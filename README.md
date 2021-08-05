@@ -1,6 +1,6 @@
 <p align="center">
-    <a href="https://github.com/yiisoft" target="_blank">
-        <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">
+    <a href="http://wwww.ioe.du.ac.in" target="_blank">
+        <img src="http://www.ioe.du.ac.in/wp-content/uploads/2021/07/ioe-du-logo.png" height="100px">
     </a>
     <h1 align="center">Yii 2 Advanced Project Template</h1>
     <br>
