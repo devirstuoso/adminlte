@@ -122,4 +122,10 @@ in basic templae you can set these values in',
         'message' => 'hi',
         'id' => 'enquiry000013',
     ],
+    'enquiry000014' => [
+        'name' => 'dev',
+        'email' => 'devanshu@gmail.com',
+        'message' => 'wefew',
+        'id' => 'enquiry000014',
+    ],
 ];

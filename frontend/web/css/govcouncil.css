@@ -1,8 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Abhaya+Libre:400,500,600,700,800|Sora:100,200,300,400,500,600,700,800')
-
 
 .govcouncil .u-section-2 {
-  background-image: url("../uploads/govcouncil.jpg");
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("../uploads/govcouncil.jpg");
   background-position: 0% 50%;
 }
 
@@ -50,12 +48,12 @@
 
 .govcouncil .u-section-2 .u-table-cell-1 {
   background-image: none;
-  padding: 20px 10px 20px 50px;
+  padding: 20px 100px 20px 250px;
 }
 
 .govcouncil .u-section-2 .u-table-cell-2 {
   background-image: none;
-  padding: 20px 10px 20px 50px;
+  padding: 20px 100px 20px 180px;
 }
 
 .govcouncil .u-section-2 .u-table-body-1 {
@@ -66,9 +64,11 @@
 
 .govcouncil .u-section-2 .u-table-cell-3 {
   border-style: solid;
+  padding: 20px 10px 20px 50px;
 }
 
 .govcouncil .u-section-2 .u-table-cell-4 {
+  border-style: solid;
   padding: 20px 10px 20px 50px;
 }
 
