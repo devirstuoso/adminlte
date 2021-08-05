@@ -86,4 +86,34 @@ these attributesa are store in different file depend by the template you are usi
 in basic templae you can set these values in',
         'id' => 'enquiry000007',
     ],
+    'enquiry000008' => [
+        'name' => 'devanshu',
+        'email' => 'devanshuverma158@gmail.com',
+        'message' => '',
+        'id' => 'enquiry000008',
+    ],
+    'enquiry000009' => [
+        'name' => 'devanshu',
+        'email' => 'devanshuverma158@gmail.com',
+        'message' => '',
+        'id' => 'enquiry000009',
+    ],
+    'enquiry000010' => [
+        'name' => 'devanshu',
+        'email' => 'devanshu@gmail.com',
+        'message' => '',
+        'id' => 'enquiry000010',
+    ],
+    'enquiry000011' => [
+        'name' => '76iu7u6',
+        'email' => 'tyjjty@gmail.com',
+        'message' => '',
+        'id' => 'enquiry000011',
+    ],
+    'enquiry000012' => [
+        'name' => 'get4rh',
+        'email' => 'digitalumesh5@gmail.com',
+        'message' => 'hi',
+        'id' => 'enquiry000012',
+    ],
 ];

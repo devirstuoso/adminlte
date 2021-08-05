@@ -437,6 +437,13 @@ function hyphen_f($dt){
                             } 
                             .form-input:focus{
                               border: none!important;
+
+                            }
+                            .submit-message{
+                              font-size: 0.9em;
+                              color: #553961;
+                              font-weight: 700;
+                              text-align: right;
                             }
 
                           </style>
@@ -472,8 +479,12 @@ function hyphen_f($dt){
 
                                   <?= $form->field($contactform, 'message',[ 'options' => ['class' => 'u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle', 'style' => 'margin-bottom: 20px']])->textarea(['rows' => 6, 'placeholder' => 'Enter your message', 'class' => 'form-input'])->label(false); ?>
 
+                                  <div>
+                                    <p class="submit-message">It may take a while, be patient. We are sending you a mail</p>
+                                  </div>
+
                                    <div class="u-form-group u-form-submit">
-                                      <a href="" class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-hover-custom-color-1 u-radius-45 u-text-body-alt-color u-btn-1">Submit</a>
+                                      <a href="" class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-hover-custom-color-1 u-radius-45 u-text-body-alt-color u-btn-1" id="index-submit">Submit</a>
                                       <?= Html::submitButton(Yii::t('app', 'Submit'), ['class' => 'u-form-control-hidden']) ?>
                                   </div>
 
@@ -497,47 +508,15 @@ function hyphen_f($dt){
 
 
 
+<?php $this->registerJs('
+  $(function(){
+
+    alert("hello everyone");
+
+  })
+');
 
 
-
-
-<!-- 
-  <div class="site-index">
-     slider:begin
-
-
-    slider:end
-
-    <ul class="list-group">
-      <div style="width:300px">
-        <li class="list-group-item" style="color:red"><h3>Updates</h3></li>
-        <li class="list-group-item" style="color:black">
-          ?php foreach($updates as $up){ ?>
-            ?php if(is_null($up->updates_link)){ ?>
-              <h4>?= Html::a(Html::encode($up->updates_title),['updates-page', 'id'=>$up->id]);?></h4>
-            ?php } else {;?>
-              <a href="?= Html::encode($up->updates_link);?>"><h4>?= Html::encode($up->updates_title);?></h4></a>
-            ?php };?>
-          ?php };?>
-        </li>
-      </div>
-    </ul>
-
-
-    <div class="jumbotron">
-      
-
-      ?php echo $slider_1->slider_image;?
-
-    </div>
-  </div>
-</div>
-
-
-
-
-
--->
 
 
 
