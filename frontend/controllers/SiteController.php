@@ -309,6 +309,13 @@ class SiteController extends Controller
         return $this->render('leadership', ['leaders' => $leaders]);
     }
 
+    public function actionGovCouncil()
+    {
+        // $leaders = new Leadership();
+
+        return $this->render('governingCouncil');//, ['leaders' => $leaders]);
+    }
+
     public function actionSchools()
     {
         return $this->render('schools');

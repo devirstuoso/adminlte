@@ -22,14 +22,14 @@ $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,
           </li>
           <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" href="<?= Url::to(['about'])?>" style="padding: 10px 0px;">About IoE</a>
           </li>
-          <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" href="<?= Url::to(['coming-soon'])?>" style="padding: 10px 0px;">Governance</a>
+          <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" style="padding: 10px 0px;">Governance</a>
             <div class="u-nav-popup">
               <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-2">
                 <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['coming-soon'])?>">Message Chairmen GC</a>
                 </li>
                 <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['coming-soon'])?>">Message CEO</a>
                 </li>
-                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['coming-soon'])?>">Governing Council</a>
+                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['gov-council'])?>">Governing Council</a>
                 </li>
               </ul>
             </div>
@@ -100,14 +100,14 @@ $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,
               </li>
               <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['about'])?>" style="padding: 10px 0px;">About IoE</a>
               </li>
-              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="" style="padding: 10px 0px;">Governance</a>
+              <li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 0px;">Governance</a>
                 <div class="u-nav-popup">
                   <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-7">
                     <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['coming-soon'])?><?= Url::to(['coming-soon'])?><?= Url::to(['coming-soon'])?>">Message Chairmen GC</a>
                     </li>
                     <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['coming-soon'])?><?= Url::to(['coming-soon'])?>">Message CEO</a>
                     </li>
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['coming-soon'])?>">Governing Council</a>
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['gov-council'])?>">Governing Council</a>
                     </li>
                   </ul>
                 </div>

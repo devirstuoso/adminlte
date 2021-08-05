@@ -37,6 +37,7 @@ class ContactFormController extends Controller
     {
         $searchModel = new ContactFormSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider->setPagination(['pageSize' => 10]); 
 
         return $this->render('../contactForm/index', [
             'searchModel' => $searchModel,

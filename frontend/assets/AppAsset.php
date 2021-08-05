@@ -21,6 +21,7 @@ class AppAsset extends AssetBundle
         'css/news-events.css',
         'css/schools.css',
         'css/leadership.css',
+        'css/govcouncil.css',
     ];
     public $js = [
         'js/nicepage.js',
