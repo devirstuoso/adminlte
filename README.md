@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="http://wwww.ioe.du.ac.in" target="_blank">
+    <a href="http://www.ioe.du.ac.in" target="_blank">
         <img src="http://www.ioe.du.ac.in/wp-content/uploads/2021/07/ioe-du-logo.png" height="100px">
     </a>
     <h1 align="center">Yii 2 Advanced Project Template</h1>
