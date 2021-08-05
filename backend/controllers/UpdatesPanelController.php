@@ -42,7 +42,7 @@ class UpdatesPanelController extends Controller
         $searchModel = new UpdatesPanelSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('../UpdatesPanel/index', [
+        return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
@@ -56,7 +56,7 @@ class UpdatesPanelController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('../UpdatesPanel/view', [
+        return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
     }
@@ -85,7 +85,7 @@ class UpdatesPanelController extends Controller
             return $this->redirect(['updates-panel/view', 'id' => $model->id]);
         }
         $this->layout = 'modal';
-        return $this->render('../UpdatesPanel/create', [
+        return $this->render('create', [
             'model' => $model, 'content_model' => $content_model,
         ]);
     }
@@ -114,7 +114,7 @@ class UpdatesPanelController extends Controller
         }
 
         $this->layout = 'modal';
-        return $this->render('../UpdatesPanel/update', [
+        return $this->render('update', [
             'model' => $model,                                                                                                                                                                                       
         ]);
     }

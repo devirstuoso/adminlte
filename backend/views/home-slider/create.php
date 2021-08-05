@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1 class="gridview-header-text"><?= Html::encode($this->title)?></h1>
 
-    <?= $this->render('../HomeSlider/_form', [
+    <?= $this->render('_form', [
         'model' => $model,
     ]) ?>
 

@@ -39,7 +39,7 @@ class ContactFormController extends Controller
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         $dataProvider->setPagination(['pageSize' => 10]); 
 
-        return $this->render('../contactForm/index', [
+        return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
@@ -53,7 +53,7 @@ class ContactFormController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('../contactForm/view', [
+        return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
     }
@@ -81,7 +81,7 @@ class ContactFormController extends Controller
     //         }
     //     }
     //     // $this->layout = 'modal';
-    //     return $this->render('../contactForm/create', [
+    //     return $this->render('create', [
     //         'model' => $model,
     //     ]);
     // }
@@ -109,7 +109,7 @@ class ContactFormController extends Controller
     //     return $this->redirect(['view', 'id' => $model->id]);
     // }
     // // $this->layout = 'modal';
-    // return $this->render('../contactForm/update', [
+    // return $this->render('update', [
     //     'model' => $model,
     // ]);
     // }
