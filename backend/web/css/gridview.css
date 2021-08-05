@@ -1,0 +1,224 @@
+    .gridview-header-text{
+        color: #605ca8;
+        text-align: center;
+        font-weight: 1000;
+        text-transform: uppercase;
+        /*text-decoration: underline;*/
+    }
+    .gridview-header{
+        height: auto;
+        width: auto;
+        /*display: flex;*/
+        align-items: center;
+        text-align: center;
+        justify-content: space-around;
+        background-color: #ffffff;
+                }
+    .gridview-header a {
+        font-weight: bold;
+        color: #605ca8 ;
+                }
+    .gridview-header select, .gridview-header input[type = text] {
+        color: #605ca8 ;
+        border-radius: 10px;
+            }
+    .gridview-header textarea {
+        color: #605ca8 ;
+        height: inherit;
+        border-radius: 10px;
+            }
+    .gridview-header input[type = file]{
+        display: block;
+        color: pink;
+        border: 5px;
+    }
+    
+
+    .gridview-purple-cell{
+        background-color : #605ca8;
+        color: #ffffff;
+        text-align: left;
+        }
+     .gridview-gray-cell{
+        background-color : #BFBFBF;
+        color: #272727;
+        text-align: left;
+        }
+
+    .gridview-image-index{
+        height: 200px ;
+        width: 300px;
+    }
+
+    .gridview-image-view{
+        height: 400px ;
+        width: 600px;
+    }
+
+
+    .gridview-image-form{
+        height: 100px ;
+        width: 100px;
+        display: block;
+        margin-bottom: 0px;
+    }
+
+    .gridview-image-passp{
+        height: 4in ;
+        width: 3.5in;
+    }
+
+
+
+
+
+
+    .gridview-menu-buttons-container{
+        height: auto;
+        width: auto;
+        box-shadow: -7px -7px 17px rgba(255,255,255,0.2),
+                    7px 7px 17px rgba(70,70,70,0.1);
+        position: relative;
+        margin: 16px;
+        top: 0px;
+        bottom:0px;
+        left: 0px;
+        right: 0px;
+        border-radius: 20px;
+        display: grid;
+        align-items: center;
+        vertical-align: center;
+        justify-content: space-around;
+                }
+    .gridview-menu-buttons-container a, .gridview-header button, .gridview-menu-buttons-container button{
+        height: 30px;
+        width: 30px;
+        box-shadow: -7px -7px 17px rgba(255,255,255,0.2),
+                7px 7px 17px rgba(70,70,70,0.1);
+        border-radius: 50%;
+        display: inherit;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none; 
+        font-size: 16px;
+        color: #ffffff
+        /*padding-bottom: 20px;*/
+                }
+    .gridview-menu-buttons-container a:hover, .gridview-header button:hover .gridview-menu-buttons-container button:hover{
+     color: #ffffff;
+            }
+    .gridview-menu-buttons-container a:active{
+    box-shadow: inset -7px -7px 17px rgba(255,255,255,0.6),
+                inset 7px 7px 17px rgba(70,70,70,0.15); 
+
+}
+
+
+/*___________________________________________________________*/
+
+.file-input{
+    background-color: #EEE;
+    width: 250px;
+    height: 170px;
+    border: 1px solid #CCC;
+    position: relative;
+    z-index: 5;
+    /*border-radius: 50px;*/
+    padding-left: 10px ;
+    margin-bottom: 20px;
+}
+.file-input > span{
+    font-family: Tahoma, Arial;
+    font-size: 15px;
+    align-items: center;
+    display: inline-block;
+    padding: 5px;
+    height: -170px;
+}
+.file-input input[type="file"]{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+.file-input:after{
+    content: 'Upload';
+    width: auto;
+    height: 30px;
+    padding: 5px;
+    color: #fff;
+    background-color: #605ca8;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    line-height: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: Tahmoa, Arial;
+    border-radius: 50px;
+
+}
+
+/*.checkbox-div{
+    width: 200px;
+    height: 50px;
+}
+.checkbox-div .checkbox{
+    font-size: 20px;
+    position: relative;
+    display: block;
+    opacity: 0;
+    cursor: pointer;
+    background-color: #605ca8;
+    }
+.checkbox-div .checkbox-span{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 44px;
+    width: 44px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid pink;
+
+}
+.checkbox-div .checkbox-span::after{
+    position: absolute;
+    content: 'Hide';
+    left: 12;
+}*/
+
+
+/*-----------------------------------*/
+.checkbox-input{
+    background-color: #605ca8;
+    vertical-align: middle;
+    margin: 30px 0;
+    padding: 10px;
+}
+
+.checkbox-input .checkbox{
+    height: 18px;
+    width: 18px;
+    display: inline;
+    margin: auto;
+}
+.checkbox-input .checkbox-label{
+    color: #ffffff;
+    font-weight: bold;
+    font-size: x-large;
+    text-transform: uppercase;
+}
+
+
+/*
+*Validation rules errors
+*/
+ .help-block{
+    color: red !important;
+
+}

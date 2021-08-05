@@ -1,0 +1,212 @@
+
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Condensed', sans-serif;
+
+}
+
+.site-index .jumbotron section {
+  display: grid;
+  grid-gap: 2px;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+  "main main"
+  "event event";
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+@media (min-width: 1200px) {
+ .site-index .jumbotron section {
+  grid-template-areas:
+  "main event"
+  "main event";
+}
+}
+
+.site-index .jumbotron .leftBox {
+  grid-area: main;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+.site-index .jumbotron section .leftBox .content {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  transition: 0.5s;
+}
+
+.site-index .jumbotron section .leftBox .content:hover {
+  background-color: rgba(102, 51, 153, 1);
+}
+
+.site-index .jumbotron section .leftBox .content h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 50px;
+  text-transform: uppercase;
+}
+
+.site-index .jumbotron section .leftBox .content p {
+  margin: 10px 0 0;
+  padding: 0;
+}
+
+.site-index .jumbotron section .leftBox  a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 15px;
+  border: 2px solid #262626;
+  margin-top: 16px;
+  font-size: 18px;
+  transition: 0.5s;
+  color:rgba(102, 51, 153, 1);
+}
+
+
+.site-index .jumbotron section .leftBox  a:hover {
+  background-color: rgba(102, 51, 153, 1);
+  color: #fff;
+  border-color: rgba(38, 19, 57,1);
+
+}
+
+.site-index .jumbotron section .events {
+  grid-area: event;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+.site-index .jumbotron section .events ul {
+  margin: 0;
+  padding: 50px;
+  list-style: none;
+}
+
+.site-index .jumbotron section .events ul li {
+  background-color: #fff;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 50% 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 0;
+  grid-template-areas:
+  "time time"
+  "detail detail";
+  margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  .site-index .jumbotron section .events ul li {
+    grid-template-areas:
+    "time detail"
+    "time detail";
+  }
+}
+
+.site-index .jumbotron section .events ul li .time {
+  grid-area: time;
+  position: relative;
+  background-color: #262626;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  transition: 0.5s;
+}
+
+    /* section .events ul li:hover .time {
+      background-color: rgba(102, 51, 153, 1);
+    }
+    */
+    .site-index .jumbotron section .events ul li .time h2 {
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      font-size: 60px;
+      line-height: 30px;
+    }
+
+    .site-index .jumbotron section .events ul li .time img {
+      border: 5px solid white;
+      /*border-radius: 4px;*/
+      width: 100%;
+      height:100%;
+      box-shadow: 5px 0px 15px 1px rgba(0, 0, 0, 0.5);
+    }
+
+    .site-index .jumbotron section .events ul li .time img:hover {
+     box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.5);
+
+   }
+
+   .site-index .jumbotron section .events ul li .time h2 span {
+    font-size: 30px;
+  }
+
+  .site-index .jumbotron section .events ul li .details {
+    grid-area: detail;
+    padding: 20px 20px 32px;
+    background-color: #fff;
+    box-sizing: border-box;
+  }
+
+  .site-index .jumbotron section .events ul li .details h3, .site-index .jumbotron section .events ul li .details a {
+    margin: 0;
+    padding-bottom: 20px;
+    font-size: 28px;
+    color:rgba(102, 51, 153, 1);
+    font-weight:50 px;
+    font-family: sans-serif
+  }
+
+  .site-index .jumbotron section .events ul li .details h3, .site-index .jumbotron section .events ul li .details a:hover {
+    color:rgba(102, 51, 153, 1);
+    font-weight:100 px;
+  }
+
+  .site-index .jumbotron section .events ul li .details h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    color:rgba(1, 1, 1, 1);
+    font-weight: 30 px;
+  }
+
+  .site-index .jumbotron section .events ul li .details p {
+    margin: 10px 0 0;
+    padding: 0;
+    font-size: 16px;
+  }
+
+  section .events .more {
+    padding: 50px;
+   }
+
+  section .events .more a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 15px;
+  border: 2px solid #262626;
+  margin-top: 16px;
+  font-size: 18px;
+  transition: 0.5s;
+  color:#fff/*rgba(102, 51, 153, 1);*/
+}
+
+  section .events .more a:hover {
+
+  background-color: rgba(102, 51, 153, 1);
+  color: #fff;
+  border-color: rgba(38, 19, 57,1);
+
+}
+</style>
