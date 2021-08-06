@@ -97,8 +97,8 @@ class GovCouncilController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
-        if ($model->validate()) {
+        if ($model->load(Yii::$app->request->post())) {
+            if ($model->validate()) {
                 $model->save();
                 Yii::$app->session->setFlash('success', 'Successfully saved the item.');
                 return $this->redirect(['view', 'id' => $model->id]);
@@ -108,7 +108,7 @@ class GovCouncilController extends Controller
                 return $this->redirect(['view', 'id' => $model->id]);
 
             }
-
+        }
         $this->layout = 'modal';
         return $this->render('update', [
             'model' => $model,

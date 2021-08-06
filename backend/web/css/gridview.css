@@ -15,7 +15,7 @@
         background-color: #ffffff;
                 }
 
-    .gridview-header li a, .gridview-header li {
+    .gridview-header a, .gridview-header li {
         color: #6f42c1;
         font-size: x-large;
         margin: 0 10px;

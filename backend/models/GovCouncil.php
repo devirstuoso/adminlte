@@ -28,7 +28,7 @@ class GovCouncil extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'name', 'designation', 'image'], 'required'],
+            [['id', 'name', 'designation'], 'required'],
             [['id'], 'string', 'max' => 30],
             [['name', 'image'], 'string', 'max' => 100],
             [['designation'], 'string', 'max' => 300],

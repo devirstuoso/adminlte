@@ -6,6 +6,14 @@ use yii\widgets\Breadcrumbs;
 
 $this->title = 'Governing Council';
 $this->params['breadcrumbs'][] = $this->title;
+
+$members = $govcouncil::find()->all();
+
+
+
+
+
+
 ?>
 
 
@@ -45,26 +53,16 @@ $this->params['breadcrumbs'][] = $this->title;
 					</thead>
 
 					<tbody class="u-align-left u-custom-font u-font-titillium-web u-grey-90 u-table-alt-grey-80 u-table-body u-table-body-1">
-						<tr style="height: 45px;">
-							<td class="u-border-1 u-border-grey-75 u-border-no-left u-border-no-right u-table-cell u-table-cell-3">abc</td>
-							<td class="u-border-1 u-border-grey-75 u-border-no-left u-border-no-right u-table-cell u-table-cell-4">abc</td>
+
+						<?php foreach ($members as $member) : ?>
+						<tr style="height: 150px;">
+							<td class="u-border-1 u-border-grey-75 u-border-no-left u-border-no-right u-table-cell u-table-cell-3"><?php echo $member->name ?></td>
+							<td class="u-border-1 u-border-grey-75 u-border-no-left u-border-no-right u-table-cell u-table-cell-4"><?php echo $member->designation ?></td>
 						</tr>
-						<tr style="height: 71px;">
-							<td class="u-border-1 u-border-grey-75 u-border-no-left u-border-no-right u-table-cell u-table-cell-3">abc</td>
-							<td class="u-border-1 u-border-grey-75 u-border-no-left u-border-no-right u-table-cell u-table-cell-4">abc</td>
-						</tr>
-						<tr style="height: 71px;">
-							<td class="u-border-1 u-border-grey-75 u-border-no-left u-border-no-right u-table-cell u-table-cell-3"></td>
-							<td class="u-border-1 u-border-grey-75 u-border-no-left u-border-no-right u-table-cell u-table-cell-4"></td>
-						</tr>
-						<tr style="height: 71px;">
-							<td class="u-border-1 u-border-grey-75 u-border-no-left u-border-no-right u-table-cell u-table-cell-3"></td>
-							<td class="u-border-1 u-border-grey-75 u-border-no-left u-border-no-right u-table-cell u-table-cell-4"></td>
-						</tr>
-						<tr style="height: 25px;">
-							<td class="u-border-1 u-border-grey-75 u-border-no-left u-border-no-right u-table-cell u-table-cell-3"></td>
-							<td class="u-border-1 u-border-grey-75 u-border-no-left u-border-no-right u-table-cell u-table-cell-4"></td>
-						</tr>
+						
+						<?php endforeach; ?>
+
+
 					</tbody>
 					<tfoot class="u-custom-font u-font-titillium-web u-palette-2-dark-1 u-table-footer u-table-footer-1">
 						<tr style="height: 67px;">
