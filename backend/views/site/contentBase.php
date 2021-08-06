@@ -33,9 +33,22 @@ $this->params['breadcrumbs'] = [['label' => $this->title]];
 	<div class="row justify-content-around align-items-center">
 		<div class="col-lg-3 col-sm-2 col-10">
 			<a href="<?php echo Yii::$app->urlManager->createUrl("leadership/index");?>" class="btn btn-outline-info"><?= Html::img('@web/img/leadershipbase.png',['alt' => 'Nothing to show', 'class' => 'img-fluid']);?><h2 style="font-size: 150%;">Leadership</h2></a> 
+		</div>		
+		<div class="col-lg-3 col-sm-2 col-10">
+			<a href="<?php echo Yii::$app->urlManager->createUrl("gov-council/index");?>" class="btn btn-outline-info"><?= Html::img('@web/img/govcouncilbase.png',['alt' => 'Nothing to show', 'class' => 'img-fluid']);?><h2 style="font-size: 150%;">Governing Council</h2></a> 
 		</div>
 		<div class="col-lg-3 col-sm-2 col-10">
 			<a href="<?php echo Yii::$app->urlManager->createUrl("contact-form/index");?>" class="btn btn-outline-info"><?= Html::img('@web/img/formbase.png',['alt' => 'Nothing to show', 'class' => 'img-fluid']);?><h2 style="font-size: 150%;">Home Form</h2></a> 
+		</div>
+
+	</div>
+
+	<div class="row justify-content-around align-items-center">
+		<div class="col-lg-3 col-sm-2 col-10">
+			<a href="<?php //echo Yii::$app->urlManager->createUrl("home-form/index");?>" class="btn btn-outline-info"><?= Html::img('@web/img/photo2.png',['alt' => 'Nothing to show', 'class' => 'img-fluid']);?><h2 style="font-size: 150%;">Empty</h2></a> 
+		</div>
+		<div class="col-lg-3 col-sm-2 col-10">
+			<a href="<?php //echo Yii::$app->urlManager->createUrl("home-form/index");?>" class="btn btn-outline-info"><?= Html::img('@web/img/photo2.png',['alt' => 'Nothing to show', 'class' => 'img-fluid']);?><h2 style="font-size: 150%;">Empty</h2></a> 
 		</div>
 		<div class="col-lg-3 col-sm-2 col-10">
 			<a href="<?php //echo Yii::$app->urlManager->createUrl("home-form/index");?>" class="btn btn-outline-info"><?= Html::img('@web/img/photo2.png',['alt' => 'Nothing to show', 'class' => 'img-fluid']);?><h2 style="font-size: 150%;">Empty</h2></a> 
