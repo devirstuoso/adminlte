@@ -17,12 +17,12 @@
 
     .gridview-header a, .gridview-header li {
         color: #6f42c1;
-        font-size: x-large;
         margin: 0 10px;
     }
-    .gridview-header li a {
+    .gridview-header li a, .gridview-header li span  {
         font-weight: bold;
-        color: pink !important;
+        font-size: x-large;
+        /*color: pink !important;*/
                 }
     .gridview-header select, .gridview-header input[type = text] {
         color: #605ca8 ;

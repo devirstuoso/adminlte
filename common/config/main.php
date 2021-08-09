@@ -16,6 +16,9 @@ return [
                     'cache' => [
                         'class' => 'yii\caching\FileCache',
                     ],
+                    'assetManager' => [
+                        'appendTimestamp' => true,
+                    ],
                     'filedb' => [
                         'class' => 'yii2tech\filedb\Connection',
                         'path' => '@common/data/files',
