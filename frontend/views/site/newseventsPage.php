@@ -60,17 +60,14 @@ function hyphen_f($dt){
 </div>
 
 
-
-
-
-
 <div class="news-events">
 
   <section class="skrollable u-clearfix u-image u-parallax u-shading u-section-2" id="sec-7da3" data-image-width="1440" data-image-height="960">
     <div class="u-clearfix u-sheet u-sheet-1">
       <div class="u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-1">
         <div class="u-container-layout u-container-layout-1">
-          <div class="u-container-style u-group u-group-2">
+
+          <div class="u-container-style u-group u-group-2 sticky-1">
             <div class="u-container-layout">
               <div class="u-palette-2-base u-shape u-shape-rectangle u-shape-1"></div>
               <h1 class="u-text u-text-body-alt-color u-text-default u-text-1">NEWS </h1>
@@ -98,7 +95,7 @@ function hyphen_f($dt){
             </div>
           <?php endforeach; ?>
 
-          <div class="u-container-style u-group u-group-2">
+          <div class="u-container-style u-group u-group-2 sticky-2">
             <div class="u-container-layout">
               <div class="u-palette-2-base u-shape u-shape-rectangle u-shape-1"></div>
               <h1 class="u-text u-text-body-alt-color u-text-default u-text-1">EVENTS </h1>
