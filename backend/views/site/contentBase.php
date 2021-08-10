@@ -1,5 +1,5 @@
 <?php
-$this->title = 'Strater Page';
+$this->title = 'Base Website Contents';
 use \hail812\adminlte\widgets;
 use dosamigos\chartjs\ChartJs;
 use yii\helpers\Html;

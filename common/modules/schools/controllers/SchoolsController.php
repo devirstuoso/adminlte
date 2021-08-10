@@ -1,20 +1,18 @@
 <?php
 
-namespace backend\controllers;
+namespace common\modules\schools\controllers;
 
 use Yii;
-use backend\models\HomeSlider;
-use backend\models\HomeSliderSearch;
+use common\modules\schools\models\Schools;
+use common\modules\schools\models\SchoolsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\web\UploadedFile;
-
 
 /**
- * HomeSliderController implements the CRUD actions for HomeSlider model.
+ * SchoolsController implements the CRUD actions for Schools model.
  */
-class HomeSliderController extends Controller
+class SchoolsController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -32,12 +30,12 @@ class HomeSliderController extends Controller
     }
 
     /**
-     * Lists all HomeSlider models.
+     * Lists all Schools models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new HomeSliderSearch();
+        $searchModel = new SchoolsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -47,7 +45,7 @@ class HomeSliderController extends Controller
     }
 
     /**
-     * Displays a single HomeSlider model.
+     * Displays a single Schools model.
      * @param string $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -60,20 +58,18 @@ class HomeSliderController extends Controller
     }
 
     /**
-     * Creates a new HomeSlider model.
+     * Creates a new Schools model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new HomeSlider();
-
-        #$model->scenario = 'create-photo-upload';
+        $model = new Schools();
 
         if ($model->load(Yii::$app->request->post())) {
             
             $model->id = $this->keyValue();
-            $this->uploadImage($model);
+            // $this->uploadImage($model);
             if ($model->validate()) {
                 $model->save();
                 Yii::$app->session->setFlash('success', 'Successfully saved the item.');
@@ -91,7 +87,7 @@ class HomeSliderController extends Controller
     }
 
     /**
-     * Updates an existing HomeSlider model.
+     * Updates an existing Schools model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param string $id
      * @return mixed
@@ -100,14 +96,10 @@ class HomeSliderController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        $old_image = $model->slider_image;
 
-        #$model->scenario = 'update-photo-upload';
-
-        if ($model->load(Yii::$app->request->post())) {
+       if ($model->load(Yii::$app->request->post())) {
    
-            $this->uploadImage($model, $old_image);
-            
+            // $this->uploadImage($model, $old_image);
             if ($model->validate()) {
                 $model->save();
                 Yii::$app->session->setFlash('success', 'Successfully saved the item.');
@@ -116,10 +108,8 @@ class HomeSliderController extends Controller
             else{
                 Yii::$app->session->setFlash('error', 'Unable to save the item.');
                 return $this->redirect(['view', 'id' => $model->id]);
-
             }
         }
-
         $this->layout = 'modal';
         return $this->render('update', [
             'model' => $model,
@@ -127,7 +117,7 @@ class HomeSliderController extends Controller
     }
 
     /**
-     * Deletes an existing HomeSlider model.
+     * Deletes an existing Schools model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param string $id
      * @return mixed
@@ -135,56 +125,34 @@ class HomeSliderController extends Controller
      */
     public function actionDelete($id)
     {
-        $model = $this->findModel($id);
-        if(file_exists($model->slider_image)){
-            unlink($model->slider_image);
-        }
-        $model->delete();
+        $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
     }
 
     /**
-     * Finds the HomeSlider model based on its primary key value.
+     * Finds the Schools model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param string $id
-     * @return HomeSlider the loaded model
+     * @return Schools the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = HomeSlider::findOne($id)) !== null) {
+        if (($model = Schools::findOne($id)) !== null) {
             return $model;
         }
 
-        throw new NotFoundHttpException('The requested page does not exist.');
-    }
-
-    protected function uploadImage($model, $old_image = Null)
-    {   
-        $uploaded_image = UploadedFile::getInstance($model, 'slider_image');
-        if(isset($uploaded_image)){
-            $image_name = $model->id.'.png';#.$model->slider_image->getExtension(); 
-            $image_path = 'uploads/slider/'.$image_name;
-            $model->slider_image = $image_path;
-            if($model->save()){
-                $uploaded_image->saveAs($image_path);
-            }
-        }
-        else{
-           $model->slider_image = $old_image;
-        }
-        return true;
+        throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
     }
 
     protected function keyValue()
-    {   $last = HomeSlider::find()->orderBy(['id' => SORT_DESC])->one();
+    {   $last = Schools::find()->orderBy(['id' => SORT_DESC])->one();
         if(empty($last))
         { 
-            return "slider0001";
+            return "school0001";
         } 
         $id = $last->id;
         return ++$id;
     }
-
 }

@@ -18,7 +18,7 @@ return [
                     ],
                     'assetManager' => [
                         'appendTimestamp' => true,
-                    ],
+                    ],  //clear cache each time
                     'filedb' => [
                         'class' => 'yii2tech\filedb\Connection',
                         'path' => '@common/data/files',
@@ -37,6 +37,13 @@ return [
                         ],
                     ],
 
+    ],
+
+    'modules' => [
+                  'schools' => [
+                        'class' => 'common\modules\schools\School',
+                        ],
+    
     ],
     
 ];
