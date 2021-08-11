@@ -34,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1 class="gridview-header-text"><?= Html::encode($this->title) ?></h1>
 
    <p>
-        <?= Html::a('<i class="fas fa-arrow-left"></i>', ['site/content-base'], ['class' => 'btn btn-outline-dark']) ?> 
+        <?= Html::a('<i class="fas fa-arrow-left"></i>', ['/site/content-schools'], ['class' => 'btn btn-outline-dark']) ?> 
 
         <?= Html::button('<i class="fas fa-plus"></i>', ['value' => Url::to(['create']), 'class' => 'btn btn-outline-success', 'id' => 'modalButton']);?>
     </p>
@@ -61,6 +61,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'school_id',
             'school_name',
+             ['attribute' => 'school_logo',
+                'contentOptions' => ['class' => ''],
+                'format' => 'html',
+                'value' => function($model){
+                    return yii\helpers\HtmlPurifier::process($model->school_logo);
+                }
+            ],
 
                         ['class' => 'yii\grid\ActionColumn',
                 'contentOptions' => ['class' => 'gridview-menu-buttons-container'],

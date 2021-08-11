@@ -3,12 +3,14 @@
 /* @var $this yii\web\View */
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\Breadcrumbs;
 
 $this->title = Yii::t('app', 'Delhi Schools of {name}', [
     'name' => $school->school_name,
 ]);
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Delhi Schools'), 'url' => Yii::$app->urlManager->createUrl("schools")];
+$this->params['breadcrumbs'][] = $school->school_name;
 ?>
 
 <div class="about">

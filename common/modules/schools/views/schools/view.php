@@ -56,6 +56,14 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'school_id',
             'school_name',
+            'school_logo',
+            ['attribute' => 'school_logo',
+                'contentOptions' => ['class' => ''],
+                'format' => 'html',
+                'value' => function($model){
+                    return '<span>'.$model->school_logo.'</span>';
+                }
+            ],
         ],
     ]) ?>
 

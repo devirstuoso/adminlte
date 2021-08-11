@@ -30,7 +30,8 @@ class Schools extends \yii\db\ActiveRecord
             [['id', 'school_id', 'school_name'], 'required'],
             [['id', 'school_id'], 'string', 'max' => 30],
             [['school_name'], 'string', 'max' => 300],
-            [['id'], 'unique'],
+            [['school_logo'], 'string', 'max' => 10000],
+            [['id', 'school_id'], 'unique'],
         ];
     }
 
