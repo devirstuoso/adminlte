@@ -44,4 +44,9 @@ phpunit.phar
 
 
 # ignore console application
-console/
+/console
+
+# ignore generated assets files
+/backend/web/assets
+/backend/web/assets
+

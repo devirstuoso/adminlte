@@ -40,7 +40,7 @@ class HomeSliderController extends Controller
         $searchModel = new HomeSliderSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('../HomeSlider/index', [
+        return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
@@ -54,7 +54,7 @@ class HomeSliderController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('../HomeSlider/view', [
+        return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
     }
@@ -82,12 +82,10 @@ class HomeSliderController extends Controller
             else{
                 Yii::$app->session->setFlash('error', 'Unable to save the item.');
                 return $this->redirect(['index']);
-
-            }
-            
+            }  
         }
         $this->layout = 'modal';
-        return $this->render('../HomeSlider/create', [
+        return $this->render('create', [
             'model' => $model,
         ]);
     }
@@ -123,7 +121,7 @@ class HomeSliderController extends Controller
         }
 
         $this->layout = 'modal';
-        return $this->render('../HomeSlider/update', [
+        return $this->render('update', [
             'model' => $model,
         ]);
     }

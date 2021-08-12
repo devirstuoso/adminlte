@@ -1,6 +1,10 @@
 <?php 
 use yii\helpers\Url;
 
+use common\modules\schools\models\Schools;
+
+$schools = Schools::find()->all();
+
 $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i");
 ?>
 
@@ -18,56 +22,45 @@ $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,
 
       <div class="u-custom-menu u-nav-container">
         <ul class="u-nav u-spacing-20 u-unstyled u-nav-1">
-          <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1 fonter" href="<?= Url::to(['index'])?>" style="padding: 10px 0px;">Home</a>
+          <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1 fonter" href="<?= Url::to(['/site/index'])?>" style="padding: 10px 0px;">Home</a>
           </li>
-          <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" href="<?= Url::to(['about'])?>" style="padding: 10px 0px;">About IoE</a>
+          <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" href="<?= Url::to(['/site/about'])?>" style="padding: 10px 0px;">About IoE</a>
           </li>
-          <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" href="<?= Url::to(['coming-soon'])?>" style="padding: 10px 0px;">Governance</a>
+          <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" style="padding: 10px 0px;">Governance</a>
             <div class="u-nav-popup">
               <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-2">
-                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['coming-soon'])?>">Message Chairmen GC</a>
+                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['/site/coming-soon'])?>">Message Chairmen GC</a>
                 </li>
-                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['coming-soon'])?>">Message CEO</a>
+                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['/site/coming-soon'])?>">Message CEO</a>
                 </li>
-                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['coming-soon'])?>">Governing Council</a>
+                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['/site/gov-council'])?>">Governing Council</a>
                 </li>
               </ul>
             </div>
           </li>
-          <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" href="<?= Url::to(['leadership'])?>" style="padding: 10px 0px;">Leadership</a>
+          <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" href="<?= Url::to(['/site/leadership'])?>" style="padding: 10px 0px;">Leadership</a>
           </li>
-          <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" href="<?= Url::to(['schools'])?>" style="padding: 10px 0px;">Schools</a>
+          <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" href="<?= Url::to(['/schools'])?>" style="padding: 10px 0px;">Schools</a>
             <div class="u-nav-popup">
               <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-3">
-                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['coming-soon'])?>">Delhi School of Pubic Health</a>
-                </li>
-                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['coming-soon'])?>">Delhi School of Climate Change &amp; Sustainability</a>
-                </li>
-                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['coming-soon'])?>">Delhi School of Public Policy &amp; Governance</a>
-                </li>
-                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['coming-soon'])?>">Delhi School of Transnational Affairs</a>
-                </li>
-                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['coming-soon'])?>">Delhi School of Skill Enhancement &amp; Entrepreneurship Development</a>
-                </li>
-                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['coming-soon'])?>">Delhi School of Informatics, Computing &amp; Data Analytics (TBA)</a>
-                </li>
-                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['coming-soon'])?>">Delhi School of Culture &amp; Heritage Education (TBA)</a>
-                </li>
-                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['coming-soon'])?>">Delhi School of Performing Arts (TBA)</a>
-                </li>
-                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['coming-soon'])?>">Centre For Global History (TBA)</a>
-                </li>
+
+                <?php foreach ($schools as $school):?>
+                  <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['/schools/schoolf', 'id' => $school->school_id])?>">Delhi School of <?php echo $school->school_name;?></a>
+                  </li>
+                <?php endforeach;?>
+
+
               </ul>
             </div>
           </li>
           <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" href="" style="padding: 10px 0px;">Activities</a>
             <div class="u-nav-popup">
               <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-4">
-                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['coming-soon'])?>">Research</a>
+                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['/site/coming-soon'])?>">Research</a>
                 </li>
-                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['coming-soon'])?>">Teaching</a>
+                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['/site/coming-soon'])?>">Teaching</a>
                 </li>
-                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['coming-soon'])?>">Training</a>
+                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['/site/coming-soon'])?>">Training</a>
                 </li>
                 <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white">Out Reach</a>
                 </li>
@@ -77,12 +70,12 @@ $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,
           <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" href="" style="padding: 10px 0px;">Careers</a>
             <div class="u-nav-popup">
               <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-5">
-                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['coming-soon'])?>">Post Doctoral Fellowships</a>
+                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['/site/coming-soon'])?>">Post Doctoral Fellowships</a>
                 </li>
               </ul>
             </div>
           </li>
-          <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" href="<?= Url::to(['news-events-page'])?>" style="padding: 10px 0px;">News &amp; Events</a>
+          <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" href="<?= Url::to(['/site/news-events-page'])?>" style="padding: 10px 0px;">News &amp; Events</a>
           </li>
         </ul>
       </div>
@@ -96,56 +89,45 @@ $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,
             <div class="u-menu-close">
             </div>
             <ul class="u-align-center-lg u-align-center-xl u-align-left-md u-align-left-sm u-align-left-xs u-nav u-popupmenu-items u-spacing-14 u-unstyled u-nav-6">
-              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['index'])?>" style="padding: 10px 0px;">Home</a>
+              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/index'])?>" style="padding: 10px 0px;">Home</a>
               </li>
-              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['about'])?>" style="padding: 10px 0px;">About IoE</a>
+              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/about'])?>" style="padding: 10px 0px;">About IoE</a>
               </li>
-              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="" style="padding: 10px 0px;">Governance</a>
+              <li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 0px;">Governance</a>
                 <div class="u-nav-popup">
                   <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-7">
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['coming-soon'])?><?= Url::to(['coming-soon'])?><?= Url::to(['coming-soon'])?>">Message Chairmen GC</a>
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/coming-soon'])?><?= Url::to(['/site/coming-soon'])?><?= Url::to(['/site/coming-soon'])?>">Message Chairmen GC</a>
                     </li>
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['coming-soon'])?><?= Url::to(['coming-soon'])?>">Message CEO</a>
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/coming-soon'])?><?= Url::to(['/site/coming-soon'])?>">Message CEO</a>
                     </li>
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['coming-soon'])?>">Governing Council</a>
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/gov-council'])?>">Governing Council</a>
                     </li>
                   </ul>
                 </div>
               </li>
-              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['leadership'])?>" style="padding: 10px 0px;">Leadership</a>
+              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/leadership'])?>" style="padding: 10px 0px;">Leadership</a>
               </li>
-              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['schools'])?>" style="padding: 10px 0px;">Schools</a>
+              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/schools'])?>" style="padding: 10px 0px;">Schools</a>
                 <div class="u-nav-popup">
+
                   <ul class="u-h-spacing-100 u-nav u-unstyled u-v-spacing-15 u-nav-8">
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['coming-soon'])?>">Delhi School of Pubic Health</a>
+                    
+                    <?php foreach ($schools as $school):?>
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/schools/schoolf', 'id' => $school->school_id])?>">Delhi School of <?php echo $school->school_name;?></a>
                     </li>
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['coming-soon'])?>">Delhi School of Climate Change &amp; Sustainability</a>
-                    </li>
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['coming-soon'])?>">Delhi School of Public Policy &amp; Governance</a>
-                    </li>
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['coming-soon'])?>">Delhi School of Transnational Affairs</a>
-                    </li>
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['coming-soon'])?>">Delhi School of Skill Enhancement &amp; Entrepreneurship Development</a>
-                    </li>
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['coming-soon'])?>">Delhi School of Informatics, Computing &amp; Data Analytics (TBA)</a>
-                    </li>
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['coming-soon'])?>">Delhi School of Culture &amp; Heritage Education (TBA)</a>
-                    </li>
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['coming-soon'])?>">Delhi School of Performing Arts (TBA)</a>
-                    </li>
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['coming-soon'])?>">Centre For Global History (TBA)</a>
-                    </li>
+                   <?php endforeach; ?>
+
                   </ul>
                 </div>
               </li>
               <li class="u-nav-item"><a class="u-button-style u-nav-link" href="" style="padding: 10px 0px;">Activities</a>
                 <div class="u-nav-popup">
                   <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-9">
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['coming-soon'])?>">Research</a>
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/coming-soon'])?>">Research</a>
                     </li>
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['coming-soon'])?>">Teaching</a>
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/coming-soon'])?>">Teaching</a>
                     </li>
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['coming-soon'])?>">Training</a>
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/coming-soon'])?>">Training</a>
                     </li>
                     <li class="u-nav-item"><a class="u-button-style u-nav-link">Out Reach</a>
                     </li>
@@ -155,12 +137,12 @@ $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,
               <li class="u-nav-item"><a class="u-button-style u-nav-link" href="" style="padding: 10px 0px;">Careers</a>
                 <div class="u-nav-popup">
                   <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-10">
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['coming-soon'])?>">Post Doctoral Fellowships</a>
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/coming-soon'])?>">Post Doctoral Fellowships</a>
                     </li>
                   </ul>
                 </div>
               </li>
-              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['news-events-page'])?>" style="padding: 10px 0px;">News &amp; Events</a>
+              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/news-events-page'])?>" style="padding: 10px 0px;">News &amp; Events</a>
               </li>
             </ul>
           </div>
@@ -169,7 +151,7 @@ $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,
         </div>
       </div>
     </nav>
-    <a href="<?= Url::to(['index'])?>" class="u-image u-logo u-image-1" data-image-width="850" data-image-height="200">
+    <a href="<?= Url::to(['/site/index'])?>" class="u-image u-logo u-image-1" data-image-width="850" data-image-height="200">
       <img src="<?php echo Yii::getAlias('@frontend_web/').'uploads/ioe-du-logo-2.png';?>" class="u-logo-image u-logo-image-1" data-image-width="300">
     </a>
   </div>

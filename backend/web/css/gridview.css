@@ -14,9 +14,15 @@
         justify-content: space-around;
         background-color: #ffffff;
                 }
-    .gridview-header a {
+
+    .gridview-header a, .gridview-header li {
+        color: #6f42c1;
+        margin: 0 10px;
+    }
+    .gridview-header li a, .gridview-header li span  {
         font-weight: bold;
-        color: #605ca8 ;
+        font-size: x-large;
+        /*color: pink !important;*/
                 }
     .gridview-header select, .gridview-header input[type = text] {
         color: #605ca8 ;
@@ -31,6 +37,10 @@
         display: block;
         color: pink;
         border: 5px;
+    }
+
+    .gridview-header .pagination{
+        margin: 100px;
     }
     
 

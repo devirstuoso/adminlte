@@ -21,6 +21,7 @@ use backend\models\UpdatesPanelContent;
 use backend\models\NewsEvents;
 use backend\models\Leadership;
 use backend\models\ContactForm;
+use backend\models\GovCouncil;
 
 /**
  * Site controller
@@ -307,6 +308,13 @@ class SiteController extends Controller
         $leaders = new Leadership();
 
         return $this->render('leadership', ['leaders' => $leaders]);
+    }
+
+    public function actionGovCouncil()
+    {
+        $govcouncil = new GovCouncil();
+
+        return $this->render('governingCouncil', ['govcouncil' => $govcouncil]);
     }
 
     public function actionSchools()

@@ -45,7 +45,7 @@ class NewsEventsController extends Controller
         //     $ne_type = Yii::$app->request->post('editableKey');
         // }
 
-        return $this->render('../NewsEvents/index', [
+        return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
@@ -59,7 +59,7 @@ class NewsEventsController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('../NewsEvents/view', [
+        return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
     }
@@ -89,7 +89,7 @@ class NewsEventsController extends Controller
         }
 
         $this->layout = 'modal';
-        return $this->render('../NewsEvents/create', [
+        return $this->render('create', [
             'model' => $model,
         ]);
     }
@@ -107,7 +107,7 @@ class NewsEventsController extends Controller
     //     }
     //     }
     //     $this->layout = 'modal';
-    //     return $this->render('../NewsEvents/create', [
+    //     return $this->render('create', [
     //         'model' => $model,
     //     ]);
     // }
@@ -142,7 +142,7 @@ class NewsEventsController extends Controller
         }
 
         $this->layout = 'modal';
-        return $this->render('../NewsEvents/update', [
+        return $this->render('update', [
             'model' => $model,
         ]);
     }

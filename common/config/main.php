@@ -10,12 +10,17 @@ return [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
 
+        '@schools' => '@app_name/common/modules/schools',
+
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
                     'cache' => [
                         'class' => 'yii\caching\FileCache',
                     ],
+                    'assetManager' => [
+                        'appendTimestamp' => true,
+                    ],  //clear cache each time
                     'filedb' => [
                         'class' => 'yii2tech\filedb\Connection',
                         'path' => '@common/data/files',
@@ -32,8 +37,22 @@ return [
                             'port' => '587',//'465',
                             'encryption' => 'tls',
                         ],
+                    'urlManagerModules' =>[
+                        'class' => 'yii\web\urlManager',
+                        'scriptUrl' => '/adminlte/common/modules/schools',
+                        'baseUrl' => '@schools',
+                        'enablePrettyUrl' => false,
+                        'showScriptName' => false,
+                    ],
                     ],
 
+    ],
+
+    'modules' => [
+                  'schools' => [
+                        'class' => 'common\modules\schools\School',
+                        ],
+    
     ],
     
 ];

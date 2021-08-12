@@ -13,7 +13,7 @@ $this->title = $name;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <div class="alert alert-danger">
+    <div style="background: tomato; height: 300px; font-size: 3em; color: white;">
         <?= nl2br(Html::encode($message)) ?>
     </div>
 
