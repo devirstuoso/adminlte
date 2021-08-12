@@ -40,6 +40,7 @@ class SchoolsSearch extends Schools
     public function search($params)
     {
         $query = Schools::find();
+        $query->joinWith(['schoolSlider']);
 
         // add conditions that should always apply here
 
@@ -58,8 +59,13 @@ class SchoolsSearch extends Schools
         // grid filtering conditions
         $query->andFilterWhere(['like', 'id', $this->id])
             ->andFilterWhere(['like', 'school_id', $this->school_id])
-            ->andFilterWhere(['like', 'school_name', $this->school_name])
-            ->andFilterWhere(['like', 'heading', $this->schoolSlider]);
+            ->andFilterWhere(['like', 'school_name', $this->school_name]);
+            // ->andFilterWhere(['like', 'heading', $this->schoolSlider]);
+
+        $dataProvider->sort->attributes['heading'] = [
+        'asc' => ['heading' => SORT_ASC],
+        'desc' => ['heading' => SORT_DESC],
+        ];
 
         return $dataProvider;
     }

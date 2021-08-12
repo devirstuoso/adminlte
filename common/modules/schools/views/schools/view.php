@@ -56,14 +56,30 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'school_id',
             'school_name',
-            'school_logo',
             ['attribute' => 'school_logo',
-                'contentOptions' => ['class' => ''],
-                'format' => 'html',
-                'value' => function($model){
-                    return '<span>'.$model->school_logo.'</span>';
-                }
+            'contentOptions' => ['class' => ''],
+            'format' => 'raw',
+            'value' => function($model){
+                return '<div style="width:100px"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 500" version="1.1" style="fill: black;">'.$model->school_logo.'</svg></div>';  }
             ],
+            ['label' => 'Slider',
+            'attribute' => 'image',
+            'contentOptions' => ['class' => ''],
+            'format' => 'html',
+            'value' => function($model){
+
+            $cellData = [];
+            $index = $model::find()->andWhere(['school_id' => $model->school_id])->one();
+            foreach ($index->schoolSlider as $key => $value) {
+                $cellData[] = Html::img($value->image.'?'.time(), ['alt' =>'No Image to show','class' => 'gridview-image-index']);
+
+                $cellData[] =  html::encode($value->heading);
+                }
+            return implode("<hr>" , $cellData);
+                }                 
+            ],
+           
+           
         ],
     ]) ?>
 
