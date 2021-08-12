@@ -18,6 +18,15 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'school_logo')->textArea(['maxlength' => true, 'rows'=> 6]) ?>
 
+
+
+
+
+   <label>Updates Image</label>
+    <div class="file-input">
+        <?= $form->field($model->schoolSlider->image, 'image', ['options' => ['class' => 'formfield-error']])->fileInput()->label(false) ?>
+    </div>
+
      <div class="form-group">
         <?= Html::a('<i class="fas fa-arrow-left"></i>', ['index'], ['class' => 'btn btn-outline-dark']) ?>
         <?= Html::submitButton('<i class="fas fa-save"></i> ', ['class' => 'btn btn-outline-success']) ?>
