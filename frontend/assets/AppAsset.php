@@ -20,6 +20,7 @@ class AppAsset extends AssetBundle
         'css/about.css',
         'css/news-events.css',
         'css/schools.css',
+        'css/school-home.css',
         'css/leadership.css',
         'css/govcouncil.css',
     ];

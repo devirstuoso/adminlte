@@ -140,4 +140,16 @@ in basic templae you can set these values in',
         'message' => '',
         'id' => 'enquiry000016',
     ],
+    'enquiry000017' => [
+        'name' => 'rahul kumar',
+        'email' => 'ra1121991@gmail.com',
+        'message' => 'qwfewgreger',
+        'id' => 'enquiry000017',
+    ],
+    'enquiry000018' => [
+        'name' => 'rahul kumar',
+        'email' => 'ra1121991@gmail.com',
+        'message' => 'qwfewgreger',
+        'id' => 'enquiry000018',
+    ],
 ];

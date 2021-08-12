@@ -5,6 +5,7 @@ namespace common\modules\schools\controllers;
 use Yii;
 use common\modules\schools\models\Schools;
 use common\modules\schools\models\SchoolsSearch;
+use common\modules\schools\models\SchoolSliderSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -37,7 +38,7 @@ class SchoolsController extends Controller
     {
         $searchModel = new SchoolsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
+       
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,

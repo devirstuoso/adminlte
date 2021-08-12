@@ -4,12 +4,12 @@ namespace common\modules\schools\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\modules\schools\models\Schools;
+use common\modules\schools\models\SchoolSlider;
 
 /**
  * SchoolsSearch represents the model behind the search form of `common\modules\schools\models\Schools`.
  */
-class SchoolsSearch extends Schools
+class SchoolSliderSearch extends SchoolSlider
 {
     /**
      * {@inheritdoc}
@@ -17,7 +17,7 @@ class SchoolsSearch extends Schools
     public function rules()
     {
         return [
-            [['id', 'school_id', 'school_name'], 'safe'],
+            [['id', 'school_id'], 'safe'],
         ];
     }
 
@@ -39,7 +39,7 @@ class SchoolsSearch extends Schools
      */
     public function search($params)
     {
-        $query = Schools::find();
+        $query = SchoolSlider::find();
 
         // add conditions that should always apply here
 
@@ -58,9 +58,8 @@ class SchoolsSearch extends Schools
         // grid filtering conditions
         $query->andFilterWhere(['like', 'id', $this->id])
             ->andFilterWhere(['like', 'school_id', $this->school_id])
-            ->andFilterWhere(['like', 'school_name', $this->school_name])
-            ->andFilterWhere(['like', 'heading', $this->schoolSlider]);
-
+            ->andFilterWhere(['like', 'image', $this->image])
+            ->andFilterWhere(['like', 'heading', $this->heading]);
         return $dataProvider;
     }
 }

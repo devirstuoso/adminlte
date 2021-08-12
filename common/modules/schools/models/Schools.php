@@ -46,4 +46,9 @@ class Schools extends \yii\db\ActiveRecord
             'school_name' => Yii::t('app', 'School Name'),
         ];
     }
+
+    public function getSchoolSlider() 
+    {
+        return $this->hasMany(SchoolSlider::className(), ['school_id' => 'school_id']);
+    }
 }
