@@ -22,10 +22,10 @@ use yii\widgets\ActiveForm;
 
 
 
-   <label>Updates Image</label>
+<!--    <label>Updates Image</label>
     <div class="file-input">
-        <?= $form->field($model->schoolSlider->image, 'image', ['options' => ['class' => 'formfield-error']])->fileInput()->label(false) ?>
-    </div>
+        ?= $form->field($model->schoolSlider->image, 'image', ['options' => ['class' => 'formfield-error']])->fileInput()->label(false) ?>
+    </div> -->
 
      <div class="form-group">
         <?= Html::a('<i class="fas fa-arrow-left"></i>', ['index'], ['class' => 'btn btn-outline-dark']) ?>
