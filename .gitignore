@@ -45,6 +45,6 @@ phpunit.phar
 /console
 
 # ignore generated assets files
-/backend/web/assets
+/frontend/web/assets
 /backend/web/assets
 
