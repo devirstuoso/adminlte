@@ -14,6 +14,8 @@ class Model extends \yii\base\Model
      * @param array $multipleModels
      * @return array
      */
+
+    // $modelsSlider = Model::createMultiple(SchoolSlider::classname());
     public static function createMultiple($modelClass, $multipleModels = [])
     {
         $model    = new $modelClass;

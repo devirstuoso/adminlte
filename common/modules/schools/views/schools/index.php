@@ -101,7 +101,7 @@ $this->params['breadcrumbs'][] = $this->title;
             foreach ($index->schoolSlider as $key => $value) {
                 $cellData[] = html::encode($value->heading);
                 }
-            return implode("<hr>" , $cellData);
+            return implode("<hr style = 'margin: 70% '>" , $cellData);
                     
                 }
             ],

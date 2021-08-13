@@ -59,6 +59,8 @@ $this->registerJs($js);
         'model' => $modelsSlider[0],
         'formId' => 'dynamic-form',
         'formFields' => [
+            'id',
+            'school_id',
             'image',
             'heading',
         ],
@@ -100,9 +102,9 @@ $this->registerJs($js);
                                         </span>
                                         ?= $form->field($slide, "[{$index}]image", ['options' => ['class' => 'formfield-error']])->fileInput()->label(false) ?>
                                     </div> -->
-                                     <div class="col-sm-6 center">
-                                    <?= $form->field($slide, "[{$index}]heading")->textInput(['maxlength' => true]) ?>
-                                </div>
+
+                                    <?= $form->field($slide, "[{$index}]id")->textInput(['maxlength' => true]) ?>
+                                
                                 </div>
                             </div>
                             <div class="row">
