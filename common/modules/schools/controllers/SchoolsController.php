@@ -3,13 +3,18 @@
 namespace common\modules\schools\controllers;
 
 use Yii;
-use common\modules\schools\models\Schools;
-use common\modules\schools\models\SchoolsSearch;
-use common\modules\schools\models\SchoolSliderSearch;
+use backend\models\Model;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
+use yii\helpers\Url;
+use yii\web\UploadedFile;
+
+
+use common\modules\schools\models\Schools;
+use common\modules\schools\models\SchoolSlider;
+use common\modules\schools\models\SchoolsSearch;
 /**
  * SchoolsController implements the CRUD actions for Schools model.
  */
@@ -65,25 +70,56 @@ class SchoolsController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Schools();
+        $modelSchool = new Schools;
+        $modelsSlider = [new SchoolSlider];
 
-        if ($model->load(Yii::$app->request->post())) {
-            
-            $model->id = $this->keyValue();
-            // $this->uploadImage($model);
-            if ($model->validate()) {
-                $model->save();
-                Yii::$app->session->setFlash('success', 'Successfully saved the item.');
-                return $this->redirect(['view', 'id' => $model->id]);
+        if ($modelSchool->load(Yii::$app->request->post())) {
+
+            $modelSchool->id = $this->keyValue();
+
+            $modelsSlider = Model::createMultiple(SchoolSlider::classname());
+            Model::loadMultiple($modelsSlider, Yii::$app->request->post());
+
+            // validate all models
+            $valid = $modelSchool->validate();
+            $valid = Model::validateMultiple($modelsSlider) && $valid;
+
+            if ($valid) {
+                $transaction = \Yii::$app->db->beginTransaction();
+
+                try {
+                    if ($flag = $modelSchool->save(true)) {
+                        foreach ($modelsSlider as $modelSlider) {
+                            // $modelSlider->id = $this->sliderKeyValue();
+                            $modelSlider->school_id = $modelSchool->school_id;
+                            // $this->uploadImage($modelSlider);
+                            if (! ($flag = $modelSlider->save(true))) {
+                                $transaction->rollBack();
+                                break;
+                            }
+                        }
+                    }
+
+                    if ($flag) {
+                        $transaction->commit();
+                        Yii::$app->session->setFlash('success', 'Successfully saved the item.');
+                        return $this->redirect(['view', 'id' => $modelSchool->id]);
+                    }
+                } catch (Exception $e) {
+                    $transaction->rollBack();
+                }
             }
+
             else{
                 Yii::$app->session->setFlash('error', 'Unable to save the item.');
                 return $this->redirect(['index']);
             }  
         }
+
         $this->layout = 'modal';
         return $this->render('create', [
-            'model' => $model,
+            'modelSchool' => $modelSchool,
+            'modelsSlider' => (empty($modelsSlider)) ? [new SchoolSlider()] : $modelsSlider
         ]);
     }
 
@@ -147,11 +183,38 @@ class SchoolsController extends Controller
         throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
     }
 
+    protected function uploadImage($model, $old_image = Null)
+    {   
+        $uploaded_image = UploadedFile::getInstance($model, 'image');//\yii\web\UploadedFile::getInstance($modelOptionValue, "[{$index}]img");
+        if(isset($uploaded_image)){
+            $image_name = $model->id.'.png'; 
+            $image_path = $image_name;
+            $model->image = $image_path;
+            if($model->save(true)){
+                $uploaded_image->saveAs($image_path);
+            }
+        }
+        else{
+           $model->slider_image = $old_image;
+        }
+        return true;
+    }
+
     protected function keyValue()
     {   $last = Schools::find()->orderBy(['id' => SORT_DESC])->one();
         if(empty($last))
         { 
             return "school0001";
+        } 
+        $id = $last->id;
+        return ++$id;
+    }
+
+    protected function sliderKeyValue()
+    {   $last = SchoolSlider::find()->orderBy(['id' => SORT_DESC])->one();
+        if(empty($last))
+        { 
+            return "slider0001";
         } 
         $id = $last->id;
         return ++$id;

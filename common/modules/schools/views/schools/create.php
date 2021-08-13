@@ -3,7 +3,8 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model common\modules\schools\models\Schools */
+/* @var $modelSchool common\modules\schools\models\Schools */
+/* @var $modelsSlider common\modules\schools\models\SchoolSlider */
 
 $this->title = Yii::t('app', 'Schools [ Create Mode ]');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Schools'), 'url' => ['index']];
@@ -14,7 +15,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1 class="gridview-header-text"><?= Html::encode($this->title) ?></h1>
 
     <?= $this->render('_form', [
-        'model' => $model,
+        'modelSchool' => $modelSchool,
+        'modelsSlider' => $modelsSlider,
     ]) ?>
 
 </div>
