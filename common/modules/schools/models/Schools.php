@@ -12,7 +12,8 @@ use Yii;
  * @property string $school_name
  */
 class Schools extends \yii\db\ActiveRecord
-{
+{   
+    const ID_PREFIX = 'schools';
     /**
      * {@inheritdoc}
      */

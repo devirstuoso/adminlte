@@ -71,9 +71,10 @@ $this->params['breadcrumbs'][] = $this->title;
             $cellData = [];
             $index = $model::find()->andWhere(['school_id' => $model->school_id])->one();
             foreach ($index->schoolSlider as $key => $value) {
-                $cellData[] = Html::img($value->image.'?'.time(), ['alt' =>'No Image to show','class' => 'gridview-image-index']);
-
                 $cellData[] =  html::encode($value->heading);
+                $cellData[] = Html::img($value->image.'?'.time(), ['alt' =>'No Image to show', 'height'=>'300px', 'width'=>'400px']);
+
+                
                 }
             return implode("<hr>" , $cellData);
                 }                 

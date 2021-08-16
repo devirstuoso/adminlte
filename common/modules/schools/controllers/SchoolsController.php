@@ -9,6 +9,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 use yii\helpers\Url;
+use yii\helpers\ArrayHelper;
 use yii\web\UploadedFile;
 
 
@@ -43,7 +44,7 @@ class SchoolsController extends Controller
     {
         $searchModel = new SchoolsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-       
+
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
@@ -70,15 +71,20 @@ class SchoolsController extends Controller
      */
     public function actionCreate()
     {
-        $modelSchool = new Schools;
-        $modelsSlider = [new SchoolSlider];
+      $modelSchool = new Schools;
+      $modelsSlider = [new SchoolSlider];
 
-        if ($modelSchool->load(Yii::$app->request->post())) {
-
-            $modelSchool->id = $this->keyValue();
+      if ($modelSchool->load(Yii::$app->request->post())) {
+            $modelSchool->id = $this->keyValue(Schools::classname()); //comment this for int id
 
             $modelsSlider = Model::createMultiple(SchoolSlider::classname());
             Model::loadMultiple($modelsSlider, Yii::$app->request->post());
+
+            foreach($modelsSlider as $index => $modelSlider){
+
+                $modelSlider->id = $this->keyValue(SchoolSlider::className());
+                $modelSlider->image = $this->uploadImage($modelSlider, "[{$index}]image");
+            }
 
             // validate all models
             $valid = $modelSchool->validate();
@@ -88,12 +94,11 @@ class SchoolsController extends Controller
                 $transaction = \Yii::$app->db->beginTransaction();
 
                 try {
-                    if ($flag = $modelSchool->save(true)) {
+                    if ($flag = $modelSchool->save(false)) {
                         foreach ($modelsSlider as $modelSlider) {
-                            // $modelSlider->id = $this->sliderKeyValue();
+                            // $modelSlider->id = $this->keyValue(SchoolSlider::classname());
                             $modelSlider->school_id = $modelSchool->school_id;
-                            // $this->uploadImage($modelSlider);
-                            if (! ($flag = $modelSlider->save(true))) {
+                            if (! ($flag = $modelSlider->save(false))) {
                                 $transaction->rollBack();
                                 break;
                             }
@@ -102,24 +107,17 @@ class SchoolsController extends Controller
 
                     if ($flag) {
                         $transaction->commit();
-                        Yii::$app->session->setFlash('success', 'Successfully saved the item.');
                         return $this->redirect(['view', 'id' => $modelSchool->id]);
                     }
                 } catch (Exception $e) {
                     $transaction->rollBack();
                 }
             }
-
-            else{
-                Yii::$app->session->setFlash('error', 'Unable to save the item.');
-                return $this->redirect(['index']);
-            }  
         }
-
         $this->layout = 'modal';
         return $this->render('create', [
             'modelSchool' => $modelSchool,
-            'modelsSlider' => (empty($modelsSlider)) ? [new SchoolSlider()] : $modelsSlider
+            'modelsSlider' => (empty($modelsSlider)) ? [new SchoolSlider] : $modelsSlider
         ]);
     }
 
@@ -132,25 +130,7 @@ class SchoolsController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
 
-       if ($model->load(Yii::$app->request->post())) {
-   
-            // $this->uploadImage($model, $old_image);
-            if ($model->validate()) {
-                $model->save();
-                Yii::$app->session->setFlash('success', 'Successfully saved the item.');
-                return $this->redirect(['view', 'id' => $model->id]);
-            }
-            else{
-                Yii::$app->session->setFlash('error', 'Unable to save the item.');
-                return $this->redirect(['view', 'id' => $model->id]);
-            }
-        }
-        $this->layout = 'modal';
-        return $this->render('update', [
-            'model' => $model,
-        ]);
     }
 
     /**
@@ -183,40 +163,31 @@ class SchoolsController extends Controller
         throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
     }
 
-    protected function uploadImage($model, $old_image = Null)
+    protected function keyValue($class)
+    {   //$last = $model::find()->orderBy(['id' => SORT_DESC])->one();
+        $id = $class::find()->select(['id'=>'MAX(`id`)'])->one()->id;
+
+        if(empty($id))
+        { return $class::ID_PREFIX.'0001';
+        } 
+        return ++$id;
+    }
+
+    protected function uploadImage($model, $attribute)
     {   
-        $uploaded_image = UploadedFile::getInstance($model, 'image');//\yii\web\UploadedFile::getInstance($modelOptionValue, "[{$index}]img");
-        if(isset($uploaded_image)){
-            $image_name = $model->id.'.png'; 
-            $image_path = $image_name;
-            $model->image = $image_path;
-            if($model->save(true)){
-                $uploaded_image->saveAs($image_path);
-            }
+        $uploaded_image = UploadedFile::getInstance($model, $attribute);
+        $image_name = $uploaded_image;#$model->id.'.png';#.$model->slider_image->getExtension(); 
+        $image_path = "uploads/".$image_name;
+
+
+        $cond =  $model->save() && !is_null($uploaded_image);
+
+        if($cond){
+            // $uploaded_image->saveAs($image_path);
+            return $image_path;
         }
-        else{
-           $model->slider_image = $old_image;
-        }
-        return true;
+        
     }
 
-    protected function keyValue()
-    {   $last = Schools::find()->orderBy(['id' => SORT_DESC])->one();
-        if(empty($last))
-        { 
-            return "school0001";
-        } 
-        $id = $last->id;
-        return ++$id;
-    }
 
-    protected function sliderKeyValue()
-    {   $last = SchoolSlider::find()->orderBy(['id' => SORT_DESC])->one();
-        if(empty($last))
-        { 
-            return "slider0001";
-        } 
-        $id = $last->id;
-        return ++$id;
-    }
 }

@@ -14,6 +14,7 @@ use Yii;
  */
 class SchoolSlider extends \yii\db\ActiveRecord
 {
+    const ID_PREFIX = 'slider';
     /**
      * {@inheritdoc}
      */
@@ -28,15 +29,15 @@ class SchoolSlider extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'school_id'], 'required'],
-            [['id', 'school_id'], 'string', 'max' => 30],
+            // [['id', 'school_id'], 'required'],
+            // [['id', 'school_id'], 'string', 'max' => 30],
             [['image'], 'file', 
               'skipOnEmpty'=>true,
               'extensions' => 'png, jpg, jpeg, gif',
               'mimeTypes' => 'image/jpeg, image/png, image/gif',
             ],
             [['heading'], 'string', 'max' => 500],
-            [['id'], 'unique'],
+            // [['id'], 'unique'],
         ];
     }
 

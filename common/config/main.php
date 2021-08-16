@@ -30,11 +30,7 @@ return [
                         'viewPath' => '@backend/mail',
                         'useFileTransport' => false,
                         'transport' => [
-                            'class' => 'Swift_SmtpTransport',
-                            'host' => 'smtp.gmail.com',
-                            'username' => 'devanshuverma158@gmail.com',
-                            'password' => '*\X3CZVnay@<?"?R',
-                            'port' => '587',//'465',
+                            'class' => '465',//'465 OR 587',
                             'encryption' => 'tls',
                         ],
                     'urlManagerModules' =>[

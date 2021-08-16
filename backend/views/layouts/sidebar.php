@@ -59,7 +59,7 @@
                     'visible' => !(Yii::$app->user->isGuest),
                     'icon' => 'tachometer-alt',
                     'badge' => '<span class="right badge badge-info">Welcome</span>',
-                    'url' => ['site/insights'],
+                    'url' => ['/site/insights'],
                     ],
                     [
                     'label' => 'Manage Content', 
@@ -67,8 +67,8 @@
                     'visible' => !(Yii::$app->user->isGuest),
                     'badge' => '<span class="right badge badge-info">2</span>',
                     'items' => [
-                            ['label' => 'Base Website', 'url' => ['site/content-base'], 'iconStyle' => 'far'],
-                            ['label' => 'Schools', 'url' => ['site/content-schools'], 'iconStyle' => 'far'],
+                            ['label' => 'Base Website', 'url' => ['/site/content-base'], 'iconStyle' => 'far'],
+                            ['label' => 'Schools', 'url' => ['/site/content-schools'], 'iconStyle' => 'far'],
                         ]],
 
                 /*  ['label' => 'Extra tabs', 'header' => true],
