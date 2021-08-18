@@ -12,6 +12,12 @@ class School extends \yii\base\Module
      */
     public $controllerNamespace = 'common\modules\schools\controllers';
 
+    // public $basePath = 
+
+    // public $aliases = [
+    //                   "@uploads" => "common\modules\schools\uploads",
+    // ];
+
     /**
      * {@inheritdoc}
      */
@@ -20,5 +26,7 @@ class School extends \yii\base\Module
         parent::init();
 
         // custom initialization code goes here
+        // \Yii::configure($this, require __DIR__ . '/config.php');
+
     }
 }

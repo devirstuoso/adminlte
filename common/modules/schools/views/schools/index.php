@@ -35,9 +35,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1 class="gridview-header-text"><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('<i class="fas fa-arrow-left"></i>', ['/site/content-schools'], ['class' => 'btn btn-outline-dark']) ?> 
+        <?= Html::a('<i class="fas fa-arrow-left"></i> Back', ['/site/content-schools'], ['class' => 'btn btn-dark']) ?> 
 
-        <?= Html::button('<i class="fas fa-plus"></i>', ['value' => Url::to(['create']), 'class' => 'btn btn-outline-success', 'id' => 'modalButton']);?>
+        <?= Html::button('<i class="fas fa-plus"></i> Create School', ['value' => Url::to(['create']), 'class' => 'btn btn-success', 'id' => 'modalButton']);?>
     </p>
 
 
@@ -84,7 +84,7 @@ $this->params['breadcrumbs'][] = $this->title;
             foreach ($index->schoolSlider as $key => $value) {
                 $cellData[] = Html::img($value->image.'?'.time(), ['alt' =>'No Image to show','class' => 'gridview-image-index center']);
                 }
-            return implode("<hr>" , $cellData);
+            return implode("<hr style='height: 5px; background: white;'>" , $cellData);
                 }                 
             ],
 
@@ -101,7 +101,7 @@ $this->params['breadcrumbs'][] = $this->title;
             foreach ($index->schoolSlider as $key => $value) {
                 $cellData[] = html::encode($value->heading);
                 }
-            return implode("<hr style = 'margin: 70% '>" , $cellData);
+            return implode("<hr style = 'margin: 190px 0 20px 0; height: 5px; background: white; '>" , $cellData);
                     
                 }
             ],

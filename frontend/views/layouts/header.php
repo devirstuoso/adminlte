@@ -113,6 +113,7 @@ $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,
                   <ul class="u-h-spacing-100 u-nav u-unstyled u-v-spacing-15 u-nav-8">
                     
                     <?php foreach ($schools as $school):?>
+                      
                     <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/schools/schoolf', 'id' => $school->school_id])?>">Delhi School of <?php echo $school->school_name;?></a>
                     </li>
                    <?php endforeach; ?>

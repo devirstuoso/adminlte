@@ -92,8 +92,7 @@ function hyphen_f($dt){
           <?php }else{ ?>
             <?php foreach($sliders AS $sl=> $s){ ?>
               <?php $counter++;
-              if($counter === 1){$active = 'u-active';}
-              else{$active = '';}
+                    $active = ($counter === 1)? 'u-active': '';
 
               if (is_null($s->slider_image)) { $image_url = Url::to ('@frontend_web') .'/uploads/default-image.jpg';      }else{ $image_url = Url::to ('@backend_web/') .$s->slider_image.'?'.time();}
               ?>

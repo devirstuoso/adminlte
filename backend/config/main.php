@@ -8,6 +8,7 @@ $params = array_merge(
 
 return [
     'id' => 'app-backend',
+    'name' => 'DU-IoE-Admin',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
@@ -58,17 +59,6 @@ return [
         ],
 
     ],
-
-    // 'i18n' => [
-    //     'translations' => [
-    //         'app*' => [
-    //             'class' => 'yii\i18n\PhpMessageSource',
-    //             'basePath' => '@common/messages',
-    //             'sourceLanguage' => 'en-US',
-    //             ],
-    //         ],
-    //     ],
-
     'params' => $params,
 
 ];

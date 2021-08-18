@@ -1,5 +1,5 @@
 <?php
-return [
+$config = [
     'aliases' => [
         '@app_name' => '/adminlte',
         '@backend_url' => '@app_name/backend',
@@ -33,11 +33,11 @@ return [
                             'class' => '465',//'465 OR 587',
                             'encryption' => 'tls',
                         ],
-                    'urlManagerModules' =>[
+                    'urlManagerSchools' =>[
                         'class' => 'yii\web\urlManager',
                         'scriptUrl' => '/adminlte/common/modules/schools',
                         'baseUrl' => '@schools',
-                        'enablePrettyUrl' => false,
+                        'enablePrettyUrl' => true,
                         'showScriptName' => false,
                     ],
                     ],
@@ -48,7 +48,21 @@ return [
                   'schools' => [
                         'class' => 'common\modules\schools\School',
                         ],
+                ],
+    ];
+
+    if (YII_ENV_DEV) {
+      // configuration adjustments for 'dev' environment
+      $config['bootstrap'][] = 'debug';
+      $config['modules']['debug'] = [
+         'class' => 'yii\debug\Module',
+      ];
+      $config['bootstrap'][] = 'gii';
+      $config['modules']['gii'] = [
+         'class' => 'yii\gii\Module',
+      ];
+   }
+
+   return $config;
     
-    ],
-    
-];
+
