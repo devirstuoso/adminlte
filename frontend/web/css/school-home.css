@@ -308,7 +308,7 @@
 }
 
 .school-home .u-section-2 .u-group-3 {
-  width: 933px;
+  width: 90%;
   min-height: 662px;
   height: auto;
   margin: 30px auto 0;
@@ -326,17 +326,18 @@
 .school-home .u-section-2 .u-text-2 {
   font-size: 1.25rem;
   margin: 13px 13px 0;
+  text-align: justify;
 }
 
 .school-home .u-section-2 .u-line-1 {
-  width: 933px;
+  width: 100%;
   height: 3px;
   transform-origin: left center 0px;
   margin: 30px auto 0;
 }
 
 .school-home .u-section-2 .u-group-4 {
-  width: 933px;
+  width: 90%;
   min-height: 637px;
   height: auto;
   margin: 30px auto 0;
@@ -514,11 +515,6 @@
     min-height: 1148px;
   }
 
-  .school-home .u-section-2 .u-group-3 {
-    width: 721px;
-    height: auto;
-  }
-
   .school-home .u-section-2 .u-text-2 {
     margin-left: 0;
     margin-right: 0;
@@ -528,10 +524,6 @@
     width: 721px;
   }
 
-  .school-home .u-section-2 .u-group-4 {
-    width: 721px;
-    height: auto;
-  }
 
   .school-home .u-section-2 .u-text-4 {
     margin-right: 0;
@@ -696,17 +688,10 @@
     min-height: 100px;
   }
 
-  .school-home .u-section-2 .u-group-3 {
-    width: 552px;
-  }
-
   .school-home .u-section-2 .u-line-1 {
     width: 552px;
   }
 
-  .school-home .u-section-2 .u-group-4 {
-    width: 552px;
-  }
 }
 
 @media (max-width: 767px) {
@@ -811,17 +796,11 @@
     margin-left: 24px;
   }
 
-  .school-home .u-section-2 .u-group-3 {
-    width: 540px;
-  }
 
   .school-home .u-section-2 .u-line-1 {
     width: 540px;
   }
 
-  .school-home .u-section-2 .u-group-4 {
-    width: 540px;
-  }
 }
 
 @media (max-width: 575px) {
@@ -864,15 +843,162 @@
     margin-left: 9px;
   }
 
-  .school-home .u-section-2 .u-group-3 {
-    width: 340px;
-  }
-
   .school-home .u-section-2 .u-line-1 {
     width: 340px;
   }
 
-  .school-home .u-section-2 .u-group-4 {
-    width: 340px;
+
+}
+
+
+
+/*table*/
+.school-home #ajax-content .u-table-1 {
+  width: 1274px;
+  margin: 20px auto;
+}
+
+.u-block-f21d-54 {
+  border-style: solid;
+}
+
+.school-home #ajax-content .u-table-entity-1 {
+  min-height: 100px;
+}
+
+.school-home #ajax-content .u-table-header-1 {
+  background-image: none;
+  font-size: 1.875rem;
+  text-transform: none;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: 9px;
+}
+
+.school-home #ajax-content .u-table-cell-1 {
+  background-image: none;
+  padding: 20px 10px 20px 50px;
+}
+
+
+.school-home #ajax-content .u-table-body-1 {
+  font-size: 1.125rem;
+  background-image: none;
+  font-weight: normal;
+}
+
+.school-home #ajax-content .u-table-cell-2 {
+  border-style: solid;
+  padding: 20px 10px 20px 50px;
+}
+
+
+
+.school-home #ajax-content .u-table-footer-1 {
+  background-image: none;
+  font-weight: 700;
+}
+
+
+@media (max-width: 1199px) {
+  .school-home #ajax-content {
+    background-position: 50% 50%;
+  }
+
+  .school-home #ajax-content .u-sheet-1 {
+    min-height: 1102px;
+  }
+
+  .school-home #ajax-content .u-text-1 {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
+  .school-home #ajax-content .u-text-2 {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
+  .school-home #ajax-content .u-table-1 {
+    width: 940px;
+  }
+}
+
+@media (max-width: 991px) {
+  .school-home #ajax-content .u-sheet-1 {
+    min-height: 844px;
+  }
+
+  .school-home #ajax-content .u-text-1 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .school-home #ajax-content .u-text-2 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .school-home #ajax-content .u-table-1 {
+    width: 720px;
+  }
+
+  .school-home #ajax-content .u-table-cell-1 {
+    padding-left: 40px;
+  }
+
+
+  .school-home #ajax-content .u-table-body-1 {
+    font-weight: 400;
+  }
+
+  .school-home #ajax-content .u-table-cell-2 {
+    border-style: solid;
+    padding-left: 40px;
+  }
+
+
+}
+
+@media (max-width: 767px) {
+  .school-home #ajax-content .u-sheet-1 {
+    min-height: 633px;
+  }
+
+  .school-home #ajax-content .u-table-1 {
+    width: 540px;
+  }
+
+  .school-home #ajax-content .u-table-header-1 {
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+  }
+
+  .school-home #ajax-content .u-table-cell-1 {
+    padding-left: 20px;
+  }
+
+  .school-home #ajax-content .u-table-body-1 {
+    font-size: 0.875rem;
+  }
+
+  .school-home #ajax-content .u-table-cell-2 {
+    padding: 20px 10px 20px 20px;
+  }
+
+  
+}
+
+@media (max-width: 575px) {
+  .school-home #ajax-content .u-sheet-1 {
+    min-height: 399px;
+  }
+
+  .school-home #ajax-content .u-table-1 {
+    width: auto;
+  }
+
+  .school-home #ajax-content .u-table-header-1 {
+    font-size: 1.125rem;
   }
 }

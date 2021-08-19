@@ -156,6 +156,8 @@
   line-height: 1.8;
   font-size: 1.5rem;
   margin: 131px 90px 0 97px;
+  text-align: justify;
+
 }
 
 .about .u-section-2 .u-text-3 {
@@ -163,6 +165,7 @@
   font-weight: 700;
   color: #5400a0;
   margin: 159px 90px 0 97px;
+  text-align: justify;
 }
 
 .about .u-section-2 .u-list-icon-1 {
@@ -222,6 +225,7 @@
 .about .u-section-2 .u-container-text{
   margin: 0 33px 0 0;
   font-size: 1.5em;
+  text-align: justify;
 }
 
 .about .u-section-2 .u-accordion-link-2 {

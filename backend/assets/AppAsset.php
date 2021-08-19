@@ -21,7 +21,7 @@ class AppAsset extends AssetBundle
         'js/modal.js'
     ];
     public $depends = [
-        // 'yii\web\YiiAsset',
-        // 'yii\bootstrap\BootstrapAsset',
+        'yii\web\YiiAsset',
+        'yii\bootstrap\BootstrapAsset',
     ];
 }
