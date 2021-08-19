@@ -13,8 +13,32 @@ class SchoolfController extends \yii\web\Controller
     public function actionIndex($id)
     {   
         $school = $this->findModel($id);
+        $this->actionContainerHome($id);
         return $this->render('index', ['school' => $school]);
     }
+
+    public function actionContainerHome($id)
+    {
+        $school = $this->findModel($id);
+        $abc = 'hello';
+        return $this->renderAjax('home', ['school' => $school]);
+    }
+
+    public function actionContainerVision($id)
+    {
+        $school = $this->findModel($id);
+        return $this->renderAjax('vision', ['school' => $school]);
+    }
+
+    public function actionContainerGovernance($id)
+    {
+        $school = $this->findModel($id);
+        return $this->renderAjax('governance', ['school' => $school]);
+    }
+
+
+
+
 
     protected function findModel($id)
     {

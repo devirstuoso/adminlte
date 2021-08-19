@@ -27,6 +27,7 @@ class School extends \yii\base\Module
 
         // custom initialization code goes here
         // \Yii::configure($this, require __DIR__ . '/config.php');
+        $this->setAliases(['@schools-assets' => __DIR__. '/assets']);
 
     }
 }

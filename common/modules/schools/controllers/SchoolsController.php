@@ -78,7 +78,7 @@ class SchoolsController extends Controller
 
             $modelsSlider = Model::createMultiple(SchoolSlider::classname());
             Model::loadMultiple($modelsSlider, Yii::$app->request->post());
-
+            // return SchoolSlider::classname();
             foreach($modelsSlider as $index => $modelSlider){
 
                 $modelSlider->id = $this->keyValue(SchoolSlider::className(), $modelSchool->school_id);
@@ -236,14 +236,14 @@ class SchoolsController extends Controller
 
     protected function keyValue($class, $school_id = Null)
     {   //$last = $model::find()->orderBy(['id' => SORT_DESC])->one();
-        if ($class::classname()=='schools\models\Schools') {
+        if ($class::classname()=='common\modules\schools\models\Schools') {
              $id = $class::find()->select(['id'=>'MAX(`id`)'])->one()->id;
             if(empty($id))
             { return $class::ID_PREFIX.'0001';
             } 
             return ++$id;
         }
-        else if ($class::classname()=='schools\models\SchoolSlider') {
+        else if ($class::classname()=='common\modules\schools\models\SchoolSlider') {
              $id = $class::find()->where(['school_id' => $school_id])->select(['id'=>'MAX(`id`)'])->one()->id;
              if(empty($id))
             { return $school_id.'0001';
