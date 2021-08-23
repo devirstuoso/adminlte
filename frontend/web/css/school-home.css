@@ -852,7 +852,7 @@
 
 
 
-/*table*/
+/*table Governing & Committee*/
 .school-home #ajax-content .u-table-1 {
   width: 1274px;
   margin: 20px auto;
@@ -1000,5 +1000,172 @@
 
   .school-home #ajax-content .u-table-header-1 {
     font-size: 1.125rem;
+  }
+}
+
+/*contact form*/
+
+.school-home #ajax-content .u-sheet-1 {
+  min-height: 832px;
+}
+
+.school-home #ajax-content .u-shape-1 {
+  width: 948px;
+  height: 508px;
+  margin: 187px auto 0;
+}
+
+.school-home #ajax-content .u-group-1 {
+  width: 827px;
+  min-height: 690px;
+  background-image: none;
+  height: auto;
+  margin: -629px auto 60px;
+}
+
+.school-home #ajax-content .u-container-layout-1 {
+  padding: 30px;
+}
+
+.school-home #ajax-content .u-text-1 {
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 2.25rem;
+  margin: 8px 0 0;
+}
+
+.school-home #ajax-content .u-text-2 {
+  margin: 9px 0 0;
+}
+
+.school-home #ajax-content .u-form-1 {
+  height: 430px;
+  width: 703px;
+  margin: 20px auto 0;
+}
+
+.school-home #ajax-content .u-input-1 {
+  font-size: 1.25rem;
+}
+
+.school-home #ajax-content .u-form-group-2 {
+  margin-left: 0;
+}
+
+.school-home #ajax-content .u-input-2 {
+  font-size: 1.25rem;
+}
+
+.school-home #ajax-content .u-form-group-3 {
+  margin-left: 0;
+}
+
+.school-home #ajax-content .u-input-3 {
+  font-size: 1.25rem;
+}
+
+.school-home #ajax-content .u-form-group-4 {
+  margin-left: 0;
+}
+
+.school-home #ajax-content .u-input-4 {
+  font-size: 1.25rem;
+}
+
+.school-home #ajax-content .u-btn-1 {
+  background-image: none;
+  border-style: none;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1199px) {
+  .school-home #ajax-content .u-sheet-1 {
+    min-height: 751px;
+  }
+
+  .school-home #ajax-content .u-shape-1 {
+    width: 940px;
+  }
+
+  .school-home #ajax-content .u-group-1 {
+    height: auto;
+  }
+}
+
+@media (max-width: 991px) {
+  .school-home #ajax-content .u-shape-1 {
+    width: 720px;
+  }
+
+  .school-home #ajax-content .u-group-1 {
+    width: 720px;
+  }
+
+  .school-home #ajax-content .u-text-1 {
+    margin-top: 19px;
+  }
+
+  .school-home #ajax-content .u-form-1 {
+    width: 582px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .school-home #ajax-content .u-sheet-1 {
+    min-height: 689px;
+  }
+
+  .school-home #ajax-content .u-shape-1 {
+    width: 540px;
+  }
+
+  .school-home #ajax-content .u-group-1 {
+    margin-bottom: 0;
+    margin-right: initial;
+    margin-left: initial;
+    width: auto;
+  }
+
+  .school-home #ajax-content .u-container-layout-1 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .school-home #ajax-content .u-form-1 {
+    width: 500px;
+  }
+}
+
+@media (max-width: 575px) {
+  .school-home #ajax-content .u-sheet-1 {
+    min-height: 879px;
+  }
+
+  .school-home #ajax-content .u-shape-1 {
+    width: 340px;
+  }
+
+  .school-home #ajax-content .u-group-1 {
+    margin-bottom: 60px;
+    width: auto;
+    margin-right: initial;
+    margin-left: initial;
+  }
+
+  .school-home #ajax-content .u-container-layout-1 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .school-home #ajax-content .u-text-1 {
+    font-size: 1.5rem;
+  }
+
+  .school-home #ajax-content .u-form-1 {
+    width: 320px;
   }
 }

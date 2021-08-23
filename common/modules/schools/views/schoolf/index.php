@@ -36,6 +36,8 @@ $this->params['breadcrumbs'][] = $school->school_name;
 </div>
 
 
+
+
 <div class='school-home'>
   <section class="u-clearfix u-section-2" id="sec-2964">
     <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
@@ -47,7 +49,7 @@ $this->params['breadcrumbs'][] = $school->school_name;
               <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-1">
                 <div class="u-container-layout u-container-layout-1">
                   <!-- Gallery Carosel  -->
-                  <?php if (!is_null($school->schoolSlider)):?>
+                  <?php if (sizeOf($school->schoolSlider)>0):?>
                     <div class="u-carousel u-expanded-width u-gallery u-gallery-slider u-layout-carousel u-lightbox u-no-transition u-show-text-on-hover u-gallery-1" id="carousel-f224" data-interval="5000" data-u-ride="carousel">
                       <?php $counter = -1 ;?>
                       <ol class="u-absolute-hcenter u-carousel-indicators u-carousel-indicators-1">
@@ -140,7 +142,7 @@ $this->params['breadcrumbs'][] = $school->school_name;
                         </div>
                         <div class="u-align-center u-container-style u-list-item u-repeater-item">
                           <div class="u-container-layout u-similar-container u-valign-bottom-xl u-container-layout-6">
-                            <a href="<?= Url::to(['/schools/schoolf', 'id' => $school->school_id])?>" class="u-align-center u-border-13 u-border-hover-custom-color-1 u-border-white u-btn u-button-style u-none u-text-black u-text-hover-custom-color-1 u-btn-4">Office Berears</a>
+                            <a class="u-align-center u-border-13 u-border-hover-custom-color-1 u-border-white u-btn u-button-style u-none u-text-black u-text-hover-custom-color-1 u-btn-4" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-committee')?>",{id:"<?php echo $school->school_id; ?>"}).done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Committee Members"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Committee Members</a>
                           </div>
                         </div>
                         <div class="u-align-center u-container-style u-list-item u-repeater-item">
@@ -160,7 +162,7 @@ $this->params['breadcrumbs'][] = $school->school_name;
                         </div>
                         <div class="u-align-center u-container-style u-list-item u-repeater-item">
                           <div class="u-container-layout u-similar-container u-valign-bottom-xl u-container-layout-10">
-                            <a href="<?= Url::to(['/schools/schoolf', 'id' => $school->school_id])?>" class="u-align-center u-border-13 u-border-hover-custom-color-1 u-border-white u-btn u-button-style u-none u-text-black u-text-hover-custom-color-1 u-btn-8">Contact</a>
+                            <a class="u-align-center u-border-13 u-border-hover-custom-color-1 u-border-white u-btn u-button-style u-none u-text-black u-text-hover-custom-color-1 u-btn-8"  onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-contact')?>").done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Contact"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Contact</a>
                           </div>
                         </div>
                       </div>
@@ -173,7 +175,6 @@ $this->params['breadcrumbs'][] = $school->school_name;
             </div>
           </div>
         </div>
-
 
         <div class="u-size-30">
           <div class="u-layout-row">
@@ -202,12 +203,12 @@ $this->params['breadcrumbs'][] = $school->school_name;
                           </tr>
                           <tr >
                             <td class="u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell">
-                              <a href="" class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9">Governing Body</a>
+                              <a class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9"  onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-governance')?>",{id:"<?php echo $school->school_id; ?>"}).done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Governing Body"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Governing Body</a>
                             </td>
                           </tr>
                           <tr >
                             <td class="u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell">
-                              <a href="" class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9">Governing Body</a>
+                              <a class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-committee')?>",{id:"<?php echo $school->school_id; ?>"}).done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Committee Members"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Committee</a>
                             </td>
                           </tr>
                           <tr >
@@ -232,7 +233,7 @@ $this->params['breadcrumbs'][] = $school->school_name;
                       </tr>
                       <tr>  
                        <td class="u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell">                   
-                        <a href="" class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9">Contact</a>
+                        <a class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-contact')?>").done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Contact"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Contact</a>
                       </td>
                     </tr>
                   </tbody>
@@ -250,6 +251,7 @@ $this->params['breadcrumbs'][] = $school->school_name;
           <!--  -->
             <!-- Ajax Rendered Content -->
           <!--  -->
+
       </div>
     </div>
 
@@ -262,11 +264,19 @@ $this->params['breadcrumbs'][] = $school->school_name;
 </section>
 </div>
 
+
 <?php 
-        $script = <<< JS
-        $(
-            $.get({"Url::toRoute('/schools/schoolf/container-home')"},{id:"$school->school_id"}).done(function(data){ $("#ajax-content").html(data)})
-          );
-        JS;
+        $script = 
+        '$(document).ready(function(){
+            
+             $.get("'.Url::toRoute('/schools/schoolf/container-home').'", {id:"'.$school->school_id.'"})
+            .done(function(data){ 
+                $("#ajax-content").html(data);
+            });
+          });';
+
      $this->registerJs($script);
     ?>
+
+
+
