@@ -50,6 +50,11 @@ class SchoolfController extends \yii\web\Controller
         return $this->renderAjax('contact');
     }
 
+    public function actionContainerComsoon()
+    {
+        return $this->renderAjax('comsoon');
+    }
+
 
 
 

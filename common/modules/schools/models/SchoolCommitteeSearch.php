@@ -4,12 +4,12 @@ namespace common\modules\schools\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\modules\schools\models\SchoolGovCouncil;
+use common\modules\schools\models\SchoolCommittee;
 
 /**
  * SchoolGovCouncilSearch represents the model behind the search form of `common\modules\schools\models\SchoolGovCouncil`.
  */
-class SchoolCommitteeSearch extends SchoolGovCouncil
+class SchoolCommitteeSearch extends SchoolCommittee
 {
     /**
      * {@inheritdoc}
@@ -39,7 +39,7 @@ class SchoolCommitteeSearch extends SchoolGovCouncil
      */
     public function search($params)
     {
-        $query = SchoolGovCouncil::find();
+        $query = SchoolCommittee::find();
 
         // add conditions that should always apply here
 

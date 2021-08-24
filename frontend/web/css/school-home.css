@@ -304,7 +304,7 @@
 }
 
 .school-home .u-section-2 .u-container-layout-13 {
-  padding: 0;
+  padding: 10px 80px;
 }
 
 .school-home .u-section-2 .u-group-3 {
@@ -853,7 +853,7 @@
 
 
 /*table Governing & Committee*/
-.school-home #ajax-content .u-table-1 {
+.school-home #ajax-content .tb .u-table-1 {
   width: 1274px;
   margin: 20px auto;
 }
@@ -862,11 +862,11 @@
   border-style: solid;
 }
 
-.school-home #ajax-content .u-table-entity-1 {
+.school-home #ajax-content .tb .u-table-entity-1 {
   min-height: 100px;
 }
 
-.school-home #ajax-content .u-table-header-1 {
+.school-home #ajax-content .tb .u-table-header-1 {
   background-image: none;
   font-size: 1.875rem;
   text-transform: none;
@@ -875,84 +875,84 @@
   letter-spacing: 9px;
 }
 
-.school-home #ajax-content .u-table-cell-1 {
+.school-home #ajax-content .tb .u-table-cell-1 {
   background-image: none;
   padding: 20px 10px 20px 50px;
 }
 
 
-.school-home #ajax-content .u-table-body-1 {
+.school-home #ajax-content .tb .u-table-body-1 {
   font-size: 1.125rem;
   background-image: none;
   font-weight: normal;
 }
 
-.school-home #ajax-content .u-table-cell-2 {
+.school-home #ajax-content .tb .u-table-cell-2 {
   border-style: solid;
   padding: 20px 10px 20px 50px;
 }
 
 
 
-.school-home #ajax-content .u-table-footer-1 {
+.school-home #ajax-content .tb .u-table-footer-1 {
   background-image: none;
   font-weight: 700;
 }
 
 
 @media (max-width: 1199px) {
-  .school-home #ajax-content {
+  .school-home #ajax-content .tb {
     background-position: 50% 50%;
   }
 
-  .school-home #ajax-content .u-sheet-1 {
+  .school-home #ajax-content .tb .u-sheet-1 {
     min-height: 1102px;
   }
 
-  .school-home #ajax-content .u-text-1 {
+  .school-home #ajax-content .tb .u-text-1 {
     margin-left: 100px;
     margin-right: 100px;
   }
 
-  .school-home #ajax-content .u-text-2 {
+  .school-home #ajax-content .tb .u-text-2 {
     margin-left: 100px;
     margin-right: 100px;
   }
 
-  .school-home #ajax-content .u-table-1 {
+  .school-home #ajax-content .tb .u-table-1 {
     width: 940px;
   }
 }
 
 @media (max-width: 991px) {
-  .school-home #ajax-content .u-sheet-1 {
+  .school-home #ajax-content .tb .u-sheet-1 {
     min-height: 844px;
   }
 
-  .school-home #ajax-content .u-text-1 {
+  .school-home #ajax-content .tb .u-text-1 {
     margin-left: 0;
     margin-right: 0;
   }
 
-  .school-home #ajax-content .u-text-2 {
+  .school-home #ajax-content .tb .u-text-2 {
     margin-left: 0;
     margin-right: 0;
   }
 
-  .school-home #ajax-content .u-table-1 {
+  .school-home #ajax-content .tb .u-table-1 {
     width: 720px;
   }
 
-  .school-home #ajax-content .u-table-cell-1 {
+  .school-home #ajax-content .tb .u-table-cell-1 {
     padding-left: 40px;
   }
 
 
-  .school-home #ajax-content .u-table-body-1 {
+  .school-home #ajax-content .tb .u-table-body-1 {
     font-weight: 400;
   }
 
-  .school-home #ajax-content .u-table-cell-2 {
+  .school-home #ajax-content .tb .u-table-cell-2 {
     border-style: solid;
     padding-left: 40px;
   }
@@ -961,28 +961,28 @@
 }
 
 @media (max-width: 767px) {
-  .school-home #ajax-content .u-sheet-1 {
+  .school-home #ajax-content .tb .u-sheet-1 {
     min-height: 633px;
   }
 
-  .school-home #ajax-content .u-table-1 {
+  .school-home #ajax-content .tb .u-table-1 {
     width: 540px;
   }
 
-  .school-home #ajax-content .u-table-header-1 {
+  .school-home #ajax-content .tb .u-table-header-1 {
     font-size: 1.5rem;
     letter-spacing: 4px;
   }
 
-  .school-home #ajax-content .u-table-cell-1 {
+  .school-home #ajax-content .tb .u-table-cell-1 {
     padding-left: 20px;
   }
 
-  .school-home #ajax-content .u-table-body-1 {
+  .school-home #ajax-content .tb .u-table-body-1 {
     font-size: 0.875rem;
   }
 
-  .school-home #ajax-content .u-table-cell-2 {
+  .school-home #ajax-content .tb .u-table-cell-2 {
     padding: 20px 10px 20px 20px;
   }
 
@@ -990,32 +990,32 @@
 }
 
 @media (max-width: 575px) {
-  .school-home #ajax-content .u-sheet-1 {
+  .school-home #ajax-content .tb .u-sheet-1 {
     min-height: 399px;
   }
 
-  .school-home #ajax-content .u-table-1 {
+  .school-home #ajax-content .tb .u-table-1 {
     width: auto;
   }
 
-  .school-home #ajax-content .u-table-header-1 {
+  .school-home #ajax-content .tb .u-table-header-1 {
     font-size: 1.125rem;
   }
 }
 
 /*contact form*/
 
-.school-home #ajax-content .u-sheet-1 {
+.school-home #ajax-content .cf .u-sheet-1 {
   min-height: 832px;
 }
 
-.school-home #ajax-content .u-shape-1 {
+.school-home #ajax-content .cf .u-shape-1 {
   width: 948px;
   height: 508px;
   margin: 187px auto 0;
 }
 
-.school-home #ajax-content .u-group-1 {
+.school-home #ajax-content .cf .u-group-1 {
   width: 827px;
   min-height: 690px;
   background-image: none;
@@ -1023,11 +1023,11 @@
   margin: -629px auto 60px;
 }
 
-.school-home #ajax-content .u-container-layout-1 {
+.school-home #ajax-content .cf .u-container-layout-1 {
   padding: 30px;
 }
 
-.school-home #ajax-content .u-text-1 {
+.school-home #ajax-content .cf .u-text-1 {
   font-weight: 700;
   text-transform: none;
   letter-spacing: normal;
@@ -1035,45 +1035,45 @@
   margin: 8px 0 0;
 }
 
-.school-home #ajax-content .u-text-2 {
+.school-home #ajax-content .cf .u-text-2 {
   margin: 9px 0 0;
 }
 
-.school-home #ajax-content .u-form-1 {
+.school-home #ajax-content .cf .u-form-1 {
   height: 430px;
   width: 703px;
   margin: 20px auto 0;
 }
 
-.school-home #ajax-content .u-input-1 {
+.school-home #ajax-content .cf .u-input-1 {
   font-size: 1.25rem;
 }
 
-.school-home #ajax-content .u-form-group-2 {
+.school-home #ajax-content .cf .u-form-group-2 {
   margin-left: 0;
 }
 
-.school-home #ajax-content .u-input-2 {
+.school-home #ajax-content .cf .u-input-2 {
   font-size: 1.25rem;
 }
 
-.school-home #ajax-content .u-form-group-3 {
+.school-home #ajax-content .cf .u-form-group-3 {
   margin-left: 0;
 }
 
-.school-home #ajax-content .u-input-3 {
+.school-home #ajax-content .cf .u-input-3 {
   font-size: 1.25rem;
 }
 
-.school-home #ajax-content .u-form-group-4 {
+.school-home #ajax-content .cf .u-form-group-4 {
   margin-left: 0;
 }
 
-.school-home #ajax-content .u-input-4 {
+.school-home #ajax-content .cf .u-input-4 {
   font-size: 1.25rem;
 }
 
-.school-home #ajax-content .u-btn-1 {
+.school-home #ajax-content .cf .u-btn-1 {
   background-image: none;
   border-style: none;
   font-size: 1.125rem;
@@ -1081,33 +1081,33 @@
 }
 
 @media (max-width: 1199px) {
-  .school-home #ajax-content .u-sheet-1 {
+  .school-home #ajax-content .cf .u-sheet-1 {
     min-height: 751px;
   }
 
-  .school-home #ajax-content .u-shape-1 {
+  .school-home #ajax-content .cf .u-shape-1 {
     width: 940px;
   }
 
-  .school-home #ajax-content .u-group-1 {
+  .school-home #ajax-content .cf .u-group-1 {
     height: auto;
   }
 }
 
 @media (max-width: 991px) {
-  .school-home #ajax-content .u-shape-1 {
+  .school-home #ajax-content .cf .u-shape-1 {
     width: 720px;
   }
 
-  .school-home #ajax-content .u-group-1 {
+  .school-home #ajax-content .cf .u-group-1 {
     width: 720px;
   }
 
-  .school-home #ajax-content .u-text-1 {
+  .school-home #ajax-content .cf .u-text-1 {
     margin-top: 19px;
   }
 
-  .school-home #ajax-content .u-form-1 {
+  .school-home #ajax-content .cf .u-form-1 {
     width: 582px;
     margin-left: 0;
     margin-right: 0;
@@ -1115,57 +1115,202 @@
 }
 
 @media (max-width: 767px) {
-  .school-home #ajax-content .u-sheet-1 {
+  .school-home #ajax-content .cf .u-sheet-1 {
     min-height: 689px;
   }
 
-  .school-home #ajax-content .u-shape-1 {
+  .school-home #ajax-content .cf .u-shape-1 {
     width: 540px;
   }
 
-  .school-home #ajax-content .u-group-1 {
+  .school-home #ajax-content .cf .u-group-1 {
     margin-bottom: 0;
     margin-right: initial;
     margin-left: initial;
     width: auto;
   }
 
-  .school-home #ajax-content .u-container-layout-1 {
+  .school-home #ajax-content .cf .u-container-layout-1 {
     padding-left: 20px;
     padding-right: 20px;
   }
 
-  .school-home #ajax-content .u-form-1 {
+  .school-home #ajax-content .cf .u-form-1 {
     width: 500px;
   }
 }
 
 @media (max-width: 575px) {
-  .school-home #ajax-content .u-sheet-1 {
+  .school-home #ajax-content .cf .u-sheet-1 {
     min-height: 879px;
   }
 
-  .school-home #ajax-content .u-shape-1 {
+  .school-home #ajax-content .cf .u-shape-1 {
     width: 340px;
   }
 
-  .school-home #ajax-content .u-group-1 {
+  .school-home #ajax-content .cf .u-group-1 {
     margin-bottom: 60px;
     width: auto;
     margin-right: initial;
     margin-left: initial;
   }
 
-  .school-home #ajax-content .u-container-layout-1 {
+  .school-home #ajax-content .cf .u-container-layout-1 {
     padding-left: 10px;
     padding-right: 10px;
   }
 
-  .school-home #ajax-content .u-text-1 {
+  .school-home #ajax-content .cf .u-text-1 {
     font-size: 1.5rem;
   }
 
-  .school-home #ajax-content .u-form-1 {
+  .school-home #ajax-content .cf .u-form-1 {
     width: 320px;
+  }
+}
+
+
+/*Coming Soon*/
+
+
+.school-home #ajax-content .cs .u-sheet-1 {
+  min-height: 1101px;
+}
+
+.school-home #ajax-content .cs .u-image-1 {
+  width: 145px;
+  height: 172px;
+  margin: 226px auto 0;
+}
+
+.school-home #ajax-content .cs .u-text-1 {
+  font-size: 4.5rem;
+  text-shadow: 2px 2px 8px rgba(80,95,108,0.4);
+  letter-spacing: 4px;
+  font-family: Montserrat, sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+  margin: 29px auto 0;
+  color: #404040;
+}
+
+.school-home #ajax-content .cs .u-text-2 {
+  letter-spacing: 0px;
+  line-height: 1.4;
+  font-size: 1.5rem;
+  font-family: Lato, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  text-shadow: 2px 2px 8px rgba(128,128,128,1);
+  text-align: center;
+  margin: 32px auto 0;
+  color: #292828;
+}
+
+.school-home #ajax-content .cs .u-form-1 {
+  height: 71px;
+  width: 704px;
+  margin: 52px auto 0;
+}
+
+.school-home #ajax-content .cs .u-form-group-1 {
+  margin-left: 0;
+}
+
+.school-home #ajax-content .cs .u-label-1 {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.school-home #ajax-content .cs .u-btn-1 {
+  letter-spacing: 1px;
+  border-style: solid;
+  background-image: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.875rem;
+  width: 100%;
+  padding: 11px 31px 12px 29px;
+}
+
+.school-home #ajax-content .cs .u-social-icons-1 {
+  white-space: nowrap;
+  height: 32px;
+  min-height: 16px;
+  width: 161px;
+  min-width: 97px;
+  margin: 118px auto 60px;
+}
+
+.school-home #ajax-content .cs .u-icon-1 {
+  height: 100%;
+}
+
+.school-home #ajax-content .cs .u-icon-2 {
+  height: 100%;
+}
+
+.school-home #ajax-content .cs .u-icon-3 {
+  height: 100%;
+}
+
+.school-home #ajax-content .cs .u-icon-4 {
+  height: 100%;
+  color: rgb(255, 255, 255) !important;
+}
+
+@media (max-width: 1199px) {
+  .school-home #ajax-content .cs .u-sheet-1 {
+    min-height: 908px;
+  }
+}
+
+@media (max-width: 991px) {
+  .school-home #ajax-content .cs .u-sheet-1 {
+    min-height: 695px;
+  }
+
+  .school-home #ajax-content .cs .u-text-1 {
+    width: 720px;
+  }
+}
+
+@media (max-width: 767px) {
+  .school-home #ajax-content .cs .u-sheet-1 {
+    min-height: 812px;
+  }
+
+  .school-home #ajax-content .cs .u-text-1 {
+    font-size: 3.4375rem;
+    width: 540px;
+  }
+
+  .school-home #ajax-content .cs .u-text-2 {
+    width: 540px;
+  }
+
+  .school-home #ajax-content .cs .u-form-1 {
+    width: 540px;
+  }
+}
+
+@media (max-width: 575px) {
+  .school-home #ajax-content .cs .u-sheet-1 {
+    min-height: 512px;
+  }
+
+  .school-home #ajax-content .cs .u-text-1 {
+    font-size: 2.125rem;
+    width: 340px;
+  }
+
+  .school-home #ajax-content .cs .u-text-2 {
+    width: 340px;
+  }
+
+  .school-home #ajax-content .cs .u-form-1 {
+    width: 340px;
   }
 }

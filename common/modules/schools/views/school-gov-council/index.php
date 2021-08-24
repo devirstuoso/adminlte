@@ -45,7 +45,12 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::button('<i class="fas fa-plus"></i> Create School', ['value' => Url::to(['create']), 'class' => 'btn btn-success', 'id' => 'modalButton']);?>
     </p>
 
-    <?php Pjax::begin(); ?>
+    <div class="row">
+        <!-- ?=Html::activeDropDownList('school_id', null, ArrayHelper::map(Schools::find()->asArray()->all(), 'school_id', 'school_name'), ['class' => 'form-control', 'prompt' => 'Select School', 'id'=>'school_selector']) ?> -->
+    </div>
+    
+
+    <?php Pjax::begin(['id' => 'school-gov-council']); ?>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
@@ -99,4 +104,19 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php Pjax::end(); ?>
 
+
 </div>
+
+
+<?php
+
+$script = <<< JS
+    $("document").ready(function(){ 
+        $("#new_country").on("pjax:end", function() {
+            $.pjax.reload({container:"#countries"});  //Reload GridView
+        });
+    });
+JS;
+
+// $this->registerJs($script);
+?>

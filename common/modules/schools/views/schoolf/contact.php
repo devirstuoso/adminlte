@@ -2,7 +2,7 @@
 ?>
 
 
-
+<div class="cf">
   <div class="u-clearfix u-sheet u-sheet-1">
     <div class="u-palette-2-base u-shape u-shape-rectangle u-shape-1"></div>
     <div class="u-container-style u-custom-color-3 u-expanded-width-sm u-expanded-width-xs u-group u-opacity u-opacity-75 u-group-1">
@@ -39,3 +39,4 @@
       </div>
     </div>
   </div>
+</div>

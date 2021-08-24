@@ -37,9 +37,9 @@ class SchoolGovCouncilSearch extends SchoolGovCouncil
      *
      * @return ActiveDataProvider
      */
-    public function search($params)
+    public function search($params, $sid=null)
     {
-        $query = SchoolGovCouncil::find();
+        $query = SchoolGovCouncil::find();//->where(['school_id' => $sid])->all();
 
         // add conditions that should always apply here
 

@@ -147,17 +147,17 @@ $this->params['breadcrumbs'][] = $school->school_name;
                         </div>
                         <div class="u-align-center u-container-style u-list-item u-repeater-item">
                           <div class="u-container-layout u-similar-container u-valign-bottom-xl u-container-layout-7">
-                            <a href="<?= Url::to(['/schools/schoolf', 'id' => $school->school_id])?>" class="u-align-center u-border-13 u-border-hover-custom-color-1 u-border-white u-btn u-button-style u-none u-text-black u-text-hover-custom-color-1 u-btn-5">Ocassional Papers</a>
+                            <a class="u-align-center u-border-13 u-border-hover-custom-color-1 u-border-white u-btn u-button-style u-none u-text-black u-text-hover-custom-color-1 u-btn-5" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-comsoon')?>").done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Ocassional Papers"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Ocassional Papers</a>
                           </div>
                         </div>
                         <div class="u-align-center u-container-style u-list-item u-repeater-item">
                           <div class="u-container-layout u-similar-container u-valign-bottom-xl u-container-layout-8">
-                            <a href="<?= Url::to(['/schools/schoolf', 'id' => $school->school_id])?>" class="u-align-center u-border-13 u-border-hover-custom-color-1 u-border-white u-btn u-button-style u-none u-text-black u-text-hover-custom-color-1 u-btn-6">Faculty Members</a>
+                            <a class="u-align-center u-border-13 u-border-hover-custom-color-1 u-border-white u-btn u-button-style u-none u-text-black u-text-hover-custom-color-1 u-btn-6" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-comsoon')?>").done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Faculty Members"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Faculty Members</a>
                           </div>
                         </div>
                         <div class="u-align-center u-container-style u-list-item u-repeater-item">
                           <div class="u-container-layout u-similar-container u-valign-bottom-xl u-container-layout-9">
-                            <a href="<?= Url::to(['/schools/schoolf', 'id' => $school->school_id])?>" class="u-align-center u-border-13 u-border-hover-custom-color-1 u-border-white u-btn u-button-style u-none u-text-black u-text-hover-custom-color-1 u-btn-7">News &amp; Events</a>
+                            <a class="u-align-center u-border-13 u-border-hover-custom-color-1 u-border-white u-btn u-button-style u-none u-text-black u-text-hover-custom-color-1 u-btn-7" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-comsoon')?>").done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("News & Events"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>News &amp; Events</a>
                           </div>
                         </div>
                         <div class="u-align-center u-container-style u-list-item u-repeater-item">
@@ -213,22 +213,22 @@ $this->params['breadcrumbs'][] = $school->school_name;
                           </tr>
                           <tr >
                             <td class="u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell">
-                              <a href="" class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9">Office Bearers</a>
+                              <a  class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-comsoon')?>").done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Office Bearers"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Office Bearers</a>
                             </td>
                           </tr>
                           <tr >
                             <td class="u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell">
-                             <a href="" class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9">Ocassional Papers</a>
+                             <a  class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-comsoon')?>").done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Ocassional Papers"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Ocassional Papers</a>
                            </td>
                          </tr>
                          <tr >
                           <td class="u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell">
-                           <a href="" class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9">Faculty Members</a>
+                           <a  class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-comsoon')?>").done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Faculty Members"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Faculty Members</a>
                          </td>
                        </tr>
                        <tr >
                         <td class="u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell">
-                          <a href="" class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9">News &amp; Events</a>
+                          <a  class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-comsoon')?>").done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("News & Events"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>News &amp; Events</a>
                         </td>
                       </tr>
                       <tr>  

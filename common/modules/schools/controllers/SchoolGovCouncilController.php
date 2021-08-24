@@ -36,10 +36,10 @@ class SchoolGovCouncilController extends Controller
      * Lists all SchoolGovCouncil models.
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndex($school_id= null)
     {
         $searchModel = new SchoolGovCouncilSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams, $school_id);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
