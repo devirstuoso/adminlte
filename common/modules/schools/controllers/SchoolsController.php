@@ -113,7 +113,8 @@ class SchoolsController extends Controller
                 }
             }
         }
-        return $this->renderPartial('create', [
+        $this->layout = 'modal';
+        return $this->render('create', [
             'modelSchool' => $modelSchool,
             'modelsSlider' => (empty($modelsSlider)) ? [new SchoolSlider] : $modelsSlider
         ]);
@@ -189,7 +190,8 @@ class SchoolsController extends Controller
         }
     }
 
-    return $this->renderPartial('update', [
+    $this->layout = 'modal';
+    return $this->render('update', [
         'modelSchool' => $modelSchool,
         'modelsSlider' => (empty($modelsSlider)) ? [new SchoolSlider] : $modelsSlider
     ]);

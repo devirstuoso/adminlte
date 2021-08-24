@@ -12,13 +12,13 @@ use wbraganca\dynamicform\DynamicFormWidget;
 $js = '
 jQuery(".dynamicform_wrapper").on("afterInsert", function(e, item) {
     jQuery(".dynamicform_wrapper .panel-title-address").each(function(index) {
-        jQuery(this).html("Slide Count: " + (index + 1))
+        jQuery(this).html("Slide:" + (index + 1))
     });
 });
 
 jQuery(".dynamicform_wrapper").on("afterDelete", function(e) {
     jQuery(".dynamicform_wrapper .panel-title-address").each(function(index) {
-        jQuery(this).html("Slide Count: " + (index + 1))
+        jQuery(this).html("Slide:" + (index + 1))
     });
 });
 ';
@@ -38,7 +38,7 @@ $this->registerJs($js);
               <div class="form-group row">
                 <label for="schools-school_id" class="col-sm-2 col-form-label">School Identifier</label>
                 <div class="col-sm-3">
-                    <?= $form->field($modelSchool, 'school_id')->textInput(['maxlength' => true, 'value'=> 'school_', 'options' => ['class'=> 'form-control']])->label(false) ?>
+                    <?= $form->field($modelSchool, 'school_id')->textInput(['maxlength' => true, 'placeholder'=> 'school_', 'options' => ['class'=> 'form-control']])->label(false) ?>
                 </div>
                 <label for="schools-school_name" class="col-pd-1 col-sm-2 col-form-label">School Name</label>
                 <div class="col-sm-5">
@@ -93,7 +93,7 @@ $this->registerJs($js);
                             <div class="item panel panel-default card card-purple"><!-- widgetBody -->
                                 <div class="panel-heading card-header">
                                     <button type="button" class="pull-right remove-item btn btn-outline-danger btn-xs"><i class="fa fa-minus"></i></button>
-                                    <span class="panel-title-address">Slide Count: <?= ($index + 1) ?></span>
+                                    <span class="panel-title-address">Slide: <?= ($index + 1) ?></span>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="panel-body card-body">
