@@ -507,14 +507,21 @@ function hyphen_f($dt){
 
 
 
-<?php $this->registerJs('
-  $(function(){
+<?php 
+// $script = <<< JS
+// $(function(){
+//   alert('dev');
+//   // $('.submit-message').hide();
+//   // $('#index-submit').click(function(){
+//   //   $('.submit-message').show();
+//   // });
+// });
+// JS;
 
-    alert("hello everyone");
+// $this->registerJs($script);
 
-  })
-');
 
+?>
 
 
 

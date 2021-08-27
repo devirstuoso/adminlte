@@ -147,7 +147,7 @@ $this->params['breadcrumbs'][] = $school->school_name;
                         </div>
                         <div class="u-align-center u-container-style u-list-item u-repeater-item">
                           <div class="u-container-layout u-similar-container u-valign-bottom-xl u-container-layout-7">
-                            <a class="u-align-center u-border-13 u-border-hover-custom-color-1 u-border-white u-btn u-button-style u-none u-text-black u-text-hover-custom-color-1 u-btn-5" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-comsoon')?>").done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Ocassional Papers"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Ocassional Papers</a>
+                            <a class="u-align-center u-border-13 u-border-hover-custom-color-1 u-border-white u-btn u-button-style u-none u-text-black u-text-hover-custom-color-1 u-btn-5" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-office')?>",{id:"<?php echo $school->school_id; ?>"}).done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Office Bearers"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Office Bearers</a>
                           </div>
                         </div>
                         <div class="u-align-center u-container-style u-list-item u-repeater-item">
@@ -162,7 +162,7 @@ $this->params['breadcrumbs'][] = $school->school_name;
                         </div>
                         <div class="u-align-center u-container-style u-list-item u-repeater-item">
                           <div class="u-container-layout u-similar-container u-valign-bottom-xl u-container-layout-10">
-                            <a class="u-align-center u-border-13 u-border-hover-custom-color-1 u-border-white u-btn u-button-style u-none u-text-black u-text-hover-custom-color-1 u-btn-8"  onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-contact')?>").done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Contact"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Contact</a>
+                            <a class="u-align-center u-border-13 u-border-hover-custom-color-1 u-border-white u-btn u-button-style u-none u-text-black u-text-hover-custom-color-1 u-btn-8"  onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-comsoon')?>").done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Ocassional Papers"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Ocassional Papers</a>
                           </div>
                         </div>
                       </div>

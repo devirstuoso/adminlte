@@ -39,6 +39,15 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        'mailer' => [
+                        'class' => 'yii\swiftmailer\Mailer',
+                        'viewPath' => '@backend/mail',
+                        'useFileTransport' => false,
+                        'transport' => [
+                            'class' => '587',//'465 OR 587',
+                            'encryption' => 'ssl',
+                        ],
+                    ],
 
 
         'urlManagerBackend' => [

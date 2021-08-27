@@ -1,10 +1,11 @@
 <?php
+  use yii\helpers\Url;
 ?>
 
 
-<div class="cf">
+<div class="cf" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('<?php echo Url::to('@frontend_web/uploads/wall.jpg');?>');  background-position: 50% 50%;">
   <div class="u-clearfix u-sheet u-sheet-1">
-    <div class="u-palette-2-base u-shape u-shape-rectangle u-shape-1"></div>
+    <div class=" u-shape u-shape-1"></div>
     <div class="u-container-style u-custom-color-3 u-expanded-width-sm u-expanded-width-xs u-group u-opacity u-opacity-75 u-group-1">
       <div class="u-container-layout u-container-layout-1">
         <h2 class="u-align-center u-text u-text-1">Contact Us</h2>

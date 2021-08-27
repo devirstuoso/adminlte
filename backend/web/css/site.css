@@ -4,7 +4,7 @@ body {
 }
 
 body.blank {
-    display: flex;
+    /*display: flex;*/
     padding: 40px 0;
 }
 

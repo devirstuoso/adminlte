@@ -6,8 +6,6 @@ use yii\helpers\ArrayHelper;
 
 use common\modules\schools\models\Schools;
 
-
-
 /* @var $this yii\web\View */
 /* @var $model common\modules\schools\models\SchoolGovCouncil */
 /* @var $form yii\widgets\ActiveForm */

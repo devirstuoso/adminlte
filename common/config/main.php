@@ -31,16 +31,17 @@ $config = [
                         'useFileTransport' => false,
                         'transport' => [
                             'class' => '465',//'465 OR 587',
-                            'encryption' => 'tls',
+                            'encryption' => 'tsl',
                         ],
-                    'urlManagerSchools' =>[
-                        'class' => 'yii\web\urlManager',
-                        'scriptUrl' => '/adminlte/common/modules/schools',
-                        'baseUrl' => '@schools',
-                        'enablePrettyUrl' => true,
-                        'showScriptName' => false,
                     ],
-                    ],
+
+                    // 'urlManagerSchools' =>[
+                    //     'class' => 'yii\web\urlManager',
+                    //     'scriptUrl' => '/adminlte/common/modules/schools',
+                    //     'baseUrl' => '@schools',
+                    //     'enablePrettyUrl' => true,
+                    //     'showScriptName' => false,
+                    // ],
 
     ],
 

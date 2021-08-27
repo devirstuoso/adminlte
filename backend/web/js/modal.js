@@ -7,11 +7,6 @@ $(function(){
     });
 
 
-    // $('#modal').on('show.bs.modal', function(){
-    //         alert('dev');
-    // })
-
-
     $('#modal').on('hidden.bs.modal', function (e) { 
             for(e in tinyMCE.editors){
             tinyMCE.editors[e].destroy();
@@ -25,7 +20,8 @@ $(function(){
         .load($(this).attr('value'));
     });
 
-    $('#modalUpdate').on('hidden.bs.modal', function (e) { for(e in tinyMCE.editors){
+    $('#modalUpdate').on('hidden.bs.modal', function (e) { 
+        for(e in tinyMCE.editors){
         tinyMCE.editors[e].destroy();
  }});
 

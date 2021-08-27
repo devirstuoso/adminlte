@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Html;
+use yii\bootstrap4\ActiveForm;
 ?>
 
     <div class="login-page-main">
@@ -7,7 +8,7 @@ use yii\helpers\Html;
         <p class="login-page-sign" align="center">Institute of Eminence</p>
         <?= Html::img('@web/img/du-logo.png',['alt'=>'some', 'class'=> 'login-page-logo']); ?>
         <p class="login-page-sign-small" align="center">Welcome Back Admin</p>
-        <?php $form = \yii\bootstrap4\ActiveForm::begin(['id' => 'login-form', 'options' => ['class' => 'login-page-form1']]) ?>
+        <?php $form = ActiveForm::begin(['id' => 'login-form', 'options' => ['class' => 'login-page-form1']]) ?>
 
         <?= $form->field($model,'username', [
             'options' => ['class' => 'login-page-un'],
@@ -16,7 +17,7 @@ use yii\helpers\Html;
             'wrapperOptions' => ['class' => 'input-group mb-3']
         ])
             ->label(false)
-            ->textInput(['placeholder' => $model->getAttributeLabel('username')]) ?>
+            ->textInput(['placeholder' => $model->getAttributeLabel('username'), 'class' => 'login-page-un-input'] )?>
 
         <?= $form->field($model, 'password', [
             'options' => ['class' => 'login-page-pass'],
@@ -25,7 +26,7 @@ use yii\helpers\Html;
             'wrapperOptions' => ['class' => 'input-group mb-3']
         ])
             ->label(false)
-            ->passwordInput(['placeholder' => $model->getAttributeLabel('password')]) ?>
+            ->passwordInput(['placeholder' => $model->getAttributeLabel('password'), 'class' => 'login-page-pass-input']) ?>
 
         <div class="row">
             <div class="col-6">

@@ -56,7 +56,7 @@ $this->params['breadcrumbs'][] = $this->title;
                       <a href="<?= Url::to(['/schools/schoolf', 'id' => $school->school_id])?>">
                         <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-xl u-container-layout-3">
                           <span class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-icon u-icon-circle u-palette-2-light-2 u-spacing-9 u-icon">
-                            <svg class="u-svg-link" width="" viewBox="0 0 512 512" style="" xmlns="http://www.w3.org/2000/svg">  <!-- viewBox="0 0 64 64" -->
+                            <svg class="u-svg-link" width=100% viewBox="0 0 512 512" style="" xmlns="http://www.w3.org/2000/svg">  <!-- viewBox="0 0 64 64" -->
                             <?php echo $school->school_logo ?></svg>
                           </span>
                           <h2 class="u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-custom-color-1 u-text-default-xl u-text">Delhi School of <?php echo $school->school_name?></h2>
