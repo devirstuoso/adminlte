@@ -91,7 +91,7 @@ class SchoolfController extends \yii\web\Controller
         }
     }
 
-    public function actionContainerContact()
+    public function actionContainerContact($id)
     {
         $contactform = new ContactForm();
         if ($contactform->load(Yii::$app->request->post())) {
@@ -102,10 +102,10 @@ class SchoolfController extends \yii\web\Controller
             } else {
                 Yii::$app->session->setFlash('error', 'There was an error sending your message.');
             }
-            return $this->refresh();
+            return $this->actionIndex($id);
         }
-
-        return $this->renderAjax('contact', [ 'contactform' => $contactform ]);
+            return $this->renderAjax('contact', [ 'contactform' => $contactform ]);
+   
     }
 
     public function actionContainerComsoon()

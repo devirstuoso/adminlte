@@ -310,6 +310,13 @@ class SiteController extends Controller
         return $this->render('leadership', ['leaders' => $leaders]);
     }
 
+    public function actionLeadershipDetailed($id)
+    {
+        $leader = $this->findLeaderModel($id);
+
+        return $this->render('leadership-2', ['leader' => $leader]);
+    }
+
     public function actionGovCouncil()
     {
         $govcouncil = new GovCouncil();
@@ -337,6 +344,14 @@ class SiteController extends Controller
     protected function findModel($id)
     {
         if (($model = UpdatesPanel::findOne($id)) !== null) {
+            return $model;
+        }
+        throw new NotFoundHttpException('The requested page doesn\'t exist.' );
+    }
+
+    protected function findLeaderModel($id)
+    {
+        if (($model = Leadership::findOne($id)) !== null) {
             return $model;
         }
         throw new NotFoundHttpException('The requested page doesn\'t exist.' );

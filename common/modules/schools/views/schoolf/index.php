@@ -233,7 +233,7 @@ $this->params['breadcrumbs'][] = $school->school_name;
                       </tr>
                       <tr>  
                        <td class="u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell">                   
-                        <a class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-contact')?>").done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Contact"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Contact</a>
+                        <a class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-contact')?>",{id:"<?php echo $school->school_id; ?>"}).done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Contact"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Contact</a>
                       </td>
                     </tr>
                   </tbody>
