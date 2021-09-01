@@ -176,14 +176,15 @@ $this->params['breadcrumbs'][] = $school->school_name;
           </div>
         </div>
 
+        <!-- <div><h2 class="sticky-1">hello</h2></div> -->
+
         <div class="u-size-30">
           <div class="u-layout-row">
 
-
-            <div class="u-align-left u-container-style u-layout-cell u-size-14 u-layout-cell-2">
-              <div class="u-container-layout u-container-layout-11">
-                <div class="u-container-style u-grey-5 u-group u-group-2" data-animation-name="fadeIn" data-animation-duration="3000" data-animation-delay="0" data-animation-direction="">
-                  <div class="u-container-layout u-container-layout-12">
+            <div class="u-align-left u-container-style u-layout-cell u-size-14 u-layout-cell-2 ">
+              <div class="u-container-layout u-container-layout-11 "> 
+                <div class="u-container-style u-grey-5 u-group u-group-2  sticky-1" data-animation-name="fadeIn" data-animation-duration="3000" data-animation-delay="0" data-animation-direction="" >
+                  <div class="u-container-layout u-container-layout-12 ">
                     <!-- Side Menu -->
                     <div class="u-table u-table-responsive u-table-1">
                       <table class="u-table-entity">
@@ -266,7 +267,7 @@ $this->params['breadcrumbs'][] = $school->school_name;
 
 
 <?php 
-        $script = 
+        $ajax = 
         '$(document).ready(function(){
             
              $.get("'.Url::toRoute('/schools/schoolf/container-home').'", {id:"'.$school->school_id.'"})
@@ -275,8 +276,48 @@ $this->params['breadcrumbs'][] = $school->school_name;
             });
           });';
 
-     $this->registerJs($script);
-    ?>
+     $this->registerJs($ajax);
+
+
+     $sticky = "
+        $(document).ready(function() {
+          var sticky_1_Top = $('.sticky-1').offset().top;
+          // var sticky_1_Bottom = $('.sticky-1').offset().top+ $('.sticky-1').outerHeight();
+          
+
+             $(window).scroll(function() {
+                var windowTop = $(window).scrollTop()+ $(window).scrollTop()/4.2;
+                var windowBottom = $(document).height()-900;
+                console.log('windowBottom '+windowBottom);
+                var sticky_1_curr = $('.sticky-1').offset().top;
+                console.log('sticky_1_curr '+sticky_1_curr); 
+
+                if (sticky_1_curr > windowBottom )
+                {
+                  $('.sticky-1').css({'visibility':'hidden'});
+                } else{
+                if (sticky_1_Top < windowTop) {
+                  $('.sticky-1').css({'visibility':'visible', 'position':'fixed', 'top': '15vh', 'left': '4.7vw','z-index':'7' });
+                 } else {
+                  $('.sticky-1').css({'visibility':'visible','position':'relative', 'top': '0', 'left': '0', 'z-index':'1'});
+                }
+              }
+          // alert(windowBottom);
+
+             
+            })
+          });
+          "; 
+      $this->registerJs($sticky);
+
+
+
+
+
+
+
+
+?>
 
 
 
