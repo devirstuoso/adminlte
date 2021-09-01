@@ -84,15 +84,15 @@ $this->params['breadcrumbs'][] = $this->title;
                     ['class' => 'form-control', 'prompt' => 'Select Post'])
             ],
 
-            ['label' => 'Leader\'s Description',
-            'attribute' => 'leader_description',
+            // ['label' => 'Leader\'s Description',
+            // 'attribute' => 'leader_description',
 
-            'contentOptions' => ['class' => ''],
-            'format' => 'html',
-            'value' => function($model){
-                return yii\helpers\HtmlPurifier::process($model->leader_description);
-            }
-            ],
+            // 'contentOptions' => ['class' => ''],
+            // 'format' => 'html',
+            // 'value' => function($model){
+            //     return yii\helpers\HtmlPurifier::process($model->leader_description);
+            // }
+            // ],
 
                 ['class' => 'yii\grid\ActionColumn',
                 'contentOptions' => ['class' => 'gridview-menu-buttons-container'],
