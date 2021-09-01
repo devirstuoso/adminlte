@@ -54,7 +54,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                     <div class="u-align-center-lg u-align-center-xl u-container-style u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-2" >
                       <a href="<?= Url::to(['/schools/schoolf', 'id' => $school->school_id])?>">
-                        <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-xl u-container-layout-3">
+                        <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-xl u-container-layout-3 u-effect-hover-liftUp">
                           <span class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-icon u-icon-circle u-palette-2-light-2 u-spacing-9 u-icon">
                             <svg class="u-svg-link" width=100% viewBox="0 0 512 512" style="" xmlns="http://www.w3.org/2000/svg">  <!-- viewBox="0 0 64 64" -->
                             <?php echo $school->school_logo ?></svg>

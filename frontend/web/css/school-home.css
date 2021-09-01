@@ -1220,7 +1220,7 @@
 
 .school-home #ajax-content .ob .text-name {
   color: #302e2e;
-  font-size: 1.875rem;
+  font-size: 1.75rem;
   margin: 17px 0 0;
 }
 
@@ -1232,9 +1232,12 @@
 
 .school-home #ajax-content .ob .u-btn-link-2-page {
   background-image: none;
-  border-style: none none solid;
+  border-style: none none ;
+  font-size: 0.8rem;
   margin: 25px auto 0 0;
   padding: 0;
+  white-space: pre-wrap;
+  text-align: left;
 }
 
 

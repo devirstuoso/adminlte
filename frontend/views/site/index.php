@@ -44,55 +44,61 @@ function hyphen_f($dt){
 }
 
 
-?>
+
+$script = <<<JS
+  $(function(){
+  $('.submit-message').hide()
+  $('#index-submit').click(function(){
+    $('.submit-message').show();
+  });
+});
+
+JS;
+
+$this->registerJs($script);
+  ?>
 
 
 
-<!-- Starts here  -->
+  <!-- Starts here  -->
 
-
-<!-- <script type="application/ld+json">{
-  "@context": "http://schema.org",
-  "@type": "Organization",
-  "name": "",
-  "logo": "images/ioe-du-logo-2.png",
-  "sameAs": []
-}
-</script> -->
 
 <!--?php echo Yii::getAlias('@web').'<br>';
-      echo Yii::getAlias('@webroot').'<br>';
-      echo Yii::getAlias('@frontend_web').'<br>';
-      echo Yii::getAlias('@backend_web').'<br>';
-      echo Yii::getAlias('@frontend_url').'<br>';
-      echo Yii::getAlias('@backend_url').'<br>';?> -->
+echo Yii::getAlias('@webroot').'<br>';
+echo Yii::getAlias('@frontend_web').'<br>';
+echo Yii::getAlias('@backend_web').'<br>';
+echo Yii::getAlias('@frontend_url').'<br>';
+echo Yii::getAlias('@backend_url').'<br>';?> -->
 <div class="home">
-      <section id="carousel_c34a" class="u-carousel u-carousel-duration-1500 u-slide u-block-963f-1" data-u-ride="carousel" data-interval="4750">
+  <section id="carousel_c34a" class="u-carousel u-carousel-duration-1500 u-slide u-block-963f-1" data-u-ride="carousel" data-interval="4750">
 
-        <!-- carousel tabs -->
-        <ol class="u-absolute-hcenter u-carousel-indicators u-block-963f-2">
-          <?php for($i=0; $i<sizeof($sliders); $i++){ ?>
-            <?php if($i === 0){$active = 'u-active';}
-            else{$active='';}
+    <!-- carousel tabs -->
+    <ol class="u-absolute-hcenter u-carousel-indicators u-block-963f-2">
+      <?php for($i=0; $i<sizeof($sliders); $i++) : ?>
+        <?php if($i === 0){
+          $active = 'u-active';}
+          else{
+            $active='';}
             ?>
             <li data-u-target="#carousel_c34a" class="<?php echo $active ?> u-grey-30" data-u-slide-to="<?php echo $i;?> ">
             </li>
-          <?php } ?>
+          <?php endfor; ?>
         </ol>
 
         <?php $counter = 0;?>
         <div class="u-carousel-inner" role="listbox">
 
           <!-- Slider Page -->
-          <!-- ?php $s = $sliders[0]?> -->
+
           <?php if(sizeof($sliders) === 0 ) {  ?>
             <div class="u-active u-align-left u-carousel-item u-clearfix u-image u-section-1-1"  style="background-image: url(<?php echo Url::to ('@frontend_web') .'/uploads/default-image.jpg';?>)"data-image-width="1800" data-image-height="958">
-              <div class="u-clearfix u-sheet u-sheet-1"></div>
+              <div class="u-clearfix u-sheet u-sheet-1">
+              </div>
             </div>
           <?php }else{ ?>
-            <?php foreach($sliders AS $sl=> $s){ ?>
+            <?php foreach($sliders AS $sl=> $s) : ?>
               <?php $counter++;
-                    $active = ($counter === 1)? 'u-active': '';
+              $active = ($counter === 1)? 'u-active': '';
 
               if (is_null($s->slider_image)) { $image_url = Url::to ('@frontend_web') .'/uploads/default-image.jpg';      }else{ $image_url = Url::to ('@backend_web/') .$s->slider_image.'?'.time();}
               ?>
@@ -108,8 +114,8 @@ function hyphen_f($dt){
                             <h1 class="u-custom-font u-font-playfair-display u-text u-text-body-alt-color u-title u-text-2"> <?= HtmlPurifier::process( $s->slider_header_text) ?> </h1>
                             <p class="u-text u-text-body-alt-color u-text-3"> <?= HtmlPurifier::process( $s->slider_description_text) ?> </p>
                             <?php if ($s->slider_button_hide === 0) {?>
-                              <?= Html::a(Html::encode($s->slider_button_text), [Url::to(Html::encode($s->slider_button))], [ 'class'=>'u-border-2 u-border-grey-dark-1 u-border-hover-custom-color-1 u-btn u-btn-round u-button-style u-hover-custom-color-1 u-none u-radius-40 u-text-body-alt-color u-btn-1']); ?>
-
+                              <?= Html::a(Html::encode($s->slider_button_text), [Url::to(Html::encode($s->slider_button))], [ 'class'=>'u-border-2 u-border-grey-dark-1 u-border-hover-custom-color-1 u-btn u-btn-round u-button-style u-hover-custom-color-1 u-none u-radius-40 u-text-body-alt-color u-btn-1']); 
+                              ?>
                               <!-- <a href="?= Html::encode($s->slider_button)?>" class="u-border-2 u-border-grey-dark-1 u-border-hover-custom-color-1 u-btn u-btn-round u-button-style u-hover-custom-color-1 u-none u-radius-40 u-text-body-alt-color u-btn-1">?= Html::encode($s->slider_button_text)?></a> -->
                             <?php }?>
                           </div>
@@ -119,65 +125,22 @@ function hyphen_f($dt){
                   </div>
                 </div>
               </div>
-            <?php }?>
+            <?php endforeach; ?>
           <?php } ?>
-         <!--  <div class="u-align-left u-carousel-item u-clearfix u-image u-section-1-2" src="" data-image-width="1600" data-image-height="1067">
-            <div class="u-clearfix u-sheet u-sheet-1">
-              <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
-                <div class="u-layout">
-                  <div class="u-layout-row">
-                    <div class="u-container-style u-layout-cell u-left-cell u-size-60 u-layout-cell-1">
-                      <div class="u-container-layout u-container-layout-1">
-                        <h2 class="u-subtitle u-text u-text-body-alt-color u-text-1">Join us in a new era</h2>
-                        <h1 class="u-custom-font u-font-playfair-display u-text u-text-body-alt-color u-title u-text-2">IoE DU</h1>
-                        <p class="u-text u-text-body-alt-color u-text-3">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
-                        <a href="https://nicepage.com/c/art-design-website-templates" class="u-border-2 u-border-grey-dark-1 u-border-hover-custom-color-1 u-btn u-btn-round u-button-style u-hover-custom-color-1 u-none u-radius-42 u-text-body-alt-color u-btn-1">Join Now</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="u-align-left u-carousel-item u-clearfix u-image u-section-1-3" src="" data-image-width="1600" data-image-height="1067">
-            <div class="u-clearfix u-sheet u-sheet-1">
-              <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
-                <div class="u-layout">
-                  <div class="u-layout-row">
-                    <div class="u-container-style u-layout-cell u-left-cell u-size-60 u-layout-cell-1">
-                      <div class="u-container-layout u-container-layout-1">
-                        <h2 class="u-subtitle u-text u-text-body-alt-color u-text-1">Join us in a new era</h2>
-                        <h1 class="u-custom-font u-font-playfair-display u-text u-text-body-alt-color u-title u-text-2">IoE DU</h1>
-                        <p class="u-text u-text-body-alt-color u-text-3">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
-                        <a href="https://nicepage.com/c/art-design-website-templates" class="u-border-2 u-border-grey-dark-1 u-border-hover-custom-color-1 u-btn u-btn-round u-button-style u-hover-custom-color-1 u-none u-radius-42 u-text-body-alt-color u-btn-1">Join Now</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
+
         </div>
         <a class="u-absolute-vcenter u-carousel-control u-carousel-control-prev u-text-body-alt-color u-block-963f-5" href="#carousel_c34a" role="button" data-u-slide="prev">
-          <span aria-hidden="true">
-            <svg viewBox="0 0 477.175 477.175"><path d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225
-              c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z"></path></svg>
-            </span>
+          <span aria-hidden="true"><svg viewBox="0 0 477.175 477.175"><path d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225
+            c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z"></path></svg></span>
             <span class="sr-only">Previous</span>
           </a>
           <a class="u-absolute-vcenter u-carousel-control u-carousel-control-next u-text-body-alt-color u-block-963f-6" href="#carousel_c34a" role="button" data-u-slide="next">
-            <span aria-hidden="true">
-              <svg viewBox="0 0 477.175 477.175"><path d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5
-                c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z"></path></svg>
-              </span>
+            <span aria-hidden="true"><svg viewBox="0 0 477.175 477.175"><path d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5
+              c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z"></path></svg></span>
               <span class="sr-only">Next</span>
             </a>
           </section>
 
-
-<!--           <section>
-            <marquee>Hello Everyone to DU IOE</marquee>
-          </section> -->
 
 
           <section class="u-align-center u-clearfix u-valign-middle-sm u-valign-middle-xs u-section-2" id="carousel_3976">
@@ -254,6 +217,7 @@ function hyphen_f($dt){
             <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
               <div class="u-layout">
                 <div class="u-layout-row">
+
                   <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
                     <div class="u-container-layout u-container-layout-1">
                       <!-- NEWS AND EVENTS -->
@@ -311,13 +275,14 @@ function hyphen_f($dt){
                               </div>
                             </div>
                           </div>
-
                           <a href="<?php echo Yii::$app->urlManager->createUrl("site/news-events-page");?>" class="u-border-none u-btn u-button-style u-custom-color-2 u-btn-1">View All News And Events</a>
                         </div>
                       </div>
+
                       <div class="u-align-left u-container-style u-effect-hover-zoom u-layout-cell u-size-30 u-layout-cell-2" data-image-width="1125" data-image-height="763">
                         <div class="u-background-effect u-expanded">
-                          <div class="u-background-effect-image u-expanded u-image u-image-6" data-image-width="1125" data-image-height="763"></div>
+                          <div class="u-background-effect-image u-expanded u-image u-image-6" data-image-width="1125" data-image-height="763">
+                          </div>
                         </div>
                         <div class="u-container-layout u-valign-middle-md u-valign-top-lg u-container-layout-9">
                           <!-- UPDATES -->
@@ -333,7 +298,6 @@ function hyphen_f($dt){
                                   <div class="u-expanded-width-sm u-expanded-width-xs u-list u-list-2">
                                     <div class="u-repeater u-repeater-2">
 
-
                                       <marquee behavior=scroll direction='up' height='500em' scrollamount='5' onmouseover="this.stop();" onmouseout="this.start();">
                                         <div class="u-container-layout u-similar-container u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-container-layout-13">
                                           <?php foreach($updates as $up){ ?>
@@ -347,6 +311,7 @@ function hyphen_f($dt){
                                           <?php };?>
                                         </div>
                                       </marquee>
+
                                     </div>
                                   </div>
                                 </div>
@@ -355,6 +320,7 @@ function hyphen_f($dt){
                           </div>
                         </div>
                       </div>
+
                     </div>
                   </div>
                 </div>
@@ -423,105 +389,93 @@ function hyphen_f($dt){
                       <div class="u-container-layout u-valign-top-lg u-valign-top-md u-valign-top-xl u-container-layout-5">
                         <h2 class="u-text u-text-custom-color-2 u-text-5">contact form</h2>
                         <div class="u-expanded-width-sm u-expanded-width-xs u-form u-form-1">
-                          
+
                           <style type="text/css">
-                            .form-input{
-                              font-size: 1.1em ;
-                              background-color: #f2f2f2;
-                              border: none !important;
-                              /*border-radius: unset;*/
-                              box-shadow: none;
-                              width: 100%;
-                              padding: 0 20px;
-                            } 
-                            .form-input:focus{
-                              border: none!important;
+                          .form-input{
+                            font-size: 1.1em ;
+                            background-color: #f2f2f2;
+                            border: none !important;
+                            /*border-radius: unset;*/
+                            box-shadow: none;
+                            width: 100%;
+                            padding: 0 20px;
+                          } 
+                          .form-input:focus{
+                            border: none!important;
 
-                            }
-                            .submit-message{
-                              font-size: 0.9em;
-                              color: #553961;
-                              font-weight: 700;
-                              text-align: right;
-                            }
+                          }
+                          .submit-message{
+                            font-size: 0.9em;
+                            color: #553961;
+                            font-weight: 700;
+                            text-align: right;
+                          }
 
-                          </style>
+                        </style>
 
-                              <?php if (Yii::$app->session->hasFlash('success')): ?>
-                                <div class="alert alert-success alert-dismissable">
-                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                                 <?= Yii::$app->session->getFlash('success') ?>
-                             </div>
-                            <?php endif; ?>
+                        <?php if (Yii::$app->session->hasFlash('success')): ?>
+                          <div class="alert alert-success alert-dismissable">
+                           <button aria-hidden="true" data-dismiss="alert" class="close" type="button"></button>
+                           <?= Yii::$app->session->getFlash('success') ?>
+                         </div>
+                       <?php endif; ?>
 
-                            <?php if (Yii::$app->session->hasFlash('error')): ?>
-                                <div class="alert alert-danger alert-dismissable">
-                                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                                    <?= Yii::$app->session->getFlash('error') ?>
-                                </div>
-                            <?php endif; ?>
-
-
-
-                              <?php $form = ActiveForm::begin(['id' => 'home-contact-form', 
-                                                               'options' => ['class' => 'u-clearfix u-form-spacing-10 u-form-vertical u-inner-form', 
-                                                                             'style' => 'padding: 10px' 
-                                                                           ],
-                                                               //  'fieldConfig' => [ 'options' => ['tag' => 'span',],],
-                                                                         ]); ?>
-                                <div class="u-form-group u-form-name">
-                                  <?= $form->field($contactform, 'name',[ 'options' => ['class' => 'u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle']])->textInput(['maxlength' => true, 'placeholder' => 'Enter your Name', 'class' => 'form-input'])->label(false); ?>
-                                </div>
-
-                                <div class="u-form-email u-form-group">
-                                  <?= $form->field($contactform, 'email',[ 'options' => ['class' => 'u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle', 'style' => 'margin-bottom: 20px']])->textInput(['maxlength' => true, 'placeholder' => 'Enter a valid email address', 'class' => 'form-input'])->label(false); ?>
-
-                                  <?= $form->field($contactform, 'message',[ 'options' => ['class' => 'u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle', 'style' => 'margin-bottom: 20px']])->textarea(['rows' => 6, 'placeholder' => 'Enter your message', 'class' => 'form-input'])->label(false); ?>
-
-                                  <div>
-                                    <p class="submit-message">It may take a while, be patient. We are sending you a mail</p>
-                                  </div>
-
-                                   <div class="u-form-group u-form-submit">
-                                      <a href="" class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-hover-custom-color-1 u-radius-45 u-text-body-alt-color u-btn-1" id="index-submit">Submit</a>
-                                      <?= Html::submitButton(Yii::t('app', 'Submit'), ['class' => 'u-form-control-hidden']) ?>
-                                  </div>
-
-                                  <!-- ?= Alert::widget() ?> -->
-
-                              <?php ActiveForm::end(); ?>
-
+                       <?php if (Yii::$app->session->hasFlash('error')): ?>
+                        <div class="alert alert-danger alert-dismissable">
+                          <button aria-hidden="true" data-dismiss="alert" class="close" type="button"></button>
+                          <?= Yii::$app->session->getFlash('error') ?>
                         </div>
-                      </div>
+                      <?php endif; ?>
+
+
+
+                      <?php $form = ActiveForm::begin(['id' => 'home-contact-form', 
+                       'options' => ['class' => 'u-clearfix u-form-spacing-10 u-form-vertical u-inner-form', 
+                       'style' => 'padding: 10px' 
+                     ],
+                                                               //  'fieldConfig' => [ 'options' => ['tag' => 'span',],],
+                   ]); ?>
+                   <div class="u-form-group u-form-name">
+                    <?= $form->field($contactform, 'name',[ 'options' => ['class' => 'u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle']])->textInput(['maxlength' => true, 'placeholder' => 'Enter your Name', 'class' => 'form-input'])->label(false); ?>
+                  </div>
+
+                  <div class="u-form-email u-form-group">
+                    <?= $form->field($contactform, 'email',[ 'options' => ['class' => 'u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle', 'style' => 'margin-bottom: 10px']])->textInput(['maxlength' => true, 'placeholder' => 'Enter your email address', 'class' => 'form-input'])->label(false); ?>
+
+                    <?= $form->field($contactform, 'phone',[ 'options' => ['class' => 'u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle', 'style' => 'margin-bottom: 20px']])->textInput(['maxlength' => true, 'placeholder' => 'Enter your phone number', 'class' => 'form-input'])->label(false); ?>
+
+                    <?= $form->field($contactform, 'message',[ 'options' => ['class' => 'u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle', 'style' => 'margin-bottom: 20px']])->textarea(['rows' => 6, 'placeholder' => 'Enter your message', 'class' => 'form-input'])->label(false); ?>
+
+                    <div>
+                      <p class="submit-message">It may take a while, be patient. We are sending you a mail</p>
                     </div>
+
+                    <div class="u-form-group u-form-submit">
+                      <a href="" class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-hover-custom-color-1 u-radius-45 u-text-body-alt-color u-btn-1" id="index-submit">Submit</a>
+                      <?= Html::submitButton(Yii::t('app', 'Submit'), ['class' => 'u-form-control-hidden']) ?>
+                    </div>
+
+                    <!-- ?= Alert::widget() ?> -->
+
+                    <?php ActiveForm::end(); ?>
+
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
 
 
+</div>
 </div>
 
 
 
-<?php 
-// $script = <<< JS
-// $(function(){
-//   alert('dev');
-//   // $('.submit-message').hide();
-//   // $('#index-submit').click(function(){
-//   //   $('.submit-message').show();
-//   // });
-// });
-// JS;
-
-// $this->registerJs($script);
-
-
-?>
 
 
 

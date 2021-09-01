@@ -1,10 +1,11 @@
 <?php
+use yii\helpers\Html;
 ?>
 
 <div class="tb">
 
   <div class="u-expanded-width-xs u-table u-table-responsive u-table-1">
-    <table class="u-table-entity u-table-entity-1">
+    <table class="u-table-entity u-table-entity-1" id="gov-council-table">
       <colgroup>
         <col width="50%">
         <col width="50%">
@@ -20,10 +21,10 @@
           <?php if (!is_null($govern)) : ?>
             <tr style="height: 70px;">
               <td class="u-border-1 u-border-grey-75 u-border-no-left u-border-no-right u-table-cell u-table-cell-2">
-                <?php echo $govern->name ?>
+                <?php echo Html::encode($govern->name) ?>
               </td>
               <td class="u-border-1 u-border-grey-75 u-border-no-left u-border-no-right u-table-cell u-table-cell-2">
-                <?php echo $govern->position ?>
+                <?php echo Html::encode($govern->position) ?>
               </td>
             </tr>
           <?php endif; ?>
@@ -36,3 +37,36 @@
     </table>
   </div>
 </div>
+
+
+<?php
+
+  $highlight = <<<CS
+    .highlight{
+        background: #bbb6d1;
+        color: white;
+        font-size: 1.6em;
+        font-weight: bolder;
+        vertical-align: top ;
+        text-shadow: -1px -1px 2px #552a69,  1px -1px 2px  #552a69,  -1px 1px 2px  #552a69,  1px 1px 2px  #552a69;
+        outline: 0.1em solid #552a69;
+    }
+  CS;
+
+  $this->registerCss($highlight);  
+
+
+  $highlight = <<<JS
+    $('document').ready(function(){
+      $('#gov-council-table > tbody > tr').hover( function(){
+        $(this).find('td').toggleClass('highlight');
+      })
+      
+    })
+  JS;
+
+  $this->registerJs($highlight);
+
+
+
+?>

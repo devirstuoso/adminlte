@@ -147,7 +147,7 @@ $this->params['breadcrumbs'][] = $school->school_name;
                         </div>
                         <div class="u-align-center u-container-style u-list-item u-repeater-item">
                           <div class="u-container-layout u-similar-container u-valign-bottom-xl u-container-layout-7">
-                            <a class="u-align-center u-border-13 u-border-hover-custom-color-1 u-border-white u-btn u-button-style u-none u-text-black u-text-hover-custom-color-1 u-btn-5" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-office')?>",{id:"<?php echo $school->school_id; ?>"}).done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Office Bearers"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Office Bearers</a>
+                            <a class="u-align-center u-border-13 u-border-hover-custom-color-1 u-border-white u-btn u-button-style u-none u-text-black u-text-hover-custom-color-1 u-btn-5" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-office')?>",{id:"<?php echo $school->school_id; ?>", school:"<?php echo $school->school_name; ?>"}).done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Office Bearers"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Office Bearers</a>
                           </div>
                         </div>
                         <div class="u-align-center u-container-style u-list-item u-repeater-item">
@@ -213,7 +213,7 @@ $this->params['breadcrumbs'][] = $school->school_name;
                           </tr>
                           <tr >
                             <td class="u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell">
-                              <a  class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-comsoon')?>").done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Office Bearers"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Office Bearers</a>
+                              <a  class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-office')?>",{id:"<?php echo $school->school_id; ?>", school:"<?php echo $school->school_name; ?>"}).done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Office Bearers"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Office Bearers</a>
                             </td>
                           </tr>
                           <tr >

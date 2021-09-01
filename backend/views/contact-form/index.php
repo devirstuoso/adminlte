@@ -39,6 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
              'format' => 'email',
              'contentOptions' => ['style' => 'background-color:#fff']
             ],
+            'phone',
             ['attribute' => 'message',
              'format' => 'ntext',
              'contentOptions' => ['style' => 'width: 50%']

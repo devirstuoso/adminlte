@@ -18,7 +18,7 @@ class ContactFormSearch extends ContactForm
     {
         return [
             [['id'], 'integer'],
-            [['name', 'email'], 'safe'],
+            [['name', 'email', 'phone'], 'safe'],
         ];
     }
 
@@ -63,6 +63,7 @@ class ContactFormSearch extends ContactForm
 
         $query->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'email', $this->email])
+            ->andFilterWhere(['like', 'phone', $this->phone])
             ->andFilterWhere(['like', 'message', $this->message]);
 
         return $dataProvider;

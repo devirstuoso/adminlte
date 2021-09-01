@@ -12,6 +12,8 @@ use common\modules\schools\models\SchoolGovCouncil;
 use common\modules\schools\models\SchoolCommittee;
 use common\modules\schools\models\SchoolOffice;
 
+use backend\models\ContactForm;
+
 
 
 class SchoolfController extends \yii\web\Controller
@@ -67,11 +69,22 @@ class SchoolfController extends \yii\web\Controller
         }
     }
 
-    public function actionContainerOffice($id)
+    public function actionContainerOffice($id, $school)
     {
         $members = $this->findSchoolOffModel($id);
         if(sizeof($members)>0) {
-            return $this->renderAjax('office', ['members' => $members]);
+            return $this->renderAjax('office', ['members' => $members, 'school_name' => $school]);
+        }
+        else{
+            return $this->renderAjax('comsoon');
+        }
+    }
+
+    public function actionContainerOffice2($id, $school_name)
+    {
+        $member = $this->findOffMemberModel($id);
+        if(!is_null($member)) {
+           return $this->renderAjax('office-2', ['member' => $member, 'school_name' => $school_name]);
         }
         else{
             return $this->renderAjax('comsoon');
@@ -80,7 +93,19 @@ class SchoolfController extends \yii\web\Controller
 
     public function actionContainerContact()
     {
-        return $this->renderAjax('contact');
+        $contactform = new ContactForm();
+        if ($contactform->load(Yii::$app->request->post())) {
+            $contactform->id = $this::cf_keyValue();
+            if ($contactform->save ()) {
+                // $contactform->sendEmail();
+                Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
+            } else {
+                Yii::$app->session->setFlash('error', 'There was an error sending your message.');
+            }
+            return $this->refresh();
+        }
+
+        return $this->renderAjax('contact', [ 'contactform' => $contactform ]);
     }
 
     public function actionContainerComsoon()
@@ -144,6 +169,25 @@ class SchoolfController extends \yii\web\Controller
         }
         else
             throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
+    }
+
+    protected function findOffMemberModel($id)
+    {
+        if (($models = SchoolOffice::find()->where(['id' => $id])->one()) !== null) {
+            return $models;
+        }
+        else
+            throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
+    }
+
+    protected function cf_keyValue()
+    {   $last = ContactForm::find()->orderBy(['id' => SORT_DESC])->one();
+
+        if ($last->id == 'enquiry') {
+        return 'enquiry000001';   
+        }
+        $id = $last->id;
+        return ++$id;
     }
 
 }

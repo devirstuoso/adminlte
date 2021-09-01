@@ -27,9 +27,7 @@ class AppAsset extends AssetBundle
     public $js = [
         'js/nicepage.js',
         'js/jquery.js',
-        'js/query.js',
         // 'js/jquery-2.js',
-        // 'js/schools.js'
 
     ];
     public $depends = [
