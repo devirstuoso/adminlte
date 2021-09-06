@@ -17,8 +17,8 @@ $this->params['breadcrumbs'][] = $school->school_name;
   <section class="skrollable u-clearfix u-image u-section-1" id="sec-9737" data-image-width="1820" data-image-height="520">
     <div class="u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-gradient u-group u-shape-rectangle u-group-1">
       <div class="u-container-layout u-container-layout-1">
-        <h3 class="u-text u-text-custom-color-6 u-text-default u-text-1"  style="font-size: 3em; font-weight: 800;" id="heading-1"></h3>
-        <h1 class="u-text u-text-default u-text-1" style="font-size: 3em; margin: 20px 200px; color: gold;"  id="heading-2" ><?= Html::encode($this->title) ?></h1>
+        <h3 class="u-text u-text-custom-color-6 u-text-default u-text-1" id="heading-1"></h3>
+        <h1 class="u-text u-text-default u-text-1" style="font-size: 3em; margin: 2vw 10vw; color: gold;"  id="heading-2" ><?= Html::encode($this->title) ?></h1>
         <div class="u-container-style u-group u-hidden-md u-hidden-sm u-hidden-xs u-shape-rectangle u-group-2" >
           <div class="u-container-layout u-container-layout-2"><?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : []]) ?>
@@ -120,7 +120,7 @@ $this->params['breadcrumbs'][] = $school->school_name;
                 <!-- Gallery Carosel End  -->
                 
                 <!-- Menu Buttons -->
-                <div class="u-align-right u-container-style u-expanded-width u-group u-hidden-sm u-hidden-xs u-shape-rectangle u-group-1">
+                <div class="u-align-right u-container-style u-expanded-width u-group  u-shape-rectangle u-group-1">
                   <div class="u-container-layout u-valign-middle-lg u-valign-middle-xl u-container-layout-2">
                     <div class="u-expanded-width u-list u-list-1">
 
@@ -181,7 +181,7 @@ $this->params['breadcrumbs'][] = $school->school_name;
         <div class="u-size-30">
           <div class="u-layout-row">
 
-            <div class="u-align-left u-container-style u-layout-cell u-size-14 u-layout-cell-2 ">
+            <div class="u-align-left u-container-style u-layout-cell u-size-14 u-layout-cell-2 u-hidden-sm u-hidden-xs">
               <div class="u-container-layout u-container-layout-11 "> 
                 <div class="u-container-style u-grey-5 u-group u-group-2  sticky-1" data-animation-name="fadeIn" data-animation-duration="3000" data-animation-delay="0" data-animation-direction="" >
                   <div class="u-container-layout u-container-layout-12 ">
@@ -279,7 +279,36 @@ $this->params['breadcrumbs'][] = $school->school_name;
      $this->registerJs($ajax);
 
 
-     $sticky = "
+     $cssClasses = <<<CS
+
+        .sidemenu-pos-fixed{
+          top: 15vh;
+          left: 4.7vw;
+        }
+
+        .sidemenu-pos-relat{
+          top: 0vh;
+          left: 0vw;
+        }
+
+        @media (max-width: 1199px) {
+        .sidemenu-pos-fixed{
+          top: 15vh;
+          left: 4.7vw;
+          }
+        }
+
+        @media (max-width: 991px) {
+        .sidemenu-pos-fixed{
+          top: 15vh;
+          left: 4.7vw;
+          }
+        }
+CS;
+
+
+     $sticky = <<<JS
+
         $(document).ready(function() {
           var sticky_1_Top = $('.sticky-1').offset().top;
           // var sticky_1_Bottom = $('.sticky-1').offset().top+ $('.sticky-1').outerHeight();
@@ -287,10 +316,8 @@ $this->params['breadcrumbs'][] = $school->school_name;
 
              $(window).scroll(function() {
                 var windowTop = $(window).scrollTop()+ $(window).scrollTop()/4.2;
-                var windowBottom = $(document).height()-900;
-                console.log('windowBottom '+windowBottom);
+                var windowBottom = $(document).height()-1500;
                 var sticky_1_curr = $('.sticky-1').offset().top;
-                console.log('sticky_1_curr '+sticky_1_curr); 
 
                 if (sticky_1_curr > windowBottom )
                 {
@@ -298,16 +325,19 @@ $this->params['breadcrumbs'][] = $school->school_name;
                 } else{
                 if (sticky_1_Top < windowTop) {
                   $('.sticky-1').css({'visibility':'visible', 'position':'fixed', 'top': '15vh', 'left': '4.7vw','z-index':'7' });
+                  if(window.matchMedia("(max-width: 1199px)").matches) {
+                    $('.sticky-1').css({'top': '15vh', 'left': '2.5vw'});
+                  }
+                  else if(window.matchMedia("(max-width: 1199px)").matches) {
+                    $('.sticky-1').css({'top': '15vh', 'left': '1.5vw'});
+                  }
                  } else {
                   $('.sticky-1').css({'visibility':'visible','position':'relative', 'top': '0', 'left': '0', 'z-index':'1'});
                 }
-              }
-          // alert(windowBottom);
-
-             
+              }             
             })
           });
-          "; 
+JS; 
       $this->registerJs($sticky);
 
 
