@@ -9,11 +9,11 @@ $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,
 ?>
 
 
-
+<br/>
 <header class="u-clearfix u-header u-sticky u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-white u-header" id="sec-e741">
   <div class="u-clearfix u-sheet u-sheet-1">
     <nav class="u-align-left u-menu u-menu-dropdown u-menu-open-right u-offcanvas u-menu-1" data-responsive-from="MD">
-      <div class="menu-collapse" style="font-size: 0.875rem; letter-spacing: 0px; font-weight: 700;">
+      <div class="menu-collapse hamburger">
         <a class="u-button-style u-custom-active-border-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link" href="" style="font-size: calc(1em + 2px); color: rgb(17, 17, 17) !important;">
           <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-e524"></use></svg>
           <svg class="u-svg-content" viewBox="0 0 512 512" id="svg-e524"><path d="m464.883 64.267h-417.766c-25.98 0-47.117 21.136-47.117 47.149 0 25.98 21.137 47.117 47.117 47.117h417.766c25.98 0 47.117-21.137 47.117-47.117 0-26.013-21.137-47.149-47.117-47.149z" fill="#6e00b5"></path><path d="m464.883 64.267c25.98 0 47.117 21.137 47.117 47.149 0 25.98-21.137 47.117-47.117 47.117h-208.883v-94.266z" fill="#500093"></path><path d="m464.883 208.867h-417.766c-25.98 0-47.117 21.136-47.117 47.149 0 25.98 21.137 47.117 47.117 47.117h417.766c25.98 0 47.117-21.137 47.117-47.117 0-26.013-21.137-47.149-47.117-47.149z" fill="#6e00b5"></path><path d="m464.883 208.867c25.98 0 47.117 21.137 47.117 47.149 0 25.98-21.137 47.117-47.117 47.117h-208.883v-94.267h208.883z" fill="#500093"></path><path d="m464.883 353.467h-417.766c-25.98 0-47.117 21.137-47.117 47.149 0 25.98 21.137 47.117 47.117 47.117h417.766c25.98 0 47.117-21.137 47.117-47.117 0-26.012-21.137-47.149-47.117-47.149z" fill="#6e00b5"></path><path d="m464.883 353.467c25.98 0 47.117 21.137 47.117 47.149 0 25.98-21.137 47.117-47.117 47.117h-208.883v-94.267h208.883z" fill="#500093"></path></svg>
@@ -28,7 +28,7 @@ $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,
           </li>
           <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" style="padding: 10px 0px;">Governance</a>
             <div class="u-nav-popup">
-              <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-2">
+              <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-1">
                 <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['/site/coming-soon'])?>">Message Chairmen GC</a>
                 </li>
                 <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['/site/coming-soon'])?>">Message CEO</a>
@@ -42,7 +42,7 @@ $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,
           </li>
           <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" href="<?= Url::to(['/schools'])?>" style="padding: 10px 0px;">Schools</a>
             <div class="u-nav-popup">
-              <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-3">
+              <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-1">
 
                 <?php foreach ($schools as $school):?>
                   <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['/schools/schoolf', 'id' => $school->school_id])?>">Delhi School of <?php echo $school->school_name;?></a>
@@ -55,7 +55,7 @@ $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,
           </li>
           <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" href="" style="padding: 10px 0px;">Activities</a>
             <div class="u-nav-popup">
-              <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-4">
+              <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-1">
                 <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['/site/coming-soon'])?>">Research</a>
                 </li>
                 <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['/site/coming-soon'])?>">Teaching</a>
@@ -69,7 +69,7 @@ $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,
           </li>
           <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" href="" style="padding: 10px 0px;">Careers</a>
             <div class="u-nav-popup">
-              <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-5">
+              <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-1">
                 <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['/site/coming-soon'])?>">Post Doctoral Fellowships</a>
                 </li>
               </ul>
@@ -88,14 +88,14 @@ $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,
           <div class="u-sidenav-overflow">
             <div class="u-menu-close">
             </div>
-            <ul class="u-align-center-lg u-align-center-xl u-align-left-md u-align-left-sm u-align-left-xs u-nav u-popupmenu-items u-spacing-14 u-unstyled u-nav-6">
+            <ul class="u-align-center-lg u-align-center-xl u-align-left-md u-align-left-sm u-align-left-xs u-nav u-popupmenu-items u-spacing-14 u-unstyled u-nav-2">
               <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/index'])?>" style="padding: 10px 0px;">Home</a>
               </li>
               <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/about'])?>" style="padding: 10px 0px;">About IoE</a>
               </li>
               <li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 0px;">Governance</a>
                 <div class="u-nav-popup">
-                  <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-7">
+                  <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-2">
                     <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/coming-soon'])?><?= Url::to(['/site/coming-soon'])?><?= Url::to(['/site/coming-soon'])?>">Message Chairmen GC</a>
                     </li>
                     <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/coming-soon'])?><?= Url::to(['/site/coming-soon'])?>">Message CEO</a>
@@ -110,7 +110,7 @@ $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,
               <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/schools'])?>" style="padding: 10px 0px;">Schools</a>
                 <div class="u-nav-popup">
 
-                  <ul class="u-h-spacing-100 u-nav u-unstyled u-v-spacing-15 u-nav-8">
+                  <ul class="u-h-spacing-100 u-nav u-unstyled u-v-spacing-15 u-nav-2">
                     
                     <?php foreach ($schools as $school):?>
                       
@@ -123,7 +123,7 @@ $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,
               </li>
               <li class="u-nav-item"><a class="u-button-style u-nav-link" href="" style="padding: 10px 0px;">Activities</a>
                 <div class="u-nav-popup">
-                  <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-9">
+                  <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-2">
                     <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/coming-soon'])?>">Research</a>
                     </li>
                     <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/coming-soon'])?>">Teaching</a>
@@ -137,7 +137,7 @@ $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,
               </li>
               <li class="u-nav-item"><a class="u-button-style u-nav-link" href="" style="padding: 10px 0px;">Careers</a>
                 <div class="u-nav-popup">
-                  <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-10">
+                  <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-2">
                     <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/coming-soon'])?>">Post Doctoral Fellowships</a>
                     </li>
                   </ul>

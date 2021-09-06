@@ -195,7 +195,7 @@
 }
 
 .school-home .u-section-2 .u-layout-cell-2 {
-  min-height: 1000px;
+  min-height: 100px;
 }
 
 .school-home .u-section-2 .u-container-layout-11 {
@@ -211,7 +211,7 @@
 }
 
 .school-home .u-section-2 .u-container-layout-12 {
-  padding: 0 15px;
+  padding: 0 0 0 10px;
 }
 
 .school-home .u-section-2 .u-table-1 {
@@ -368,7 +368,7 @@
   }
 
   .school-home .u-section-2 .u-layout-cell-1 {
-    min-height: 613px;
+    min-height: 100px;
   }
 
   .school-home .u-section-2 .u-gallery-1 {
@@ -476,7 +476,7 @@
   }
 
   .school-home .u-section-2 .u-table-1 {
-    width: 171px;
+    width: 100%;
   }
 
   .school-home .u-section-2 .u-btn-9 {
@@ -537,7 +537,7 @@
   }
 
   .school-home .u-section-2 .u-layout-cell-1 {
-    min-height: 576px;
+    min-height: 100px;
   }
 
   .school-home .u-section-2 .u-group-1 {
@@ -625,7 +625,7 @@
   }
 
   .school-home .u-section-2 .u-group-2 {
-    width: 150px;
+    width: 18vw;
   }
 
   .school-home .u-section-2 .u-container-layout-12 {
@@ -634,7 +634,7 @@
   }
 
   .school-home .u-section-2 .u-table-1 {
-    width: 120px;
+    width: 154px;
   }
 
   .school-home .u-section-2 .u-btn-9 {
@@ -854,7 +854,7 @@
 
 /*table Governing & Committee*/
 .school-home #ajax-content .tb .u-table-1 {
-  width: 1274px;
+  width: 60vw;
   margin: 20px auto;
 }
 
@@ -920,8 +920,14 @@
   }
 
   .school-home #ajax-content .tb .u-table-1 {
-    width: 940px;
+    width: 70vh;
   }
+
+  .school-home #ajax-content .tb .u-table-cell-2 {
+  border-style: solid;
+  padding: 10px 10px 10px 40px;
+  font-size: 1rem;
+}
 }
 
 @media (max-width: 991px) {
@@ -940,7 +946,7 @@
   }
 
   .school-home #ajax-content .tb .u-table-1 {
-    width: 720px;
+    width: 64vw;
   }
 
   .school-home #ajax-content .tb .u-table-cell-1 {

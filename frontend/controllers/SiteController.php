@@ -142,28 +142,6 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
-    /**
-     * Displays contact page.
-     *
-     * @return mixed
-     */
-    // public function actionContact()
-    // {
-    //     $model = new ContactForm();
-    //     if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-    //         if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
-    //             Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
-    //         } else {
-    //             Yii::$app->session->setFlash('error', 'There was an error sending your message.');
-    //         }
-
-    //         return $this->refresh();
-    //     } else {
-    //         return $this->render('contact', [
-    //             'model' => $model,
-    //         ]);
-    //     }
-    // }
 
     /**
      * Displays about page.
@@ -306,6 +284,7 @@ class SiteController extends Controller
     public function actionLeadership()
     {
         $leaders = new Leadership();
+        // $leaders = $this->findLeadershipModel();
 
         return $this->render('leadership', ['leaders' => $leaders]);
     }
@@ -315,6 +294,13 @@ class SiteController extends Controller
         $leader = $this->findLeaderModel($id);
 
         return $this->render('leadership-2', ['leader' => $leader]);
+    }
+
+    public function actionSecretariat()
+    {   
+        // $staffs = $this->findSecrModels();
+        $staffs = new Leadership();
+        return $this->render('secretariat', ['staffs' => $staffs]);
     }
 
     public function actionGovCouncil()
@@ -349,6 +335,14 @@ class SiteController extends Controller
         throw new NotFoundHttpException('The requested page doesn\'t exist.' );
     }
 
+    protected function findLeadershipModel()
+    {
+        if (($model = Leadership::find()->all()) !== null) {
+            return $model;
+        }
+        throw new NotFoundHttpException('The requested page doesn\'t exist.' );
+    }
+
     protected function findLeaderModel($id)
     {
         if (($model = Leadership::findOne($id)) !== null) {
@@ -356,6 +350,15 @@ class SiteController extends Controller
         }
         throw new NotFoundHttpException('The requested page doesn\'t exist.' );
     }
+
+    protected function findSecrModels()
+    {
+        if (($model = Leadership::find()->all()) !== null) {
+            return $model;
+        }
+        throw new NotFoundHttpException('The requested page doesn\'t exist.' );
+    }
+    
     protected function cf_keyValue()
     {   $last = ContactForm::find()->orderBy(['id' => SORT_DESC])->one();
 

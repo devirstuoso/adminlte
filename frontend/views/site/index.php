@@ -328,7 +328,9 @@ echo Yii::getAlias('@backend_url').'<br>';?> -->
 
 
               <!-- Contact Form -->
-              <?php echo $this->renderAjax('contact', ['contactform' => $contactform]); ?>
+              <div id="home-form">
+                <?php echo $this->renderAjax('contact', ['contactform' => $contactform]); ?>
+              </div>
               <!-- Contact Form -->
 
 

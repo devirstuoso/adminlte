@@ -1,3 +1,81 @@
+.leadership .u-section-sec {
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("../uploads/secretariat.jpg");
+  background-position: 50% 50%;
+  background-size: auto 280%;
+}
+
+.leadership .u-section-sec .u-sheet-1 {
+  min-height: 445px;
+}
+
+.leadership .u-section-sec .u-text-1 {
+  font-size: 3rem;
+  margin: 53px -38px 0;
+}
+
+.leadership .u-section-sec .u-text-2 {
+  margin: 35px -38px 60px;
+}
+
+@media (max-width: 1199px) {
+  .leadership .u-section-sec .u-sheet-1 {
+    min-height: 424px;
+  }
+
+  .leadership .u-section-sec .u-text-1 {
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 2.25rem;
+  }
+
+  .leadership .u-section-sec .u-text-2 {
+    font-size: 1.25rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .leadership .u-section-sec .u-sheet-1 {
+    min-height: 325px;
+  }
+}
+
+@media (max-width: 767px) {
+  .leadership .u-section-sec .u-sheet-1 {
+    min-height: 453px;
+  }
+
+  .leadership .u-section-sec .u-text-1 {
+    font-size: 1.875rem;
+  }
+
+  .leadership .u-section-sec .u-text-2 {
+    font-size: 1.125rem;
+    width: auto;
+    margin-top: 27px;
+  }
+}
+
+@media (max-width: 575px) {
+  .leadership .u-section-sec .u-sheet-1 {
+    min-height: 441px;
+  }
+
+  .leadership .u-section-sec .u-text-1 {
+    font-size: 1.25rem;
+  }
+
+  .leadership .u-section-sec .u-text-2 {
+    font-size: 0.875rem;
+    margin-top: 20px;
+  }
+}
+
+
+
+
 .leadership .u-section-leaders {
   background-image: none;
 }
