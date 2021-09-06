@@ -18,7 +18,6 @@ class DefaultController extends Controller
     public function actionIndex()
     {   
         $schools = Schools::find()->all();
-        echo '<br>';
         return $this->render('index', ['schools'=> $schools]);
     }
 
