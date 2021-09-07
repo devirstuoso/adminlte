@@ -16,6 +16,7 @@ class AppAsset extends AssetBundle
         // 'css/container.css',
         // 'css/newsevents.css',
         'css/nicepage.css',
+        'css/main.css',
         'css/home.css',
         'css/about.css',
         'css/news-events.css',

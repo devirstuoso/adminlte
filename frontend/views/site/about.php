@@ -39,6 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
               <br>At the same time, we would like to make a plea for better Government funding of higher education. It is critical for a nation that has throughout its long history valued academic pursuits and has supported teaching and the teacher more than any other vocation. If India is to have its rightful place as a leading nation in the galaxy of the largest economies, its public universities will need to lead the way and this will require public funding even as the universities must become more adept at finding resources beyond the Government. More so, in case of the University of Delhi, which is outstanding in more ways than one. While the University stands the tallest in terms of quality of teaching and research, the sheer scale of the number of courses/programmes and students is unparalleled, therefore, incomparable with other candidate institutions under IoE. The University of Delhi stands apart from all and must be seen as such for the purpose of allocation of resources. <br>
               <br>This proposal seeks funds for teaching, research and skill enhancement and development programme under a novel interdisciplinary/multi-disciplinary theme-based initiative worth Rs. 793 crores, modern amenities including hostel facilities for about 5,000 students at a budget outlay of Rs. 250 crores, and recreational facilities for resident students and staff for Rs. 100 crores, expansion and upgradation of WUS health and wellness facilities for Rs. 100 crores, faculty housing to offer a residential campus environment at a cost of Rs. 20 crores. In order to follow a need-blind admission policy and ensure that a student admitted in the University stays enrolled, we have made a provision to establish an endowment fund of Rs. 100 crores for offering scholarships/loans/freeships to the needy and deserving students. To give a flip to the creative pursuits of the University a financial plan of about Rs. 1500 crores is being submitted. 
             </p>
+            <div id="vision" style="height:5vh"></div>
             <ul class="u-align-left u-custom-font u-custom-list u-font-roboto-slab u-spacing-46 u-text u-text-custom-color-1 u-text-3">
               <li style="margin-left: 2.1em;">
                 <div class="class u-list-icon u-text-custom-color-1 u-list-icon-1">
@@ -57,6 +58,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>Motto: The motto of the University of Delhi is : Nishtha Dhriti Satyam (Firm devotion to the truth) 
               </li>
             </ul>
+            <div style="height:8vh"></div>
+
             <h2 class="u-align-left u-text u-text-body-color u-text-4">Defining Eminence</h2>
             <h3 class="u-align-left u-text u-text-body-color u-text-5"> We define eminence for our University in terms of the following dimensions:</h3>
             <div class="u-accordion u-spacing-15 u-accordion-1">

@@ -55,7 +55,7 @@ $members = $govcouncil::find()->all();
 					<tbody class="u-align-left u-custom-font u-font-titillium-web u-grey-90 u-table-alt-grey-80 u-table-body u-table-body-1">
 
 						<?php foreach ($members as $member) : ?>
-						<tr style="height: 150px;">
+						<tr>
 							<td class="u-border-1 u-border-grey-75 u-border-no-left u-border-no-right u-table-cell u-table-cell-3"><?php echo $member->name ?></td>
 							<td class="u-border-1 u-border-grey-75 u-border-no-left u-border-no-right u-table-cell u-table-cell-4"><?php echo $member->designation ?></td>
 						</tr>

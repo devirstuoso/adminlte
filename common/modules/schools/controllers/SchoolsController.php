@@ -146,11 +146,11 @@ class SchoolsController extends Controller
 
         Model::loadMultiple($modelsSlider, Yii::$app->request->post());
 
-        foreach($modelsSlider as $index => $modelSlider){
+        // foreach($modelsSlider as $index => $modelSlider){
 
-                // $modelSlider->id = $this->keyValue(SchoolSlider::className());
-                // $modelSlider->image = $this->uploadImage($modelSlider, "[{$index}]image");
-        }
+        //         // $modelSlider->id = $this->keyValue(SchoolSlider::className());
+        //         // $modelSlider->image = $this->uploadImage($modelSlider, "[{$index}]image");
+        // }
 
 
         $deletedIDs = array_diff($oldIDs, array_filter(ArrayHelper::map($modelsSlider, 'id', 'id')));

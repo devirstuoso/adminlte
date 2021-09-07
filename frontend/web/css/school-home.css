@@ -481,6 +481,7 @@
 
   .school-home .u-section-2 .u-btn-9 {
     margin-left: 0;
+    font-size: 1em;
   }
 
   .school-home .u-section-2 .u-btn-10 {
@@ -1466,6 +1467,28 @@
   .school-home #ajax-content .cs .u-sheet-1 {
     min-height: 908px;
   }
+
+  .school-home #ajax-content .cs .u-text-1 {
+  font-size: 3.5rem;
+  }
+
+.school-home #ajax-content .cs .u-text-2 {
+  font-size: 1.0rem;
+  }
+
+.school-home #ajax-content .cs .u-form-1 {
+  height: 71px;
+  width: 510px;
+  margin: 40px auto 0;
+  }
+
+.school-home #ajax-content .cs .u-btn-1 {
+    width: 100%;
+    padding: 13px;
+    margin: 0px;
+}
+}
+
 }
 
 @media (max-width: 991px) {

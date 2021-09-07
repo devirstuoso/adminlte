@@ -18,7 +18,6 @@ use yii\helpers\Url;
         </div>
         <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
         <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
-        <input type="hidden" value="" name="recaptchaResponse">
       </form>
     </div>
     <div class="u-align-center u-social-icons u-spacing-11 u-social-icons-1">

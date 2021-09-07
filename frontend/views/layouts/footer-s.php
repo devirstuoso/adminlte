@@ -4,11 +4,7 @@ use yii\helpers\Url;
 
 use common\modules\schools\models\Schools;
 
-use backend\models\Footer;
-
 $schools = Schools::find()->all();
-
-$footer = Footer::find()->one();
 
 $facebook = <<<ICON
 <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-25d5"></use></svg><svg class="u-svg-content" viewBox="0 0 512 512" x="0px" y="0px" id="svg-25d5" style="enable-background:new 0 0 512 512;"><g><g><path d="M452,0H60C26.916,0,0,26.916,0,60v392c0,33.084,26.916,60,60,60h392c33.084,0,60-26.916,60-60V60    C512,26.916,485.084,0,452,0z M472,452c0,11.028-8.972,20-20,20H338V309h61.79L410,247h-72v-43c0-16.975,13.025-30,30-30h41v-62    h-41c-50.923,0-91.978,41.25-91.978,92.174V247H216v62h60.022v163H60c-11.028,0-20-8.972-20-20V60c0-11.028,8.972-20,20-20h392    c11.028,0,20,8.972,20,20V452z"></path></g></g></svg>
@@ -38,13 +34,13 @@ ICON;
         <div class="u-align-center u-container-style u-layout-cell u-size-15 u-size-30-md u-layout-cell-1">
           <div class="u-container-layout u-valign-bottom-xs u-container-layout-1">
             <a href="<?= Url::to(['/site/index'])?>" class="u-image u-logo u-image-1" data-image-width="400" data-image-height="400">
-              <img src="<?php echo Url::to('@backend_web/').$footer->logo ;?>" class="u-logo-image u-logo-image-1" data-image-width="124">
+              <img src="<?php echo Url::to('@frontend_web').'/uploads/DU-icon.png' ;?>" class="u-logo-image u-logo-image-1" data-image-width="124">
             </a>
             <p class="u-text u-text-default u-text-1">
-              <span style="font-size: 1rem; font-weight: 700;"><?=Html::encode($footer->inst_name); ?>
+              <span style="font-size: 1rem; font-weight: 700;">University of Delhi<br>Institution of Eminence
               </span>
               <br>
-              <span style="font-size: 0.875rem;" class="u-text-grey-10"><?=Html::encode($footer->inst_addr); ?></span>
+              <span style="font-size: 0.875rem;" class="u-text-grey-10">4th/5th Floor, Maharishi Kanad Bhawan, Delhi – 110007</span>
             </p>
             <div class="u-expanded-width-xl u-grey-light-2 u-map u-map-1">
               <div class="embed-responsive">
@@ -61,8 +57,8 @@ ICON;
             <div data-position="" class="u-position u-position-1"><!--block-->
               <div class="u-block">
                 <div class="u-block-container u-clearfix"><!--block_header-->
-                  <h5 class="u-align-left u-block-header u-border-5 u-border-custom-color-6 u-border-no-left u-border-no-right u-border-no-top u-text u-v-spacing-13 u-text-2"><?=Html::encode($footer->heading_1); ?></h5>
-                  <div class="u-block-content u-text">
+                  <h5 class="u-align-left u-block-header u-border-5 u-border-custom-color-6 u-border-no-left u-border-no-right u-border-no-top u-text u-v-spacing-13 u-text-2"><!--block_header_content-->Pages<!--/block_header_content--></h5><!--/block_header--><!--block_content-->
+                  <div class="u-block-content u-text"><!--block_content_content--><!--/block_content_content-->
                   </div><!--/block_content-->
                 </div>
               </div><!--/block-->
@@ -73,13 +69,23 @@ ICON;
                   <col width="100%">
                 </colgroup>
                 <tbody class="u-table-body u-table-body-1">
-                  <?php foreach ($footer->footerContent as $index => $nav) : ?>
-                    <?php if ($nav->tab == '1') : ?>
-                      <tr style="height: 46px;">
-                        <td class="u-table-cell u-text-grey-10 u-table-cell-1"><a href="<?=Url::to($nav->link)?>"><?=Html::encode($nav->title) ?></a></td>
-                      </tr>
-                    <?php endif; ?>  
-                  <?php endforeach; ?>
+                  <tr style="height: 46px;">
+                    <td class="u-table-cell u-text-grey-10 u-table-cell-1"><a href="<?= Url::to(['/site/index'])?>/#carousel_3976">About IoE</a></td>
+                  </tr>
+                  <tr style="height: 28px;">
+                    <td class="u-table-cell u-text-grey-10 u-table-cell-1"><a href="<?= Url::to(['/site/leadership'])?>">Leadership</a><br>
+                    </td>
+                  </tr>
+                  <tr style="height: 48px;">
+                    <td class="u-table-cell u-text-grey-10 u-table-cell-1"><a href="<?= Url::to(['/site/report'])?>">Annual Self Report</a></td>
+                  </tr>
+                  <tr style="height: 27px;">
+                    <td class="u-table-cell u-text-grey-10 u-table-cell-1"><a href="<?= Url::to(['/site/career'])?>">Careers</a>
+                    </td>
+                  </tr>
+                  <tr style="height: 46px;">
+                    <td class="u-table-cell u-text-grey-10 u-table-cell-1"><a href="<?= Url::to(['/site/index'])?>/#home-form">Contact</a></td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -93,8 +99,8 @@ ICON;
             <div data-position="" class="u-position u-position-1"><!--block-->
               <div class="u-block">
                 <div class="u-block-container u-clearfix"><!--block_header-->
-                  <h5 class="u-align-left u-block-header u-border-5 u-border-custom-color-6 u-border-no-left u-border-no-right u-border-no-top u-text u-v-spacing-13 u-text-2"><?=Html::encode($footer->heading_2); ?></h5>
-                  <div class="u-block-content u-text">
+                  <h5 class="u-align-left u-block-header u-border-5 u-border-custom-color-6 u-border-no-left u-border-no-right u-border-no-top u-text u-v-spacing-13 u-text-2"><!--block_header_content-->Activities<!--/block_header_content--></h5><!--/block_header--><!--block_content-->
+                  <div class="u-block-content u-text"><!--block_content_content--><!--/block_content_content-->
                   </div><!--/block_content-->
                 </div>
               </div><!--/block-->
@@ -105,13 +111,20 @@ ICON;
                   <col width="100%">
                 </colgroup>
                 <tbody class="u-table-body u-table-body-1">
-                  <?php foreach ($footer->footerContent as $index => $nav) : ?>
-                    <?php if ($nav->tab == '2') : ?>
-                      <tr style="height: 46px;">
-                        <td class="u-table-cell u-text-grey-10 u-table-cell-1"><a href="<?=Url::to($nav->link)?>"><?=Html::encode($nav->title) ?></a></td>
-                      </tr>
-                    <?php endif; ?>  
-                  <?php endforeach; ?>
+                  <tr style="height: 46px;">
+                    <td class="u-table-cell u-text-grey-10 u-table-cell-1"><a href="<?= Url::to(['/site/coming-soon'])?>">Research</a></td>
+                  </tr>
+                  <tr style="height: 28px;">
+                    <td class="u-table-cell u-text-grey-10 u-table-cell-1"><a href="<?= Url::to(['/site/coming-soon'])?>">Teaching</a><br>
+                    </td>
+                  </tr>
+                  <tr style="height: 48px;">
+                    <td class="u-table-cell u-text-grey-10 u-table-cell-1"><a href="<?= Url::to(['/site/coming-soon'])?>">Training</a></td>
+                  </tr>
+                  <tr style="height: 27px;">
+                    <td class="u-table-cell u-text-grey-10 u-table-cell-1"><a href="<?= Url::to(['/site/coming-soon'])?>">Out Reach</a>
+                    </td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -125,8 +138,8 @@ ICON;
             <div data-position="" class="u-position u-position-1"><!--block-->
               <div class="u-block">
                 <div class="u-block-container u-clearfix"><!--block_header-->
-                  <h5 class="u-align-left u-block-header u-border-5 u-border-custom-color-6 u-border-no-left u-border-no-right u-border-no-top u-text u-v-spacing-13 u-text-2"><?=Html::encode($footer->heading_3); ?></h5>
-                  <div class="u-block-content u-text">
+                  <h5 class="u-align-left u-block-header u-border-5 u-border-custom-color-6 u-border-no-left u-border-no-right u-border-no-top u-text u-v-spacing-13 u-text-2"><!--block_header_content-->Delhi Schools<!--/block_header_content--></h5><!--/block_header--><!--block_content-->
+                  <div class="u-block-content u-text"><!--block_content_content--><!--/block_content_content-->
                   </div><!--/block_content-->
                 </div>
               </div><!--/block-->
@@ -137,13 +150,11 @@ ICON;
                   <col width="100%">
                 </colgroup>
                 <tbody class="u-table-body u-table-body-1">
-                  <?php foreach ($footer->footerContent as $index => $nav) : ?>
-                    <?php if ($nav->tab == '3') : ?>
-                      <tr style="height: 46px;">
-                        <td class="u-table-cell u-text-grey-10 u-table-cell-1"><a href="<?=Url::to( $nav->link )?>"><?=Html::encode($nav->title) ?></a></td>
-                      </tr>
-                    <?php endif; ?>  
-                  <?php endforeach; ?>
+
+                 <?php foreach ($schools as $school):?>
+                  <tr style="height: 34px;"><td class="u-table-cell u-text-grey-10 u-table-cell-1"><a href="<?= Url::to(['/schools/schoolf', 'id' => $school->school_id])?>"><?php echo $school->school_name;?></a>
+                  </tr>
+                <?php endforeach;?>
               </tbody>
             </table>
           </div>

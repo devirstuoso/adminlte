@@ -1,0 +1,126 @@
+/*ERROR PAGE*/
+
+.section-error {
+  background-image: url("../uploads/wall.jpg");
+  background-position: 50% 50%;
+}
+
+.section-error .u-sheet-1 {
+  min-height: 100vh;
+  padding: 0 0 70px 0;
+}
+
+.section-error .u-group-1 {
+  width: 763px;
+  min-height: 751px;
+  background-image: none;
+  box-shadow: 6px 6px 0px 0 rgba(0,0,0,0.2);
+  margin: 129px auto 0;
+}
+
+.section-error .u-container-layout-1 {
+  padding: 50px;
+}
+
+.section-error .u-text-1 {
+  font-size: 12.5rem;
+  font-weight: 700;
+  line-height: 1;
+  margin: 0 auto;
+}
+
+.section-error .u-text-2 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  margin: 28px auto 0;
+}
+
+.section-error .u-text-3 {
+  background-image: none;
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin: 35px 1px 0;
+}
+
+.section-error .u-btn-1 {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  align-self: center;
+  text-shadow: 0 0 0 rgba(0,0,0,0);
+  font-size: 1.25rem;
+  background-image: none;
+  border-style: none;
+  margin: 56px auto 0;
+  padding: 20px 77px;
+}
+
+@media (max-width: 991px) {
+  .section-error .u-group-1 {
+    width: 720px;
+}
+
+.section-error .u-container-layout-1 {
+    padding: 30px;
+}
+
+.section-error .u-text-3 {
+    margin-left: 0;
+    margin-right: 0;
+}
+}
+
+@media (max-width: 767px) {
+  .section-error .u-sheet-1 {
+    min-height: 787px;
+}
+
+.section-error .u-group-1 {
+    min-height: 647px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    margin-right: initial;
+    margin-left: initial;
+    width: auto;
+}
+
+.section-error .u-text-2 {
+    font-size: 2.25rem;
+}
+}
+
+@media (max-width: 575px) {
+  .section-error .u-sheet-1 {
+    min-height: 740px;
+}
+
+.section-error .u-group-1 {
+    min-height: 600px;
+    width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-error .u-container-layout-1 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.section-error .u-text-1 {
+    font-size: 7.5rem;
+}
+
+.section-error .u-text-2 {
+    font-size: 1.875rem;
+}
+
+.section-error .u-text-3 {
+    font-size: 1.25rem;
+}
+
+.section-error .u-btn-1 {
+    margin-top: 40px;
+}
+}

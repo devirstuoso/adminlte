@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $school->school_name;
     <div class="u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-gradient u-group u-shape-rectangle u-group-1">
       <div class="u-container-layout u-container-layout-1">
         <h3 class="u-text u-text-custom-color-6 u-text-default u-text-1" id="heading-1"></h3>
-        <h1 class="u-text u-text-default u-text-1" style="font-size: 3em; margin: 2vw 10vw; color: gold;"  id="heading-2" ><?= Html::encode($this->title) ?></h1>
+        <h1 class="u-text u-text-default u-text-1" style=" margin: 2vw 10vw; color: gold;"  id="heading-2" ><?= Html::encode($this->title) ?></h1>
         <div class="u-container-style u-group u-hidden-md u-hidden-sm u-hidden-xs u-shape-rectangle u-group-2" >
           <div class="u-container-layout u-container-layout-2"><?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : []]) ?>
@@ -132,37 +132,37 @@ $this->params['breadcrumbs'][] = $school->school_name;
                         </div>
                         <div class="u-container-style u-list-item u-repeater-item">
                           <div class="u-container-layout u-similar-container u-valign-bottom-xl u-container-layout-4">
-                            <a  class="u-align-center u-border-13 u-border-hover-custom-color-1 u-border-white u-btn u-button-style u-none u-text-black u-text-hover-custom-color-1 u-btn-2" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-vision')?>",{id:"<?php echo $school->school_id; ?>"}).done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Vision & Objective"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Vision &amp; Objective</a>
+                            <a  class="u-align-center u-border-13 u-border-hover-custom-color-1 u-border-white u-btn u-button-style u-none u-text-black u-text-hover-custom-color-1 u-btn-2" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-vision')?>",{id:"<?php echo $school->school_id; ?>"}).done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Vision & Objective"); $("#heading-2").css({"font-size" : "3em", "color":"white"});}) '>Vision &amp; Objective</a>
                           </div>
                         </div>
                         <div class="u-align-center u-container-style u-list-item u-repeater-item">
                           <div class="u-container-layout u-similar-container u-valign-bottom-xl u-container-layout-5">
-                            <a class="u-align-center u-border-13 u-border-hover-custom-color-1 u-border-white u-btn u-button-style u-none u-text-black u-text-hover-custom-color-1 u-btn-3" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-governance')?>",{id:"<?php echo $school->school_id; ?>"}).done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Governing Body"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Governing Body</a>
+                            <a class="u-align-center u-border-13 u-border-hover-custom-color-1 u-border-white u-btn u-button-style u-none u-text-black u-text-hover-custom-color-1 u-btn-3" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-governance')?>",{id:"<?php echo $school->school_id; ?>"}).done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Governing Body"); $("#heading-2").css({"font-size" : "3em", "color":"white"});}) '>Governing Body</a>
                           </div>
                         </div>
                         <div class="u-align-center u-container-style u-list-item u-repeater-item">
                           <div class="u-container-layout u-similar-container u-valign-bottom-xl u-container-layout-6">
-                            <a class="u-align-center u-border-13 u-border-hover-custom-color-1 u-border-white u-btn u-button-style u-none u-text-black u-text-hover-custom-color-1 u-btn-4" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-committee')?>",{id:"<?php echo $school->school_id; ?>"}).done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Committee Members"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Committee Members</a>
+                            <a class="u-align-center u-border-13 u-border-hover-custom-color-1 u-border-white u-btn u-button-style u-none u-text-black u-text-hover-custom-color-1 u-btn-4" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-committee')?>",{id:"<?php echo $school->school_id; ?>"}).done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Committee Members"); $("#heading-2").css({"font-size" : "3em", "color":"white"});}) '>Committee Members</a>
                           </div>
                         </div>
                         <div class="u-align-center u-container-style u-list-item u-repeater-item">
                           <div class="u-container-layout u-similar-container u-valign-bottom-xl u-container-layout-7">
-                            <a class="u-align-center u-border-13 u-border-hover-custom-color-1 u-border-white u-btn u-button-style u-none u-text-black u-text-hover-custom-color-1 u-btn-5" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-office')?>",{id:"<?php echo $school->school_id; ?>", school:"<?php echo $school->school_name; ?>"}).done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Office Bearers"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Office Bearers</a>
+                            <a class="u-align-center u-border-13 u-border-hover-custom-color-1 u-border-white u-btn u-button-style u-none u-text-black u-text-hover-custom-color-1 u-btn-5" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-office')?>",{id:"<?php echo $school->school_id; ?>", school:"<?php echo $school->school_name; ?>"}).done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Office Bearers"); $("#heading-2").css({"font-size" : "3em", "color":"white"});}) '>Office Bearers</a>
                           </div>
                         </div>
                         <div class="u-align-center u-container-style u-list-item u-repeater-item">
                           <div class="u-container-layout u-similar-container u-valign-bottom-xl u-container-layout-8">
-                            <a class="u-align-center u-border-13 u-border-hover-custom-color-1 u-border-white u-btn u-button-style u-none u-text-black u-text-hover-custom-color-1 u-btn-6" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-comsoon')?>").done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Faculty Members"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Faculty Members</a>
+                            <a class="u-align-center u-border-13 u-border-hover-custom-color-1 u-border-white u-btn u-button-style u-none u-text-black u-text-hover-custom-color-1 u-btn-6" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-comsoon')?>").done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Faculty Members"); $("#heading-2").css({"font-size" : "3em", "color":"white"});}) '>Faculty Members</a>
                           </div>
                         </div>
                         <div class="u-align-center u-container-style u-list-item u-repeater-item">
                           <div class="u-container-layout u-similar-container u-valign-bottom-xl u-container-layout-9">
-                            <a class="u-align-center u-border-13 u-border-hover-custom-color-1 u-border-white u-btn u-button-style u-none u-text-black u-text-hover-custom-color-1 u-btn-7" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-comsoon')?>").done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("News & Events"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>News &amp; Events</a>
+                            <a class="u-align-center u-border-13 u-border-hover-custom-color-1 u-border-white u-btn u-button-style u-none u-text-black u-text-hover-custom-color-1 u-btn-7" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-comsoon')?>").done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("News & Events"); $("#heading-2").css({"font-size" : "3em", "color":"white"});}) '>News &amp; Events</a>
                           </div>
                         </div>
                         <div class="u-align-center u-container-style u-list-item u-repeater-item">
                           <div class="u-container-layout u-similar-container u-valign-bottom-xl u-container-layout-10">
-                            <a class="u-align-center u-border-13 u-border-hover-custom-color-1 u-border-white u-btn u-button-style u-none u-text-black u-text-hover-custom-color-1 u-btn-8"  onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-comsoon')?>").done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Ocassional Papers"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Ocassional Papers</a>
+                            <a class="u-align-center u-border-13 u-border-hover-custom-color-1 u-border-white u-btn u-button-style u-none u-text-black u-text-hover-custom-color-1 u-btn-8"  onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-comsoon')?>").done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Ocassional Papers"); $("#heading-2").css({"font-size" : "3em", "color":"white"});}) '>Ocassional Papers</a>
                           </div>
                         </div>
                       </div>
@@ -204,37 +204,37 @@ $this->params['breadcrumbs'][] = $school->school_name;
                           </tr>
                           <tr >
                             <td class="u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell">
-                              <a class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9"  onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-governance')?>",{id:"<?php echo $school->school_id; ?>"}).done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Governing Body"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Governing Body</a>
+                              <a class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9"  onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-governance')?>",{id:"<?php echo $school->school_id; ?>"}).done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Governing Body"); $("#heading-2").css({"font-size" : "3em", "color":"white"});}) '>Governing Body</a>
                             </td>
                           </tr>
                           <tr >
                             <td class="u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell">
-                              <a class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-committee')?>",{id:"<?php echo $school->school_id; ?>"}).done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Committee Members"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Committee</a>
+                              <a class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-committee')?>",{id:"<?php echo $school->school_id; ?>"}).done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Committee Members"); $("#heading-2").css({"font-size" : "3em", "color":"white"});}) '>Committee</a>
                             </td>
                           </tr>
                           <tr >
                             <td class="u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell">
-                              <a  class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-office')?>",{id:"<?php echo $school->school_id; ?>", school:"<?php echo $school->school_name; ?>"}).done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Office Bearers"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Office Bearers</a>
+                              <a  class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-office')?>",{id:"<?php echo $school->school_id; ?>", school:"<?php echo $school->school_name; ?>"}).done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Office Bearers"); $("#heading-2").css({"font-size" : "3em", "color":"white"});}) '>Office Bearers</a>
                             </td>
                           </tr>
                           <tr >
                             <td class="u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell">
-                             <a  class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-comsoon')?>").done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Ocassional Papers"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Ocassional Papers</a>
+                             <a  class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-comsoon')?>").done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Ocassional Papers"); $("#heading-2").css({"font-size" : "3em", "color":"white"});}) '>Ocassional Papers</a>
                            </td>
                          </tr>
                          <tr >
                           <td class="u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell">
-                           <a  class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-comsoon')?>").done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Faculty Members"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Faculty Members</a>
+                           <a  class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-comsoon')?>").done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Faculty Members"); $("#heading-2").css({"font-size" : "3em", "color":"white"});}) '>Faculty Members</a>
                          </td>
                        </tr>
                        <tr >
                         <td class="u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell">
-                          <a  class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-comsoon')?>").done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("News & Events"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>News &amp; Events</a>
+                          <a  class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-comsoon')?>").done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("News & Events"); $("#heading-2").css({"font-size" : "3em", "color":"white"});}) '>News &amp; Events</a>
                         </td>
                       </tr>
                       <tr>  
                        <td class="u-border-1 u-border-grey-dark-1 u-border-no-left u-border-no-right u-table-cell">                   
-                        <a class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-contact')?>",{id:"<?php echo $school->school_id; ?>"}).done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Contact"); $("#heading-2").css({"font-size" : "2em", "color":"white"});}) '>Contact</a>
+                        <a class="u-active-none u-align-left u-border-none u-btn u-button-style u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-9" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-contact')?>",{id:"<?php echo $school->school_id; ?>"}).done(function(data){ $("#ajax-content").html(data); $("#heading-1").text("Contact"); $("#heading-2").css({"font-size" : "3em", "color":"white"});}) '>Contact</a>
                       </td>
                     </tr>
                   </tbody>
@@ -277,35 +277,7 @@ $this->params['breadcrumbs'][] = $school->school_name;
           });';
 
      $this->registerJs($ajax);
-
-
-     $cssClasses = <<<CS
-
-        .sidemenu-pos-fixed{
-          top: 15vh;
-          left: 4.7vw;
-        }
-
-        .sidemenu-pos-relat{
-          top: 0vh;
-          left: 0vw;
-        }
-
-        @media (max-width: 1199px) {
-        .sidemenu-pos-fixed{
-          top: 15vh;
-          left: 4.7vw;
-          }
-        }
-
-        @media (max-width: 991px) {
-        .sidemenu-pos-fixed{
-          top: 15vh;
-          left: 4.7vw;
-          }
-        }
-CS;
-
+     
 
      $sticky = <<<JS
 
