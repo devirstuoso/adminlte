@@ -22,6 +22,7 @@ $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,
 
       <div class="u-custom-menu u-nav-container">
         <ul class="u-nav u-spacing-20 u-unstyled u-nav-1">
+
           <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1 fonter" href="<?= Url::to(['/site/index'])?>" style="padding: 10px 0px;">Home</a>
           </li>
           <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" href="<?= Url::to(['/site/about'])?>" style="padding: 10px 0px;">About IoE</a>
@@ -74,6 +75,8 @@ $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,
                 </li>
               </ul>
             </div>
+          </li>
+          <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" href="<?= Url::to(['/site/report'])?>" style="padding: 10px 0px;">Annual Report</a>
           </li>
           <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" href="<?= Url::to(['/site/news-events-page'])?>" style="padding: 10px 0px;">News &amp; Events</a>
           </li>
@@ -142,6 +145,8 @@ $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,
                     </li>
                   </ul>
                 </div>
+              </li>
+              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/report'])?>" style="padding: 10px 0px;">Annual Report</a>
               </li>
               <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/news-events-page'])?>" style="padding: 10px 0px;">News &amp; Events</a>
               </li>

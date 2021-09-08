@@ -153,6 +153,12 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
+    public function actionReport()
+    {
+        $filePath = Yii::getAlias('@common').'/data/files/Annual-Self-Report-21.pdf';
+
+        return Yii::$app->response->sendFile($filePath, 'Annual Self Report of year 2021' , ['inline' => true]);
+    }
     /**
      * Signs user up.
      *
