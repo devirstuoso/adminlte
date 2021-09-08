@@ -35431,7 +35431,7 @@ a.pswp__share--download:hover {
   }
 
   .u-header .u-menu-1 {
-    margin: 2vh 0 0 30vw;;
+    margin: 2vh 0 0 20vw;;
   }
 
   .u-header .u-nav-1 {
@@ -35468,7 +35468,8 @@ a.pswp__share--download:hover {
     }
 
     .u-header .u-nav-1 {
-      font-size: 0.875rem;
+      font-size: 0.84rem;
+      letter-spacing: 0px;
     }
 
     .u-header .u-image-1 {

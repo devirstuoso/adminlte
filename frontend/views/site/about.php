@@ -69,7 +69,7 @@ $this->params['breadcrumbs'][] = $this->title;
     c0.4-0.4,0.4-0.9,0-1.3c-0.4-0.4-1-0.4-1.3,0L8,10.7z"></path></svg></span>
                 </a>
                 <div class="u-accordion-active u-accordion-pane u-container-style u-shape-rectangle u-accordion-pane" id="accordion-0781" aria-labelledby="link-accordion-0781">
-                  <div class="u-container-layout u-container-layout">
+                  <div class="u-container-layout u-container-layout-3">
                     <p class="u-text u-container-text"> We aim to work towards seeing the University of Delhi become a net generator of knowledge, an innovator.</p>
                   </div>
                 </div>
@@ -80,7 +80,7 @@ $this->params['breadcrumbs'][] = $this->title;
     c0.4-0.4,0.4-0.9,0-1.3c-0.4-0.4-1-0.4-1.3,0L8,10.7z"></path></svg></span>
                 </a>
                 <div class="u-accordion-pane u-container-style u-shape-rectangle u-accordion-pane" id="accordion-4c47" aria-labelledby="link-accordion-4c47">
-                  <div class="u-container-layout u-valign-top u-container-layout">
+                  <div class="u-container-layout u-valign-top u-container-layout-3">
                     <p class="u-text u-container-text">We are very proud of the calibre of the students we admit each year as a premier university in the country. However, the University of Delhi would like to attract and retain more of Indian talent as also host high quality international talent so that we can have best quality of students from across India and the world.in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                   </div>
                 </div>
@@ -91,7 +91,7 @@ $this->params['breadcrumbs'][] = $this->title;
     c0.4-0.4,0.4-0.9,0-1.3c-0.4-0.4-1-0.4-1.3,0L8,10.7z"></path></svg></span>
                 </a>
                 <div class="u-accordion-pane u-container-style u-shape-rectangle u-accordion-pane" id="accordion-a910" aria-labelledby="link-accordion-a910">
-                  <div class="u-container-layout u-container-layout">
+                  <div class="u-container-layout u-container-layout-3">
                     <p class="u-text u-container-text"> The University of Delhi is committed to be the best quality research-driven institution that harnesses the academic life to increase societal wellbeing. As such, the University needs to engage in pursuing first-rate research relevant to our society as well as in the global context.</p>
                   </div>
                 </div>
@@ -102,7 +102,7 @@ $this->params['breadcrumbs'][] = $this->title;
     c0.4-0.4,0.4-0.9,0-1.3c-0.4-0.4-1-0.4-1.3,0L8,10.7z"></path></svg></span>
                 </a>
                 <div class="u-accordion-pane u-container-style u-shape-rectangle u-accordion-pane" id="5724" aria-labelledby="link-5724">
-                  <div class="u-container-layout u-container-layout">
+                  <div class="u-container-layout u-container-layout-3">
                     <p class="u-text u-text-default u-container-text"> The strategic plan of the University of Delhi seeks to confidently galvanize academic life in India, build a committed cadre of principled and self-assured leaders enabling them to take the nation forward, offer our young citizens necessary space and world-class opportunities, provide our scholars the environment and resources to become major contributors to global thought, and be aligned with the quality of international education that is essential to ensure India’s preeminent position as a major educational player in the world.We have thought long and hard about the metrics that we must measure ourselves to on this exciting journey and reached the conclusion that we should stay with the dimensions that are used to rank universities globally. Most of these dimensions are specifically identified in the IoE proforma and the well formulated guidelines of the MHRD for which we compliment the Ministry.We have, as an example, looked at the DU’s QS ranking scores for 2017-18 and have proposed targets for DU scores at the end of 5 years, 10 years and 15 years. These will need to be refined in consultation with the University stakeholders, but the direction of travel seems clear to us as we aim at being among the top 100 universities in 15 years’ time.This section details what we will do differently to achieve eminence along the key dimensions identified in the proforma and used by QS and Times in ranking universities. At the end of the section, we will describe specific goals on criteria used by the QS ranking system:</p>
                   </div>
                 </div>
