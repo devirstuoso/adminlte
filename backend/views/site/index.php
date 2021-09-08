@@ -16,15 +16,16 @@ $this->params['breadcrumbs'] = [['label' => $this->title]];
         <div class="col-lg-12">
             <?= widgets\Alert::widget([
                 'type' => 'success',
-                'body' => '<h3>Now you are login! '.$session->get('username').'</h3>',
-                'title' => 'Welcome Back',
+                'body' => '<h3>&nbsp&nbspNow you are login!</h3>',
+                'title' => 'Welcome Back '.$session->get('username'),
                 'icon' => 'fa door-open',
 
             ]) ?>
         </div> 
-
     </div>
 </div>
+
+<?php echo $this->render('inbox'); ?>
 
 
 <?php 
