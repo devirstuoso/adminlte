@@ -32,7 +32,7 @@ return [
     'footer0004' => [
         'title' => 'Careers',
         'tab' => '1',
-        'link' => 'index.php?r=site/careers',
+        'link' => 'index.php?r=site/career',
         'id' => 'footer0004',
         'content_id' => 'footer',
     ],

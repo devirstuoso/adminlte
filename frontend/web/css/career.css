@@ -1,0 +1,277 @@
+.career-section-1 {
+  background-image: none;
+}
+
+.career-section-1 .u-sheet-1 {
+  min-height: 826px;
+}
+
+.career-section-1 .u-text-1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 60px auto 0;
+}
+
+.career-section-1 .u-text-2 {
+  line-height: 2;
+  font-size: 1.25rem;
+  margin: 73px 0 0;
+}
+
+.career-section-1 .u-btn-1 {
+  border-style: solid;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.875rem;
+  align-self: center;
+  background-image: none;
+  box-shadow: 2px 7px 20px 0 rgba(0,0,0,0.35);
+  margin: 148px auto 60px auto;
+  padding: 10px 50px 10px 50px;
+}
+
+.btn-left {
+  margin-left: 10px !important;
+}
+
+.btn-right {
+  margin-left: 940px !important;
+  margin-top: -106px !important;
+}
+
+
+@media (max-width: 1199px) {
+  .career-section-1 .u-text-2 {
+    line-height: 2.2;
+  }
+
+  .career-section-1 .u-btn-1 {
+    margin-top: 158px;
+  }
+
+  .btn-right {
+   margin-left: 701px !important;
+ }
+}
+
+@media (max-width: 991px) {
+  .career-section-1 .u-text-1 {
+    font-size: 2.25rem;
+  }
+
+  .career-section-1 .u-text-2 {
+    font-size: 1.125rem;
+    width: auto;
+    margin-top: 43px;
+  }
+
+  .career-section-1 .u-btn-1 {
+    margin-top: 124px;
+    padding: 10px 26px 10px;
+  }
+
+  .btn-right {
+   margin-left: 580px !important;
+   margin-top: -116px !important;
+ }
+}
+
+@media (max-width: 767px) {
+  .career-section-1 .u-sheet-1 {
+    min-height: 695px;
+  }
+
+  .career-section-1 .u-text-1 {
+    margin-top: 73px;
+  }
+
+  .career-section-1 .u-text-2 {
+    line-height: 2;
+  }
+
+  .career-section-1 .u-btn-1 {
+    margin-top: 103px;
+  }
+
+  .btn-right {
+   margin-left: 380px !important;
+  }
+
+}
+
+@media (max-width: 575px) {
+  .career-section-1 .u-sheet-1 {
+    min-height: 605px;
+  }
+
+  .career-section-1 .u-text-1 {
+    font-size: 1.875rem;
+    width: auto;
+    margin-top: 60px;
+    margin-left: 23px;
+    margin-right: 23px;
+  }
+
+  .career-section-1 .u-text-2 {
+    line-height: 1.8;
+    font-size: 1rem;
+    margin-top: 34px;
+  }
+
+  .career-section-1 .u-btn-1 {
+    font-size: 0.75rem;
+    margin-top: 60px;
+    padding: 6px 11px 6px;
+  }
+
+.career-section-1 .btn-left {
+    margin-left: auto !important;
+  }
+
+  .btn-right {
+    margin-left: auto !important;
+    margin-top: -30px !important;
+  }
+}
+
+
+
+
+
+.career-section-2 {
+  background-image: none;
+}
+
+.career-section-2 .u-sheet-1 {
+  min-height: 826px;
+}
+
+.career-section-2 .u-list-1 {
+  width: 1406px;
+  margin: 23px -133px 60px;
+}
+
+.career-section-2 .u-repeater-1 {
+  min-height: 700px;
+  grid-auto-columns: 100%;
+  grid-template-columns: 100%;
+  grid-gap: 10px 10px;
+}
+
+.career-section-2 .u-container-layout-1 {
+  padding: 30px;
+}
+
+.career-section-2 .u-text-1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0 auto 0 0;
+}
+
+.career-section-2 .u-btn-1 {
+  border-style: none;
+  background-image: none;
+  box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.4);
+  margin: -48px 17px 0 auto;
+  padding: 9px 30px 10px;
+}
+
+.career-section-2 .u-text-2 {
+  line-height: 2;
+  font-size: 1.25rem;
+  margin: 21px 0 0;
+}
+
+@media (max-width: 1199px) {
+  .career-section-2 .u-list-1 {
+    width: 940px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .career-section-2 .u-btn-1 {
+    margin-right: 0;
+    font-size: 1rem;
+  }
+
+}
+
+@media (max-width: 991px) {
+  .career-section-2 .u-list-1 {
+    margin-right: initial;
+    margin-left: initial;
+    width: auto;
+  }
+
+  .career-section-2 .u-repeater-1 {
+    min-height: 596px;
+  }
+
+  .career-section-2 .u-text-1 {
+    font-size: 2.25rem;
+  }
+
+  .career-section-2 .u-btn-1 {
+    margin-top: -39px;
+    padding: 7px 25px;
+  }
+
+  .career-section-2 .u-text-2 {
+    line-height: 1.8;
+    font-size: 1.125rem;
+    margin-top: 12px;
+  }
+
+
+}
+
+@media (max-width: 767px) {
+  .career-section-2 .u-container-layout-1 {
+    padding: 24px 10px;
+  }
+
+  .career-section-2 .u-text-1 {
+    font-size: 1.875rem;
+    margin-top: 6px;
+  }
+
+  .career-section-2 .u-btn-1 {
+    font-size: 0.875rem;
+    margin-top: -34px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .career-section-2 .u-text-2 {
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 575px) {
+  .career-section-2 .u-sheet-1 {
+    min-height: 1063px;
+  }
+
+  .career-section-2 .u-repeater-1 {
+    min-height: 713px;
+  }
+
+  .career-section-2 .u-text-1 {
+    font-size: 1.5rem;
+    width: auto;
+    margin-left: auto;
+  }
+
+  .career-section-2 .u-btn-1 {
+    font-size: 0.75rem;
+    margin-top: 12px;
+    margin-right: auto;
+  }
+
+  .career-section-2 .u-text-2 {
+    font-size: 0.875rem;
+    width: auto;
+    margin-top: 23px;
+  }
+}
