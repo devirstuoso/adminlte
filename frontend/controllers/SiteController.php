@@ -1,8 +1,6 @@
 <?php
 namespace frontend\controllers;
 
-use frontend\models\ResendVerificationEmailForm;
-use frontend\models\VerifyEmailForm;
 use Yii;
 use yii\base\InvalidArgumentException;
 use yii\web\BadRequestHttpException;
@@ -13,7 +11,6 @@ use common\models\LoginForm;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
-// use frontend\models\ContactForm;
 
 use backend\models\HomeSlider;
 use backend\models\UpdatesPanel;
@@ -22,6 +19,7 @@ use backend\models\NewsEvents;
 use backend\models\Leadership;
 use backend\models\ContactForm;
 use backend\models\GovCouncil;
+use backend\models\Career;
 
 /**
  * Site controller
@@ -316,6 +314,36 @@ class SiteController extends Controller
         return $this->render('governingCouncil', ['govcouncil' => $govcouncil]);
     }
 
+
+    // Career Page
+    public function actionCareer()
+    {
+        $careers = $this->findCareerModels();
+        return $this->render('career', ['careers' => $careers]);
+    }
+    public function actionCareer1($id)
+    {
+        $career = $this->findCareerModel($id);
+        return $this->render('career-1', ['career' => $career]);
+    }
+
+    public function actionCareer2($id)
+    {
+        $career = $this->findCareerModel($id);
+        return $this->render('career-2', ['career' => $career]);
+    }
+
+    public function actionDownloadCareer($id)
+    {
+        $career = $this->findCareerModel($id);
+        $filePath = Yii::getAlias('@backend/web/').$career->download_link;
+        return Yii::$app->response->sendFile($filePath, 'Advertisement.pdf', [ 'mimeType' => 'application/pdf']);
+
+    }
+
+    // End of Career Page
+
+
     public function actionSchools()
     {
         return $this->render('schools');
@@ -361,6 +389,22 @@ class SiteController extends Controller
     {
         if (($model = Leadership::find()->all()) !== null) {
             return $model;
+        }
+        throw new NotFoundHttpException('The requested page doesn\'t exist.' );
+    }
+
+    protected function findCareerModel($id)
+    {
+        if (($model = Career::findOne($id)) !== null) {
+            return $model;
+        }
+        throw new NotFoundHttpException('The requested page doesn\'t exist.' );
+    }
+
+        protected function findCareerModels()
+    {
+        if (($models = Career::find()->all()) !== null) {
+            return $models;
         }
         throw new NotFoundHttpException('The requested page doesn\'t exist.' );
     }
