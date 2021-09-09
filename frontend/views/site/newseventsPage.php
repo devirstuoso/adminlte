@@ -44,20 +44,19 @@ function hyphen_f($dt){
 ?>
 
 
-<div class="about">
-  <section class="skrollable u-clearfix u-image u-section-1" id="sec-9737" data-image-width="1820" data-image-height="520">
-    <div class="u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-gradient u-group u-shape-rectangle u-group-1">
-      <div class="u-container-layout u-container-layout-1">
-        <h1 class="u-text u-text-custom-color-6 u-text-default u-text-1"><?= Html::encode($this->title) ?></h1>
-        <div class="u-container-style u-group u-hidden-md u-hidden-sm u-hidden-xs u-shape-rectangle u-group-2">
-          <div class="u-container-layout u-container-layout-2"><?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : []]) ?>
-          </div>
+<section class="skrollable u-clearfix u-image bread-section-1" id="sec-9737" data-image-width="1820" data-image-height="520">
+  <div class="u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-gradient u-group u-shape-rectangle u-group-1">
+    <div class="u-container-layout u-container-layout-1">
+      <h1 class="u-text u-text-custom-color-6 u-text-default u-text-1"><?= Html::encode($this->title) ?></h1>
+      <div class="u-container-style u-group u-hidden-md u-hidden-sm u-hidden-xs u-shape-rectangle u-group-2">
+        <div class="u-container-layout u-container-layout-2"><?= Breadcrumbs::widget([
+          'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : []]) ?>
         </div>
       </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>
+
 
 
 <div class="news-events">
@@ -128,25 +127,25 @@ function hyphen_f($dt){
 </div>
 
 <?php
-  $sticky = <<<JS
-      $(document).ready(function() {
-      var sticky_1_Top = $('.sticky-1').offset().top;
-      var sticky_2_Top = $('.sticky-2').offset().top;
-      $(window).scroll(function() {
-        var windowTop = $(window).scrollTop()+ $(window).scrollTop()/7;
-        if (sticky_1_Top < windowTop) {
-          $('.sticky-1').css({'position':'fixed', 'z-index':'9','background-color':'#a19abd', 'padding-right':'100px'});
-        } else {
-          $('.sticky-1').css({'position':'relative', 'z-index':'1', 'background-color':'transparent', 'padding-right':'0px'});
-        }
-        if (sticky_2_Top < windowTop) {
-          $('.sticky-2').css({'position':'fixed', 'z-index':'9','background-color':'#a19abd', 'padding-right':'50px'});
-          $('.sticky-1').css({'position':'relative', 'z-index':'1'});
+$sticky = <<<JS
+$(document).ready(function() {
+  var sticky_1_Top = $('.sticky-1').offset().top;
+  var sticky_2_Top = $('.sticky-2').offset().top;
+  $(window).scroll(function() {
+    var windowTop = $(window).scrollTop()+ $(window).scrollTop()/7;
+    if (sticky_1_Top < windowTop) {
+      $('.sticky-1').css({'position':'fixed', 'z-index':'9','background-color':'#a19abd', 'padding-right':'100px'});
+      } else {
+        $('.sticky-1').css({'position':'relative', 'z-index':'1', 'background-color':'transparent', 'padding-right':'0px'});
+      }
+      if (sticky_2_Top < windowTop) {
+        $('.sticky-2').css({'position':'fixed', 'z-index':'9','background-color':'#a19abd', 'padding-right':'50px'});
+        $('.sticky-1').css({'position':'relative', 'z-index':'1'});
         } else {
           $('.sticky-2').css({'position':'relative', 'z-index':'1', 'background-color':'transparent', 'padding-right':'0px'});
         }
-      });
-    });
-  JS; 
-  $this->registerJs($sticky);
-?>
+        });
+        });
+JS; 
+        $this->registerJs($sticky);
+      ?>

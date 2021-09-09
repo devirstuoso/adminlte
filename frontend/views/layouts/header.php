@@ -1,9 +1,12 @@
 <?php 
+use yii\helpers\Html;
 use yii\helpers\Url;
 
 use common\modules\schools\models\Schools;
+use backend\models\Career;
 
 $schools = Schools::find()->all();
+$careers = Career::find()->all();
 
 $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i");
 ?>
@@ -46,7 +49,7 @@ $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,
               <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-1">
 
                 <?php foreach ($schools as $school):?>
-                  <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['/schools/schoolf', 'id' => $school->school_id])?>">Delhi School of <?php echo $school->school_name;?></a>
+                  <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['/schools/schoolf', 'id' => $school->school_id])?>">Delhi School of <?= Html::encode($school->school_name);?></a>
                   </li>
                 <?php endforeach;?>
 
@@ -68,11 +71,13 @@ $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,
               </ul>
             </div>
           </li>
-          <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" href="" style="padding: 10px 0px;">Careers</a>
+          <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" href="<?= Url::to(['/site/career'])?>" style="padding: 10px 0px;">Careers</a>
             <div class="u-nav-popup">
               <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-1">
-                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['/site/coming-soon'])?>">Post Doctoral Fellowships</a>
-                </li>
+                <?php foreach ($careers as $index => $career) : ?>
+                  <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['/site/career1', 'id' => $career->id])?>"><?= Html::encode($career->title); ?></a>
+                  </li>
+                <?php endforeach; ?>
               </ul>
             </div>
           </li>
@@ -117,7 +122,7 @@ $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,
                     
                     <?php foreach ($schools as $school):?>
                       
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/schools/schoolf', 'id' => $school->school_id])?>">Delhi School of <?php echo $school->school_name;?></a>
+                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/schools/schoolf', 'id' => $school->school_id])?>">Delhi School of <?= Html::encode($school->school_name); ?></a>
                     </li>
                    <?php endforeach; ?>
 
@@ -138,11 +143,13 @@ $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,
                   </ul>
                 </div>
               </li>
-              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="" style="padding: 10px 0px;">Careers</a>
+              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/career'])?>" style="padding: 10px 0px;">Careers</a>
                 <div class="u-nav-popup">
                   <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-2">
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/coming-soon'])?>">Post Doctoral Fellowships</a>
-                    </li>
+                    <?php foreach ($careers as $index => $career) : ?>
+                      <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/career1', 'id' => $career->id])?>"><?= Html::encode($career->title); ?></a>
+                      </li>
+                    <?php endforeach; ?>
                   </ul>
                 </div>
               </li>
@@ -158,7 +165,7 @@ $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,
       </div>
     </nav>
     <a href="<?= Url::to(['/site/index'])?>" class="u-image u-logo u-image-1" data-image-width="850" data-image-height="200">
-      <img src="<?php echo Yii::getAlias('@frontend_web/').'uploads/ioe-du-logo-2.png';?>" class="u-logo-image u-logo-image-1" data-image-width="300">
+      <img src="<?= Yii::getAlias('@frontend_web/').'uploads/ioe-du-logo-2.png';?>" class="u-logo-image u-logo-image-1" data-image-width="300">
     </a>
   </div>
 </header>
