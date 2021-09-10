@@ -3,6 +3,8 @@ namespace common\widgets;
 
 use Yii;
 
+
+
 /**
  * Alert widget renders a message from session flash. All flash messages are displayed
  * in the sequence they were assigned using setFlash. You can set message as following:
@@ -30,6 +32,7 @@ class Alert extends \yii\bootstrap\Widget
      * - key: the name of the session flash variable
      * - value: the bootstrap alert type (i.e. danger, success, info, warning)
      */
+    protected $size = ' alert alert-lg alert-dismissable';
     public $alertTypes = [
         'error'   => 'alert-danger',
         'danger'  => 'alert-danger',
@@ -37,11 +40,21 @@ class Alert extends \yii\bootstrap\Widget
         'info'    => 'alert-info',
         'warning' => 'alert-warning'
     ];
+
+    public $alertMsg = [
+        'error'   => '<h3><i class="icon fa fa-esclamation"></i> Error</h3>',
+        'danger'  => '<h3><i class="icon fa fa-esclamation"></i> Danger</h3>',
+        'success' => '<h3><i class="icon fa fa-check"></i> Success</h3>',
+        'info'    => '<h3><i class="fas fa-info"></i> Info</h3>',
+        'warning' => '<h3><i class="fas fa-exclamation"></i> Warning</h3>'
+    ];
+
+
     /**
      * @var array the options for rendering the close button tag.
      * Array will be passed to [[\yii\bootstrap\Alert::closeButton]].
      */
-    public $closeButton = [];
+    public $closeButton = ['label' =>'<i class="fas fa-times-circle"></i>'];
 
 
     /**
@@ -59,12 +72,12 @@ class Alert extends \yii\bootstrap\Widget
             }
 
             foreach ((array) $flash as $i => $message) {
-                echo \yii\bootstrap\Alert::widget([
-                    'body' => $message,
+                echo \yii\bootstrap4\Alert::widget([
+                    'body' =>  $this->alertMsg[$type] . $message,
                     'closeButton' => $this->closeButton,
                     'options' => array_merge($this->options, [
                         'id' => $this->getId() . '-' . $type . '-' . $i,
-                        'class' => $this->alertTypes[$type] . $appendClass,
+                        'class' => $this->alertTypes[$type] . $this->size . $appendClass,
                     ]),
                 ]);
             }
@@ -73,3 +86,15 @@ class Alert extends \yii\bootstrap\Widget
         }
     }
 }
+
+?>
+
+<style type="text/css">
+    .alert-lg{
+        min-height: 8vh;
+        font-size: 1.1rem;
+        align-items: center;
+        display: block;
+    }
+</style>
+

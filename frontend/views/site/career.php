@@ -5,7 +5,7 @@ use yii\helpers\Url;
 use yii\helpers\HtmlPurifier;
 use yii\widgets\Breadcrumbs;
 
-$this->title = 'Career\' Section';
+$this->title = 'Career Section';
 $this->params['breadcrumbs'][] = $this->title;
 
 ?>

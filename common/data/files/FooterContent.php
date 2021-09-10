@@ -134,4 +134,11 @@ return [
         'id' => 'footer0018',
         'content_id' => 'footer',
     ],
+    'footer0019' => [
+        'title' => 'Demo',
+        'tab' => '1',
+        'link' => 'index.php?r=site/coming-soon',
+        'id' => 'footer0019',
+        'content_id' => 'footer',
+    ],
 ];

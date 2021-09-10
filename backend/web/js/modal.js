@@ -6,7 +6,6 @@ $(function(){
 
     });
 
-
     $('#modal').on('hidden.bs.modal', function (e) { 
             for(e in tinyMCE.editors){
             tinyMCE.editors[e].destroy();
@@ -23,19 +22,9 @@ $(function(){
     $('#modalUpdate').on('hidden.bs.modal', function (e) { 
         for(e in tinyMCE.editors){
         tinyMCE.editors[e].destroy();
- }});
+        }
+    });
 
-// $('#modalButton').on(
-//     'hidden.bs.modal',
-//     function() {
-//         tinymce.EditorManager.execCommand('mceRemoveEditor', true,
-//                 '#homeslider-slider_description_text');
-//         setTimeout(function() {
-//             tinymce.EditorManager.execCommand('mceAddEditor', true,
-//                     '#homeslider-slider_description_text');
-//         }, 30);
-
-//     });
 
 });
 

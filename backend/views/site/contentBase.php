@@ -136,7 +136,7 @@ $this->params['breadcrumbs'] = [['label' => $this->title]];
 					<p>add, remove or update career sections </p>
 				</div>
 				<div class="icon">
-					<i class="fas fa-newspaper"></i>
+					<i class="fas fa-graduation-cap"></i>
 				</div>
 				<a href="<?php echo Yii::$app->urlManager->createUrl("career/index");?>" class="small-box-footer">
 					<i class="fas fa-arrow-circle-right"></i>

@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+use common\widgets\Alert;
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\CareerSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -13,21 +14,8 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <!-- Alerts -->
-<?php if (Yii::$app->session->hasFlash('success')): ?>
-    <div class="alert alert-success alert-dismissable">
-     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-     <h4><i class="icon fa fa-check"></i>Saved!</h4>
-     <?= Yii::$app->session->getFlash('success') ?>
- </div>
-<?php endif; ?>
 
-<?php if (Yii::$app->session->hasFlash('error')): ?>
-    <div class="alert alert-danger alert-dismissable">
-        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-        <h4><i class="icon fa fa-exclamation"></i>Unable to save!</h4>
-        <?= Yii::$app->session->getFlash('error') ?>
-    </div>
-<?php endif; ?>
+<?= Alert::widget(); ?>
 
 <div class="career-index">
 
@@ -45,6 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'options' => ['class' => 'gridview-header'],
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
@@ -57,7 +46,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //                 }
             //   ],
             'download_link',
-            'apply_link',
+            'apply_link:url',
 
               ['class' => 'yii\grid\ActionColumn',
                 'contentOptions' => ['class' => 'gridview-menu-buttons-container'],

@@ -12,7 +12,7 @@ use dosamigos\tinymce\TinyMce;
 
 // for tinymce widget
 $this->registerJs('tinymce.init({
-  selector: "textarea",
+  selector: "textarea.richtext",
   branding: false,
   width:    "100%",
   height:     270,
@@ -47,7 +47,7 @@ $this->registerJs('tinymce.init({
                 <label for="career-content" class="col-sm-2 col-form-label">Main Content</label>
                 <div class="col-sm-10">
                     <?= $form->field($model, 'content')->widget(TinyMce::className(), [
-                        'options' => ['rows' => 6],
+                        'options' => ['rows' => 6 , 'class' => 'richtext'],
                         'language' => 'en-US',
                         'clientOptions' => [
                             'plugins' => [

@@ -1,12 +1,12 @@
-.schools .u-section-2 {
+.schools-section-1 {
   background-image: linear-gradient(#000000, #552a69);
 }
 
-.schools .u-section-2 .u-sheet-1 {
+.schools-section-1 .u-sheet-1 {
   min-height: 1978px;
 }
 
-.schools .u-section-2 .u-group-1 {
+.schools-section-1 .u-group-1 {
   width: 1736px;
   min-height: 1803px;
   background-image: none;
@@ -14,25 +14,25 @@
   margin: 65px -298px 0;
 }
 
-.schools .u-section-2 .u-container-layout-1 {
+.schools-section-1 .u-container-layout-1 {
   padding: 46px 0;
 }
 
-.schools .u-section-2 .u-layout-wrap-1 {
+.schools-section-1 .u-layout-wrap-1 {
   width: 1600px;
   min-height: 1800px;
   margin: -1789px -230px 60px;
 }
 
-.schools .u-section-2 .u-layout-cell-1 {
+.schools-section-1 .u-layout-cell-1 {
   min-height: 600px;
 }
 
-.schools .u-section-2 .u-container-layout-2 {
+.schools-section-1 .u-container-layout-2 {
   padding: 0;
 }
 
-.schools .u-section-2 .u-group-2 {
+.schools-section-1 .u-group-2 {
   width: 488px;
   min-height: 503px;
   animation-duration: 1000ms;
@@ -40,37 +40,37 @@
   margin: 48px auto 0;
 }
 
-.schools .u-section-2 .u-container-layout-3 {
+.schools-section-1 .u-container-layout-3 {
   padding: 15px 30px 40px;
 }
 
-.schools .u-section-2 .u-icon {
+.schools-section-1 .u-icon {
   width: 295px;
   height: 295px;
   color: rgb(85, 42, 105) !important;
   margin: 0 auto;
 }
 
-.schools .u-section-2 .u-icon:hover {
+.schools-section-1 .u-icon:hover {
     color: rgb(215 211 229) !important;
     background-color: #552a69;
 }
 
-.schools .u-section-2 .u-text {
+.schools-section-1 .u-text {
   font-weight: 700;
   font-size: 2.25rem;
   margin: 24px 0 0;
 }
 
-.schools .u-section-2 .u-layout-cell-2 {
+.schools-section-1 .u-layout-cell-2 {
   min-height: 600px;
 }
 
-.schools .u-section-2 .u-container-layout-4 {
+.schools-section-1 .u-container-layout-4 {
   padding: 21px 15px;
 }
 
-.schools .u-section-2 .u-group-3 {
+.schools-section-1 .u-group-3 {
   width: 488px;
   min-height: 503px;
   animation-duration: 2750ms;
@@ -78,11 +78,11 @@
   margin: 28px auto -9px;
 }
 
-.schools .u-section-2 .u-container-layout-5 {
+.schools-section-1 .u-container-layout-5 {
   padding: 15px 30px 40px;
 }
 
-.schools .u-section-2 .u-icon-2 {
+.schools-section-1 .u-icon-2 {
   width: 297px;
   height: 297px;
   background-image: none;
@@ -90,15 +90,15 @@
   margin: 0 auto;
 }
 
-.schools .u-section-2 .u-layout-cell-3 {
+.schools-section-1 .u-layout-cell-3 {
   min-height: 600px;
 }
 
-.schools .u-section-2 .u-container-layout-6 {
+.schools-section-1 .u-container-layout-6 {
   padding: 2px 12px;
 }
 
-.schools .u-section-2 .u-group-4 {
+.schools-section-1 .u-group-4 {
   width: 488px;
   min-height: 503px;
   animation-duration: 1000ms;
@@ -106,11 +106,11 @@
   margin: 47px auto 0;
 }
 
-.schools .u-section-2 .u-container-layout-7 {
+.schools-section-1 .u-container-layout-7 {
   padding: 15px 30px 40px;
 }
 
-.schools .u-section-2 .u-icon-3 {
+.schools-section-1 .u-icon-3 {
   width: 297px;
   height: 297px;
   background-image: none;
@@ -118,15 +118,15 @@
   margin: 0 auto;
 }
 
-.schools .u-section-2 .u-layout-cell-4 {
+.schools-section-1 .u-layout-cell-4 {
   min-height: 600px;
 }
 
-.schools .u-section-2 .u-container-layout-8 {
+.schools-section-1 .u-container-layout-8 {
   padding: 30px 2px;
 }
 
-.schools .u-section-2 .u-group-5 {
+.schools-section-1 .u-group-5 {
   width: 488px;
   min-height: 502px;
   animation-duration: 2750ms;
@@ -134,26 +134,26 @@
   margin: 0 auto;
 }
 
-.schools .u-section-2 .u-container-layout-9 {
+.schools-section-1 .u-container-layout-9 {
   padding: 15px 30px 40px;
 }
 
-.schools .u-section-2 .u-icon-4 {
+.schools-section-1 .u-icon-4 {
   width: 295px;
   height: 295px;
   color: rgb(17, 17, 17) !important;
   margin: 0 auto;
 }
 
-.schools .u-section-2 .u-layout-cell-5 {
+.schools-section-1 .u-layout-cell-5 {
   min-height: 600px;
 }
 
-.schools .u-section-2 .u-container-layout-10 {
+.schools-section-1 .u-container-layout-10 {
   padding: 30px 0;
 }
 
-.schools .u-section-2 .u-group-6 {
+.schools-section-1 .u-group-6 {
   width: 488px;
   min-height: 503px;
   animation-duration: 1000ms;
@@ -161,20 +161,20 @@
   margin: 19px auto 0;
 }
 
-.schools .u-section-2 .u-container-layout-11 {
+.schools-section-1 .u-container-layout-11 {
   padding: 15px 30px 40px;
 }
 
 
-.schools .u-section-2 .u-layout-cell-6 {
+.schools-section-1 .u-layout-cell-6 {
   min-height: 600px;
 }
 
-.schools .u-section-2 .u-container-layout-12 {
+.schools-section-1 .u-container-layout-12 {
   padding: 0 9px;
 }
 
-.schools .u-section-2 .u-group-7 {
+.schools-section-1 .u-group-7 {
   width: 488px;
   min-height: 503px;
   animation-duration: 1000ms;
@@ -182,20 +182,20 @@
   margin: 48px auto -43px;
 }
 
-.schools .u-section-2 .u-container-layout-13 {
+.schools-section-1 .u-container-layout-13 {
   padding: 15px 30px 40px;
 }
 
 
-.schools .u-section-2 .u-layout-cell-7 {
+.schools-section-1 .u-layout-cell-7 {
   min-height: 600px;
 }
 
-.schools .u-section-2 .u-container-layout-14 {
+.schools-section-1 .u-container-layout-14 {
   padding: 6px 5px;
 }
 
-.schools .u-section-2 .u-group-8 {
+.schools-section-1 .u-group-8 {
   width: 488px;
   min-height: 503px;
   animation-duration: 2750ms;
@@ -203,19 +203,19 @@
   margin: 43px auto 0;
 }
 
-.schools .u-section-2 .u-container-layout-15 {
+.schools-section-1 .u-container-layout-15 {
   padding: 15px 30px 40px;
 }
 
-.schools .u-section-2 .u-layout-cell-8 {
+.schools-section-1 .u-layout-cell-8 {
   min-height: 600px;
 }
 
-.schools .u-section-2 .u-container-layout-16 {
+.schools-section-1 .u-container-layout-16 {
   padding: 30px 23px;
 }
 
-.schools .u-section-2 .u-group-9 {
+.schools-section-1 .u-group-9 {
   width: 488px;
   min-height: 506px;
   animation-duration: 2500ms;
@@ -223,19 +223,19 @@
   margin: 17px auto 0;
 }
 
-.schools .u-section-2 .u-container-layout-17 {
+.schools-section-1 .u-container-layout-17 {
   padding: 15px 30px 40px;
 }
 
-.schools .u-section-2 .u-layout-cell-9 {
+.schools-section-1 .u-layout-cell-9 {
   min-height: 600px;
 }
 
-.schools .u-section-2 .u-container-layout-18 {
+.schools-section-1 .u-container-layout-18 {
   padding: 11px 19px;
 }
 
-.schools .u-section-2 .u-group-10 {
+.schools-section-1 .u-group-10 {
   width: 488px;
   min-height: 503px;
   animation-duration: 1000ms;
@@ -243,52 +243,52 @@
   margin: 38px auto -19px;
 }
 
-.schools .u-section-2 .u-container-layout-19 {
+.schools-section-1 .u-container-layout-19 {
   padding: 15px 30px 40px;
 }
 
 @media (max-width: 1199px) {
-  .schools .u-section-2 .u-sheet-1 {
+  .schools-section-1 .u-sheet-1 {
     min-height: 1237px;
   }
 
-  .schools .u-section-2 .u-group-1 {
+  .schools-section-1 .u-group-1 {
     margin-right: initial;
     margin-left: initial;
     width: auto;
     height: auto;
   }
 
-  .schools .u-section-2 .u-container-layout-1 {
+  .schools-section-1 .u-container-layout-1 {
     padding-top: 0;
     padding-bottom: 0;
   }
 
-  .schools .u-section-2 .u-layout-wrap-1 {
+  .schools-section-1 .u-layout-wrap-1 {
     width: 940px;
     margin-left: 0;
     margin-right: 0;
   }
 
-  .schools .u-section-2 .u-layout-cell-1 {
+  .schools-section-1 .u-layout-cell-1 {
     min-height: 353px;
   }
 
-  .schools .u-section-2 .u-group-2 {
+  .schools-section-1 .u-group-2 {
     width: 313px;
     height: auto;
   }
 
-  .schools .u-section-2 .u-icon {
+  .schools-section-1 .u-icon {
     width: 250px;
     height: 250px;
   }
 
-  .schools .u-section-2 .u-layout-cell-2 {
+  .schools-section-1 .u-layout-cell-2 {
     min-height: 353px;
   }
 
-  .schools .u-section-2 .u-group-3 {
+  .schools-section-1 .u-group-3 {
     width: 283px;
     margin-top: 9px;
     margin-left: 0;
@@ -297,11 +297,11 @@
   }
 
 
-  .schools .u-section-2 .u-layout-cell-3 {
+  .schools-section-1 .u-layout-cell-3 {
     min-height: 353px;
   }
 
-  .schools .u-section-2 .u-group-4 {
+  .schools-section-1 .u-group-4 {
     width: 289px;
     margin-top: 22px;
     margin-left: 0;
@@ -310,68 +310,68 @@
   }
 
 
-  .schools .u-section-2 .u-layout-cell-4 {
+  .schools-section-1 .u-layout-cell-4 {
     min-height: 353px;
   }
 
-  .schools .u-section-2 .u-group-5 {
+  .schools-section-1 .u-group-5 {
     width: 309px;
     margin-left: 0;
     margin-right: 0;
     height: auto;
   }
 
-  .schools .u-section-2 .u-layout-cell-5 {
+  .schools-section-1 .u-layout-cell-5 {
     min-height: 353px;
   }
 
-  .schools .u-section-2 .u-group-6 {
+  .schools-section-1 .u-group-6 {
     width: 313px;
     margin-top: 9px;
     margin-right: 0;
     height: auto;
   }
 
-  .schools .u-section-2 .u-layout-cell-6 {
+  .schools-section-1 .u-layout-cell-6 {
     min-height: 353px;
   }
 
-  .schools .u-section-2 .u-group-7 {
+  .schools-section-1 .u-group-7 {
     width: 294px;
     margin-top: 35px;
     height: auto;
   }
 
-  .schools .u-section-2 .u-container-layout-13 {
+  .schools-section-1 .u-container-layout-13 {
     padding-left: 0;
     padding-right: 0;
   }
 
-  .schools .u-section-2 .u-layout-cell-7 {
+  .schools-section-1 .u-layout-cell-7 {
     min-height: 353px;
   }
 
-  .schools .u-section-2 .u-group-8 {
+  .schools-section-1 .u-group-8 {
     width: 303px;
     margin-top: 57px;
     height: auto;
   }
 
-  .schools .u-section-2 .u-layout-cell-8 {
+  .schools-section-1 .u-layout-cell-8 {
     min-height: 353px;
   }
 
-  .schools .u-section-2 .u-group-9 {
+  .schools-section-1 .u-group-9 {
     width: 268px;
     margin-top: 0;
     height: auto;
   }
 
-  .schools .u-section-2 .u-layout-cell-9 {
+  .schools-section-1 .u-layout-cell-9 {
     min-height: 353px;
   }
 
-  .schools .u-section-2 .u-group-10 {
+  .schools-section-1 .u-group-10 {
     width: 275px;
     margin-top: 43px;
     margin-left: 0;
@@ -382,27 +382,27 @@
 }
 
 @media (max-width: 991px) {
-  .schools .u-section-2 .u-sheet-1 {
+  .schools-section-1 .u-sheet-1 {
     min-height: 1809px;
   }
 
-  .schools .u-section-2 .u-group-1 {
+  .schools-section-1 .u-group-1 {
     min-height: 1467px;
     width: auto;
     margin-right: initial;
     margin-left: initial;
   }
 
-  .schools .u-section-2 .u-layout-wrap-1 {
+  .schools-section-1 .u-layout-wrap-1 {
     width: 720px;
     margin-top: -1453px;
   }
 
-  .schools .u-section-2 .u-layout-cell-1 {
+  .schools-section-1 .u-layout-cell-1 {
     min-height: 446px;
   }
 
-  .schools .u-section-2 .u-group-2 {
+  .schools-section-1 .u-group-2 {
     min-height: 334px;
     margin-top: 32px;
     margin-right: initial;
@@ -410,27 +410,27 @@
     width: auto;
   }
 
-  .schools .u-section-2 .u-container-layout-3 {
+  .schools-section-1 .u-container-layout-3 {
     padding-bottom: 30px;
   }
 
-  .schools .u-section-2 .u-icon {
+  .schools-section-1 .u-icon {
     width: 200px;
     height: 200px;
     margin-left: -10px;
     margin-right: -10px;
   }
 
-  .schools .u-section-2 .u-text {
+  .schools-section-1 .u-text {
     font-size: 1.5rem;
     width: auto;
   }
 
-  .schools .u-section-2 .u-layout-cell-2 {
+  .schools-section-1 .u-layout-cell-2 {
     min-height: 446px;
   }
 
-  .schools .u-section-2 .u-group-3 {
+  .schools-section-1 .u-group-3 {
     min-height: 365px;
     margin-bottom: 0;
     margin-right: initial;
@@ -438,21 +438,21 @@
     width: auto;
   }
 
-  .schools .u-section-2 .u-container-layout-5 {
+  .schools-section-1 .u-container-layout-5 {
     padding-bottom: 30px;
   }
 
 
-  .schools .u-section-2 .u-layout-cell-3 {
+  .schools-section-1 .u-layout-cell-3 {
     min-height: 446px;
   }
 
-  .schools .u-section-2 .u-container-layout-6 {
+  .schools-section-1 .u-container-layout-6 {
     padding-top: 0;
     padding-bottom: 0;
   }
 
-  .schools .u-section-2 .u-group-4 {
+  .schools-section-1 .u-group-4 {
     min-height: 430px;
     margin-top: 8px;
     margin-right: initial;
@@ -460,13 +460,13 @@
     width: auto;
   }
 
-  .schools .u-section-2 .u-container-layout-7 {
+  .schools-section-1 .u-container-layout-7 {
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 0;
   }
 
-  .schools .u-section-2 .u-icon-3 {
+  .schools-section-1 .u-icon-3 {
     width: 200px;
     height: 200px;
     margin-top: 14px;
@@ -474,53 +474,53 @@
     margin-right: auto;
   }
 
-  .schools .u-section-2 .u-layout-cell-4 {
+  .schools-section-1 .u-layout-cell-4 {
     min-height: 434px;
   }
 
-  .schools .u-section-2 .u-container-layout-8 {
+  .schools-section-1 .u-container-layout-8 {
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 0;
   }
 
-  .schools .u-section-2 .u-group-5 {
+  .schools-section-1 .u-group-5 {
     width: 235px;
     min-height: 344px;
     margin-top: 3px;
     margin-left: auto;
   }
 
-  .schools .u-section-2 .u-container-layout-9 {
+  .schools-section-1 .u-container-layout-9 {
     padding-top: 12px;
     padding-bottom: 28px;
   }
 
-  .schools .u-section-2 .u-layout-cell-5 {
+  .schools-section-1 .u-layout-cell-5 {
     min-height: 434px;
   }
 
-  .schools .u-section-2 .u-container-layout-10 {
+  .schools-section-1 .u-container-layout-10 {
     padding-top: 26px;
     padding-bottom: 26px;
   }
 
-  .schools .u-section-2 .u-group-6 {
+  .schools-section-1 .u-group-6 {
     min-height: 332px;
     width: 240px;
     margin-top: 11px;
     margin-left: 0;
   }
 
-  .schools .u-section-2 .u-container-layout-11 {
+  .schools-section-1 .u-container-layout-11 {
     padding: 9px 0;
   }
 
-  .schools .u-section-2 .u-layout-cell-6 {
+  .schools-section-1 .u-layout-cell-6 {
     min-height: 434px;
   }
 
-  .schools .u-section-2 .u-group-7 {
+  .schools-section-1 .u-group-7 {
     min-height: 319px;
     margin-bottom: 0;
     margin-right: initial;
@@ -528,23 +528,23 @@
     width: auto;
   }
 
-  .schools .u-section-2 .u-container-layout-13 {
+  .schools-section-1 .u-container-layout-13 {
     padding-bottom: 15px;
   }
 
 
-  .schools .u-section-2 .u-layout-cell-7 {
+  .schools-section-1 .u-layout-cell-7 {
     min-height: 401px;
   }
 
-  .schools .u-section-2 .u-group-8 {
+  .schools-section-1 .u-group-8 {
     width: 230px;
     margin-top: 0;
     margin-left: 0;
     margin-right: 0;
   }
 
-  .schools .u-section-2 .u-container-layout-15 {
+  .schools-section-1 .u-container-layout-15 {
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 30px;
@@ -552,16 +552,16 @@
 
 
 
-  .schools .u-section-2 .u-layout-cell-8 {
+  .schools-section-1 .u-layout-cell-8 {
     min-height: 401px;
   }
 
-  .schools .u-section-2 .u-group-9 {
+  .schools-section-1 .u-group-9 {
     min-height: 403px;
     width: 195px;
   }
 
-  .schools .u-section-2 .u-container-layout-17 {
+  .schools-section-1 .u-container-layout-17 {
     padding-bottom: 15px;
     padding-left: 0;
     padding-right: 0;
@@ -569,17 +569,17 @@
 
  
 
-  .schools .u-section-2 .u-layout-cell-9 {
+  .schools-section-1 .u-layout-cell-9 {
     min-height: 401px;
   }
 
-  .schools .u-section-2 .u-group-10 {
+  .schools-section-1 .u-group-10 {
     min-height: 379px;
     width: 201px;
     margin: 17px auto 0;
   }
 
-  .schools .u-section-2 .u-container-layout-19 {
+  .schools-section-1 .u-container-layout-19 {
     padding-bottom: 30px;
   }
 
@@ -587,11 +587,11 @@
 }
 
 @media (max-width: 767px) {
-  .schools .u-section-2 .u-sheet-1 {
+  .schools-section-1 .u-sheet-1 {
     min-height: 3790px;
   }
 
-  .schools .u-section-2 .u-group-1 {
+  .schools-section-1 .u-group-1 {
     min-height: 3587px;
     margin-top: 63px;
     width: auto;
@@ -599,146 +599,146 @@
     margin-left: initial;
   }
 
-  .schools .u-section-2 .u-layout-wrap-1 {
+  .schools-section-1 .u-layout-wrap-1 {
     margin-top: -3571px;
     margin-right: initial;
     margin-left: initial;
     width: auto;
   }
 
-  .schools .u-section-2 .u-layout-cell-1 {
+  .schools-section-1 .u-layout-cell-1 {
     min-height: 366px;
   }
 
-  .schools .u-section-2 .u-container-layout-3 {
+  .schools-section-1 .u-container-layout-3 {
     padding-left: 10px;
     padding-right: 10px;
   }
 
-  .schools .u-section-2 .u-icon {
+  .schools-section-1 .u-icon {
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
   }
 
-  .schools .u-section-2 .u-text {
+  .schools-section-1 .u-text {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
   }
 
-  .schools .u-section-2 .u-layout-cell-2 {
+  .schools-section-1 .u-layout-cell-2 {
     min-height: 416px;
   }
 
-  .schools .u-section-2 .u-container-layout-4 {
+  .schools-section-1 .u-container-layout-4 {
     padding-left: 10px;
     padding-right: 10px;
   }
 
-  .schools .u-section-2 .u-container-layout-5 {
+  .schools-section-1 .u-container-layout-5 {
     padding-left: 10px;
     padding-right: 10px;
   }
 
 
-  .schools .u-section-2 .u-layout-cell-3 {
+  .schools-section-1 .u-layout-cell-3 {
     min-height: 362px;
   }
 
-  .schools .u-section-2 .u-container-layout-6 {
+  .schools-section-1 .u-container-layout-6 {
     padding-left: 10px;
     padding-right: 10px;
   }
 
-  .schools .u-section-2 .u-group-4 {
+  .schools-section-1 .u-group-4 {
     min-height: 354px;
     width: auto;
     margin-right: initial;
     margin-left: initial;
   }
 
-  .schools .u-section-2 .u-layout-cell-4 {
+  .schools-section-1 .u-layout-cell-4 {
     min-height: 377px;
   }
 
-  .schools .u-section-2 .u-group-5 {
+  .schools-section-1 .u-group-5 {
     margin-right: initial;
     margin-left: initial;
     width: auto;
   }
 
-  .schools .u-section-2 .u-container-layout-9 {
+  .schools-section-1 .u-container-layout-9 {
     padding-left: 10px;
     padding-right: 10px;
   }
 
-  .schools .u-section-2 .u-layout-cell-5 {
+  .schools-section-1 .u-layout-cell-5 {
     min-height: 395px;
   }
 
-  .schools .u-section-2 .u-group-6 {
+  .schools-section-1 .u-group-6 {
     margin-right: initial;
     margin-left: initial;
     width: auto;
   }
 
 
-  .schools .u-section-2 .u-layout-cell-6 {
+  .schools-section-1 .u-layout-cell-6 {
     min-height: 354px;
   }
 
-  .schools .u-section-2 .u-layout-cell-7 {
+  .schools-section-1 .u-layout-cell-7 {
     min-height: 406px;
   }
 
-  .schools .u-section-2 .u-group-8 {
+  .schools-section-1 .u-group-8 {
     min-height: 394px;
     margin-right: initial;
     margin-left: initial;
     width: auto;
   }
 
-  .schools .u-section-2 .u-container-layout-15 {
+  .schools-section-1 .u-container-layout-15 {
     padding-left: 10px;
     padding-right: 10px;
   }
 
 
 
-  .schools .u-section-2 .u-layout-cell-8 {
+  .schools-section-1 .u-layout-cell-8 {
     min-height: 403px;
   }
 
-  .schools .u-section-2 .u-container-layout-16 {
+  .schools-section-1 .u-container-layout-16 {
     padding-left: 0;
     padding-right: 0;
   }
 
-  .schools .u-section-2 .u-group-9 {
+  .schools-section-1 .u-group-9 {
     width: 535px;
     min-height: 343px;
     margin-left: 0;
   }
 
 
-  .schools .u-section-2 .u-layout-cell-9 {
+  .schools-section-1 .u-layout-cell-9 {
     min-height: 508px;
   }
 
-  .schools .u-section-2 .u-container-layout-18 {
+  .schools-section-1 .u-container-layout-18 {
     padding-left: 0;
     padding-right: 0;
   }
 
-  .schools .u-section-2 .u-group-10 {
+  .schools-section-1 .u-group-10 {
     min-height: 352px;
     margin-right: initial;
     margin-left: initial;
     width: auto;
   }
 
-  .schools .u-section-2 .u-container-layout-19 {
+  .schools-section-1 .u-container-layout-19 {
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -747,29 +747,29 @@
 }
 
 @media (max-width: 575px) {
-  .schools .u-section-2 .u-sheet-1 {
+  .schools-section-1 .u-sheet-1 {
     min-height: 3122px;
   }
 
-  .schools .u-section-2 .u-group-1 {
+  .schools-section-1 .u-group-1 {
     min-height: 2983px;
     width: auto;
     margin-right: initial;
     margin-left: initial;
   }
 
-  .schools .u-section-2 .u-layout-wrap-1 {
+  .schools-section-1 .u-layout-wrap-1 {
     margin-top: -2967px;
     width: auto;
     margin-right: initial;
     margin-left: initial;
   }
 
-  .schools .u-section-2 .u-layout-cell-1 {
+  .schools-section-1 .u-layout-cell-1 {
     min-height: 310px;
   }
 
-  .schools .u-section-2 .u-group-2 {
+  .schools-section-1 .u-group-2 {
     min-height: 310px;
     width: 340px;
     margin-top: 0;
@@ -777,40 +777,40 @@
     margin-right: 0;
   }
 
-  .schools .u-section-2 .u-icon {
+  .schools-section-1 .u-icon {
     width: 150px;
     height: 150px;
   }
 
-  .schools .u-section-2 .u-text {
+  .schools-section-1 .u-text {
     width: auto;
     margin-top: 25px;
     margin-left: 25px;
     margin-right: 25px;
   }
 
-  .schools .u-section-2 .u-layout-cell-2 {
+  .schools-section-1 .u-layout-cell-2 {
     min-height: 291px;
   }
 
-  .schools .u-section-2 .u-group-3 {
+  .schools-section-1 .u-group-3 {
     min-height: 271px;
     width: auto;
     margin-right: initial;
     margin-left: initial;
   }
 
-  .schools .u-section-2 .u-container-layout-5 {
+  .schools-section-1 .u-container-layout-5 {
     padding-bottom: 15px;
   }
 
   
 
-  .schools .u-section-2 .u-layout-cell-3 {
+  .schools-section-1 .u-layout-cell-3 {
     min-height: 277px;
   }
 
-  .schools .u-section-2 .u-group-4 {
+  .schools-section-1 .u-group-4 {
     min-height: 292px;
     width: auto;
     margin-right: initial;
@@ -818,15 +818,15 @@
   }
 
  
-  .schools .u-section-2 .u-layout-cell-4 {
+  .schools-section-1 .u-layout-cell-4 {
     min-height: 282px;
   }
 
-  .schools .u-section-2 .u-container-layout-8 {
+  .schools-section-1 .u-container-layout-8 {
     padding-top: 0;
   }
 
-  .schools .u-section-2 .u-group-5 {
+  .schools-section-1 .u-group-5 {
     min-height: 317px;
     margin-top: 0;
     width: auto;
@@ -836,11 +836,11 @@
 
  
 
-  .schools .u-section-2 .u-layout-cell-5 {
+  .schools-section-1 .u-layout-cell-5 {
     min-height: 312px;
   }
 
-  .schools .u-section-2 .u-group-6 {
+  .schools-section-1 .u-group-6 {
     min-height: 285px;
     width: auto;
     margin-right: initial;
@@ -849,11 +849,11 @@
 
 
 
-  .schools .u-section-2 .u-layout-cell-6 {
+  .schools-section-1 .u-layout-cell-6 {
     min-height: 256px;
   }
 
-  .schools .u-section-2 .u-group-7 {
+  .schools-section-1 .u-group-7 {
     min-height: 275px;
     margin-top: 18px;
     width: auto;
@@ -862,27 +862,27 @@
   }
 
 
-  .schools .u-section-2 .u-layout-cell-7 {
+  .schools-section-1 .u-layout-cell-7 {
     min-height: 300px;
   }
 
-  .schools .u-section-2 .u-group-8 {
+  .schools-section-1 .u-group-8 {
     min-height: 314px;
     width: auto;
     margin-right: initial;
     margin-left: initial;
   }
 
-  .schools .u-section-2 .u-container-layout-15 {
+  .schools-section-1 .u-container-layout-15 {
     padding-bottom: 0;
   }
 
 
-  .schools .u-section-2 .u-layout-cell-8 {
+  .schools-section-1 .u-layout-cell-8 {
     min-height: 320px;
   }
 
-  .schools .u-section-2 .u-group-9 {
+  .schools-section-1 .u-group-9 {
     min-height: 287px;
     margin-right: initial;
     margin-left: initial;
@@ -890,11 +890,11 @@
   }
 
  
-  .schools .u-section-2 .u-layout-cell-9 {
+  .schools-section-1 .u-layout-cell-9 {
     min-height: 309px;
   }
 
-  .schools .u-section-2 .u-group-10 {
+  .schools-section-1 .u-group-10 {
     min-height: 287px;
     width: 340px;
     margin-top: 0;

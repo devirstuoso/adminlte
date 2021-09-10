@@ -59,9 +59,8 @@ function hyphen_f($dt){
 
 
 
-<div class="news-events">
 
-  <section class="skrollable u-clearfix u-image u-parallax u-shading u-section-2" id="sec-7da3" data-image-width="1440" data-image-height="960">
+  <section class="skrollable u-clearfix u-image u-parallax u-shading news-section-1" id="sec-7da3" data-image-width="1440" data-image-height="960">
     <div class="u-clearfix u-sheet u-sheet-1">
       <div class="u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-1">
         <div class="u-container-layout u-container-layout-1">

@@ -12,23 +12,22 @@
         align-items: center;
         text-align: center;
         justify-content: space-around;
-        background-color: #ffffff;
+        /*background-color: #ffffff;*/
                 }
 
-    .gridview-header a, .gridview-header li {
+   .gridview-header a, .gridview-header li {
         color: #6f42c1;
-        margin: 0 10px;
+        /*margin: 0 10px;*/
     }
     .gridview-header li a, .gridview-header li span  {
         font-weight: bold;
         font-size: x-large;
-        /*color: pink !important;*/
                 }
-    .gridview-header select, .gridview-header input[type = text] {
+   .gridview-header select, .gridview-header input[type = text] {
         color: #605ca8 ;
         border-radius: 10px;
             }
-    .gridview-header textarea {
+  .gridview-header textarea {
         color: #605ca8 ;
         height: inherit;
         border-radius: 10px;
@@ -100,7 +99,7 @@
         vertical-align: center;
         justify-content: space-around;
                 }
-    .gridview-menu-buttons-container a, .gridview-header button, .gridview-menu-buttons-container button{
+    .gridview-menu-buttons-container a, .gridview-menu-buttons-container button{
         height: 30px;
         width: 30px;
         box-shadow: -7px -7px 17px rgba(255,255,255,0.2),
@@ -114,10 +113,10 @@
         color: #ffffff
         /*padding-bottom: 20px;*/
                 }
-    .gridview-menu-buttons-container a:hover, .gridview-header button:hover .gridview-menu-buttons-container button:hover{
+    .gridview-menu-buttons-container a:hover, .gridview-menu-buttons-container button:hover{
      color: #ffffff;
             }
-    .gridview-menu-buttons-container a:active{
+    .gridview-menu-buttons-container a:active, .gridview-menu-buttons-container button:active{
     box-shadow: inset -7px -7px 17px rgba(255,255,255,0.6),
                 inset 7px 7px 17px rgba(70,70,70,0.15); 
 
