@@ -41,7 +41,7 @@ class FooterContent extends ActiveRecord //change to \yii\db\ActiveRecord
             // [['id', 'content_id'], 'string', 'max' => 30],
             // [['id'], 'unique'],
             [['title', 'link'], 'string', 'max' => 300],
-            [['link'], 'default', 'value' => 'index.php?r=site/coming-soon'],
+            [['link'], 'default', 'value' => '#'],
         ];
     }
 

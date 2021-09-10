@@ -18,7 +18,7 @@ $this->params['breadcrumbs'] = [['label' => $this->title]];
 				<div class="icon">
 					<i class="fas fa-bars"></i>
 				</div>
-				<a href="#" class="small-box-footer">
+				<a href="<?php echo Yii::$app->urlManager->createUrl("header/index");?>" class="small-box-footer">
 					<i class="fas fa-arrow-circle-right"></i>
 				</a>
 			</div>

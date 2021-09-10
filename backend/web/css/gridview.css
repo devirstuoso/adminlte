@@ -55,19 +55,18 @@
         }
 
     .gridview-image-index{
-        height: 200px ;
-        width: 300px;
-    }
+        max-width: 350px ;
+            }
 
     .gridview-image-view{
         height: 400px ;
-        width: 600px;
+        width: auto;
     }
 
 
     .gridview-image-form{
-        height: 100px ;
-        width: 100px;
+        max-height: 100px ;
+        width: auto;
         display: block;
         margin-bottom: 0px;
     }
