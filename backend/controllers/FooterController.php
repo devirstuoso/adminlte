@@ -130,6 +130,7 @@ class FooterController extends Controller
                             $modelContent->id = $this->keyValue(FooterContent::className(), $model->id);
                             $modelContent->content_id = $model->id;
                             if (! ($flag = $modelContent->save(false))) {
+                                Yii::$app->session->setFlash('error', 'Unable to save the item.');
                                 $transaction->rollBack();
                                 break;
                             }
@@ -137,11 +138,15 @@ class FooterController extends Controller
                     }
                     if ($flag) {
                         $transaction->commit();
+                         Yii::$app->session->setFlash('success', 'Successfully saved the item.');
                         return $this->redirect(['view', 'id' => $model->id]);
                     }
                 } catch (Exception $e) {
                     $transaction->rollBack();
                 }
+            }
+            else{
+                Yii::$app->session->setFlash('error', 'Unable to save the item.');
             }
         }
         $this->layout = 'modal';

@@ -4,6 +4,9 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\DetailView;
 
+use common\widgets\Alert;
+
+
 /* @var $this yii\web\View */
 /* @var $model backend\models\UpdatesPanel */
 
@@ -12,6 +15,10 @@ $this->params['breadcrumbs'][] = ['label' => 'Updates Panels', 'url' => ['index'
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
+
+<!-- Alerts -->
+<?= Alert::widget(); ?>
+
 <div class="updates-panel-view">
 
     <h1 class="gridview-header-text"><?= Html::encode($this->title) ?></h1>
@@ -39,11 +46,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'updates_hide:boolean',
         ],
     ]) ?>
-<!-- <div style="width:40px;">
- <div class="gridview-menu-buttons-container"> -->
-<!-- ?=Html::a('<i class="fas fa-plus"></i> <i class="fas fa-file"></i>',['updates-panel-content/create' , 'update_id'=> $model->id],['class' => 'btn btn-outline-success']); ?> -->
-<!-- </div>
-</div> -->
+
 
 <?php if((!isset($model->updates_link)) && (!sizeof($model->updatesContent)==0)) {?>
     

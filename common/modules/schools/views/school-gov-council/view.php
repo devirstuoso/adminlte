@@ -4,31 +4,20 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\DetailView;
 
-/* @var $this yii\web\View */
-/* @var $model common\modules\schools\models\SchoolGovCouncil */
+use common\widgets\Alert;
 
 $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'School Gov Councils'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
+
+/* @var $this yii\web\View */
+/* @var $model common\modules\schools\models\SchoolGovCouncil */
+
 ?>
 
 <!-- Alerts -->
-<?php if (Yii::$app->session->hasFlash('success')): ?>
-    <div class="alert alert-success alert-dismissable">
-     <button aria-hidden="true" data-dismiss="alert" class="close" type="button"><i class="fas fa-times-circle"></i></button>
-     <h4><i class="icon fa fa-check"></i>Saved!</h4>
-     <?= Yii::$app->session->getFlash('success') ?>
- </div>
-<?php endif; ?>
-
-<?php if (Yii::$app->session->hasFlash('error')): ?>
-    <div class="alert alert-danger alert-dismissable">
-        <button aria-hidden="true" data-dismiss="alert" class="close" type="button"><i class="fas fa-times-circle"></i></button>
-        <h4><i class="icon fa fa-check"></i>Unsaved!</h4>
-        <?= Yii::$app->session->getFlash('error') ?>
-    </div>
-<?php endif; ?>
+<?= Alert::widget(); ?>
 
 <div class="school-gov-council-view">
 

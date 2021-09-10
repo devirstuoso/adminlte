@@ -42,11 +42,11 @@ class Alert extends \yii\bootstrap\Widget
     ];
 
     public $alertMsg = [
-        'error'   => '<h3><i class="icon fa fa-esclamation"></i> Error</h3>',
-        'danger'  => '<h3><i class="icon fa fa-esclamation"></i> Danger</h3>',
+        'error'   => '<h3><i class="icon fas fa-exclamation"></i> Error</h3>',
+        'danger'  => '<h3><i class="icon fas fa-exclamation"></i> Danger</h3>',
         'success' => '<h3><i class="icon fa fa-check"></i> Success</h3>',
-        'info'    => '<h3><i class="fas fa-info"></i> Info</h3>',
-        'warning' => '<h3><i class="fas fa-exclamation"></i> Warning</h3>'
+        'info'    => '<h3><i class="icon fas fa-info"></i> Info</h3>',
+        'warning' => '<h3><i class="icon fas fa-exclamation"></i> Warning</h3>'
     ];
 
 
@@ -54,7 +54,9 @@ class Alert extends \yii\bootstrap\Widget
      * @var array the options for rendering the close button tag.
      * Array will be passed to [[\yii\bootstrap\Alert::closeButton]].
      */
-    public $closeButton = ['label' =>'<i class="fas fa-times-circle"></i>'];
+    public $closeButton = [
+        'label' =>'<i class="fas fa-times-circle"></i>'
+    ];
 
 
     /**

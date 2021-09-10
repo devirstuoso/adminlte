@@ -4,6 +4,8 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\DetailView;
 
+use common\widgets\Alert; 
+
 /* @var $this yii\web\View */
 /* @var $model common\modules\schools\models\SchoolOffice */
 
@@ -12,6 +14,10 @@ $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'School Offices'), 'u
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
+
+<!-- Alerts -->
+<?= Alert::widget(); ?>
+
 <div class="school-office-view">
 
     <h1 class="gridview-header-text"><?= Html::encode($this->title) ?></h1>
