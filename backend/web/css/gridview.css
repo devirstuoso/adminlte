@@ -83,7 +83,7 @@
 
     .gridview-menu-buttons-container{
         height: auto;
-        width: auto;
+        width: 15vh;
         box-shadow: -7px -7px 17px rgba(255,255,255,0.2),
                     7px 7px 17px rgba(70,70,70,0.1);
         position: relative;
@@ -93,7 +93,9 @@
         left: 0px;
         right: 0px;
         border-radius: 20px;
-        display: grid;
+        /*display: grid;*/
+        /*display: inline-block;*/
+        display: flex;
         align-items: center;
         vertical-align: center;
         justify-content: space-around;
@@ -104,12 +106,13 @@
         box-shadow: -7px -7px 17px rgba(255,255,255,0.2),
                 7px 7px 17px rgba(70,70,70,0.1);
         border-radius: 50%;
-        display: inherit;
+        display: inline-flex;
         align-items: center;
         justify-content: center;
         text-decoration: none; 
         font-size: 16px;
-        color: #ffffff
+        color: #ffffff;
+        background-color: #6a46cb ;
         /*padding-bottom: 20px;*/
                 }
     .gridview-menu-buttons-container a:hover, .gridview-menu-buttons-container button:hover{

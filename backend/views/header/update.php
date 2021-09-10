@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Footer'), 'url' => [
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
 ?>
-<div class="Footer-update">
+<div class="footer-update">
 
     <h1 class="gridview-header-text"><?= Html::encode($this->title) ?></h1>
     <?= $this->render('_form', [

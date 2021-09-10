@@ -43,13 +43,13 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            //  [
-            // 'attribute' => 'logo',
-            // 'format' => 'html',
-            // 'value' => function($model){
-            //     return Html::img($model->logo.'?'.time(), ['alt' =>'No Image to show','class' => 'gridview-image-index']);
-            //     }
-            // ],
+             [
+            'attribute' => 'logo',
+            'format' => 'html',
+            'value' => function($model){
+                return Html::img($model->logo.'?'.time(), ['alt' =>'No Image to show','class' => 'gridview-image-index']);
+                }
+            ],
             'nav_item',
             'nav_link:url',
 
@@ -58,11 +58,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 'contentOptions' => ['class' => 'gridview-menu-buttons-container'],
                 'template' => '{view}  {update} {delete}',
                 'buttons' => [  'view' => function($url, $model, $key){
-                    return Html::a('<i class="fas fa-eye"></i>',['view' , 'id'=> $model->id],['class' => '', 'style' => ['background-color'=> '#6a46cb']]);
+                    return Html::a('<i class="fas fa-eye"></i>',['view' , 'id'=> $model->id],['class' => '', ]);
                 },
 
                 'update' => function($url, $model, $key){
-                    return Html::button('<i class="fas fa-edit"></i>', ['value' => Url::to(['update' , 'id'=> $model->id]), 'class' => ['modalUpdateButton', 'btn'], 'style' => ['background-color'=> '#6a46cb']]);
+                    return Html::button('<i class="fas fa-edit"></i>', ['value' => Url::to(['update' , 'id'=> $model->id]), 'class' => ['modalUpdateButton', 'btn'], ]);
                 },
 
                 'delete' => function($url, $model, $key){

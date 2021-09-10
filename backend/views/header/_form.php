@@ -63,8 +63,10 @@ $this->registerJs($script);
                 </div>
                 <div class="form-group row">
                     <label for="header-nav_link" class="col-sm-2 col-form-label">Navigation Link</label>
+                    
                     <div class="col-sm-9">
                     <?= $form->field($model, 'nav_link')->textInput(['maxlength' => true, 'options' => ['class'=> 'form-control']])->label(false) ?>
+                    <label for="header-nav_link" class="col-sm-9" style="color:#6a46cb; font-weight: 500;">* input "inherit" for inheriting the sub menus </label>
                     </div>
                 </div>
 

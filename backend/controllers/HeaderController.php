@@ -95,8 +95,10 @@ class HeaderController extends Controller
 
                 try {
                     if ($flag = $model->save()) {
+
+                        if(strcasecmp($model->nav_link, 'inherit') != 0) {
                         foreach ($modelsContent as $modelContent) {
-                            // $modelContent->id = $this->keyValue(HeaderContent::classname());
+                            $modelContent->id = $this->keyValue(HeaderContent::classname(), $model->id);
                             $modelContent->nav_id = $model->id;
                             if (! ($flag = $modelContent->save())) {
                                 Yii::$app->session->setFlash('error', 'Unable to save the item.');
@@ -104,6 +106,11 @@ class HeaderController extends Controller
                                 break;
                             }
                         }
+                      }
+                      else {
+                        // here setup the inherited models
+                      }
+
                     }
 
                     if ($flag) {
@@ -203,7 +210,9 @@ class HeaderController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+        HeaderContent::deleteAll(['nav_id' => $model->id]);
+        $model->delete();
 
         return $this->redirect(['index']);
     }
@@ -261,7 +270,7 @@ class HeaderController extends Controller
         }
         else if ($class::classname()=='backend\models\HeaderContent') {
              $last = $class::find()->where(['nav_id' => $id])->orderBy(['id' => SORT_DESC])->one();
-             if(is_null($last) || $last->id == 'subheader0000')
+             if(is_null($last) || $last->id == $id.'0000')
             { return $id.'0001';
             } 
             $id = $last->id;

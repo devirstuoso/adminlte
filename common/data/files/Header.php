@@ -61,4 +61,16 @@ return [
         'logo' => null,
         'id' => 'header0009',
     ],
+    'header0010' => [
+        'nav_item' => 'demo inherit',
+        'nav_link' => 'inherit',
+        'logo' => null,
+        'id' => 'header0010',
+    ],
+    'header0011' => [
+        'nav_item' => 'demo inherit',
+        'nav_link' => 'inherit',
+        'logo' => null,
+        'id' => 'header0011',
+    ],
 ];
