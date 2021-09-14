@@ -35485,8 +35485,8 @@ a.pswp__share--download:hover {
     }
 
     .u-header .u-nav-2 {
-      width: 357px;
-      margin: 39px 0 0 auto;
+      width: 320px;
+      margin: 10px 0 40px 34px;
     }
 
     .u-header .u-image-1 {
@@ -35508,9 +35508,6 @@ a.pswp__share--download:hover {
     }
   }
   @media (max-width: 767px) {
-    .u-header .u-nav-2 {
-      width: 358px;
-    }
 
     .u-header .u-image-1 {
       margin-left: -65px;
@@ -35529,7 +35526,7 @@ a.pswp__share--download:hover {
     }
 
     .u-header .u-nav-2 {
-      width: 390px;
+      width: 300px;
       margin-top: 20px;
     }
 

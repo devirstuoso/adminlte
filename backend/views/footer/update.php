@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
 ?>
 <div class="Footer-update">
 
-    <h1 class="gridview-footer-text"><?= Html::encode($this->title) ?></h1>
+    <h1 class="gridview-header-text"><?= Html::encode($this->title) ?></h1>
     <?= $this->render('_form', [
         'model' => $model,
         'modelsContent' => $modelsContent,

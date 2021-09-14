@@ -8,6 +8,12 @@ use backend\models\Career;
 $schools = Schools::find()->all();
 $careers = Career::find()->all();
 
+use backend\models\Header;
+
+$logo = Header::find()->where(['id' => 'header0000'])->one();
+$header = Header::find()->where(['<>', 'id', 'header0000'])->orderBy(['nav_order' => SORT_ASC])->all();
+
+
 $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i");
 ?>
 
@@ -25,66 +31,30 @@ $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,
 
       <div class="u-custom-menu u-nav-container">
         <ul class="u-nav u-spacing-20 u-unstyled u-nav-1">
+          <?php foreach ($header as $key => $nav) : ?>
+            <?php 
 
-          <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1 fonter" href="<?= Url::to(['/site/index'])?>" style="padding: 10px 0px;">Home</a>
-          </li>
-          <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" href="<?= Url::to(['/site/about'])?>" style="padding: 10px 0px;">About IoE</a>
-          </li>
-          <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" style="padding: 10px 0px;">Governance</a>
-            <div class="u-nav-popup">
-              <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-1">
-                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['/site/coming-soon'])?>">Message Chairmen GC</a>
-                </li>
-                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['/site/coming-soon'])?>">Message CEO</a>
-                </li>
-                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['/site/gov-council'])?>">Governing Council</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" href="<?= Url::to(['/site/leadership'])?>" style="padding: 10px 0px;">Leadership</a>
-          </li>
-          <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" href="<?= Url::to(['/schools'])?>" style="padding: 10px 0px;">Schools</a>
-            <div class="u-nav-popup">
-              <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-1">
+            if ($key == 0) {
+              $weight = 'fonter';
+            } else {
+              $weight = '';
+            }
+            ?>
 
-                <?php foreach ($schools as $school):?>
-                  <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['/schools/schoolf', 'id' => $school->school_id])?>">Delhi School of <?= Html::encode($school->school_name);?></a>
-                  </li>
-                <?php endforeach;?>
+            <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1 <?php echo $weight ; ?>" href="<?= Html::encode($nav->nav_link);?>" style="padding: 10px 0px;"><?= Html::encode($nav->nav_item); ?></a>
 
-
-              </ul>
-            </div>
-          </li>
-          <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" href="" style="padding: 10px 0px;">Activities</a>
-            <div class="u-nav-popup">
-              <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-1">
-                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['/site/coming-soon'])?>">Research</a>
-                </li>
-                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['/site/coming-soon'])?>">Teaching</a>
-                </li>
-                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['/site/coming-soon'])?>">Training</a>
-                </li>
-                <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white">Out Reach</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" href="<?= Url::to(['/site/career'])?>" style="padding: 10px 0px;">Careers</a>
-            <div class="u-nav-popup">
-              <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-1">
-                <?php foreach ($careers as $index => $career) : ?>
-                  <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Url::to(['/site/career1', 'id' => $career->id])?>"><?= Html::encode($career->title); ?></a>
-                  </li>
-                <?php endforeach; ?>
-              </ul>
-            </div>
-          </li>
-          <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" href="<?= Url::to(['/site/report'])?>" style="padding: 10px 0px;">Annual Report</a>
-          </li>
-          <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1" href="<?= Url::to(['/site/news-events-page'])?>" style="padding: 10px 0px;">News &amp; Events</a>
-          </li>
+              <?php if ($nav->headerContent) : ?>
+                <div class="u-nav-popup">
+                  <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-1">
+                    <?php foreach ($nav->headerContent as $key => $sub_nav) : ?>
+                      <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Html::encode($sub_nav->nav_sub_link);?>"><?= Html::encode($sub_nav->nav_sub_item); ?></a>
+                      </li>
+                    <?php endforeach; ?>
+                  </ul>
+                </div>
+              <?php endif; ?>
+            </li>  
+          <?php endforeach; ?>
         </ul>
       </div>
 
@@ -97,75 +67,42 @@ $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,
             <div class="u-menu-close">
             </div>
             <ul class="u-align-center-lg u-align-center-xl u-align-left-md u-align-left-sm u-align-left-xs u-nav u-popupmenu-items u-spacing-14 u-unstyled u-nav-2">
-              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/index'])?>" style="padding: 10px 0px;">Home</a>
-              </li>
-              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/about'])?>" style="padding: 10px 0px;">About IoE</a>
-              </li>
-              <li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 0px;">Governance</a>
-                <div class="u-nav-popup">
-                  <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-2">
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/coming-soon'])?><?= Url::to(['/site/coming-soon'])?><?= Url::to(['/site/coming-soon'])?>">Message Chairmen GC</a>
-                    </li>
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/coming-soon'])?><?= Url::to(['/site/coming-soon'])?>">Message CEO</a>
-                    </li>
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/gov-council'])?>">Governing Council</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/leadership'])?>" style="padding: 10px 0px;">Leadership</a>
-              </li>
-              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/schools'])?>" style="padding: 10px 0px;">Schools</a>
-                <div class="u-nav-popup">
 
-                  <ul class="u-h-spacing-100 u-nav u-unstyled u-v-spacing-15 u-nav-2">
-                    
-                    <?php foreach ($schools as $school):?>
-                      
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/schools/schoolf', 'id' => $school->school_id])?>">Delhi School of <?= Html::encode($school->school_name); ?></a>
-                    </li>
-                   <?php endforeach; ?>
+              <?php foreach ($header as $key => $nav) : ?>
+                <?php 
+                // if ($key == 0) {
+                //   $weight = 'fonter';
+                // } else {
+                //   $weight = '';
+                // }
+                ?>
 
-                  </ul>
-                </div>
-              </li>
-              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="" style="padding: 10px 0px;">Activities</a>
-                <div class="u-nav-popup">
-                  <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-2">
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/coming-soon'])?>">Research</a>
-                    </li>
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/coming-soon'])?>">Teaching</a>
-                    </li>
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/coming-soon'])?>">Training</a>
-                    </li>
-                    <li class="u-nav-item"><a class="u-button-style u-nav-link">Out Reach</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/career'])?>" style="padding: 10px 0px;">Careers</a>
-                <div class="u-nav-popup">
-                  <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-2">
-                    <?php foreach ($careers as $index => $career) : ?>
-                      <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/career1', 'id' => $career->id])?>"><?= Html::encode($career->title); ?></a>
-                      </li>
-                    <?php endforeach; ?>
-                  </ul>
-                </div>
-              </li>
-              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/report'])?>" style="padding: 10px 0px;">Annual Report</a>
-              </li>
-              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Url::to(['/site/news-events-page'])?>" style="padding: 10px 0px;">News &amp; Events</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="u-black u-menu-overlay u-opacity u-opacity-70">
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Html::encode($nav->nav_link);?>" style="padding: 10px 0px;"><?= Html::encode($nav->nav_item); ?></a>
+
+                <?php if ($nav->headerContent) : ?>
+                  <div class="u-nav-popup">
+                    <span style="height: 2px; background: white;"></span>
+                    <ul class="u-h-spacing-100 u-nav u-unstyled u-v-spacing-15 u-nav-2">
+                      <?php foreach ($nav->headerContent as $key => $sub_nav) : ?>
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link" style="line-height: 27px;" href="<?= Html::encode($sub_nav->nav_sub_link); ?>"><?= Html::encode($sub_nav->nav_sub_item); ?></a>
+                        </li>
+
+                      <?php endforeach; ?>
+                    </ul>
+                  </div>
+                <?php endif; ?>
+              </li>  
+            <?php endforeach; ?>
+            
+          </ul>
         </div>
       </div>
-    </nav>
-    <a href="<?= Url::to(['/site/index'])?>" class="u-image u-logo u-image-1" data-image-width="850" data-image-height="200">
-      <img src="<?= Yii::getAlias('@frontend_web/').'uploads/ioe-du-logo-2.png';?>" class="u-logo-image u-logo-image-1" data-image-width="300">
-    </a>
-  </div>
+      <div class="u-black u-menu-overlay u-opacity u-opacity-70">
+      </div>
+    </div>
+  </nav>
+  <a href="<?= Url::to(['/site/index'])?>" class="u-image u-logo u-image-1" data-image-width="850" data-image-height="200">
+    <img src="<?= Yii::getAlias('@frontend_web/').'uploads/ioe-du-logo-2.png';?>" class="u-logo-image u-logo-image-1" data-image-width="300">
+  </a>
+</div>
 </header>

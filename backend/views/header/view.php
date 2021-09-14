@@ -50,6 +50,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'nav_item',
             'nav_link:url',
+            'nav_order',
 
             ['label' => ' Sub Navigation Items',
             'contentOptions' => ['class' => ''],

@@ -52,6 +52,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'nav_item',
             'nav_link:url',
+            'nav_order',
 
 
                 ['class' => 'yii\grid\ActionColumn',

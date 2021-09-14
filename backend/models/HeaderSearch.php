@@ -39,7 +39,7 @@ class HeaderSearch extends Header
      */
     public function search($params)
     {
-        $query = Header::find()->where(['<>', 'id', 'header0000']);
+        $query = Header::find();//->where(['<>', 'id', 'header0000']);
 
         // add conditions that should always apply here
 

@@ -26,32 +26,32 @@ class SiteController extends Controller
     public function behaviors()
     {
         return [
-            // 'access' => [
-            //     'class' => AccessControl::className(),
-            //     'rules' => [
-            //         [
-            //             'actions' => ['login', 
-            //                           'request-password-reset', 
-            //                           'error', 'reset-password'],
-            //             'allow' => true,
-            //             'roles' => ['?'],
-            //         ],
-            //         [
-            //             'actions' => ['logout', 
-            //                           'index', 
-            //                           'dashboard',
-            //                           'error', 
-            //                           'home-slider',
-            //                           'insights',
-            //                           'user-details',
-            //                           'content-base',
-            //                           'content-schools',
-            //                           'contact'],
-            //             'allow' => true,
-            //             'roles' => ['@'],
-            //         ],
-            //     ],
-            // ],
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['login', 
+                                      'request-password-reset', 
+                                      'error', 'reset-password'],
+                        'allow' => true,
+                        'roles' => ['?'],
+                    ],
+                    [
+                        'actions' => ['logout', 
+                                      'index', 
+                                      'dashboard',
+                                      'error', 
+                                      'home-slider',
+                                      'insights',
+                                      'user-details',
+                                      'content-base',
+                                      'content-schools',
+                                      'contact'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

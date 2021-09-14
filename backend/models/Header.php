@@ -47,6 +47,10 @@ class Header extends ActiveRecord
             [['nav_item'], 'string', 'max' => 100],
             [['nav_link'], 'string', 'max' => 300],
             [['nav_link'], 'default', 'value' => '#'],
+            [['nav_order'], 'integer'],
+            [['nav_order'], 'unique', 'message' => 'Place it into another position'],
+
+
 
 
         ];

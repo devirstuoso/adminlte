@@ -42,6 +42,26 @@ JS;
 
 $this->registerJs($script);
 
+$inherit = <<< js
+
+    $("document").ready(function(){
+        $("#inherit-tab").hide();
+        $("#inherit").on("change", function(){
+             if(this.checked) {
+                $("#dynamic-form-tab").hide();
+                $("#inherit-tab").show();
+             } else {
+                $("#dynamic-form-tab").show();
+                $("#inherit-tab").hide();
+             }
+            })
+
+        });
+
+js;
+
+$this->registerJs($inherit);
+
 
 ?>
 
@@ -57,8 +77,12 @@ $this->registerJs($script);
             <div class="card-body">
                 <div class="form-group row">
                     <label for="header-inst_name" class="col-pd-1 col-sm-2 col-form-label">Navigation Title</label>
-                    <div class="col-sm-9">
+                    <div class="col-sm-6">
                     <?= $form->field($model, 'nav_item', ['options' => ['class' => '']])->textInput(['maxlength' => true, 'options' => ['class'=> 'form-control']])->label(false) ?>                   
+                    </div>
+                    <label for="header-nav_order" class="col-pd-1 col-sm-1 col-form-label">Order</label>
+                    <div class="col-sm-2">
+                    <?= $form->field($model, 'nav_order')->dropDownList(array_combine(range(1,9), range(1,9)))->label(false) ?>       
                     </div>
                 </div>
                 <div class="form-group row">
@@ -66,7 +90,7 @@ $this->registerJs($script);
                     
                     <div class="col-sm-9">
                     <?= $form->field($model, 'nav_link')->textInput(['maxlength' => true, 'options' => ['class'=> 'form-control']])->label(false) ?>
-                    <label for="header-nav_link" class="col-sm-9" style="color:#6a46cb; font-weight: 500;">* input "inherit" for inheriting the sub menus </label>
+                    
                     </div>
                 </div>
 
@@ -89,7 +113,16 @@ $this->registerJs($script);
                         </div>
                     </div>
                 </div>
+                <?php if ($model->isNewRecord) : ?>
+                <div class="form-group row">
+                    <label for="header-nav_link" class="col-sm-2 col-form-label">Inherit from Class</label>
+                    <div class="col-sm-9">
+                        <input type="checkbox" id="inherit" name="inherit" style="width:10px" />
+                    </div>
+                </div>
+                <?php endif; ?>
 
+                <div id="dynamic-form-tab">
                 <?php DynamicFormWidget::begin([
                             'widgetContainer' => 'dynamicform_wrapper', // required: only alphanumeric characters plus "_" [A-Za-z0-9_]
                             'widgetBody' => '.container-items', // required: css class selector
@@ -154,6 +187,35 @@ $this->registerJs($script);
                 </div>
                 <?php DynamicFormWidget::end(); ?>
             </div>
+            <div id="inherit-tab">
+                <div class="panel panel-default  card card-default col-pd-3 col-11">
+                    <div class="panel-heading card-header">
+                        <h3 class="card-title">Inherited Sub Menu Details&nbsp; &nbsp; </h3>
+                        <i class="fa fa-link"></i> 
+                    </div>
+
+                    <div class="panel-body container-items card-body">
+                        <div class="item panel panel-default card card-purple">
+                            <div class="panel-body card-body">
+                            <div class="form-group row">
+                                <label for="header-inherit_class_name" class="col-pd-1 col-sm-2 col-form-label">Inherit Class Name</label>
+                                <div class="col-sm-9">  
+                                    <input type="text" id="header-inherit_class_name" name="header-inherit_class_name" class = 'form-control'>
+                                    <label for="header-nav_link" class="col-sm-9" style="color:#6a46cb; font-weight: 500;">* input "controller_path#controller_id" </label>               
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="header-inherit_control_path" class="col-pd-1 col-sm-2 col-form-label">Inherit Controller Path</label>
+                                <div class="col-sm-9">  
+                                    <input type="text" id="header-inherit_control_path" name="header-inherit_control_path" class = 'form-control'>               
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
         <div class="card-footer">
             <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => 'btn btn-primary float-right']) ?>
         
@@ -161,7 +223,5 @@ $this->registerJs($script);
     </div>
         </div>
       
-
-
 
 
