@@ -30,8 +30,12 @@ $config = [
                         'viewPath' => '@backend/mail',
                         'useFileTransport' => false,
                         'transport' => [
-                            'class' => '465',//'465 OR 587',
-                            'encryption' => 'tsl',
+                            'class' => 'Swift_SmtpTransport',
+                            'host' => 'smtp.gmail.com',
+                            'username' =>'devanshuverma158@gmail.com',
+                            'password' => '*\X3CZVnay@<?"?R',
+                            'port' => '587',//'465 OR 587',
+                            'encryption' => 'tls',
                         ],
                     ],
 
