@@ -71,4 +71,25 @@ return [
         'message' => 'ewf',
         'id' => 'enquiry000040',
     ],
+    'enquiry000041' => [
+        'name' => 'Devanshu',
+        'email' => 'devanshuverma158@gmail.com',
+        'phone' => '07838062678',
+        'message' => 'hello',
+        'id' => 'enquiry000041',
+    ],
+    'enquiry000042' => [
+        'name' => 'Devanshu',
+        'email' => 'devanshuverma158@gmail.com',
+        'phone' => '07838062678',
+        'message' => 'hello',
+        'id' => 'enquiry000042',
+    ],
+    'enquiry000043' => [
+        'name' => 'Devanshu',
+        'email' => 'devanshuverma158@gmail.com',
+        'phone' => '07838062678',
+        'message' => 'hello',
+        'id' => 'enquiry000043',
+    ],
 ];

@@ -32,9 +32,15 @@ $this->params['breadcrumbs'][] = $school->school_name;
 </section>
 
 <!-- $school->schoolSlider->image -->
-<div style="color: white; background: black; height: 60px; font: 1.2em bold comic-sans;">
-  <marquee><p>Latest News for <?= Html::encode($this->title) ?> Every Latest news goes here </p></marquee>
-</div>
+<section style="color: white; background: black; height: 60px; font: 1.2em bold comic-sans;">
+  <marquee onmouseover= 'this.stop()' onmouseout = 'this.start()'>
+    <p>
+      <span style="margin: 0 200px;"><span style="color:gold">*New : </span>Latest News for <?= Html::encode($this->title) ?> Every Latest news goes here</span>
+      <span style="margin: 0 200px;">Latest News for <?= Html::encode($this->title) ?> Every Latest news goes here</span> 
+      <span style="margin: 0 200px;">Latest News for <?= Html::encode($this->title) ?> Every Latest news goes here</span>  
+    </p>
+  </marquee>
+</section>
 
 
 
