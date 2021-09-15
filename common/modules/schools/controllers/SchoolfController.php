@@ -84,10 +84,9 @@ class SchoolfController extends \yii\web\Controller
         }
     }
 
-    public function actionContainerOffice2($id)
+    public function actionContainerOffice2($id, $school_name)
     {
         $member = $this->findOffMemberModel($id);
-        $school_name = $this->findSchoolModel($id)->school_name;
 
         if(!is_null($member)) {
            return $this->renderAjax('office-2', ['member' => $member, 'school_name' => $school_name]);

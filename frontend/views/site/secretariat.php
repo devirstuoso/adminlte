@@ -32,16 +32,14 @@ $members = $staffs::find()->where(['like','leader_postition','section officer'])
 </section>
 
 
-<div class="leadership">
-
-  <section class="u-clearfix u-image u-shading u-section-sec" id="sec-1974" data-image-width="1280" data-image-height="853">
+  <section class="u-clearfix u-image u-shading leadership-section-sec" id="sec-1974" data-image-width="1280" data-image-height="853">
     <div class="u-clearfix u-sheet u-sheet-1">
       <h2 class="u-align-justify u-text u-text-1">Welcome to the IoE Secretariat</h2>
       <p class="u-align-justify u-text u-text-2">The University of Delhi achieved a significant distinction in terms of being recognized as the Institution of Eminence (IoE) by the Ministry of Education, Government of India. A well-deserved recognition that has been achieved as a result of the continuing efforts and contribution of our students, researchers, teachers and the administrative staff. This distinction is extraordinary in the sense that the competition for a limited number of institutions to be so recognized by the MHRD was both serious and severe. Our stakeholders deserve to be congratulated for this remarkable accomplishment.</p>
     </div>
   </section>
 
-  <section class="skrollable u-clearfix u-white u-section-leaders" id="sec-83b8">
+  <section class="skrollable u-clearfix u-white leadership-section-leaders" id="sec-83b8">
 
     <div class="u-clearfix u-sheet u-valign-top-xl .u-sheet-leaders">
 
@@ -72,4 +70,3 @@ $members = $staffs::find()->where(['like','leader_postition','section officer'])
       </div>
     </div>
   </section>
-</div>

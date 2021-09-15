@@ -20,7 +20,7 @@ return [
         'id' => 'header0002',
     ],
     'header0003' => [
-        'nav_item' => 'Committee Members',
+        'nav_item' => 'Committee',
         'nav_order' => '3',
         'nav_link' => '/schools/schoolf/container-committee',
         'id' => 'header0003',

@@ -7,6 +7,8 @@ use yii\helpers\HtmlPurifier;
 use yii\helpers\Url;
 use yii\widgets\Breadcrumbs;
 
+\common\modules\schools\assets\schoolsAsset::register($this);
+
 $this->title = Yii::t('app', 'Delhi Schools');
 $this->params['breadcrumbs'][] = $this->title;
 ?>

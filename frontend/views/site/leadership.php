@@ -58,8 +58,7 @@ SVG;
   </div>
 </section>
 
-<div class="leadership">
- <section class="skrollable u-clearfix u-white u-section-leaders" id="sec-83b8">
+ <section class="skrollable u-clearfix u-white leadership-section-leaders" id="sec-83b8">
 
   <div class="u-clearfix u-sheet u-valign-top-xl .u-sheet-leaders">
 
@@ -87,16 +86,16 @@ SVG;
         <?php endif; ?>
         <?php if(!is_null($osd1)): ?>
           <div class="u-align-center u-container-style u-list-item u-repeater-item u-shape-rectangle" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
-            <div class="u-container-layout u-similar-container u-valign-top-lg u-container-layout-4">
-              <div class="u-align-center u-container-style u-effect-hover-liftUp u-group u-shape-rectangle u-group-3" data-image-width="225" data-image-height="225">
+            <div class="u-container-layout u-similar-container u-valign-top-lg u-container-layout-2">
+              <div class="u-align-center u-container-style u-effect-hover-liftUp u-group u-shape-rectangle u-group-2" data-image-width="225" data-image-height="225">
                 <div class="u-background-effect u-expanded">
-                  <div class="u-background-effect-image u-expanded u-image u-image-2" style="background-image: url(<?php echo Url::to ('@backend_web/').$osd1->leader_image ;?>)" data-image-width="225" data-image-height="225"></div>
+                  <div class="u-background-effect-image u-expanded u-image u-image-1" style="background-image: url(<?php echo Url::to ('@backend_web/').$osd1->leader_image ;?>)" data-image-width="225" data-image-height="225"></div>
                 </div>
-                <div class="u-container-layout u-container-layout-5"></div>
+                <div class="u-container-layout u-container-layout-3"></div>
               </div>
-              <h1 class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-text u-text-default u-text-3"><?php echo $osd1->leader_postition;?></h1>
-              <h2 class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-text u-text-default u-text-4"><?php echo $osd1->leader_name.' '.$osd1->leader_name_suf;?></h2>
-              <a href="<?php echo Url::to(['leadership-detailed','id' => $osd1->id]); ?>" class="u-active-none u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-border-none u-btn u-button-style u-hover-none u-none u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-2">Meet the <?php echo $osd1->leader_postition;?>&nbsp;<span><?php echo '  '.$arrow?></span>
+              <h1 class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-text u-text-default u-text-1"><?php echo $osd1->leader_postition;?></h1>
+              <h2 class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-text u-text-default u-text-2"><?php echo $osd1->leader_name.' '.$osd1->leader_name_suf;?></h2>
+              <a href="<?php echo Url::to(['leadership-detailed','id' => $osd1->id]); ?>" class="u-active-none u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-border-none u-btn u-button-style u-hover-none u-none u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-1">Meet the <?php echo $osd1->leader_postition;?>&nbsp;<span><?php echo '  '.$arrow?></span>
               </a>
             </div>
           </div>
@@ -104,16 +103,16 @@ SVG;
 
         <?php if(!is_null($osd2)): ?>
           <div class="u-align-center u-container-style u-list-item u-repeater-item u-shape-rectangle" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
-            <div class="u-container-layout u-similar-container u-valign-top-lg u-container-layout-6">
-              <div class="u-align-center u-container-style u-effect-hover-liftUp u-group u-shape-rectangle u-group-4" data-image-width="225" data-image-height="225">
+            <div class="u-container-layout u-similar-container u-valign-top-lg u-container-layout-2">
+              <div class="u-align-center u-container-style u-effect-hover-liftUp u-group u-shape-rectangle u-group-2" data-image-width="225" data-image-height="225">
                 <div class="u-background-effect u-expanded">
-                  <div class="u-background-effect-image u-expanded u-image u-image-3" style="background-image: url(<?php echo Url::to ('@backend_web/').$osd2->leader_image ;?>)"  data-image-width="225" data-image-height="225"></div>
+                  <div class="u-background-effect-image u-expanded u-image u-image-1" style="background-image: url(<?php echo Url::to ('@backend_web/').$osd2->leader_image ;?>)"  data-image-width="225" data-image-height="225"></div>
                 </div>
-                <div class="u-container-layout u-container-layout-7"></div>
+                <div class="u-container-layout u-container-layout-3"></div>
               </div>
-              <h1 class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-text u-text-default u-text-5"><?php echo $osd2->leader_postition;?></h1>
-              <h2 class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-text u-text-default u-text-6"><?php echo $osd2->leader_name.' '.$osd2->leader_name_suf;?></h2>
-              <a href="<?php echo Url::to(['leadership-detailed','id' => $osd2->id]); ?>" class="u-active-none u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-border-none u-btn u-button-style u-hover-none u-none u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-3">Meet the <?php echo $osd2->leader_postition;?>&nbsp;<span><?php echo '  '.$arrow?></span>
+              <h1 class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-text u-text-default u-text-1"><?php echo $osd2->leader_postition;?></h1>
+              <h2 class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-text u-text-default u-text-2"><?php echo $osd2->leader_name.' '.$osd2->leader_name_suf;?></h2>
+              <a href="<?php echo Url::to(['leadership-detailed','id' => $osd2->id]); ?>" class="u-active-none u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-border-none u-btn u-button-style u-hover-none u-none u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-1">Meet the <?php echo $osd2->leader_postition;?>&nbsp;<span><?php echo '  '.$arrow?></span>
               </a>
             </div>
           </div>
@@ -121,16 +120,16 @@ SVG;
 
         <?php if(!is_null($sle)): ?>
           <div class="u-align-center u-container-style u-list-item u-repeater-item u-shape-rectangle" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
-            <div class="u-container-layout u-similar-container u-valign-top-lg u-container-layout-8">
-              <div class="u-align-center u-container-style u-effect-hover-liftUp u-group u-shape-rectangle u-group-5" data-image-width="225" data-image-height="225">
+            <div class="u-container-layout u-similar-container u-valign-top-lg u-container-layout-2">
+              <div class="u-align-center u-container-style u-effect-hover-liftUp u-group u-shape-rectangle u-group-2" data-image-width="225" data-image-height="225">
                 <div class="u-background-effect u-expanded">
-                  <div class="u-background-effect-image u-expanded u-image u-image-4" style="background-image: url(<?php echo Url::to ('@backend_web/').$sle->leader_image ;?>)"  data-image-width="225" data-image-height="225"></div>
+                  <div class="u-background-effect-image u-expanded u-image u-image-1" style="background-image: url(<?php echo Url::to ('@backend_web/').$sle->leader_image ;?>)"  data-image-width="225" data-image-height="225"></div>
                 </div>
-                <div class="u-container-layout u-container-layout-9"></div>
+                <div class="u-container-layout u-container-layout-3"></div>
               </div>
-              <h1 class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-text u-text-default u-text-7"><?php echo $sle->leader_postition;?></h1>
-              <h2 class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-text u-text-default u-text-8"><?php echo $sle->leader_name.' '.$sle->leader_name_suf;?></h2>
-              <a href="<?php echo Url::to(['leadership-detailed','id' => $sle->id]); ?>" class="u-active-none u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-border-none u-btn u-button-style u-hover-none u-none u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-4">Meet the <?php echo $sle->leader_postition;?>&nbsp;<span><?php echo '  '.$arrow?></span>
+              <h1 class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-text u-text-default u-text-1"><?php echo $sle->leader_postition;?></h1>
+              <h2 class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-text u-text-default u-text-2"><?php echo $sle->leader_name.' '.$sle->leader_name_suf;?></h2>
+              <a href="<?php echo Url::to(['leadership-detailed','id' => $sle->id]); ?>" class="u-active-none u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-border-none u-btn u-button-style u-hover-none u-none u-text-custom-color-3 u-text-hover-custom-color-1 u-btn-1">Meet the <?php echo $sle->leader_postition;?>&nbsp;<span><?php echo '  '.$arrow?></span>
               </a>
             </div>
           </div>
@@ -140,4 +139,4 @@ SVG;
     </div>
   </div>
 </section>
-</div>
+

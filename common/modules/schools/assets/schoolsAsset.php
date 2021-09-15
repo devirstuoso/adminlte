@@ -1,24 +1,25 @@
 <?php 
 
 namespace common\modules\schools\assets;
+use yii\web\AssetBundle;
+
 
 class schoolsAsset extends AssetBundle
 {
-	public $sourcePath = ''; //alias to asset folder in file system
+	public $sourcePath = '@schools-web'; //alias to asset folder in file system
 	public $baseUrl = '';
 
 	public $css = [
-        'css/site.css',
-        'css/login-page.css',
-        'css/gridview.css',
+        'css/schools.css',
+        'css/school-home.css',
 
     ];
     public $js = [
-        'js/modal.js'
+        '',
     ];
     public $depends = [
         'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
+        'yii\bootstrap4\BootstrapAsset',
     ];
 }
 
