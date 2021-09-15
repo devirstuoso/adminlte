@@ -82,7 +82,7 @@ $this->registerJs($inherit);
                     </div>
                     <label for="header-nav_order" class="col-pd-1 col-sm-1 col-form-label">Order</label>
                     <div class="col-sm-2">
-                    <?= $form->field($model, 'nav_order')->dropDownList(array_combine(range(1,9), range(1,9)))->label(false) ?>       
+                    <?= $form->field($model, 'nav_order' ,['enableAjaxValidation' => true])->dropDownList(array_combine(range(1,9), range(1,9)))->label(false) ?>       
                     </div>
                 </div>
                 <div class="form-group row">

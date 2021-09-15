@@ -11,6 +11,7 @@ use common\modules\schools\models\SchoolObj;
 use common\modules\schools\models\SchoolGovCouncil;
 use common\modules\schools\models\SchoolCommittee;
 use common\modules\schools\models\SchoolOffice;
+use common\modules\schools\models\SchoolHeader;
 
 use backend\models\ContactForm;
 
@@ -21,8 +22,9 @@ class SchoolfController extends \yii\web\Controller
     public function actionIndex($id)
     {   
         $school = $this->findSchoolModel($id);
+        $nav = SchoolHeader::find()->orderBy(['nav_order' => SORT_ASC])->all();
         $this->actionContainerHome($id);
-        return $this->render('index', ['school' => $school]);
+        return $this->render('index', ['school' => $school, 'nav_menu' => $nav,]);
     }
 
     public function actionContainerHome($id)
@@ -69,20 +71,24 @@ class SchoolfController extends \yii\web\Controller
         }
     }
 
-    public function actionContainerOffice($id, $school)
+    public function actionContainerOffice($id)
     {
         $members = $this->findSchoolOffModel($id);
+        $school = $this->findSchoolModel($id);
+
         if(sizeof($members)>0) {
-            return $this->renderAjax('office', ['members' => $members, 'school_name' => $school]);
+            return $this->renderAjax('office', ['members' => $members, 'school' => $school]);
         }
         else{
             return $this->renderAjax('comsoon');
         }
     }
 
-    public function actionContainerOffice2($id, $school_name)
+    public function actionContainerOffice2($id)
     {
         $member = $this->findOffMemberModel($id);
+        $school_name = $this->findSchoolModel($id)->school_name;
+
         if(!is_null($member)) {
            return $this->renderAjax('office-2', ['member' => $member, 'school_name' => $school_name]);
         }

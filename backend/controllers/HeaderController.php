@@ -12,6 +12,9 @@ use yii\web\NotFoundHttpException;
 use yii\web\UploadedFile;
 use yii\filters\VerbFilter;
 
+use yii\web\Response;
+use yii\widgets\ActiveForm;
+
 use backend\models\Model;
 use backend\models\HeaderContent;
 
@@ -78,6 +81,12 @@ class HeaderController extends Controller
     {   
         $model = new Header;
         $modelsContent = [ new HeaderContent ];
+
+
+        if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            return ActiveForm::validate($model);
+        }
 
         if ($model->load(Yii::$app->request->post())) {
             $model->id = $this->keyValue(Header::classname()); //comment this for int id
@@ -173,6 +182,12 @@ class HeaderController extends Controller
         $modelsContent = $model->headerContent;
         $old_image = $model->logo;
 
+
+        if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            return ActiveForm::validate($model);
+        }
+
         if ($model->load(Yii::$app->request->post())) {
 
             $oldIDs = ArrayHelper::map($modelsContent, 'id', 'id');
@@ -236,11 +251,16 @@ class HeaderController extends Controller
      */
     public function actionDelete($id)
     {
-        $model = $this->findModel($id);
-        HeaderContent::deleteAll(['nav_id' => $model->id]);
-        $model->delete();
-
+        if ($id <> 'header0000') {
+            $model = $this->findModel($id);
+            HeaderContent::deleteAll(['nav_id' => $model->id]);
+            $model->delete();
+            return $this->redirect(['index']);
+        }
+        else {
+        Yii::$app->session->setFlash('error', 'This Item Can\'t be deleted.');
         return $this->redirect(['index']);
+        }
     }
 
     /**

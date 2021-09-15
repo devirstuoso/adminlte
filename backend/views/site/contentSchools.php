@@ -11,6 +11,36 @@ $this->params['breadcrumbs'] = [['label' => $this->title]];
 		<div class="col-lg-5 col-md-6 col-sm-6 col-xs-4 col-10">
 			<div class="small-box bg-purple">
 				<div class="inner">
+					<h3>Schools Header & Menu</h3>
+					<p>change the navigation menu</p>
+				</div>
+				<div class="icon">
+					<i class="fas fa-bars"></i>
+				</div>
+				<a href="<?php echo Yii::$app->urlManager->createUrl("/schools/school-header");?>" class="small-box-footer">
+					<i class="fas fa-arrow-circle-right"></i>
+				</a>
+			</div>
+		</div>
+		<div class="col-lg-5 col-md-6 col-sm-6 col-xs-4 col-10">
+			<div class="small-box bg-light">
+				<div class="inner">
+					<h3></h3>
+					<p></p>
+				</div>
+				<div class="icon">
+					<i class="fas fa-bars"></i>
+				</div>
+				<a href="<?php echo Yii::$app->urlManager->createUrl("");?>" class="small-box-footer">
+					<i class="fas fa-arrow-circle-right"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="row align-items-center">
+		<div class="col-lg-5 col-md-6 col-sm-6 col-xs-4 col-10">
+			<div class="small-box bg-purple">
+				<div class="inner">
 					<h3>Schools Index</h3>
 					<p>change the basic information or slider of a school</p>
 				</div>
