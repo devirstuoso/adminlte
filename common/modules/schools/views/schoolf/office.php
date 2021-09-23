@@ -26,7 +26,7 @@ SVG;
             <img src="<?php echo Url::to('@backend_web/').$member->photograph.'?'.time() ;?>" class="bearer-image u-effect-hover-liftUp">
             <h3 class="u-text text-name "><?= Html::encode($member->name);?></h3>
             <h3 class="u-text text-post"><?= Html::encode($member->position);?></h3>
-            <a class="u-active-none u-border-2 u-border-palette-1-base u-btn u-btn-rectangle u-button-style u-hover-none u-none u-text-black u-text-hover-custom-color-1 u-btn-link-2-page" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-office2')?>",{id:"<?php echo $member->id; ?>", school_name:"<?php echo $school->school_name;?>"}).done(function(data){ $("#member").html(data); }) '>Meet <?= Html::encode($member->position);?> of Delhi School of <?= Html::encode($school->school_name);?> <span ><?php echo '  '.$arrow?></span></a>
+            <a class="u-active-none u-border-2 u-border-palette-1-base u-btn u-btn-rectangle u-button-style u-hover-none u-none u-text-black u-text-hover-custom-color-1 u-btn-link-2-page" onclick='$.get("<?=Url::toRoute('/schools/schoolf/container-office2')?>",{id:"<?php echo $member->id; ?>", school_name:"<?php echo $school->title;?>"}).done(function(data){ $("#member").html(data); }) '>Meet <?= Html::encode($member->position);?> of Delhi School of <?= Html::encode($school->title);?> <span ><?php echo '  '.$arrow?></span></a>
           </div>
         </div>
 

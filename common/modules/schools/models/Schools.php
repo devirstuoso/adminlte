@@ -9,7 +9,7 @@ use Yii;
  *
  * @property string $id
  * @property string $school_id
- * @property string $school_name
+ * @property string $title
  */
 class Schools extends \yii\db\ActiveRecord
 {   
@@ -28,10 +28,10 @@ class Schools extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'school_id', 'school_name'], 'required'],
+            [['id', 'school_id', 'title'], 'required'],
             [['id', 'school_id'], 'string', 'max' => 30],
             [['school_id'], 'compare', 'compareValue' => 'school_', 'operator'=> '!=', 'message' =>'append the school code.'],
-            [['school_name'], 'string', 'max' => 300],
+            [['title'], 'string', 'max' => 300],
             [['school_logo'], 'string', 'max' => 10000],
             [['id', 'school_id'], 'unique'],
         ];
@@ -45,7 +45,7 @@ class Schools extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('app', 'ID'),
             'school_id' => Yii::t('app', 'School ID'),
-            'school_name' => Yii::t('app', 'School Name'),
+            'title' => Yii::t('app', 'School Name'),
         ];
     }
 

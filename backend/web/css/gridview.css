@@ -49,10 +49,13 @@
         text-align: left;
         }
      .gridview-gray-cell{
-        background-color : #BFBFBF;
-        color: #272727;
+        background-color : #bfbfbf !important/*#BFBFBF*/;
         text-align: left;
         }
+     .gridview-gray-cell td:not(:last-child) {
+        filter: blur(0.5rem);
+        }
+
 
     .gridview-image-index{
         max-width: 350px ;

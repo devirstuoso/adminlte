@@ -16,6 +16,8 @@ return [
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
+            'class' => 'common\components\Request',
+            'web' => '/frontend/web',
         ],
         'user' => [
             'enableSession' => true,
@@ -40,19 +42,35 @@ return [
             'errorAction' => 'site/error',
         ],
 
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            // 'suffix' => '.php',
+            'rules' => [
+
+                '' => 'site/index',
+                'about' => 'site/about',
+                'governing-council' => 'site/gov-council',
+                'leadership' => 'site/leadership',
+                'careers' => 'site/career',
+                // 'careers/career1<id>' => 'site/career-1<id>',
+                'schools/schoolf<id>' => 'schools/schoolf<id>',
+                'annual-report' => 'site/report',
+                'news&events' => 'site/news-events-page',
+
+                'career-in' => '/site/career-1',
+
+                // 's/<alias>' => 'site/<alias>',
+                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+
+            ],
+        ],
 
         'urlManagerBackend' => [
             'class' => 'yii\web\urlManager',
             'baseUrl' => '@backend_web/',
-            'enablePrettyUrl' => false,
-            'showScriptName' => false,
-        ],
-
-        'urlManager' => [
-            'enablePrettyUrl' => false,
-            'showScriptName' => false,
-            'rules' => [
-            ],
+            // 'enablePrettyUrl' => true,
+            // 'showScriptName' => false,
         ],
         
     ],

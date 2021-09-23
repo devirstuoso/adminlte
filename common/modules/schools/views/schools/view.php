@@ -10,7 +10,7 @@ use common\widgets\Alert;
 /* @var $model common\modules\schools\models\Schools */
 
 $this->title = Yii::t('app', 'Delhi School of {name} [ View Mode ]', [
-    'name' => $model->school_name,
+    'name' => $model->title,
 ]);
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Schools'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
@@ -44,7 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'school_id',
-            'school_name',
+            'title',
             ['attribute' => 'school_logo',
             'contentOptions' => ['class' => ''],
             'format' => 'raw',

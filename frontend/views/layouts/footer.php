@@ -76,7 +76,7 @@ ICON;
                   <?php foreach ($footer->footerContent as $index => $nav) : ?>
                     <?php if ($nav->tab == '1') : ?>
                       <tr style="height: 46px;">
-                        <td class="u-table-cell u-text-grey-10 u-table-cell-1"><a href="<?=Url::to($nav->link)?>"><?=Html::encode($nav->title) ?></a></td>
+                        <td class="u-table-cell u-text-grey-10 u-table-cell-1"><a href="<?= Yii::$app->urlManager->createUrl($nav->link)?>"><?=Html::encode($nav->title) ?></a></td>
                       </tr>
                     <?php endif; ?>  
                   <?php endforeach; ?>
@@ -108,7 +108,7 @@ ICON;
                   <?php foreach ($footer->footerContent as $index => $nav) : ?>
                     <?php if ($nav->tab == '2') : ?>
                       <tr style="height: 46px;">
-                        <td class="u-table-cell u-text-grey-10 u-table-cell-1"><a href="<?=Url::to($nav->link)?>"><?=Html::encode($nav->title) ?></a></td>
+                        <td class="u-table-cell u-text-grey-10 u-table-cell-1"><a href="<?= Yii::$app->urlManager->createUrl($nav->link)?>"><?=Html::encode($nav->title) ?></a></td>
                       </tr>
                     <?php endif; ?>  
                   <?php endforeach; ?>
@@ -140,7 +140,7 @@ ICON;
                   <?php foreach ($footer->footerContent as $index => $nav) : ?>
                     <?php if ($nav->tab == '3') : ?>
                       <tr style="height: 46px;">
-                        <td class="u-table-cell u-text-grey-10 u-table-cell-1"><a href="<?=Url::to( $nav->link )?>"><?=Html::encode($nav->title) ?></a></td>
+                        <td class="u-table-cell u-text-grey-10 u-table-cell-1"><a href="<?= Yii::$app->urlManager->createUrl( $nav->link )?>"><?=Html::encode($nav->title) ?></a></td>
                       </tr>
                     <?php endif; ?>  
                   <?php endforeach; ?>

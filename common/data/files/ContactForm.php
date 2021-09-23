@@ -92,4 +92,25 @@ return [
         'message' => 'hello',
         'id' => 'enquiry000043',
     ],
+    'enquiry000044' => [
+        'name' => 'sameerdmehta',
+        'email' => 'sd.mehta1993@gmail.com',
+        'phone' => '999999999',
+        'message' => 'qwe',
+        'id' => 'enquiry000044',
+    ],
+    'enquiry000045' => [
+        'name' => 'Devanshu',
+        'email' => 'devanshuverma158@gmail.com',
+        'phone' => '07838062678',
+        'message' => 'qw',
+        'id' => 'enquiry000045',
+    ],
+    'enquiry000046' => [
+        'name' => 'sameer d mehta',
+        'email' => 'sd.mehta1993@gmail.com',
+        'phone' => '07838062678',
+        'message' => '1243',
+        'id' => 'enquiry000046',
+    ],
 ];

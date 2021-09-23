@@ -40,9 +40,9 @@ $this->registerJs($js);
                 <div class="col-sm-3">
                     <?= $form->field($modelSchool, 'school_id')->textInput(['maxlength' => true, 'placeholder'=> 'school_', 'options' => ['class'=> 'form-control']])->label(false) ?>
                 </div>
-                <label for="schools-school_name" class="col-pd-1 col-sm-2 col-form-label">School Name</label>
+                <label for="schools-title" class="col-pd-1 col-sm-2 col-form-label">School Name</label>
                 <div class="col-sm-5">
-                    <?= $form->field($modelSchool, 'school_name', ['options' => ['class' => '']])->textInput(['maxlength' => true, 'options' => ['class'=> 'form-control']])->label(false) ?>                   
+                    <?= $form->field($modelSchool, 'title', ['options' => ['class' => '']])->textInput(['maxlength' => true, 'options' => ['class'=> 'form-control']])->label(false) ?>                   
                 </div>
             </div>
             <div class="form-group row">

@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
     <p>
-        <?= Html::a('<i class="fas fa-arrow-left"></i>', ['site/content-base'], ['class' => 'btn btn-outline-dark']) ?> 
+        <?= Html::a('<i class="fas fa-arrow-left"></i> Back', ['site/content-base'], ['class' => 'btn btn-dark']) ?> 
     </p>
 
     <?php Pjax::begin(); ?>
@@ -25,12 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
-        'tableOptions' => ['class' => 'table table-bordered'],
-        'summaryOptions' => ['class' => 'gridview-purple-cell'],
         'options' => ['class' => 'gridview-header'],
-        'rowOptions'=>function($model){
-                return ['class' => 'gridview-purple-cell', 'height'=> '10px'];
-        },
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
@@ -40,10 +35,10 @@ $this->params['breadcrumbs'][] = $this->title;
              'contentOptions' => ['style' => 'background-color:#fff']
             ],
             'phone',
-            ['attribute' => 'message',
-             'format' => 'ntext',
-             'contentOptions' => ['style' => 'width: 50%']
-            ],
+            // ['attribute' => 'message',
+            //  'format' => 'ntext',
+            //  'contentOptions' => ['style' => 'width: 50%']
+            // ],
             ['class' => 'yii\grid\ActionColumn',
                 'contentOptions' => ['class' => 'gridview-menu-buttons-container'],
                 'template' => '{view} {delete}',
@@ -64,8 +59,5 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php Pjax::end(); ?>
 
-    <p>
-        <?= Html::a('<i class="fas fa-arrow-left"></i>', ['site/content-base'], ['class' => 'btn btn-outline-dark']) ?> 
-    </p>
 
 </div>

@@ -10,10 +10,10 @@ use yii\widgets\Breadcrumbs;
 
 
 $this->title = Yii::t('app', 'Delhi Schools of {name}', [
-  'name' => $school->school_name,
+  'name' => $school->title,
 ]);
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Delhi Schools'), 'url' => Yii::$app->urlManager->createUrl("schools")];
-$this->params['breadcrumbs'][] = $school->school_name;
+$this->params['breadcrumbs'][] = $school->title;
 ?>
 
 <section class="skrollable u-clearfix u-image bread-section-1" id="sec-9737" data-image-width="1820" data-image-height="520">

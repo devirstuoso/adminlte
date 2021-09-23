@@ -11,8 +11,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     
-    <!-- ?php echo Yii::$app->urlManagerFrontend->createUrl("site/index");?> -->
-    <a href="<?php echo Yii::$app->urlManagerFrontend->createUrl("site/index");?>" class="brand-link">
+    <a href="<?php echo Yii::$app->urlManagerFrontend->createUrl("");?>" class="brand-link" target ="_blank">
         <?= Html::img('@web/img/du-logo.png',['alt'=>'DU Logo', 'class'=> 'brand-image img-circle elevation-4']); ?>
         <span class="brand-text font-weight-light">DU IOE</span>
     </a>
@@ -48,7 +47,7 @@
         </div> -->
 
         <!-- Sidebar Menu -->
-        <nav class="mt-2">
+        <nav class="mt-5">
             <?php
             echo widgets\Menu::widget([
                 'items' => [
@@ -61,15 +60,53 @@
                     'badge' => '<span class="right badge badge-info">Welcome</span>',
                     'url' => ['/site/insights'],
                     ],
+                    ['icon' => ''],
+                     ['label' => 'Manage Content','icon' => 'th',  'iconStyle' => 'fa', 'iconClassAdded' => 'text-info'],
                     [
-                    'label' => 'Manage Content', 
-                    'icon' => 'th', 
+                    'label' => 'IoE Website', 
+                    // 'icon' => 'th', 
                     'visible' => !(Yii::$app->user->isGuest),
-                    'badge' => '<span class="right badge badge-info">2</span>',
+                    'badge' => '<span class="right badge badge-info">8</span>',
                     'items' => [
-                            ['label' => 'Base Website', 'url' => ['/site/content-base'], 'iconStyle' => 'far'],
-                            ['label' => 'Schools', 'url' => ['/site/content-schools'], 'iconStyle' => 'far'],
+                            ['label' => 'Header', 'url' => ['/header'], 'iconStyle' => 'far'],
+                            ['label' => 'Slider', 'url' => ['/home-slider'], 'iconStyle' => 'far'],
+                            ['label' => 'Governing', 'url' => ['/gov-council'], 'iconStyle' => 'far'],
+                            ['label' => 'Leadership', 'url' => ['/leadership'], 'iconStyle' => 'far'],
+                            ['label' => 'Updates', 'url' => ['/updates-panel'], 'iconStyle' => 'far'],
+                            ['label' => 'News&Events', 'url' => ['/news-events'], 'iconStyle' => 'far'],
+                            ['label' => 'Careers', 'url' => ['/career'], 'iconStyle' => 'far'],
+                            ['label' => 'Footer', 'url' => ['/footer'], 'iconStyle' => 'far'],
                         ]],
+                                        [
+                    'label' => 'Delhi Schools', 
+                    // 'icon' => 'th', 
+                    'visible' => !(Yii::$app->user->isGuest),
+                    'badge' => '<span class="right badge badge-info">7</span>',
+                    'items' => [
+                            ['label' => 'Create School', 'url' => ['/schools/schools'], 'iconStyle' => 'far'],
+                            ['label' => 'Header', 'url' => ['/schools/school-header'], 'iconStyle' => 'far'],
+                            ['label' => 'Home Page', 'url' => ['/schools/school-home'], 'iconStyle' => 'far'],
+                            ['label' => 'Objective', 'url' => ['/schools/school-obj'], 'iconStyle' => 'far'],
+                            ['label' => 'Governing', 'url' => ['/schools/school-gov-council'], 'iconStyle' => 'far'],
+                            ['label' => 'Office Bearers', 'url' => ['/schools/school-office'], 'iconStyle' => 'far'],
+                            ['label' => 'Committee', 'url' => ['/schools/school-committee'], 'iconStyle' => 'far'],
+                          
+                        ]],
+                      [
+                    'label' => 'Contact form',
+                    'visible' => !(Yii::$app->user->isGuest),
+                    'icon' => 'info',
+                    'url' => ['/contact-form'],
+                    ],
+                    // [
+                    // 'label' => 'Manage Content', 
+                    // 'icon' => 'th', 
+                    // 'visible' => !(Yii::$app->user->isGuest),
+                    // 'badge' => '<span class="right badge badge-info">2</span>',
+                    // 'items' => [
+                    //         ['label' => 'Base Website', 'url' => ['/site/content-base'], 'iconStyle' => 'far'],
+                    //         ['label' => 'Schools', 'url' => ['/site/content-schools'], 'iconStyle' => 'far'],
+                    //     ]],
 
                 /*  ['label' => 'Extra tabs', 'header' => true],
                     ['label' => 'Gii',  'icon' => 'file-code', 'url' => ['/gii'], 'target' => '_blank'],

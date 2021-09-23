@@ -14,11 +14,14 @@ return [
     'bootstrap' => ['log'],
     'aliases' => [
         '@adminlte/widgets'=>'@vendor/adminlte/hail812/yii2-adminlte-widgets'
-        ],
+    ],
     'modules' => [],
     'components' => [
         'request' => [
-            'csrfParam' => '_csrf-backend',
+            // 'csrfParam' => '_csrf-backend',
+            'class' => 'common\components\Request',
+            'web' => '/backend/web',
+            'adminUrl' => '/admin',
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -49,13 +52,21 @@ return [
             'errorAction' => 'site/error',
         ],
 
-
+        'urlManager' => [
+            'enablePrettyUrl' => false,
+            'showScriptName' => true,
+            'rules' => [
+                '' => 'site/index',
+                // '<action>' => 'site/<action>',
+                // '<controller>index' => '<controller>/index'
+            ],
+        ],
         'urlManagerFrontend' => [
             'class' => 'yii\web\urlManager',
-            'scriptUrl' => '/adminlte/frontend/web',
+            'scriptUrl' => '/adminlte',
             'baseUrl' => '@frontend/web',
-            'enablePrettyUrl' => false,
-            'showScriptName' => false,
+            'enablePrettyUrl' => true,
+            // 'showScriptName' => false,
         ],
 
     ],

@@ -50,7 +50,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ['attribute' => 'school_id',
             'value' =>    function($model){
                 return $model->school_id; },
-                'filter' => Html::activeDropDownList($searchModel, 'school_id', ArrayHelper::map(Schools::find()->asArray()->all(), 'school_id', 'school_name'), 
+                'filter' => Html::activeDropDownList($searchModel, 'school_id', ArrayHelper::map(Schools::find()->asArray()->all(), 'school_id', 'title'), 
                     ['class' => 'form-control', 'prompt' => 'Select School'])
             ],
             ['label' => 'Content',

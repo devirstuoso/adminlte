@@ -59,7 +59,7 @@ class HomeSliderSearch extends HomeSlider
         $query->andFilterWhere(['like', 'id', $this->id])
             ->andFilterWhere(['like', 'slider_header_text', $this->slider_header_text])
             ->andFilterWhere(['like', 'slider_subheader_text', $this->slider_subheader_text])
-            ->andFilterWhere(['like', 'slider_hide', $this->slider_button_hide])
+            ->andFilterWhere(['like', 'slider_button_hide', $this->slider_button_hide])
             ->andFilterWhere(['like', 'slider_hide', $this->slider_hide]);
 
         return $dataProvider;

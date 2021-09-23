@@ -51,7 +51,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'school_id',
-            'school_name',
+            'title',
             ['attribute' => 'school_logo',
             'contentOptions' => ['class' => ''],
             'format' => 'raw',

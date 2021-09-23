@@ -11,14 +11,14 @@ use dosamigos\tinymce\TinyMce;
 /* @var $model backend\models\UpdatesPanelContent */
 /* @var $form yii\widgets\ActiveForm */
 // for tinymce widget
-$this->registerJs('tinymce.init({
-  selector: "textarea",
-  branding: false,
-  width:    "100%",
-  height:     270,
-  rel_list:   [ { title: "Lightbox", value: "lightbox" } ],
-  forced_root_block: false
-});');
+// $this->registerJs('tinymce.init({
+//   selector: "textarea",
+//   branding: false,
+//   width:    "100%",
+//   height:     270,
+//   rel_list:   [ { title: "Lightbox", value: "lightbox" } ],
+//   forced_root_block: false
+// });');
 
 
 ?>
@@ -39,15 +39,15 @@ $this->registerJs('tinymce.init({
 
 
     <?= $form->field($model, 'updates_content_paragraph')->widget(TinyMce::className(), [
-        'options' => ['rows' => 6],
+        'options' => ['rows' => 12],
         'language' => 'en-US',
         'clientOptions' => [
             'plugins' => [
-                "advlist autolink lists link charmap preview anchor", // print visualblocks media table 
-                "searchreplace code fullscreen", 
-                "insertdatetime contextmenu paste"
+                "advlist autolink lists link charmap print preview anchor ", // print visualblocks media table 
+                "searchreplace visualblocks code fullscreen", 
+                "insertdatetime media table contextmenu paste",
             ],
-            'toolbar' => "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+            // 'toolbar' => "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
         ]
     ]);?>
     

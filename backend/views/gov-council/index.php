@@ -22,9 +22,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1 class="gridview-header-text"><?= Html::encode($this->title) ?></h1>
 
    <p>
-        <?= Html::a('<i class="fas fa-arrow-left"></i>', ['site/content-base'], ['class' => 'btn btn-outline-dark']) ?> 
+        <?= Html::a('<i class="fas fa-arrow-left"></i> Back', ['/site/content-base'], ['class' => 'btn btn-dark']) ?> 
 
-        <?= Html::button('<i class="fas fa-plus"></i>', ['value' => Url::to(['create']), 'class' => 'btn btn-outline-success', 'id' => 'modalButton']);?>
+        <?= Html::button('<i class="fas fa-plus"></i> Add a new Member', ['value' => Url::to(['create']), 'class' => 'btn btn-success', 'id' => 'modalButton']);?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -33,17 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
-        'tableOptions' => ['class' => 'table table-bordered'],
-        'summaryOptions' => ['class' => 'gridview-purple-cell'],
         'options' => ['class' => 'gridview-header'],
-        'rowOptions'=>function($model){
-            if (true) {
-                return ['class' => 'gridview-purple-cell', 'height'=> '10px'];
-            }
-            else if ($model->slider_hide == 1){
-                return ['class' => 'gridview-gray-cell'];
-            }
-        },
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
@@ -79,10 +69,5 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php Pjax::end(); ?>
 
-    <p>
-    <?= Html::a('<i class="fas fa-arrow-left"></i>', ['site/content-base'], ['class' => 'btn btn-outline-dark']) ?> 
-    <?= Html::button('<i class="fas fa-plus"></i>', ['value' => Url::to(['create']), 'class' => 'btn btn-outline-success', 'id' => 'modalButton']);?>
-
-</p>
 
 </div>

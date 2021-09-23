@@ -1,7 +1,7 @@
 <?php
 $config = [
     'aliases' => [
-        '@app_name' => '/adminlte',
+        '@app_name' => '/adminlte',             //app name
         '@backend_url' => '@app_name/backend',
         '@backend_web' => '@backend_url/web',
         '@frontend_url' => '@app_name/frontend',
@@ -15,11 +15,11 @@ $config = [
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
-                    'cache' => [
-                        'class' => 'yii\caching\FileCache',
-                    ],
-                    'assetManager' => [
-                        'appendTimestamp' => true,
+        'cache' => [
+            'class' => 'yii\caching\FileCache',
+        ],
+        'assetManager' => [
+            'appendTimestamp' => true,
                     ],  //clear cache each time
                     'filedb' => [
                         'class' => 'yii2tech\filedb\Connection',
@@ -38,6 +38,14 @@ $config = [
                             'encryption' => 'tls',
                         ],
                     ],
+                    // 'urlManager' => [
+                    //     'enablePrettyUrl' => true,
+                    //     'showScriptName' => true,
+                    //     'rules' => [
+                    //     ],
+                    // ],
+
+                    
 
                     // 'urlManagerSchools' =>[
                     //     'class' => 'yii\web\urlManager',
@@ -47,27 +55,27 @@ $config = [
                     //     'showScriptName' => false,
                     // ],
 
-    ],
-
-    'modules' => [
-                  'schools' => [
-                        'class' => 'common\modules\schools\School',
-                        ],
                 ],
-    ];
 
-    if (YII_ENV_DEV) {
+                'modules' => [
+                  'schools' => [
+                    'class' => 'common\modules\schools\School',
+                ],
+            ],
+        ];
+
+        if (YII_ENV_DEV) {
       // configuration adjustments for 'dev' environment
-      $config['bootstrap'][] = 'debug';
-      $config['modules']['debug'] = [
-         'class' => 'yii\debug\Module',
-      ];
-      $config['bootstrap'][] = 'gii';
-      $config['modules']['gii'] = [
-         'class' => 'yii\gii\Module',
-      ];
+          $config['bootstrap'][] = 'debug';
+          $config['modules']['debug'] = [
+           'class' => 'yii\debug\Module',
+       ];
+       $config['bootstrap'][] = 'gii';
+       $config['modules']['gii'] = [
+           'class' => 'yii\gii\Module',
+       ];
    }
 
    return $config;
-    
+
 

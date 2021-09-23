@@ -26,10 +26,12 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1 class="gridview-header-text"><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('<i class="fas fa-arrow-left"></i>', ['site/content-base'], ['class' => 'btn btn-outline-dark']) ?> 
-        <?= Html::button('<i class="fas fa-plus"></i>', ['value' => Url::to(['header/create']), 'class' => 'btn btn-outline-success', 'id' => 'modalButton']);?>
+        <?= Html::a('<i class="fas fa-arrow-left"></i> Back', ['site/content-base'], ['class' => 'btn btn-dark']) ?> 
+        <?= Html::button('<i class="fas fa-plus"></i> Create a nav menu', ['value' => Url::to(['header/create']), 'class' => 'btn btn-success', 'id' => 'modalButton']);?>
 
     </p>
+
+
 
 
     <?php Pjax::begin(); ?>
@@ -47,7 +49,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'attribute' => 'logo',
             'format' => 'html',
             'value' => function($model){
-                return Html::img($model->logo.'?'.time(), ['alt' =>'No Image to show','class' => 'gridview-image-index']);
+                return Html::img($model->logo, ['class' => 'gridview-image-index']);
                 }
             ],
             'nav_item',

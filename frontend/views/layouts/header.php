@@ -41,13 +41,13 @@ $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,
             }
             ?>
 
-            <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1 <?php echo $weight ; ?>" href="<?= Html::encode($nav->nav_link);?>" style="padding: 10px 0px;"><?= Html::encode($nav->nav_item); ?></a>
+            <li class="u-nav-item"><a class="u-border-10 u-border-active-custom-color-1 u-border-hover-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-custom-color-1 <?php echo $weight ; ?>" href="<?= $nav->nav_link == '#'? '#' :  Yii::$app->urlManager->createUrl($nav->nav_link);?>" style="padding: 10px 0px;"><?= Html::encode($nav->nav_item); ?></a>
 
               <?php if ($nav->headerContent) : ?>
                 <div class="u-nav-popup">
                   <ul class="u-h-spacing-21 u-nav u-unstyled u-v-spacing-15 u-nav-1">
                     <?php foreach ($nav->headerContent as $key => $sub_nav) : ?>
-                      <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= Html::encode($sub_nav->nav_sub_link);?>"><?= Html::encode($sub_nav->nav_sub_item); ?></a>
+                      <li class="u-nav-item"><a class="u-button-style u-hover-palette-2-light-2 u-nav-link u-text-hover-custom-color-1 u-white" href="<?= $sub_nav->nav_sub_link == '#'? '#' :  Yii::$app->urlManager->createUrl($sub_nav->nav_sub_link);?>"><?= Html::encode($sub_nav->nav_sub_item); ?></a>
                       </li>
                     <?php endforeach; ?>
                   </ul>
@@ -77,14 +77,14 @@ $this->registerCssFile("https://fonts.googleapis.com/css?family=Roboto:100,100i,
                 // }
                 ?>
 
-                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= Html::encode($nav->nav_link);?>" style="padding: 10px 0px;"><?= Html::encode($nav->nav_item); ?></a>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="<?= $nav->nav_link == '#'? '#' :  Yii::$app->urlManager->createUrl($nav->nav_link);?>" style="padding: 10px 0px;"><?= Html::encode($nav->nav_item); ?></a>
 
                 <?php if ($nav->headerContent) : ?>
                   <div class="u-nav-popup">
                     <span style="height: 2px; background: white;"></span>
                     <ul class="u-h-spacing-100 u-nav u-unstyled u-v-spacing-15 u-nav-2">
                       <?php foreach ($nav->headerContent as $key => $sub_nav) : ?>
-                        <li class="u-nav-item"><a class="u-button-style u-nav-link" style="line-height: 27px;" href="<?= Html::encode($sub_nav->nav_sub_link); ?>"><?= Html::encode($sub_nav->nav_sub_item); ?></a>
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link" style="line-height: 27px;" href="<?= $sub_nav->nav_sub_link == '#'? '#' :  Yii::$app->urlManager->createUrl($sub_nav->nav_sub_link); ?>"><?= Html::encode($sub_nav->nav_sub_item); ?></a>
                         </li>
 
                       <?php endforeach; ?>

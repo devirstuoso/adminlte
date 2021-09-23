@@ -17,7 +17,7 @@ class SchoolsSearch extends Schools
     public function rules()
     {
         return [
-            [['id', 'school_id', 'school_name'], 'safe'],
+            [['id', 'school_id', 'title'], 'safe'],
         ];
     }
 
@@ -59,7 +59,7 @@ class SchoolsSearch extends Schools
         // grid filtering conditions
         $query->andFilterWhere(['like', 'id', $this->id])
             ->andFilterWhere(['like', 'school_id', $this->school_id])
-            ->andFilterWhere(['like', 'school_name', $this->school_name]);
+            ->andFilterWhere(['like', 'title', $this->title]);
             // ->andFilterWhere(['like', 'heading', $this->schoolSlider]);
 
         $dataProvider->sort->attributes['heading'] = [

@@ -24,8 +24,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1 class="gridview-header-text"><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('<i class="fas fa-arrow-left"></i>', ['site/content-base'], ['class' => 'btn btn-outline-dark']) ?> 
-        <?= Html::button('<i class="fas fa-plus"></i>', ['value' => Url::to(['updates-panel/create']), 'class' => 'btn btn-outline-success', 'id' => 'modalButton']);?>
+        <?= Html::a('<i class="fas fa-arrow-left"></i> Back', ['/site/content-base'], ['class' => 'btn btn-dark']) ?> 
+        <?= Html::button('<i class="fas fa-plus"></i> Create', ['value' => Url::to(['create']), 'class' => 'btn btn-success', 'id' => 'modalButton']);?>
        
     </p>
 
@@ -37,13 +37,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'tableOptions' => ['class' => 'table table-bordered'],
-        'summaryOptions' => ['class' => 'gridview-purple-cell'],
         'options' => ['class' => 'gridview-header'],
         'rowOptions'=>function($model){
-            if ($model->updates_hide == 0) {
-                return ['class' => 'gridview-purple-cell', 'height'=> '10px'];
-            }
-            else if ($model->updates_hide == 1){
+            // if ($model->updates_hide == 0) {
+            //     return ['class' => 'gridview-purple-cell', 'height'=> '10px'];
+            // }
+            if ($model->updates_hide == 1){
                 return ['class' => 'gridview-gray-cell'];
                 }
             },
@@ -92,12 +91,6 @@ $this->params['breadcrumbs'][] = $this->title;
     ]); ?>
 
 <?php Pjax::end(); ?>
-
-
-    <p>
-        <?= Html::a('<i class="fas fa-arrow-left"></i>', ['site/content-base'], ['class' => 'btn btn-outline-dark']) ?> 
-        <?= Html::a('<i class="fas fa-plus"></i>', ['create'], ['class' => 'btn btn-outline-success'])?> <!-- Add an Update to the panel -->
-    </p>
 
 
 </div>

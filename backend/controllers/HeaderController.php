@@ -130,11 +130,11 @@ class HeaderController extends Controller
                                  $modelContent = new HeaderContent();
                                  $modelContent->id = $this->keyValue(HeaderContent::classname(), $model->id);
                                  $modelContent->nav_id = $model->id;
-                                 $modelContent->nav_sub_item = 'Delhi School of '.$object->school_name; //need correction in model and all files school_name->title
+                                 $modelContent->nav_sub_item = $object->title;
                                  // $modelContent->nav_sub_link = '';
                                  $controlPath = strtok($_POST['header-inherit_control_path'], '#');
                                  $controlId = strtok('');
-                                 $modelContent->nav_sub_link = Url::to("index.php?r={$controlPath}&id={$object->{$controlId}}");
+                                 $modelContent->nav_sub_link = "/{$controlPath}?id={$object->{$controlId}}";
                                  if (! ($flag = $modelContent->save())) {
                                     Yii::$app->session->setFlash('error', 'Unable to save the item.');
 

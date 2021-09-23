@@ -90,9 +90,7 @@ class SiteController extends Controller
     {    
         $session = Yii::$app->session;
         $session->open();
-        $model = new LoginForm();
-        return $this->render('insights', [
-                'model' => $model, 'session' => $session,
+        return $this->render('insights', [ 'session' => $session,
             ]);
     }
 
@@ -100,9 +98,7 @@ class SiteController extends Controller
     {    
         $session = Yii::$app->session;
         $session->open();
-        $model = new LoginForm();
-        return $this->render('textEdit', [
-                'model' => $model, 'session' => $session,
+        return $this->render('textEdit', ['session' => $session,
             ]);
     }
 
@@ -111,9 +107,7 @@ class SiteController extends Controller
     {    
         $session = Yii::$app->session;
         $session->open();
-        $model = new LoginForm();
-        return $this->render('userDetails', [
-                'model' => $model, 'session' => $session,
+        return $this->render('userDetails', ['session' => $session,
             ]);
     }
 
@@ -121,9 +115,7 @@ class SiteController extends Controller
     {    
         $session = Yii::$app->session;
         $session->open();
-        $model = new LoginForm();
-        return $this->render('contentBase', [
-                'model' => $model, 'session' => $session,
+        return $this->render('contentBase', ['session' => $session,
             ]);
     }
 
@@ -131,7 +123,6 @@ class SiteController extends Controller
     {    
         $session = Yii::$app->session;
         $session->open();
-        $model = new LoginForm();
         return $this->render('contentSchools', [
                 'model' => $model, 'session' => $session,
             ]);
@@ -201,11 +192,12 @@ class SiteController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail()) { //Yii::$app->params['adminEmail'])
                 Yii::$app->session->setFlash('success', 'Check your email for further instructions.');
-                $user = new LoginForm();
-                $this->layout = 'blank';
-                return $this->render('login', [
-                'model' => $user,
-            ]);
+                // $user = new LoginForm();
+                // $this->layout = 'blank';
+                return $this->redirect('site/login');
+            //     return $this->render('login', [
+            //     'model' => $user,
+            // ]);
                 
             } else {
                 Yii::$app->session->setFlash('error', 'Sorry, we are unable to reset password for the provided email address.');

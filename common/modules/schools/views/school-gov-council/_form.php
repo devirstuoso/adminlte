@@ -28,7 +28,7 @@ use common\modules\schools\models\Schools;
             <label for="schools-school_id" class="col-sm-3 col-form-label">Select School</label>
             <div class="col-sm-8">
                 <!-- ?= $form->field($model, 'school_id')->textInput(['maxlength' => true])->label(false) ?> -->
-                 <?= $form->field($model, 'school_id')->dropDownList( ArrayHelper::map(Schools::find()->all(), 'school_id', 'school_name'),['prompt' => ''])->label(false) ?>
+                 <?= $form->field($model, 'school_id')->dropDownList( ArrayHelper::map(Schools::find()->all(), 'school_id', 'title'),['prompt' => ''])->label(false) ?>
             </div>
         </div>
         <div class="form-group row">

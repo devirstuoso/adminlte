@@ -1,10 +1,8 @@
 <?php
 use yii\helpers\Url;
 ?>
-<section class="section-2">
-  <div class="school-home">
-  <div id="ajax-content">
-<div class="cs" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('<?php echo Url::to('@frontend_web/uploads/wall.jpg');?>');  background-position: 50% 50%;">
+<section class="section-comsoon">
+<div style="background-image: linear-gradient(0deg, rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('<?php echo Url::to('@frontend_web/uploads/wall.jpg');?>');  background-position: 50% 50%;">
   <div class="u-clearfix u-sheet u-sheet-1">
     <img src="<?php echo Url::to('@frontend_web/uploads/DU-icon.png');?>" alt="" class="u-image u-image-contain u-image-round u-preserve-proportions u-image-1" data-image-width="400" data-image-height="400">
     <h1 class="u-custom-font u-font-montserrat u-text u-text-1">Coming Soon</h1>
@@ -43,7 +41,5 @@ use yii\helpers\Url;
       </a>
     </div>
   </div>
-</div>
-</div>
 </div>
 </section>

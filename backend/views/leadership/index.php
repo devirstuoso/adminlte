@@ -38,17 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
-        'tableOptions' => ['class' => 'table table-bordered'],
-        'summaryOptions' => ['class' => 'gridview-purple-cell'],
         'options' => ['class' => 'gridview-header'],
-        'rowOptions'=>function($model){
-            if (true) {
-                return ['class' => 'gridview-purple-cell', 'height'=> '10px'];
-            }
-            else if ($model->slider_hide == 1){
-                return ['class' => 'gridview-gray-cell'];
-            }
-        },
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
