@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             ['attribute' => 'email',
              'format' => 'email',
-             'contentOptions' => ['style' => 'background-color:#fff']
+            //  'contentOptions' => ['style' => 'background-color:#fff']
             ],
             'phone',
             // ['attribute' => 'message',

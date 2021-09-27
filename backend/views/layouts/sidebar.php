@@ -10,8 +10,10 @@
 
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    
-    <a href="<?php echo Yii::$app->urlManagerFrontend->createUrl("");?>" class="brand-link" target ="_blank">
+
+
+
+    <a href="<?php echo Yii::$app->urlManagerFrontend->createUrl("");?>" class="brand-link" target ="_blank" data-toggle = "tooltip" title = "Hint">
         <?= Html::img('@web/img/du-logo.png',['alt'=>'DU Logo', 'class'=> 'brand-image img-circle elevation-4']); ?>
         <span class="brand-text font-weight-light">DU IOE</span>
     </a>
@@ -26,7 +28,7 @@
             <div class="info">
                 <a href="<?php echo Yii::$app->urlManager->createUrl("site/user-details");?>" class="d-block"><?= strtoupper($session->get('username'));?></a>
                 <?php if(!Yii::$app->user->isGuest){ ?>
-                <?=     Html::a('<i class="fas fa-sign-out-alt">Logout</i>', ['site/logout'], ['data-method' => 'post', 'class' => 'd-block']) ?>
+                <?= Html::a('<i class="fas fa-sign-out-alt">Logout</i>', ['site/logout'], ['data-method' => 'post', 'class' => 'd-block']) ?>
 
                 <?php }?>
             </div>

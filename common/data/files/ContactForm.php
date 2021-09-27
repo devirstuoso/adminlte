@@ -29,13 +29,6 @@ return [
         'message' => 'df',
         'id' => 'enquiry000032',
     ],
-    'enquiry000033' => [
-        'name' => 'shivali',
-        'email' => 'shivalimeena@gmail.com',
-        'phone' => '999999999',
-        'message' => 'hello dev',
-        'id' => 'enquiry000033',
-    ],
     'enquiry000034' => [
         'name' => 'dev',
         'email' => 'asdaesf@gmail.com',

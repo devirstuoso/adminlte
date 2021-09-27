@@ -9,7 +9,7 @@ use common\widgets\Alert;
 
 /* @var $this yii\web\View */
 
-$this->title = 'DU IOE Front-end Demo';
+$this->title = 'DU IOE';
 $base_URL = Yii::$app->urlManagerBackend->baseUrl.'/';
 
 $sliders = $slider::find()->where(['slider_hide'=>0])->all();
