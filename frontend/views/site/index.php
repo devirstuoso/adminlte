@@ -14,7 +14,7 @@ $base_URL = Yii::$app->urlManagerBackend->baseUrl.'/';
 
 $sliders = $slider::find()->where(['slider_hide'=>0])->all();
 
-$updates = $update::find()->where(['updates_hide'=>0])->orderBy(['id' => SORT_DESC])->limit(10)->all();
+$updates = $update::find()->where(['hide'=>0])->orderBy(['id' => SORT_DESC])->limit(10)->all();
 
 $news= $newsevents::find()->where(['ne_hide'=>0 ])->andWhere(['ne_type' =>'news'])->orderBy(['id' => SORT_DESC])->limit(5)->all();
 
@@ -301,11 +301,11 @@ echo Yii::getAlias('@backend_url').'<br>';?> -->
                                       <marquee behavior=scroll direction='up' height='500em' scrollamount='5' onmouseover="this.stop();" onmouseout="this.start();">
                                         <div class="u-container-layout u-similar-container u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-container-layout-13">
                                           <?php foreach($updates as $up){ ?>
-                                            <?php if(is_null($up->updates_link)){ ?>
-                                              <h4><?= Html::a(Html::encode($up->updates_title),['updates-page', 'id'=>$up->id]);?></h4>
+                                            <?php if(is_null($up->link)){ ?>
+                                              <h4><?= Html::a(Html::encode($up->title),['updates-page', 'id'=>$up->id],['target' => '_blank']);?></h4>
                                               <hr/>
                                             <?php } else {;?>
-                                              <a href="<?= Html::encode($up->updates_link);?>"><h4><?= Html::encode($up->updates_title);?></h4></a>
+                                              <h4><?= Html::a(Html::encode($up->title),Html::encode('https://www.'.$up->link),['target' => '_blank']);?></h4></a>
                                               <hr/>
                                             <?php };?>
                                           <?php };?>

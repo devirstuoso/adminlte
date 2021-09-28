@@ -13,8 +13,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1 class="gridview-header-text"><?= Html::encode($this->title) ?></h1>
 
-    <?= $this->render('_form_create', [
-        'model' => $model, 'content_model' => $content_model
+    <?= $this->render('_form', [
+        'model' => $model
     ]) ?>
 
 </div>

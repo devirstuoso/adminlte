@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('<i class="fas fa-arrow-left"></i>', ['index'], ['class' => 'btn btn-outline-dark']) ?>
         
-        <?= Html::a('<i class="fas fa-edit"></i>', ['update', 'id' => $model->id], ['class' => 'btn btn-outline-primary']) ?>
+        <?= Html::button('<i class="fas fa-edit"></i>', ['value' => Url::to(['update' , 'id'=> $model->id]), 'class' => ['modalUpdateButton', 'btn', 'btn-outline-primary']]); ?>
         <?= Html::a('<i class="fas fa-trash"></i>', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-outline-danger',
             'data' => [
@@ -41,48 +41,48 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'updates_title',
-            'updates_link',
-            'updates_hide:boolean',
+            'title',
+            'link:url',
+            'hide:boolean',
+            'content:html',
         ],
     ]) ?>
-
-
-<?php if((!isset($model->updates_link)) && (!sizeof($model->updatesContent)==0)) {?>
+</div>
+<!-- ?php if((!isset($model->link)) && (!sizeof($model->updatesContent)==0)) {?>
     
 <h2 class="gridview-header-text" style="margin:50px;">Content of the Updates page</h2>
     <table class="table">
         <head>
             <tr>
                 <th>Content Id</th>
-                <!-- <th>Content Update Id</th> -->
+                !-- <th>Content Update Id</th> --
                 <th>Content Image</th>
                 <th>Content Text</th>
                 <th></th>
             </tr> 
         </head>
         <body>
-            <?php foreach ($model->updatesContent as $content) { ?>
+            ?php foreach ($model->updatesContent as $content) { ?>
             <tr>
                  <td>
-                     <?= $content->id ?>
+                     ?= $content->id ?>
                  </td>
-                 <!-- <td>
+                 !-- <td>
                      ?= $content->update_id ?>
-                 </td> -->
+                 </td> --
                  <td>
-                     <?=Html::img('@web/'.$content->updates_content_picture.'?'.time(), ['alt' => 'Nothing to show', 'class'=>'gridview-image-index']); ?>
+                     ?=Html::img('@web/'.$content->updates_content_picture.'?'.time(), ['alt' => 'Nothing to show', 'class'=>'gridview-image-index']); ?>
                  </td>
                  <td>
-                     <?= $content->updates_content_paragraph ?>
+                     ?= $content->updates_content_paragraph ?>
                  </td>
                  <td>
                     <div class="gridview-menu-buttons-container">
                 
-                    <?= Html::a('<i class="fas fa-eye"></i>',['updates-panel-content/view' , 'id'=> $content->id],['class' => 'btn btn-info']);?>
-                    <!-- ?= Html::a('<i class="fas fa-edit"></i>', ['updates-panel-content/update', 'id' => $content->id], ['class' => 'btn btn-primary']) ?> -->
-                    <?= Html::button('<i class="fas fa-edit"></i>', ['value' => Url::to(['updates-panel-content/update' , 'id'=> $content->id]), 'class' => ['modalUpdateButton', 's']]); ?>
-                    <?= Html::a(Yii::t('app', '<i class="fas fa-trash"></i>'), ['updates-panel-content/delete', 'id' => $content->id, 'back_id' => $content->update_id], ['class' => 'btn btn-danger',
+                    ?= Html::a('<i class="fas fa-eye"></i>',['updates-panel-content/view' , 'id'=> $content->id],['class' => 'btn btn-info']);?>
+                    !-- ?= Html::a('<i class="fas fa-edit"></i>', ['updates-panel-content/update', 'id' => $content->id], ['class' => 'btn btn-primary']) ?> --
+                    ?= Html::button('<i class="fas fa-edit"></i>', ['value' => Url::to(['updates-panel-content/update' , 'id'=> $content->id]), 'class' => ['modalUpdateButton', 's']]); ?>
+                    ?= Html::a(Yii::t('app', '<i class="fas fa-trash"></i>'), ['updates-panel-content/delete', 'id' => $content->id, 'back_id' => $content->update_id], ['class' => 'btn btn-danger',
                          'data' => [
                             'confirm' => Yii::t('app', 'Are you sure you want to delete this item?'),
                             'method' => 'post',
@@ -91,9 +91,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
                  </td>
             </tr>
-            <?php } ?>
+            ?php } ?>
         </body>
     </table>
-<?php } ?>
+?php } ?>
 
-</div>
+</div> -->

@@ -8,9 +8,9 @@ use Yii;
  * This is the model class for table "updates_panel".
  *
  * @property string $id
- * @property string $updates_title
- * @property string $updates_link
- * @property int $updates_hide
+ * @property string $title
+ * @property string $link
+ * @property int $hide
  */
 class UpdatesPanel extends \yii\db\ActiveRecord
 {
@@ -28,12 +28,13 @@ class UpdatesPanel extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'updates_title'], 'required'],
-            [['updates_hide'], 'integer'],
+            [['id', 'title'], 'required'],
+            [['hide'], 'integer'],
             [['id'], 'string', 'max' => 30],
-            [['updates_title', 'updates_link'], 'string', 'max' => 200],
+            [['title', 'link'], 'string', 'max' => 200],
             [['id'], 'unique'],
-            [['updates_link'], 'default', 'value' => null],
+            [['link'], 'default', 'value' => null],
+            [['content'], 'string'],
         ];
     }
 
@@ -44,9 +45,10 @@ class UpdatesPanel extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'updates_title' => 'Updates Title',
-            'updates_link' => 'Updates Link',
-            'updates_hide' => 'Hide',
+            'title' => 'Updates Title',
+            'link' => 'Updates Link',
+            'hide' => 'Hide',
+            'content' => 'Page Content'
         ];
     }
 

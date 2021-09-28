@@ -17,8 +17,8 @@ class UpdatesPanelSearch extends UpdatesPanel
     public function rules()
     {
         return [
-            [['id', 'updates_title'], 'safe'],
-            [['updates_hide'], 'boolean'],
+            [['id', 'title'], 'safe'],
+            [['hide'], 'boolean'],
         ];
     }
 
@@ -58,11 +58,11 @@ class UpdatesPanelSearch extends UpdatesPanel
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'updates_hide' => $this->updates_hide,
+            'hide' => $this->hide,
         ]);
 
         $query->andFilterWhere(['like', 'id', $this->id])
-            ->andFilterWhere(['like', 'updates_title', $this->updates_title]);
+            ->andFilterWhere(['like', 'title', $this->title]);
 
         return $dataProvider;
     }

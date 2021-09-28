@@ -45,12 +45,12 @@ $(document).on("focusin", function(e) {
     <!-- ?= $form->field($model, 'id')->textInput(['maxlength' => true]) ?> -->
 
     <div class="checkbox-input">
-          <?= $form->field($model, 'updates_hide',['options' => ['class'=>'']])->checkbox(['class' => 'checkbox'],false)->label('Hide Item',['class'=>'checkbox-label']) ?>
+          <?= $form->field($model, 'hide',['options' => ['class'=>'']])->checkbox(['class' => 'checkbox'],false)->label('Hide Item',['class'=>'checkbox-label']) ?>
     </div>
 
-    <?= $form->field($model, 'updates_title')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'updates_link')->textInput(['maxlength' => true])->label("<p>Update's Link</p><span style='color:Tomato; font-size:12px;'>*for external link only, otherwise left empty<span>")?>
+    <?= $form->field($model, 'link')->textInput(['maxlength' => true])->label("<p>Update's Link</p><span style='color:Tomato; font-size:12px;'>*for external link only, otherwise left empty<span>")?>
 
 
     <!-- ?php foreach ($model->updatesContent as $content) { ?>
