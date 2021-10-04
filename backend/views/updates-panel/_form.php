@@ -12,7 +12,6 @@ use yii\web\JsExpression;
 /* @var $form yii\widgets\ActiveForm */
 
 // for tinymce widget
-
 $hide = <<<JS
 $(document).ready(function(){
     if($("#updatespanel-link").val().length !== 0) {
@@ -36,7 +35,6 @@ $this->registerJs($hide);
 $myDateTime = new DateTime();
 $content_css = ['assets/b2bcbbd1/css/bootstrap.css?', ];
 
-
 ?>
 
 <div class="updates-panel-form">
@@ -56,8 +54,6 @@ $content_css = ['assets/b2bcbbd1/css/bootstrap.css?', ];
     'language' => 'en_CA',
     
     'clientOptions' => [
-        //'inline' => true,
-        //$content_css needs to be defined as "" or some css rules/files
         'content_css' => $content_css,
         'plugins' => [
             "advlist autolink lists link charmap print preview anchor",
@@ -69,7 +65,6 @@ $content_css = ['assets/b2bcbbd1/css/bootstrap.css?', ];
         'toolbar1' => "undo redo | styleselect fontselect fontsizeselect forecolor backcolor | bold italic",
         'toolbar2' => "alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
         'image_advtab' => true,
-        
         'tabindex'=>"2",
         'selector' =>'textarea',
         'branding' => false,
@@ -82,11 +77,8 @@ $content_css = ['assets/b2bcbbd1/css/bootstrap.css?', ];
         'convert_urls'=>false,
         // here we add custom filepicker only to Image dialog
         'file_picker_types'=>'image',
-        // and here's our custom image picker
-        // 'file_picker_callback'=> new JsExpression("")
         ]
     ]);?>
-    
     
     
     <div class="form-group">
