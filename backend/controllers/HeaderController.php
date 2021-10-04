@@ -74,14 +74,12 @@ class HeaderController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-
-
-
     public function actionCreate()
     {   
         $model = new Header;
         $modelsContent = [ new HeaderContent ];
 
+        Yii::$app->rbac->role(['admin', 'create']);
 
         if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
             Yii::$app->response->format = Response::FORMAT_JSON;
@@ -98,7 +96,6 @@ class HeaderController extends Controller
                 $modelContent->id = $this->keyValue(HeaderContent::className(), $model->id);
             }
 
-            // validate all models
             $valid = $model->validate();
             $valid = Model::validateMultiple($modelsContent) && $valid;
 
@@ -123,7 +120,6 @@ class HeaderController extends Controller
                         }
                        else {
                         $className = $_POST['header-inherit_class_name'];
-                        // $obj = \common\modules\schools\models\Schools::find()->all();
                         $objects = $className::find()->all();
 
                             foreach ($objects as $object) {
@@ -131,23 +127,18 @@ class HeaderController extends Controller
                                  $modelContent->id = $this->keyValue(HeaderContent::classname(), $model->id);
                                  $modelContent->nav_id = $model->id;
                                  $modelContent->nav_sub_item = $object->title;
-                                 // $modelContent->nav_sub_link = '';
                                  $controlPath = strtok($_POST['header-inherit_control_path'], '#');
                                  $controlId = strtok('');
                                  $modelContent->nav_sub_link = "/{$controlPath}?id={$object->{$controlId}}";
                                  if (! ($flag = $modelContent->save())) {
                                     Yii::$app->session->setFlash('error', 'Unable to save the item.');
-
                                     $transaction->rollBack();
                                     break;
                                 }
-                            
-                            // Url::to(['/schools/schoolf', 'id' => $school->school_id])
                             }
                       }
 
                     }
-
                     if ($flag) {
                         $transaction->commit();
                         Yii::$app->session->setFlash('success', 'Successfully saved the item.');
@@ -182,12 +173,12 @@ class HeaderController extends Controller
         $modelsContent = $model->headerContent;
         $old_image = $model->logo;
 
+        Yii::$app->rbac->role(['admin', 'update']);
 
         if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
             Yii::$app->response->format = Response::FORMAT_JSON;
             return ActiveForm::validate($model);
         }
-
         if ($model->load(Yii::$app->request->post())) {
 
             $oldIDs = ArrayHelper::map($modelsContent, 'id', 'id');
@@ -239,9 +230,6 @@ class HeaderController extends Controller
 
 
 
-
-
-
     /**
      * Deletes an existing Header model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
@@ -251,16 +239,17 @@ class HeaderController extends Controller
      */
     public function actionDelete($id)
     {
+        Yii::$app->rbac->role(['admin', 'delete']);
+
         if ($id <> 'header0000') {
             $model = $this->findModel($id);
             HeaderContent::deleteAll(['nav_id' => $model->id]);
             $model->delete();
-            return $this->redirect(['index']);
         }
         else {
-        Yii::$app->session->setFlash('error', 'This Item Can\'t be deleted.');
-        return $this->redirect(['index']);
+            Yii::$app->session->setFlash('error', 'This Item Can\'t be deleted.');
         }
+        return $this->redirect(['index']);
     }
 
     /**

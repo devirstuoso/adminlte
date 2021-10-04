@@ -72,6 +72,8 @@ class FooterController extends Controller
 
     // public function actionCreate()
     // {   
+    //    Yii::$app->rbac->role(['admin', 'create']);
+    //
     //     $model = new Leadership();
     //     $model->id = $this->keyValue();
 
@@ -103,6 +105,8 @@ class FooterController extends Controller
      */
     public function actionUpdate($id) 
     {
+        Yii::$app->rbac->role(['admin', 'update']);
+
         $model = $this->findModel($id);
         $modelsContent = $model->footerContent;
         $old_image = $model->logo;
@@ -157,10 +161,6 @@ class FooterController extends Controller
     }
 
 
-
-
-
-
     /**
      * Deletes an existing Leadership model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
@@ -168,12 +168,13 @@ class FooterController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($id)
-    {
-        $this->findModel($id)->delete();
+    // public function actionDelete($id)
+    // {
+    //     Yii::$app->rbac->role(['admin', 'delete']);
 
-        return $this->redirect(['index']);
-    }
+    //     $this->findModel($id)->delete();
+    //     return $this->redirect(['index']);
+    // }
 
     /**
      * Finds the Leadership model based on its primary key value.

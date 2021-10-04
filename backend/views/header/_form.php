@@ -27,7 +27,6 @@ jQuery(".dynamicform_wrapper").on("afterDelete", function(e) {
 $this->registerJs($js);
 
 $script = <<<JS
-
     $("document").ready(function(){
         $("#header-logo").on("change", function(){
             $("#upl").text("Uploaded");
@@ -39,11 +38,9 @@ $script = <<<JS
 
         });
 JS;
-
 $this->registerJs($script);
 
-$inherit = <<< js
-
+$inherit = <<< JS
     $("document").ready(function(){
         $("#inherit-tab").hide();
         $("#inherit").on("change", function(){
@@ -55,18 +52,14 @@ $inherit = <<< js
                 $("#inherit-tab").hide();
              }
             })
-
         });
-
-js;
-
+JS;
 $this->registerJs($inherit);
 
 
 ?>
 
 <div class="header-form">
-
     <div class="card card-purple">
         <div class="card-header">
             <h3 class="card-title">Header Navigation</h3>
@@ -87,13 +80,11 @@ $this->registerJs($inherit);
                 </div>
                 <div class="form-group row">
                     <label for="header-nav_link" class="col-sm-2 col-form-label">Navigation Link</label>
-                    
                     <div class="col-sm-9">
                     <?= $form->field($model, 'nav_link')->textInput(['maxlength' => true, 'options' => ['class'=> 'form-control']])->label(false) ?>
-                    
                     </div>
                 </div>
-
+                <?php if ($model->id == 'header0000') : ?>
                 <div class="form-group row">
                     <label for="header-logo" class="col-sm-2 col-form-label">Institution's Logo</label>
                     <div class="col-sm-9">
@@ -112,7 +103,8 @@ $this->registerJs($inherit);
                                                     echo Html::img(Url::to ('@backend_web/').$model->logo.'?'.time(), ['class'=>'gridview-image-form']); }?>  
                         </div>
                     </div>
-                </div>
+                </div>          
+                <?php endif; ?>
                 <?php if ($model->isNewRecord) : ?>
                 <div class="form-group row">
                     <label for="header-nav_link" class="col-sm-2 col-form-label">Inherit from Class</label>
@@ -121,7 +113,6 @@ $this->registerJs($inherit);
                     </div>
                 </div>
                 <?php endif; ?>
-
                 <div id="dynamic-form-tab">
                 <?php DynamicFormWidget::begin([
                             'widgetContainer' => 'dynamicform_wrapper', // required: only alphanumeric characters plus "_" [A-Za-z0-9_]
@@ -138,13 +129,11 @@ $this->registerJs($inherit);
                                 'image',
                             ],
                         ]); ?>
-
                 <div class="panel panel-default  card card-default col-pd-3 col-11">
                     <div class="panel-heading card-header">
                         <h3 class="card-title">Sub Navigation Links &nbsp; &nbsp; </h3>
                         <i class="fa fa-link"></i> 
                     </div>
-
                 <div class="panel-body container-items card-body p-0"><!-- widgetContainer -->
                     <?php foreach ($modelsContent as $index => $modelContent): ?>
                             <div class="item panel panel-default card card-purple"><!-- widgetBody -->
@@ -176,14 +165,10 @@ $this->registerJs($inherit);
 
                                 </div>
                             </div>
-                       
                         <?php endforeach; ?>
-
                     </div>
-
                     <button type="button" class="pull-right add-item btn btn-success"><i class="fa fa-plus"></i> Add a sub navigation link</button>
-                    <div class="clearfix"></div>
-                    
+                    <div class="clearfix"></div>    
                 </div>
                 <?php DynamicFormWidget::end(); ?>
             </div>
@@ -193,7 +178,6 @@ $this->registerJs($inherit);
                         <h3 class="card-title">Inherited Sub Menu Details&nbsp; &nbsp; </h3>
                         <i class="fa fa-link"></i> 
                     </div>
-
                     <div class="panel-body container-items card-body">
                         <div class="item panel panel-default card card-purple">
                             <div class="panel-body card-body">
@@ -217,11 +201,10 @@ $this->registerJs($inherit);
             </div>
             </div>
         <div class="card-footer">
-            <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => 'btn btn-primary float-right']) ?>
-        
+            <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => 'btn btn-primary float-right']) ?>    
         <?php ActiveForm::end(); ?>
     </div>
-        </div>
+</div>
       
 
 

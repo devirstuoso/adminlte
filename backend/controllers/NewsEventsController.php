@@ -71,6 +71,8 @@ class NewsEventsController extends Controller
      */
     public function actionCreate()
     {
+        Yii::$app->rbac->role(['admin', 'create']);
+
         $model = new NewsEvents();
 
         if ($model->load(Yii::$app->request->post())) {
@@ -121,6 +123,8 @@ class NewsEventsController extends Controller
      */
     public function actionUpdate($id)
     {
+        Yii::$app->rbac->role(['admin', 'update']);
+
         $model = $this->findModel($id);
         $old_image = $model->ne_image;
 
@@ -136,11 +140,8 @@ class NewsEventsController extends Controller
             else{
                 Yii::$app->session->setFlash('error', 'Unable to save the item.');
                 return $this->redirect(['view', 'id' => $model->id]);
-
-            }
-           
+            } 
         }
-
         $this->layout = 'modal';
         return $this->render('update', [
             'model' => $model,
@@ -156,8 +157,9 @@ class NewsEventsController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        Yii::$app->rbac->role(['admin', 'delete']);
 
+        $this->findModel($id)->delete();
         return $this->redirect(['index']);
     }
 

@@ -63,7 +63,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 },
 
                 'update' => function($url, $model, $key){
-                    return Html::button('<i class="fas fa-edit"></i>', ['value' => Url::to(['update' , 'id'=> $model->id]), 'class' => ['modalUpdateButton', 'btn']]);
+                    if (Yii::$app->rbac->role_chk(['admin', 'update'])) { 
+                        return Html::button('<i class="fas fa-edit"></i>', ['value' => Url::to(['update' , 'id'=> $model->id]), 'class' => ['modalUpdateButton', 'btn'], 'style' => ['background-color'=> '#6a46cb']]);
+                    }
                 },
 
                 // 'delete' => function($url, $model, $key){

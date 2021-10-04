@@ -217,17 +217,17 @@ $this->registerCss($style);
 
 $script = <<<JS
   $(function(){
-  $('#wait-panel').hide()
-//   $('.alert').hide(100);
-//   $('#index-submit').click(function(){
-//     $('#form-panel').hide();
-//     $('#wait-panel').show();
-//   });
-//   if($('.alert').is(":visible")) {
-//     setTimeout(function() {
-//         $('.alert').fadeOut('fast'); 
-//     }, 6000);
-//   }
+  $('#wait-panel').hide();
+  $('.alert').fadeOut(100);
+  $('#index-submit').click(function(){
+    $('#form-panel').hide();
+    $('#wait-panel').show();
+  });
+  if($('.alert').is(":visible")) {
+    setTimeout(function() {
+        $('.alert').fadeOut('fast'); 
+    }, 6000);
+  }
 });
 
 JS;

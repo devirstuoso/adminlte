@@ -7,7 +7,7 @@
   /*********************************************
    * Change this line to set the upload folder *
    *********************************************/
-  $imageFolder = '../img/tinymce_uploads/';//Yii::getAlias('@common')."/data/images/";
+  $imageFolder = '../uploads/tinymce/';//Yii::getAlias('@common')."/data/images/";
   // $imageFolder = 'http://localhost/adminlte/backend/web/img/tinymce_uploads';
 
   if (isset($_SERVER['HTTP_ORIGIN'])) {

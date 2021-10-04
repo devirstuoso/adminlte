@@ -66,6 +66,8 @@ class HomeSliderController extends Controller
      */
     public function actionCreate()
     {
+        Yii::$app->rbac->role(['admin', 'create']);
+
         $model = new HomeSlider();
 
         #$model->scenario = 'create-photo-upload';
@@ -99,6 +101,8 @@ class HomeSliderController extends Controller
      */
     public function actionUpdate($id)
     {
+        Yii::$app->rbac->role(['admin', 'update']);
+
         $model = $this->findModel($id);
         $old_image = $model->slider_image;
 
@@ -135,6 +139,8 @@ class HomeSliderController extends Controller
      */
     public function actionDelete($id)
     {
+        Yii::$app->rbac->role(['admin', 'delete']);
+
         $model = $this->findModel($id);
         if(file_exists($model->slider_image)){
             unlink($model->slider_image);

@@ -26,9 +26,10 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1 class="gridview-header-text"><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('<i class="fas fa-arrow-left"></i> Back', ['site/content-base'], ['class' => 'btn btn-dark']) ?> 
-        <!-- ?= Html::a('<i class="fas fa-plus"></i>', ['create'], ['class' => 'btn btn-success'])?> -->
-        <?= Html::button('<i class="fas fa-plus"></i> Create', ['value' => Url::to(['news-events/create']), 'class' => ['modalUpdateButton', 'btn btn-success']]);?>
+        <?= Html::a('<i class="fas fa-arrow-left"></i> Back', ['/site/content-base'], ['class' => 'btn btn-dark']) ?> 
+        <?php if (Yii::$app->rbac->role_chk(['admin', 'create'])) {
+            echo Html::button('<i class="fas fa-plus"></i> Create a News or an Event', ['value' => Url::to(['create']), 'class' => 'btn btn-success', 'id' => 'modalButton']);
+        } ?>
     </p>
 
 
@@ -91,23 +92,25 @@ $this->params['breadcrumbs'][] = $this->title;
         ['class' => 'yii\grid\ActionColumn',
         'contentOptions' => ['class' => 'gridview-menu-buttons-container'],
         'template' => '{view}  {update}  {delete}',
-        'buttons' => [  'view' => function($url, $model, $key){
+        'buttons' => [  
+            'view' => function($url, $model, $key){
             return Html::a('<i class="fas fa-eye"></i>',['news-events/view' , 'id'=> $model->id],['class' => '']);
-        },
-                            // 'update' => function($url, $model, $key){
-                            //     return Html::a('<i class="fas fa-edit"></i>',['news-events/update' , 'id'=> $model->id],['class' => '']);
-                            // },
-        'update' => function($url, $model, $key){
-            return Html::button('<i class="fas fa-edit"></i>', ['value' => Url::to(['update' , 'id'=> $model->id]), 'class' => ['modalUpdateButton', 'btn']]);
-        },
-        'delete' => function($url, $model, $key){
-            return Html::a('<i class="fas fa-trash"></i>', ['delete', 'id' => $model->id], [ 'style' => ['background-color'=> '#CB4646'],
-                'class' => '',
-                'data' => [
-                    'confirm' => 'Are you sure you want to delete this item?',
-                    'method' => 'post',
-                ]]);
-        },
+            },
+            'update' => function($url, $model, $key){
+                if (Yii::$app->rbac->role_chk(['admin', 'update'])) { 
+                    return Html::button('<i class="fas fa-edit"></i>', ['value' => Url::to(['update' , 'id'=> $model->id]), 'class' => ['modalUpdateButton', 'btn'], 'style' => ['background-color'=> '#6a46cb']]);
+                }
+            },
+            'delete' => function($url, $model, $key){
+                if (Yii::$app->rbac->role_chk(['admin', 'delete'])) { 
+                    return Html::a('<i class="fas fa-trash"></i>', ['delete', 'id' => $model->id],          [
+                        'style' => ['background-color'=> '#CB4646'],
+                        'data' => [
+                            'confirm' => 'Are you sure you want to delete this item?',
+                            'method' => 'post',
+                        ]]);
+                    }
+                },
 
 
     ],

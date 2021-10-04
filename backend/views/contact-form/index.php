@@ -45,13 +45,16 @@ $this->params['breadcrumbs'][] = $this->title;
              'buttons' => [  
                 'view' => function($url, $model, $key){
                 return Html::a('<i class="fas fa-eye"></i>',['view' , 'id'=> $model->id],['class' => '']); },
-            'delete' => function($url, $model, $key){
-                return Html::a('<i class="fas fa-trash"></i>', ['delete', 'id' => $model->id],          [
-                        'style' => ['background-color'=> '#CB4646'],
-                        'data' => [
-                                    'confirm' => 'Are you sure you want to delete this item?',
-                                    'method' => 'post',
-                        ]]); },
+                'delete' => function($url, $model, $key){
+                    if (Yii::$app->rbac->role_chk(['admin', 'delete'])) { 
+                        return Html::a('<i class="fas fa-trash"></i>', ['delete', 'id' => $model->id],          [
+                            'style' => ['background-color'=> '#CB4646'],
+                            'data' => [
+                                'confirm' => 'Are you sure you want to delete this item?',
+                                'method' => 'post',
+                            ]]);
+                    }
+                },
                     ],
                 ]
             ]

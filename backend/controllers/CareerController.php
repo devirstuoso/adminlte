@@ -65,6 +65,8 @@ class CareerController extends Controller
      */
     public function actionCreate()
     {
+        Yii::$app->rbac->role(['admin', 'create']);
+
         $model = new Career();
         if ($model->load(Yii::$app->request->post())) {
             
@@ -96,6 +98,8 @@ class CareerController extends Controller
      */
     public function actionUpdate($id)
     {
+        Yii::$app->rbac->role(['admin', 'update']);
+
         $model = $this->findModel($id);
         $old_file = $model->download_link;
 
@@ -130,6 +134,8 @@ class CareerController extends Controller
      */
     public function actionDelete($id)
     {
+        Yii::$app->rbac->role(['admin', 'delete']);
+
         $del_model = $this->findModel($id);
         unlink($del_model->download_link);
         $del_model->delete();
@@ -181,4 +187,6 @@ class CareerController extends Controller
         $id = $last->id;
         return ++$id;
     }
+
+   
 }

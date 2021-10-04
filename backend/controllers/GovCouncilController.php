@@ -64,6 +64,8 @@ class GovCouncilController extends Controller
      */
     public function actionCreate()
     {
+        Yii::$app->rbac->role(['admin', 'create']);
+
         $model = new GovCouncil();
 
         if ($model->load(Yii::$app->request->post())) {
@@ -96,6 +98,8 @@ class GovCouncilController extends Controller
      */
     public function actionUpdate($id)
     {
+        Yii::$app->rbac->role(['admin', 'update']);
+
         $model = $this->findModel($id);
         if ($model->load(Yii::$app->request->post())) {
             if ($model->validate()) {
@@ -124,8 +128,9 @@ class GovCouncilController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        Yii::$app->rbac->role(['admin', 'delete']);
 
+        $this->findModel($id)->delete();
         return $this->redirect(['index']);
     }
 

@@ -59,7 +59,7 @@ $this->registerJs('tinymce.init({
         ]
     ]);?>
 
-    <textarea></textarea>
+    <!-- <textarea></textarea> -->
 
 
     <!-- ?= $form->field($model, 'slider_description_text')->widget(Summernote::class, [

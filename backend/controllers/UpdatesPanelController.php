@@ -8,6 +8,7 @@ use backend\models\UpdatesPanelSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\ForbiddenHttpException;
 
 use backend\models\UpdatesPanelContent;
 use yii\web\UploadedFile;
@@ -68,6 +69,8 @@ class UpdatesPanelController extends Controller
      */
     public function actionCreate()
     {
+        Yii::$app->rbac->role(['admin', 'create']);
+
         $model = new UpdatesPanel();
         $content_model = new UpdatesPanelContent();
 
@@ -99,6 +102,8 @@ class UpdatesPanelController extends Controller
      */
     public function actionUpdate($id)
     {
+        Yii::$app->rbac->role(['admin', 'update']);
+
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post())) {
@@ -128,6 +133,8 @@ class UpdatesPanelController extends Controller
      */
     public function actionDelete($id)
     {
+        Yii::$app->rbac->role(['admin', 'delete']);
+
         $model = $this->findModel($id);
         foreach ($model->updatesContent as $content){
             if(file_exists($content->updates_content_picture)){

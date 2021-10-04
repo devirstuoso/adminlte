@@ -21,23 +21,29 @@ $config = [
         'assetManager' => [
             'appendTimestamp' => true,
                     ],  //clear cache each time
-                    'filedb' => [
-                        'class' => 'yii2tech\filedb\Connection',
-                        'path' => '@common/data/files',
+        'filedb' => [
+            'class' => 'yii2tech\filedb\Connection',
+            'path' => '@common/data/files',
                     ],
-                    'mailer' => [
-                        'class' => 'yii\swiftmailer\Mailer',
-                        'viewPath' => '@backend/mail',
-                        'useFileTransport' => false,
-                        'transport' => [
-                            'class' => 'Swift_SmtpTransport',
-                            'host' => 'smtp.gmail.com',
-                            'username' =>'devanshuverma158@gmail.com',
-                            'password' => '*\X3CZVnay@<?"?R',
-                            'port' => '587',//'465 OR 587',
-                            'encryption' => 'tls',
+        'mailer' => [
+            'class' => 'yii\swiftmailer\Mailer',
+            'viewPath' => '@backend/mail',
+            'useFileTransport' => false,
+            'transport' => [
+                    'class' => 'Swift_SmtpTransport',
+                    'host' => 'smtp.gmail.com',
+                    'username' =>'devanshuverma158@gmail.com',
+                    'password' => '*\X3CZVnay@<?"?R',
+                    'port' => '587',//'465 OR 587',
+                    'encryption' => 'tls',
                         ],
                     ],
+            'authManager' => [
+                    'class' => 'yii\rbac\DbManager', //'yii\rbac\PhpManager',
+                    ],
+            'rbac' => [
+                    'class' => 'common\components\Rbac',
+                    ], 
                     // 'urlManager' => [
                     //     'enablePrettyUrl' => true,
                     //     'showScriptName' => true,
