@@ -59,6 +59,8 @@ $this->registerJs('tinymce.init({
         ]
     ]);?>
 
+    <textarea></textarea>
+
 
     <!-- ?= $form->field($model, 'slider_description_text')->widget(Summernote::class, [
     'useKrajeePresets' =>true,

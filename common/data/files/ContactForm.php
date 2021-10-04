@@ -106,4 +106,25 @@ return [
         'message' => '1243',
         'id' => 'enquiry000046',
     ],
+    'enquiry000047' => [
+        'name' => 'Devanshu',
+        'email' => 'devanshu.mcs19.du@gmail.com',
+        'phone' => '07838062678',
+        'message' => 'qdwqwd',
+        'id' => 'enquiry000047',
+    ],
+    'enquiry000048' => [
+        'name' => 'Devanshu',
+        'email' => 'devanshuverma158@gmail.com',
+        'phone' => '07838062678',
+        'message' => '',
+        'id' => 'enquiry000048',
+    ],
+    'enquiry000049' => [
+        'name' => 'Devanshu',
+        'email' => 'devanshuverma158@gmail.com',
+        'phone' => '07838062678',
+        'message' => '',
+        'id' => 'enquiry000049',
+    ],
 ];

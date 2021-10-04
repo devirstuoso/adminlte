@@ -4,10 +4,13 @@ namespace frontend\controllers;
 use Yii;
 use yii\base\InvalidArgumentException;
 use yii\web\BadRequestHttpException;
+use yii\web\NotFoundHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+
 use common\models\LoginForm;
+
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
@@ -86,8 +89,9 @@ class SiteController extends Controller
 
         if ($contactform->load(Yii::$app->request->post())) {
             $contactform->id = $this::cf_keyValue();
-            if ($contactform->save ()) {
-                $contactform->sendEmail();
+            if (true) {//$contactform->save ()) {
+                // $contactform->sendEmail();
+                sleep(40);
                 Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
             } else {
                 Yii::$app->session->setFlash('error', 'There was an error sending your message.');

@@ -23,6 +23,77 @@ $style = <<<CS
         font-weight: 700;
         text-align: right;
         }
+    .wait-panel{
+        height: 500px;
+        background: #f2f2f2;
+        margin: 0 6px;
+        padding: 30px 0px; 
+    }
+    .wait-panel .loader,
+    .wait-panel .loader:before,
+    .wait-panel .loader:after {
+        border-radius: 50%;
+        width: 2.5em;
+        height: 2.5em;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation: load7 1.8s infinite ease-in-out;
+        animation: load7 1.8s infinite ease-in-out;
+    }
+    .wait-panel .loader {
+        color: #553961;
+        font-size: 10px;
+        margin: 100px auto;
+        position: relative;
+        text-indent: -9999em;
+        -webkit-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-animation-delay: -0.16s;
+        animation-delay: -0.16s;
+    }
+    .wait-panel .loader:before,
+    .wait-panel .loader:after {
+        content: '';
+        position: absolute;
+        top: 0;
+    }
+    .wait-panel .loader:before {
+        left: -3.5em;
+        -webkit-animation-delay: -0.32s;
+        animation-delay: -0.32s;
+    }
+    .wait-panel .loader:after {
+        left: 3.5em;
+    }
+    @-webkit-keyframes load7 {
+        0%,
+        80%,
+        100% {
+            box-shadow: 0 2.5em 0 -1.3em;
+        }
+        40% {
+            box-shadow: 0 2.5em 0 0;
+        }
+    }
+    @keyframes load7 {
+        0%,
+        80%,
+        100% {
+            box-shadow: 0 2.5em 0 -1.3em;
+        }
+        40% {
+            box-shadow: 0 2.5em 0 0;
+        }
+    }
+    .wait-panel .u-text-wait{
+        margin: 183px auto 0px; 
+        background-image: none; 
+        font-size: 1rem; 
+        font-weight: 700;
+        line-height: 1.2; 
+        width: auto;
+    }
 CS;
 
 $this->registerCss($style);
@@ -96,26 +167,25 @@ $this->registerCss($style);
                                         <?php endif; ?>
 
 
-
+                                        <div id="form-panel">
                                         <?php $form = ActiveForm::begin(['id' => 'home-contact-form', 
                                          'options' => ['class' => 'u-clearfix u-form-spacing-10 u-form-vertical u-inner-form', 
                                          'style' => 'padding: 10px' 
                                             ],   //  'fieldConfig' => [ 'options' => ['tag' => 'span',],],
                                          ]); ?>
-                                         <div class="u-form-group u-form-name">
+                                         <div class="u-form-group">
                                             <?= $form->field($contactform, 'name',[ 'options' => ['class' => 'u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle']])->textInput(['maxlength' => true, 'placeholder' => 'Enter your Name', 'class' => 'form-input'])->label(false); ?>
                                         </div>
-
-                                        <div class="u-form-email u-form-group">
+                                        <div class="u-form-group">
                                             <?= $form->field($contactform, 'email',[ 'options' => ['class' => 'u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle', 'style' => 'margin-bottom: 10px']])->textInput(['maxlength' => true, 'placeholder' => 'Enter your email address', 'class' => 'form-input'])->label(false); ?>
 
                                             <?= $form->field($contactform, 'phone',[ 'options' => ['class' => 'u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle', 'style' => 'margin-bottom: 20px']])->textInput(['maxlength' => true, 'placeholder' => 'Enter your phone number', 'class' => 'form-input'])->label(false); ?>
 
                                             <?= $form->field($contactform, 'message',[ 'options' => ['class' => 'u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle', 'style' => 'margin-bottom: 20px']])->textarea(['rows' => 6, 'placeholder' => 'Enter your message', 'class' => 'form-input'])->label(false); ?>
-
-                                            <div>
-                                                <p class="submit-message">It may take a while, be patient. We are sending you a mail</p>
-                                            </div>
+                                        
+                                        </div>
+                                                <!-- <p class="submit-message">It may take a while, be patient. We are sending you a mail</p>
+                                            </div> -->
 
                                             <div class="u-form-group u-form-submit">
                                               <a href="" class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-hover-custom-color-1 u-radius-45 u-text-body-alt-color u-btn-1" id="index-submit">Submit</a>
@@ -125,6 +195,11 @@ $this->registerCss($style);
                                             <!-- ?= Alert::widget() ?> -->
 
                                         <?php ActiveForm::end(); ?>
+                                        </div>
+                                        <div class="wait-panel" id="wait-panel">
+                                            <div class="loader">Loading...</div>
+                                            <p class="u-text u-font-pt-sans u-custom-font u-text-custom-color-2 u-align-center u-text-default  u-text-wait" data-block="360" data-block-type="Text">It may take a while, be patient. <br>We are sending you a mail</p>
+                                        </div>
 
                                     </div>
                                 </div>
@@ -136,3 +211,27 @@ $this->registerCss($style);
         </div>
     </div>
 </section>
+
+
+<?php
+
+$script = <<<JS
+  $(function(){
+  $('#wait-panel').hide()
+//   $('.alert').hide(100);
+//   $('#index-submit').click(function(){
+//     $('#form-panel').hide();
+//     $('#wait-panel').show();
+//   });
+//   if($('.alert').is(":visible")) {
+//     setTimeout(function() {
+//         $('.alert').fadeOut('fast'); 
+//     }, 6000);
+//   }
+});
+
+JS;
+
+$this->registerJs($script);
+
+?>

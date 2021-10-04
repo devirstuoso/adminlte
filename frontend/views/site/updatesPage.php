@@ -3,33 +3,41 @@ use yii\helpers\Html;
 use yii\helpers\HtmlPurifier;
 
 /* @var $this yii\web\View */
-
+// $this->registerCssFile('@backend_web/css/tinymce-responsive.css');
  
 // $update_contents = $update_contents::find()->where(['update_id' => $update->id])->all();
 ?>
 
-
-<div class="container">
-	<div class="row text-center">
-		<h2 style="color:black; self-align:center;"><?= Html::encode($update->title);?></h1>
+<div class="p-m" style="">
+	<div class="row text-center m-b">
+		<h1 style="color:black;"><?= Html::encode($update->title);?></h1>
 	</div>
-	<div class="row">
+	<div class="row text-center" id="content">
 		<?= HtmlPurifier::process($update->content); ?>
 	</div>
+	
 </div>
 
+<?php 
+$css = <<<CS
+.m-b{
+	margin-bottom:30px;
+}
+.p-m{
+	// overflow:hidden; 
+	// word-break: break-all; 
+	min-height:70vh;
+	margin:0 10vw 10vh 10vw;
+}
+@media(max-width:767px){
+.p-m{
+ margin: auto 5vw;
+}
+}
+CS;
+$this->registerCss($css);
 
-<!-- ?php foreach($update_contents as $content){ ?>
-<div class="container">
-	<div class="row" >
-		<div class="col-lg-4">
-			?=Html::img('../../backend/web/'.$content->updates_content_picture.'?'.time(),['alt' => 'Image Missing', 'width' => 400, 'height' => 400]); ?>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-xl-10">
-			?=HtmlPurifier::process($content->updates_content_paragraph); ?>
-		</div>
-	</div>
-</div>
-?php }?> -->
+
+?>
+
+

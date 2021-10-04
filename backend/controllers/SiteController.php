@@ -123,8 +123,7 @@ class SiteController extends Controller
     {    
         $session = Yii::$app->session;
         $session->open();
-        return $this->render('contentSchools', [
-                'model' => $model, 'session' => $session,
+        return $this->render('contentSchools', ['session' => $session,
             ]);
     }
 

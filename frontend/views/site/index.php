@@ -43,19 +43,6 @@ function hyphen_f($dt){
     return '';
 }
 
-
-
-$script = <<<JS
-  $(function(){
-  $('.submit-message').hide()
-  $('#index-submit').click(function(){
-    $('.submit-message').show();
-  });
-});
-
-JS;
-
-$this->registerJs($script);
   ?>
 
 
@@ -302,12 +289,11 @@ echo Yii::getAlias('@backend_url').'<br>';?> -->
                                         <div class="u-container-layout u-similar-container u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-container-layout-13">
                                           <?php foreach($updates as $up){ ?>
                                             <?php if(is_null($up->link)){ ?>
-                                              <h4><?= Html::a(Html::encode($up->title),['updates-page', 'id'=>$up->id],['target' => '_blank']);?></h4>
-                                              <hr/>
+                                              <p><?= Html::a(Html::encode($up->title),['updates-page', 'id'=>$up->id],['target' => '_blank']);?></p>
                                             <?php } else {;?>
-                                              <h4><?= Html::a(Html::encode($up->title),Html::encode('https://www.'.$up->link),['target' => '_blank']);?></h4></a>
-                                              <hr/>
+                                              <p><?= Html::a(Html::encode($up->title),Html::encode('https://www.'.$up->link),['target' => '_blank']);?></p></a>
                                             <?php };?>
+                                            <hr>
                                           <?php };?>
                                         </div>
                                       </marquee>
