@@ -64,15 +64,15 @@ class SchoolObjController extends Controller
      */
     public function actionCreate()
     {
-        $model = new SchoolObj();
+        Yii::$app->rbac->role('school-create');
 
+        $model = new SchoolObj();
         if ($model->load(Yii::$app->request->post())) {
             $model->id = $this->keyValue(SchoolObj::classname());
             if ($model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         }
-
         $this->layout = 'modal';
         return $this->render('create', [
             'model' => $model,
@@ -88,12 +88,12 @@ class SchoolObjController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
+        Yii::$app->rbac->role('school-update');
 
+        $model = $this->findModel($id);
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
-
         $this->layout = 'modal';
         return $this->render('update', [
             'model' => $model,
@@ -109,8 +109,9 @@ class SchoolObjController extends Controller
      */
     public function actionDelete($id)
     {
+        Yii::$app->rbac->role('school-delete');
+        
         $this->findModel($id)->delete();
-
         return $this->redirect(['index']);
     }
 

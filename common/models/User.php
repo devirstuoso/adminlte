@@ -24,6 +24,8 @@ use yii\web\IdentityInterface;
  */
 class User extends ActiveRecord implements IdentityInterface
 {
+    // public $auth;
+
     const STATUS_DELETED = 0;
     const STATUS_INACTIVE = 9;
     const STATUS_ACTIVE = 10;
@@ -34,7 +36,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function tableName()
     {
-        return 'user'; //'{{%user}}';
+        return '{{%user}}';
     }
 
     /**
@@ -208,5 +210,11 @@ class User extends ActiveRecord implements IdentityInterface
     public function removePasswordResetToken()
     {
         $this->password_reset_token = null;
+    }
+
+
+    public function getAuths()
+    {
+        return $this->hasMany(AuthAssignment::className(),['user_id' => 'id']);
     }
 }

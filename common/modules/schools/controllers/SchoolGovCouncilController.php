@@ -67,8 +67,9 @@ class SchoolGovCouncilController extends Controller
      */
     public function actionCreate()
     {
-        $model = new SchoolGovCouncil();
+        Yii::$app->rbac->role('school-create');
 
+        $model = new SchoolGovCouncil();
         if ($model->load(Yii::$app->request->post())) {
             $model->id = $this->keyValue(SchoolGovCouncil::classname());
             if ($model->save()) {
@@ -76,7 +77,6 @@ class SchoolGovCouncilController extends Controller
             }
             
         }
-
         return $this->renderPartial('create', [
             'model' => $model,
         ]);
@@ -91,12 +91,12 @@ class SchoolGovCouncilController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
+        Yii::$app->rbac->role('school-update');
 
+        $model = $this->findModel($id);
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
-
         return $this->renderPartial('update', [
             'model' => $model,
         ]);
@@ -111,8 +111,9 @@ class SchoolGovCouncilController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        Yii::$app->rbac->role('school-delete');
 
+        $this->findModel($id)->delete();
         return $this->redirect(['index']);
     }
 

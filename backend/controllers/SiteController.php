@@ -5,6 +5,8 @@ use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+
+use backend\models\VerifyEmailForm;
 use common\models\LoginForm;
 use common\models\PasswordResetRequestForm;
 use common\models\ResetPasswordForm;
@@ -46,7 +48,8 @@ class SiteController extends Controller
                                       'user-details',
                                       'content-base',
                                       'content-schools',
-                                      'contact'],
+                                      'contact',
+                                      'verify-email'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -242,6 +245,30 @@ class SiteController extends Controller
         ]);
     }
 
+     /**
+     * Verify email address
+     *
+     * @param string $token
+     * @throws BadRequestHttpException
+     * @return yii\web\Response
+     */
+    public function actionVerifyEmail($token)
+    {
+        try {
+            $model = new VerifyEmailForm($token);
+        } catch (InvalidArgumentException $e) {
+            throw new BadRequestHttpException($e->getMessage());
+        }
+        if ($user = $model->verifyEmail()) {
+            // if (Yii::$app->user->login($user)) {
+                Yii::$app->session->setFlash('success', 'Your email has been confirmed!');
+                return 'verified';
+            // }
+        }
+
+        Yii::$app->session->setFlash('error', 'Sorry, we are unable to verify your account with provided token.');
+        return $this->goHome();
+    }
 
 
 

@@ -13,7 +13,7 @@ use yii\helpers\Html;
         <?php if(!Yii::$app->user->isGuest){ ?>
 
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="<?php echo Yii::$app->urlManager->createUrl("site/index");?>" class="nav-link">Home</a>           <!--?=\yii\helpers\Url::home()?-->
+            <a href="<?php echo Yii::$app->urlManager->createUrl("/site/index");?>" class="nav-link">Home</a>           <!--?=\yii\helpers\Url::home()?-->
         </li>
         <li class="nav-item d-none d-sm-inline-block">
             <a href="#" class="nav-link">Contact</a>
@@ -26,7 +26,7 @@ use yii\helpers\Html;
 
                 <li class="dropdown-divider"></li>
 
-                <li><?= Html::a('Sign out', ['site/logout'], ['data-method' => 'post', 'class' => 'dropdown-item']) ?></li>
+                <li><?= Html::a('Sign out', ['/site/logout'], ['data-method' => 'post', 'class' => 'dropdown-item']) ?></li>
 
                 
 
@@ -180,7 +180,7 @@ use yii\helpers\Html;
             </div>
         </li>
         <li class="nav-item">
-            <?= Html::a('<i class="fas fa-sign-out-alt"></i>', ['site/logout'], ['data-method' => 'post', 'class' => 'nav-link']) ?>
+            <?= Html::a('<i class="fas fa-sign-out-alt"></i>', ['/site/logout'], ['data-method' => 'post', 'class' => 'nav-link']) ?>
         </li>
     <?php } ?>
         <li class="nav-item">

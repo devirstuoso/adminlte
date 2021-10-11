@@ -28,6 +28,10 @@ return [
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
         ],
+        'backuprestore' => [
+            'class' => '\oe\modules\backuprestore\Module',
+            //'layout' => '@admin-views/layouts/main', or what ever layout you use
+        ],
     //     'view' => [
     //      'theme' => [
     //          'pathMap' => [

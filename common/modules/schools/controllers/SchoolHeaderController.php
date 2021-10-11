@@ -79,6 +79,8 @@ class SchoolHeaderController extends Controller
 
     public function actionCreate()
     {   
+        Yii::$app->rbac->role('school-create');
+
         $model = new SchoolHeader;
 
         if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
@@ -126,23 +128,19 @@ class SchoolHeaderController extends Controller
      */
     public function actionUpdate($id) 
     {
-        $model = $this->findModel($id);
+        Yii::$app->rbac->role('school-update');
 
-        
+        $model = $this->findModel($id);
         if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
             Yii::$app->response->format = Response::FORMAT_JSON;
             return ActiveForm::validate($model);
         }
-
         if ($model->load(Yii::$app->request->post())) {
-
             // validate all models
             $valid = $model->validate();
-
             if ($valid) {
                 $transaction = \Yii::$app->db->beginTransaction();
                 try {
-
                     if ($model->save()) {
                         $transaction->commit();
                          Yii::$app->session->setFlash('success', 'Successfully updated the item.');
@@ -163,10 +161,6 @@ class SchoolHeaderController extends Controller
     }
 
 
-
-
-
-
     /**
      * Deletes an existing SchoolHeader model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
@@ -176,6 +170,8 @@ class SchoolHeaderController extends Controller
      */
     public function actionDelete($id)
     {
+        Yii::$app->rbac->role('school-delete');
+
         if ($id <> 'header0000') {
             $this->findModel($id)->delete();
             return $this->redirect(['index']);
@@ -198,7 +194,6 @@ class SchoolHeaderController extends Controller
         if (($model = SchoolHeader::findOne($id)) !== null) {
             return $model;
         }
-
         throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
     }   
 

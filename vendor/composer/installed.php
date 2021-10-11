@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'f41c8d23ce7e4762e0e8b29e1cb98f7f3695d4c2',
+        'reference' => '8e59f3223fbf5080bf1e924c2b90e57db8775903',
         'name' => 'yiisoft/yii2-app-advanced',
         'dev' => true,
     ),
@@ -399,6 +399,17 @@
             'install_path' => __DIR__ . '/../npm-asset/bootstrap',
             'aliases' => array(),
             'reference' => NULL,
+            'dev_requirement' => false,
+        ),
+        'open-ecommerce/yii2-backuprestore' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'type' => 'yii2-extension',
+            'install_path' => __DIR__ . '/../open-ecommerce/yii2-backuprestore',
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
+            'reference' => '59d99ac02d56cf798f831810384fa601b5525ca1',
             'dev_requirement' => false,
         ),
         'opis/closure' => array(
@@ -988,7 +999,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'f41c8d23ce7e4762e0e8b29e1cb98f7f3695d4c2',
+            'reference' => '8e59f3223fbf5080bf1e924c2b90e57db8775903',
             'dev_requirement' => false,
         ),
         'yiisoft/yii2-bootstrap' => array(

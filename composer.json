@@ -30,7 +30,8 @@
         "kartik-v/yii2-password": "dev-master",
         "2amigos/yii2-tinymce-widget": "~1.1",
         "yii2tech/filedb": "^1.0",
-        "wbraganca/yii2-dynamicform": "dev-master"
+        "wbraganca/yii2-dynamicform": "dev-master",
+        "open-ecommerce/yii2-backuprestore": "dev-master"
     
     },
     "require-dev": {

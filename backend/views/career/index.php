@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('<i class="fas fa-arrow-left"></i> Back', ['/site/content-base'], ['class' => 'btn btn-dark']) ?> 
-        <?php if (Yii::$app->rbac->role_chk(['admin', 'create'])) {
+        <?php if (Yii::$app->rbac->role_chk('create')) {
             echo Html::button('<i class="fas fa-plus"></i> Create a Career Section', ['value' => Url::to(['create']), 'class' => 'btn btn-success', 'id' => 'modalButton']);
         } ?>
     </p>
@@ -56,12 +56,12 @@ $this->params['breadcrumbs'][] = $this->title;
                     return Html::a('<i class="fas fa-eye"></i>',['view' , 'id'=> $model->id],['class' => '', 'style' => ['background-color'=> '#6a46cb']]);
                 },
                 'update' => function($url, $model, $key){
-                    if (Yii::$app->rbac->role_chk(['admin', 'update'])) { 
+                    if (Yii::$app->rbac->role_chk('update')) { 
                         return Html::button('<i class="fas fa-edit"></i>', ['value' => Url::to(['update' , 'id'=> $model->id]), 'class' => ['modalUpdateButton', 'btn'], 'style' => ['background-color'=> '#6a46cb']]);
                     }
                 },
                 'delete' => function($url, $model, $key){
-                    if (Yii::$app->rbac->role_chk(['admin', 'delete'])) { 
+                    if ( Yii::$app->rbac->role_chk('delete')) { 
                         return Html::a('<i class="fas fa-trash"></i>', ['delete', 'id' => $model->id],          [
                             'style' => ['background-color'=> '#CB4646'],
                             'data' => [

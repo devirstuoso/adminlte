@@ -64,8 +64,9 @@ class SchoolHomeController extends Controller
      */
     public function actionCreate()
     {
-        $model = new SchoolHome();
+        Yii::$app->rbac->role('school-create');
 
+        $model = new SchoolHome();
         if ($model->load(Yii::$app->request->post())) {
             $model->id = $this->keyValue(SchoolHome::classname());
             if ($model->save()) {
@@ -88,12 +89,12 @@ class SchoolHomeController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
+        Yii::$app->rbac->role('school-update');
 
+        $model = $this->findModel($id);
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
-
         $this->layout = 'modal';
         return $this->render('update', [
             'model' => $model,
@@ -109,8 +110,9 @@ class SchoolHomeController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        Yii::$app->rbac->role('school-delete');
 
+        $this->findModel($id)->delete();
         return $this->redirect(['index']);
     }
 

@@ -68,8 +68,9 @@ class SchoolOfficeController extends Controller
      */
     public function actionCreate()
     {
-        $model = new SchoolOffice();
+        Yii::$app->rbac->role('school-create');
 
+        $model = new SchoolOffice();
         if ($model->load(Yii::$app->request->post())) {
             $model->id = $this->keyValue(SchoolOffice::classname());
             $model->photograph = $this->uploadImage($model, 'photograph');
@@ -77,7 +78,6 @@ class SchoolOfficeController extends Controller
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         }
-
         $this->layout = 'modal';
         return $this->render('create', [
             'model' => $model,
@@ -93,15 +93,15 @@ class SchoolOfficeController extends Controller
      */
     public function actionUpdate($id)
     {
+        Yii::$app->rbac->role('school-update');
+
         $model = $this->findModel($id);
         $old_image =$model->photograph;
-
         if ($model->load(Yii::$app->request->post())) {
             $model->photograph = $this->uploadImage($model, 'photograph', $old_image);
             $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
         }
-
         $this->layout = 'modal';
         return $this->render('update', [
             'model' => $model,
@@ -117,8 +117,9 @@ class SchoolOfficeController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        Yii::$app->rbac->role('school-delete');
 
+        $this->findModel($id)->delete();
         return $this->redirect(['index']);
     }
 

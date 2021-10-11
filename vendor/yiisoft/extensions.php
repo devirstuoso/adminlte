@@ -210,4 +210,13 @@ return array (
       '@yii/debug' => $vendorDir . '/yiisoft/yii2-debug/src',
     ),
   ),
+  'open-ecommerce/yii2-backuprestore' => 
+  array (
+    'name' => 'open-ecommerce/yii2-backuprestore',
+    'version' => 'dev-master',
+    'alias' => 
+    array (
+      '@oe/modules/backuprestore' => $vendorDir . '/open-ecommerce/yii2-backuprestore',
+    ),
+  ),
 );

@@ -49,6 +49,10 @@ class ComposerStaticInitbe126db7813c83d717eea90e7af619da
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'o' => 
+        array (
+            'oe\\modules\\backuprestore\\' => 25,
+        ),
         'k' => 
         array (
             'kartik\\time\\' => 12,
@@ -195,6 +199,10 @@ class ComposerStaticInitbe126db7813c83d717eea90e7af619da
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+        ),
+        'oe\\modules\\backuprestore\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/open-ecommerce/yii2-backuprestore',
         ),
         'kartik\\time\\' => 
         array (
@@ -346,8 +354,8 @@ class ComposerStaticInitbe126db7813c83d717eea90e7af619da
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\EventDispatcher\\' => 
         array (
@@ -399,9 +407,9 @@ class ComposerStaticInitbe126db7813c83d717eea90e7af619da
         ),
         'Codeception\\' => 
         array (
-            0 => __DIR__ . '/..' . '/codeception/stub/src',
-            1 => __DIR__ . '/..' . '/codeception/verify/src/Codeception',
-            2 => __DIR__ . '/..' . '/codeception/codeception/src/Codeception',
+            0 => __DIR__ . '/..' . '/codeception/codeception/src/Codeception',
+            1 => __DIR__ . '/..' . '/codeception/stub/src',
+            2 => __DIR__ . '/..' . '/codeception/verify/src/Codeception',
         ),
     );
 

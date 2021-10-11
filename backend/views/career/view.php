@@ -29,10 +29,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
        <?= Html::a('<i class="fas fa-arrow-left"></i> Back', ['index'], ['class' => 'btn btn-dark']) ?>
-       <?php if (Yii::$app->rbac->role_chk(['admin', 'update'])) {
+       <?php if (Yii::$app->rbac->role_chk('school-update')) {
             echo Html::button('<i class="fas fa-edit"></i> Update', ['value' => Url::to(['update' , 'id'=> $model->id]), 'class' => ['modalUpdateButton', 'btn btn-primary']]); 
         } ?>
-       <?php if (Yii::$app->rbac->role_chk(['admin', 'delete'])) {
+       <?php if (Yii::$app->rbac->role_chk('school-delete')) {
             echo Html::a('<i class="fas fa-trash"></i> Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [

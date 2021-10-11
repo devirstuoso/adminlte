@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "640815f148a4e4fe429c5254ca206b32",
+    "content-hash": "71dc3c77c4d13d59333fe7b1883ae0d2",
     "packages": [
         {
             "name": "2amigos/yii2-chartjs-widget",
@@ -1361,6 +1361,53 @@
             "license": [
                 "MIT"
             ]
+        },
+        {
+            "name": "open-ecommerce/yii2-backuprestore",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/open-ecommerce/yii2-backuprestore.git",
+                "reference": "59d99ac02d56cf798f831810384fa601b5525ca1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/open-ecommerce/yii2-backuprestore/zipball/59d99ac02d56cf798f831810384fa601b5525ca1",
+                "reference": "59d99ac02d56cf798f831810384fa601b5525ca1",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "default-branch": true,
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "oe\\modules\\backuprestore\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "open-ecommerce.org",
+                    "email": "info@open-ecommerce.org"
+                }
+            ],
+            "description": "Database Backup and Restore functionality",
+            "keywords": [
+                "backup",
+                "database",
+                "restore",
+                "yii2"
+            ],
+            "support": {
+                "issues": "https://github.com/open-ecommerce/yii2-backuprestore/issues",
+                "source": "https://github.com/open-ecommerce/yii2-backuprestore/tree/v1.0"
+            },
+            "time": "2017-02-12T13:30:49+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -6765,7 +6812,8 @@
         "kartik-v/yii2-widget-datepicker": 20,
         "kartik-v/yii2-widget-timepicker": 20,
         "kartik-v/yii2-password": 20,
-        "wbraganca/yii2-dynamicform": 20
+        "wbraganca/yii2-dynamicform": 20,
+        "open-ecommerce/yii2-backuprestore": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

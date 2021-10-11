@@ -2316,6 +2316,56 @@
             "install-path": "../npm-asset/bootstrap"
         },
         {
+            "name": "open-ecommerce/yii2-backuprestore",
+            "version": "dev-master",
+            "version_normalized": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/open-ecommerce/yii2-backuprestore.git",
+                "reference": "59d99ac02d56cf798f831810384fa601b5525ca1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/open-ecommerce/yii2-backuprestore/zipball/59d99ac02d56cf798f831810384fa601b5525ca1",
+                "reference": "59d99ac02d56cf798f831810384fa601b5525ca1",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "time": "2017-02-12T13:30:49+00:00",
+            "default-branch": true,
+            "type": "yii2-extension",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "oe\\modules\\backuprestore\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "open-ecommerce.org",
+                    "email": "info@open-ecommerce.org"
+                }
+            ],
+            "description": "Database Backup and Restore functionality",
+            "keywords": [
+                "backup",
+                "database",
+                "restore",
+                "yii2"
+            ],
+            "support": {
+                "issues": "https://github.com/open-ecommerce/yii2-backuprestore/issues",
+                "source": "https://github.com/open-ecommerce/yii2-backuprestore/tree/v1.0"
+            },
+            "install-path": "../open-ecommerce/yii2-backuprestore"
+        },
+        {
             "name": "opis/closure",
             "version": "3.6.2",
             "version_normalized": "3.6.2.0",

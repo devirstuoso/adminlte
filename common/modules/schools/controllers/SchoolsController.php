@@ -70,28 +70,25 @@ class SchoolsController extends Controller
      */
     public function actionCreate()
     {
+      Yii::$app->rbac->role('create');
+
       $modelSchool = new Schools;
       $modelsSlider = [new SchoolSlider];
-
       if ($modelSchool->load(Yii::$app->request->post())) {
             $modelSchool->id = $this->keyValue(Schools::classname()); //comment this for int id
-
             $modelsSlider = Model::createMultiple(SchoolSlider::classname());
             Model::loadMultiple($modelsSlider, Yii::$app->request->post());
             // return SchoolSlider::classname();
             foreach($modelsSlider as $index => $modelSlider){
-
                 $modelSlider->id = $this->keyValue(SchoolSlider::className(), $modelSchool->school_id);
                 $modelSlider->image = $this->uploadImage($modelSlider, "[{$index}]image");
             }
-
             // validate all models
             $valid = $modelSchool->validate();
             $valid = Model::validateMultiple($modelsSlider) && $valid;
 
             if ($valid) {
                 $transaction = \Yii::$app->db->beginTransaction();
-
                 try {
                     if ($flag = $modelSchool->save(false)) {
                         foreach ($modelsSlider as $modelSlider) {
@@ -103,7 +100,6 @@ class SchoolsController extends Controller
                             }
                         }
                     }
-
                     if ($flag) {
                         $transaction->commit();
                         return $this->redirect(['view', 'id' => $modelSchool->id]);
@@ -129,41 +125,31 @@ class SchoolsController extends Controller
      */
     public function actionUpdate($id)
     {
+        Yii::$app->rbac->role('school-update');
+
      $modelSchool = $this->findModel($id);
      $modelsSlider = $modelSchool->schoolSlider;
-
-
      if ($modelSchool->load(Yii::$app->request->post())) {
-
         $oldIDs = ArrayHelper::map($modelsSlider, 'id', 'id');
-
         $oldImages = [];
         foreach($modelsSlider as $index => $modelSlider){
             $oldImages[$modelSlider->id] = $modelSlider->image; 
         }
-
         $modelsSlider = Model::createMultiple(SchoolSlider::classname());//, $modelsSlider);
-
         Model::loadMultiple($modelsSlider, Yii::$app->request->post());
-
         // foreach($modelsSlider as $index => $modelSlider){
 
         //         // $modelSlider->id = $this->keyValue(SchoolSlider::className());
         //         // $modelSlider->image = $this->uploadImage($modelSlider, "[{$index}]image");
         // }
-
-
         $deletedIDs = array_diff($oldIDs, array_filter(ArrayHelper::map($modelsSlider, 'id', 'id')));
-
-            // validate all models
+        // validate all models
         $valid = $modelSchool->validate();
         $valid = Model::validateMultiple($modelsSlider) && $valid;
-
         if ($valid) {
             $transaction = \Yii::$app->db->beginTransaction();
             try {
                 if ($flag = $modelSchool->save(true)) {
-
                     if (!empty($deletedIDs)) {
                         SchoolSlider::deleteAll(['id' => $deletedIDs]);
                     }
@@ -173,7 +159,6 @@ class SchoolsController extends Controller
                         $modelSlider->image = $image??$oldImages[$modelSlider->id];
                         $modelSlider->school_id = $modelSchool->school_id;
                         if (! ($flag = $modelSlider->save(true))) {
-
                             $transaction->rollBack();
                             break;
                         }
@@ -181,7 +166,6 @@ class SchoolsController extends Controller
                 }
                 if ($flag) {
                     $transaction->commit();
-
                     return $this->redirect(['view', 'id' => $modelSchool->id]);
                 }
             } catch (Exception $e) {
@@ -189,7 +173,6 @@ class SchoolsController extends Controller
             }
         }
     }
-
     $this->layout = 'modal';
     return $this->render('update', [
         'modelSchool' => $modelSchool,
@@ -206,10 +189,11 @@ class SchoolsController extends Controller
      */
     public function actionDelete($id)
     {
+        Yii::$app->rbac->role('school-delete');
+
         $school = $this->findModel($id);
         SchoolSlider::deleteAll(['school_id' => $school->school_id]);
         $school->delete();
-
         return $this->redirect(['index']);
     }
 
@@ -225,7 +209,6 @@ class SchoolsController extends Controller
         if (($model = Schools::findOne($id)) !== null) {
             return $model;
         }
-
         throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
     }
 
@@ -258,9 +241,7 @@ class SchoolsController extends Controller
         $image_name = $model->id.'.png';#.$model->slider_image->getExtension(); 
         $image_path =  'uploads/schoolslider/'.$image_name;
 
-
         $cond =  $model->save() && !is_null($uploaded_image);
-
         if($cond){
             $uploaded_image->saveAs($image_path);
             return $image_path;
