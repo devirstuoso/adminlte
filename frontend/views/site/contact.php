@@ -149,7 +149,7 @@ $this->registerCss($style);
                         <div class="u-layout-col">
                             <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-3">
                                 <div class="u-container-layout u-valign-top-lg u-valign-top-md u-valign-top-xl u-container-layout-5">
-                                    <h2 class="u-text u-text-custom-color-2 u-text-5">contact form</h2>
+                                    <h2 class="u-text u-text-custom-color-2 u-text-5">Contact Form</h2>
                                     <div class="u-expanded-width-sm u-expanded-width-xs u-form u-form-1">
 
                                         <?php if (Yii::$app->session->hasFlash('success')): ?>

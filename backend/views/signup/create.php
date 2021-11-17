@@ -14,6 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1 class="gridview-header-text"><?= Html::encode($this->title) ?></h1>
 
     <?= $this->render('_form', [
+        'create' => true,
         'model' => $model,
     ]) ?>
 

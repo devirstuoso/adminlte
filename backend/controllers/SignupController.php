@@ -62,6 +62,7 @@ class SignupController extends Controller
 
         return $this->render('view', [
             'model' => $this->findUserModel($id),
+            'auths' => $this->findAuthModels($id),
         ]);
     }
 
@@ -114,25 +115,23 @@ class SignupController extends Controller
         //     Yii::$app->response->format = Response::FORMAT_JSON;
         //     return ActiveForm::validate($model);
         // }
-
-        $model = $this->findUserModel($id);
+        $model = new Signup();
+        $user = $this->findUserModel($id);
         $auths = $this->findAuthModels($id);
 
         if ($model->load(Yii::$app->request->post()) ) {
-            if ($model->save()) {
+            if ($model->update_status($user)) {
                 Yii::$app->session->setFlash('success', 'User updated successfully.');// Please check your inbox for verification email.');
-                return $this->redirect(['view', 'id' => $model->id]);
+                return $this->redirect(['view', 'id' => $id]);
             }
             else {
                 Yii::$app->session->setFlash('error', 'There is some problem with given data');
                 return $this->redirect(['index']);
             }
-           
         }
-
         $this->layout = 'modal';
         return $this->render('update', [
-            'model' => $model,
+            'model' => $model, 'user' => $user, 'auths' => $auths,
         ]);
     }
 

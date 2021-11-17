@@ -24,6 +24,7 @@ use backend\models\ContactForm;
 use backend\models\GovCouncil;
 use backend\models\Career;
 
+
 /**
  * Site controller
  */
@@ -89,9 +90,9 @@ class SiteController extends Controller
 
         if ($contactform->load(Yii::$app->request->post())) {
             $contactform->id = $this::cf_keyValue();
-            if (true) {//$contactform->save ()) {
-                // $contactform->sendEmail();
-                sleep(10);
+            if ($contactform->save ()) {
+                $contactform->sendEmail();
+                // sleep(10);
                 Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
             } else {
                 Yii::$app->session->setFlash('error', 'There was an error sending your message.');

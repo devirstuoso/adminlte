@@ -3,7 +3,7 @@
 /**
  * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2021
  * @package yii2-editors
- * @version 1.0.0
+ * @version 1.0.1
  */
 
 namespace kartik\editors;
@@ -14,10 +14,10 @@ use kartik\editors\assets\KrajeeCodemirrorAsset;
 use kartik\editors\assets\KrajeeSummernoteAsset;
 use kartik\editors\assets\KrajeeSummernoteStyleAsset;
 use kartik\editors\assets\SummernoteAsset;
+use kartik\editors\assets\SummernoteBs5Asset;
 use ReflectionException;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
-use yii\helpers\Json;
 use yii\web\JsExpression;
 
 /**
@@ -36,8 +36,6 @@ class Summernote extends InputWidget
      */
     public $pluginName = 'kvSummernote';
 
-    
-
     /**
      * @var bool whether to use styles with span
      */
@@ -47,32 +45,32 @@ class Summernote extends InputWidget
      * @var bool whether to use Krajee presets for toolbar and other plugin settings. You can override these through
      * plugin options;
      */
-    public $useKrajeePresets = false;
+    public $useKrajeePresets = true;
 
     /**
      * @var bool whether to use Krajee CSS modifications to the Summernote Bootstrap styles.
      */
-    public $useKrajeeStyle = false;
+    public $useKrajeeStyle = true;
 
     /**
      * @var bool whether to enable full screen zoom. Applied only when [[useKrajeePresets]] is set to `true`.
      */
-    public $enableFullScreen = false;
+    public $enableFullScreen = true;
 
     /**
      * @var bool whether to enable display of code view. Applied only when [[useKrajeePresets]] is set to `true`.
      */
-    public $enableCodeView = false;
+    public $enableCodeView = true;
 
     /**
      * @var bool whether to enable display of help button. Applied only when [[useKrajeePresets]] is set to `true`.
      */
-    public $enableHelp = false;
+    public $enableHelp = true;
 
     /**
      * @var bool whether to enable emojis hints. If set to `true` will set hint via Github emoji API.
      */
-    public $enableHintEmojis = false;
+    public $enableHintEmojis = true;
 
     /**
      * @var array set a list of words displayed as hints when you type. If empty or not set, will not be displayed.
@@ -88,7 +86,7 @@ class Summernote extends InputWidget
     /**
      * @var bool whether to autoformat HTML code when switching to code view mode.
      */
-    public $autoFormatCode = false;
+    public $autoFormatCode = true;
 
     /**
      * @var array HTML attributes of the container to render the editor. The following special
@@ -101,14 +99,14 @@ class Summernote extends InputWidget
      * @var array default Krajee presets for the summernote plugin
      */
     protected $krajeePresets = [
-        'height' => 100,
+        'height' => 300,
         'dialogsFade' => true,
         'toolbar' => [
             ['style1', ['style']],
             ['style2', ['bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript']],
             ['font', ['fontname', 'fontsize', 'color', 'clear']],
             ['para', ['ul', 'ol', 'paragraph', 'height']],
-            ['insert', ['link', 'hr']], //'picture', 'video', 'table',
+            ['insert', ['link', 'picture', 'video', 'table', 'hr']],
         ],
         'fontSizes' => ['8', '9', '10', '11', '12', '13', '14', '16', '18', '20', '24', '36', '48'],
         'codemirror' => [
@@ -146,7 +144,7 @@ class Summernote extends InputWidget
         }
         $tag = ArrayHelper::remove($this->container, 'tag', 'div');
         if (!isset($this->container['id'])) {
-            $this->container['id'] = $this->options['id'] . '-container';
+            $this->container['id'] = $this->options['id'].'-container';
         }
         if (!isset($this->container['class'])) {
             $this->container['class'] = 'form-control kv-editor-container';
@@ -154,6 +152,7 @@ class Summernote extends InputWidget
         $this->initKrajeePresets();
         $this->initHints();
         $this->registerAssets();
+
         return Html::tag($tag, $this->getInput('textarea'), $this->container);
     }
 
@@ -196,10 +195,10 @@ class Summernote extends InputWidget
                 'words' => $this->hintWords,
                 'match' => new JsExpression('/\b(\w{1,})$/'),
                 'search' => new JsExpression(
-                    'function (keyword, callback) {' .
-                    '    callback($.grep(this.words, function (item) {' .
-                    '        return item.indexOf(keyword) === 0;' .
-                    '    }));' .
+                    'function (keyword, callback) {'.
+                    '    callback($.grep(this.words, function (item) {'.
+                    '        return item.indexOf(keyword) === 0;'.
+                    '    }));'.
                     '}'
                 ),
             ];
@@ -209,10 +208,10 @@ class Summernote extends InputWidget
                 'mentions' => $this->hintMentions,
                 'match' => new JsExpression('/\B@(\w*)$/'),
                 'search' => new JsExpression(
-                    'function (keyword, callback) {' .
-                    '    callback($.grep(this.mentions, function (item) {' .
-                    '        return item.indexOf(keyword) == 0;' .
-                    '    }));' .
+                    'function (keyword, callback) {'.
+                    '    callback($.grep(this.mentions, function (item) {'.
+                    '        return item.indexOf(keyword) == 0;'.
+                    '    }));'.
                     '}'
                 ),
                 'content' => new JsExpression('function (item) { return "@" + item; }'),
@@ -225,25 +224,25 @@ class Summernote extends InputWidget
             $hint[] = [
                 'match' => new JsExpression('/:([\-+\w]+)$/'),
                 'search' => new JsExpression(
-                    'function (keyword, callback) {' .
-                    '    callback($.grep(kvEmojis, function (item) {' .
-                    '        return item.indexOf(keyword) === 0;' .
-                    '    }));' .
+                    'function (keyword, callback) {'.
+                    '    callback($.grep(kvEmojis, function (item) {'.
+                    '        return item.indexOf(keyword) === 0;'.
+                    '    }));'.
                     '}'
                 ),
                 'template' => new JsExpression(
-                    'function (item) {' .
-                    '    var content = kvEmojiUrls[item];' .
-                    '    return \'<img src="\' + content + \'" width="20" /> :\' + item + \':\'' .
+                    'function (item) {'.
+                    '    var content = kvEmojiUrls[item];'.
+                    '    return \'<img src="\' + content + \'" width="20" /> :\' + item + \':\''.
                     '}'
                 ),
                 'content' => new JsExpression(
-                    'function (item) {' .
-                    '    var url = kvEmojiUrls[item];' .
-                    '    if (url) {' .
-                    '        return $("<img />").attr("src", url).css("width", 20)[0];' .
-                    '    }' .
-                    '    return "";' .
+                    'function (item) {'.
+                    '    var url = kvEmojiUrls[item];'.
+                    '    if (url) {'.
+                    '        return $("<img />").attr("src", url).css("width", 20)[0];'.
+                    '    }'.
+                    '    return "";'.
                     '}'
                 ),
             ];
@@ -278,5 +277,18 @@ class Summernote extends InputWidget
             KrajeeSummernoteStyleAsset::register($view);
         }
         $this->registerPlugin($this->pluginName);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getPluginScript($name, $element = null, $callback = null, $callbackCon = null)
+    {
+        $script = parent::getPluginScript($name, $element, $callback, $callbackCon);
+        if ($this->isBs(5)) {
+            SummernoteBs5Asset::register($this->getView());
+            $script .= "\nkvSummernoteBs5('{$this->container['id']}');";
+        }
+        return $script;
     }
 }

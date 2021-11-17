@@ -57,7 +57,7 @@ echo Yii::getAlias('@backend_web').'<br>';
 echo Yii::getAlias('@frontend_url').'<br>';
 echo Yii::getAlias('@backend_url').'<br>';?> -->
 <div class="home">
-  <section id="carousel_c34a" class="u-carousel u-carousel-duration-1500 u-slide u-block-963f-1" data-u-ride="carousel" data-interval="4750">
+  <section id="carousel_c34a" class="u-carousel u-carousel-duration-1500 u-slidea u-block-963f-1" data-u-ride="carousel" data-interval="4750">
 
     <!-- carousel tabs -->
     <ol class="u-absolute-hcenter u-carousel-indicators u-block-963f-2">
@@ -99,7 +99,7 @@ echo Yii::getAlias('@backend_url').'<br>';?> -->
                             <!-- ?= Html::img('../../backend/web/'.$s->slider_image,['alt'=>'some', 'width'=>'100%', 'height'=>'180px']);  ?> -->
                             <h2 class="u-subtitle u-text u-text-body-alt-color u-text-1"> <?= HtmlPurifier::process( $s->slider_subheader_text) ?> </h2>
                             <h1 class="u-custom-font u-font-playfair-display u-text u-text-body-alt-color u-title u-text-2"> <?= HtmlPurifier::process( $s->slider_header_text) ?> </h1>
-                            <p class="u-text u-text-body-alt-color u-text-3"> <?= HtmlPurifier::process( $s->slider_description_text) ?> </p>
+                            <div class="u-text u-text-body-alt-color u-text-3"> <?php echo HtmlPurifier::process( $s->slider_description_text) ?> </div>
                             <?php if ($s->slider_button_hide === 0) {?>
                               <?= Html::a(Html::encode($s->slider_button_text), [Url::to(Html::encode($s->slider_button))], [ 'class'=>'u-border-2 u-border-grey-dark-1 u-border-hover-custom-color-1 u-btn u-btn-round u-button-style u-hover-custom-color-1 u-none u-radius-40 u-text-body-alt-color u-btn-1']); 
                               ?>

@@ -127,4 +127,11 @@ return [
         'message' => '',
         'id' => 'enquiry000049',
     ],
+    'enquiry000050' => [
+        'name' => 'Devanshu',
+        'email' => 'devanshuverma158@gmail.com',
+        'phone' => '07838062678',
+        'message' => '',
+        'id' => 'enquiry000050',
+    ],
 ];

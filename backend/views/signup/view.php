@@ -18,7 +18,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
 <div class="signup-view">
-
     <h1 class="gridview-header-text"><?= Html::encode($this->title) ?></h1>
 
     <p>
@@ -45,6 +44,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'username',
             'email:email',
             'password_hash',
+            ['attribute' => 'profile',
+            'format' => 'html',
+            'value' => function($model){
+                   return yii\bootstrap\Html::img('uploads/users/'.$model->profile.'?'.time(), ['class' => 'gridview-image-view']);
+                           }
+             ],
             ['attribute' => 'status',
             'format' => 'html',
             'value' => function($model){
@@ -58,10 +63,23 @@ $this->params['breadcrumbs'][] = $this->title;
             'verification_token',
             'password_reset_token',
             'auth_key',
-            'created_at',
-            'updated_at',
-            ['attribute' => ''],
+            'created_at:date',
+            'updated_at:date',
+            ['attribute' => 'autherization',
+            'format' => 'html',
+            'value' => function($model){
+                if (!($model->auths)) {
+                    return '...';
+                } else {
+                    foreach ($model->auths as $key => $auth) {
+                        $arr[] = Html::encode($auth->item_name);
+                    }
+                    return implode($arr, ', ') ;
+                }
+              }
+            ],
         ],
     ]) ?>
+
 
 </div>

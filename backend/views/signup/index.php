@@ -4,7 +4,6 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
-use common\widgets\Alert;
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\SignupSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -12,7 +11,6 @@ use common\widgets\Alert;
 $this->title = Yii::t('app', 'Users');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<?= Alert::widget(); ?>
 
 
 <div class="signup-index">

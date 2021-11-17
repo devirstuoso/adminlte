@@ -66,33 +66,6 @@ return array (
       '@dosamigos/chartjs' => $vendorDir . '/2amigos/yii2-chartjs-widget/src',
     ),
   ),
-  'kartik-v/yii2-krajee-base' => 
-  array (
-    'name' => 'kartik-v/yii2-krajee-base',
-    'version' => '2.0.6.0',
-    'alias' => 
-    array (
-      '@kartik/base' => $vendorDir . '/kartik-v/yii2-krajee-base/src',
-    ),
-  ),
-  'kartik-v/yii2-editors' => 
-  array (
-    'name' => 'kartik-v/yii2-editors',
-    'version' => 'dev-master',
-    'alias' => 
-    array (
-      '@kartik/editors' => $vendorDir . '/kartik-v/yii2-editors/src',
-    ),
-  ),
-  'kartik-v/yii2-widget-fileinput' => 
-  array (
-    'name' => 'kartik-v/yii2-widget-fileinput',
-    'version' => 'dev-master',
-    'alias' => 
-    array (
-      '@kartik/file' => $vendorDir . '/kartik-v/yii2-widget-fileinput/src',
-    ),
-  ),
   'kartik-v/yii2-widget-datepicker' => 
   array (
     'name' => 'kartik-v/yii2-widget-datepicker',
@@ -136,15 +109,6 @@ return array (
     'alias' => 
     array (
       '@kartik/popover' => $vendorDir . '/kartik-v/yii2-popover-x/src',
-    ),
-  ),
-  'kartik-v/yii2-widget-activeform' => 
-  array (
-    'name' => 'kartik-v/yii2-widget-activeform',
-    'version' => '1.5.8.0',
-    'alias' => 
-    array (
-      '@kartik/form' => $vendorDir . '/kartik-v/yii2-widget-activeform/src',
     ),
   ),
   'kartik-v/yii2-editable' => 
@@ -217,6 +181,78 @@ return array (
     'alias' => 
     array (
       '@oe/modules/backuprestore' => $vendorDir . '/open-ecommerce/yii2-backuprestore',
+    ),
+  ),
+  'kartik-v/yii2-dialog' => 
+  array (
+    'name' => 'kartik-v/yii2-dialog',
+    'version' => '1.0.6.0',
+    'alias' => 
+    array (
+      '@kartik/dialog' => $vendorDir . '/kartik-v/yii2-dialog/src',
+    ),
+  ),
+  'kartik-v/yii2-bootstrap5-dropdown' => 
+  array (
+    'name' => 'kartik-v/yii2-bootstrap5-dropdown',
+    'version' => '1.0.0.0',
+    'alias' => 
+    array (
+      '@kartik/bs5dropdown' => $vendorDir . '/kartik-v/yii2-bootstrap5-dropdown/src',
+    ),
+  ),
+  'kartik-v/yii2-bootstrap4-dropdown' => 
+  array (
+    'name' => 'kartik-v/yii2-bootstrap4-dropdown',
+    'version' => '1.0.2.0',
+    'alias' => 
+    array (
+      '@kartik/bs4dropdown' => $vendorDir . '/kartik-v/yii2-bootstrap4-dropdown/src',
+    ),
+  ),
+  'kartik-v/yii2-grid' => 
+  array (
+    'name' => 'kartik-v/yii2-grid',
+    'version' => 'dev-master',
+    'alias' => 
+    array (
+      '@kartik/grid' => $vendorDir . '/kartik-v/yii2-grid/src',
+    ),
+  ),
+  'kartik-v/yii2-krajee-base' => 
+  array (
+    'name' => 'kartik-v/yii2-krajee-base',
+    'version' => '3.0.1.0',
+    'alias' => 
+    array (
+      '@kartik/base' => $vendorDir . '/kartik-v/yii2-krajee-base/src',
+    ),
+  ),
+  'kartik-v/yii2-widget-activeform' => 
+  array (
+    'name' => 'kartik-v/yii2-widget-activeform',
+    'version' => '1.6.0.0',
+    'alias' => 
+    array (
+      '@kartik/form' => $vendorDir . '/kartik-v/yii2-widget-activeform/src',
+    ),
+  ),
+  'kartik-v/yii2-editors' => 
+  array (
+    'name' => 'kartik-v/yii2-editors',
+    'version' => 'dev-master',
+    'alias' => 
+    array (
+      '@kartik/editors' => $vendorDir . '/kartik-v/yii2-editors/src',
+    ),
+  ),
+  'kartik-v/yii2-widget-fileinput' => 
+  array (
+    'name' => 'kartik-v/yii2-widget-fileinput',
+    'version' => 'dev-master',
+    'alias' => 
+    array (
+      '@kartik/file' => $vendorDir . '/kartik-v/yii2-widget-fileinput/src',
     ),
   ),
 );

@@ -67,6 +67,10 @@ $config = [
                   'schools' => [
                     'class' => 'common\modules\schools\School',
                 ],
+                  'gridview' =>  [
+                    'class' => '\kartik\grid\Module',
+                ],
+
             ],
         ];
 

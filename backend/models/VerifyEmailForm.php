@@ -3,6 +3,7 @@
 namespace backend\models;
 
 use common\models\User;
+use common\models\AuthAssignment;
 use yii\base\InvalidArgumentException;
 use yii\base\Model;
 
@@ -47,6 +48,12 @@ class VerifyEmailForm extends Model
     {
         $user = $this->_user;
         $user->status = User::STATUS_ACTIVE;
+        $id = $user->id;
+        $auths = AuthAssignment::findAll(['user_id' => (string)$id]);
+        foreach ($auths as $auth) {
+            $auth->status = User::STATUS_ACTIVE;
+            $auth->save();
+        }
         return $user->save(false) ? $user : null;
     }
 }

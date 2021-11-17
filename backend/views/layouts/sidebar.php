@@ -28,16 +28,18 @@
             <div class="info">
             
             <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="d-block dropdown-toggle">
-                <?= strtoupper($session->get('username'));?>
+                <?= strtoupper(Yii::$app->user->identity->username);?> <!--$session->get('username')-->
                 <?php if (Yii::$app->rbac->role_chk('admin')) {
                        echo '<span>&nbsp&nbsp&nbsp<i class="fas fa-user-cog" style="color:#fff;"></i></span>';
                      } ?>
             </a>
-            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-1 shadow" role="menu" style="z-index: 10; position: relative; top: -20px; left: -61px;">
-                <li><a href="<?php echo Yii::$app->urlManager->createUrl("/site/user-details");?>" class="dropdown-item">Profile </a></li>
-                <div class="dropdown-divider"></div>
-                <li><?= Html::a('Sign out', ['/site/logout'], ['data-method' => 'post', 'class' => 'dropdown-item']) ?></li>
-            </ul>
+            <?php if(!Yii::$app->user->isGuest) : ?>
+                <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-1 shadow" role="menu" style="z-index: 10; position: relative; top: -20px; left: -61px;">
+                    <li><a href="<?php echo Yii::$app->urlManager->createUrl("/site/user-details");?>" class="dropdown-item">Profile </a></li>
+                    <div class="dropdown-divider"></div>
+                    <li><?= Html::a('Sign out', ['/site/logout'], ['data-method' => 'post', 'class' => 'dropdown-item']) ?></li>
+                </ul>
+            <?php endif; ?>
         
             </div>
 
